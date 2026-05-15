@@ -1,0 +1,17 @@
+PATA Y ALETA — WEB PÚBLICA + ADMIN EN /admin
+
+1. Descomprime este ZIP.
+2. Arrastra la carpeta completa a Netlify en el proyecto existente.
+3. Abre: https://pata-y-aleta-msf1234.netlify.app/admin/
+4. Si pide conexión, pega:
+   Supabase URL: https://vjyktubsdhpusyvnphvj.supabase.co
+   Publishable key: la llave que empieza con sb_publishable_
+5. Acceso por correo.
+6. Código interno: PATA2026
+
+IMPORTANTE EN SUPABASE:
+Authentication > URL Configuration
+Site URL: https://pata-y-aleta-msf1234.netlify.app
+Redirect URLs:
+https://pata-y-aleta-msf1234.netlify.app/*
+https://pata-y-aleta-msf1234.netlify.app/admin/
