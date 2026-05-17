@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Catálogo | Pata y Aleta</title>
+
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fa;
+}
+
+.header{
+background:white;
+padding:20px;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+height:65px;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+padding:40px 20px;
+}
+
+.title{
+font-size:42px;
+font-weight:800;
+margin-bottom:10px;
+color:#0d1b2a;
+}
+
+.subtitle{
+color:#666;
+margin-bottom:35px;
+font-size:18px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+gap:24px;
+}
+
+.card{
+background:white;
+border-radius:24px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.image{
+height:280px;
+background:#eee;
+overflow:hidden;
+}
+
+.image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.content{
+padding:20px;
+}
+
+.category{
+font-size:13px;
+color:#007A8C;
+font-weight:700;
+margin-bottom:10px;
+text-transform:uppercase;
+}
+
+.name{
+font-size:22px;
+font-weight:800;
+margin-bottom:10px;
+color:#071426;
+}
+
+.desc{
+font-size:14px;
+line-height:1.6;
+color:#666;
+margin-bottom:15px;
+}
+
+.price{
+font-size:24px;
+font-weight:800;
+color:#007A8C;
+}
+
+.badge{
+display:inline-block;
+background:#eaf8fa;
+padding:8px 14px;
+border-radius:999px;
+font-size:12px;
+font-weight:700;
+color:#007A8C;
+margin-bottom:15px;
+}
+
+.loader{
+text-align:center;
+padding:80px;
+font-size:20px;
+font-weight:bold;
+}
+
+.empty{
+text-align:center;
+padding:80px;
+font-size:22px;
+color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<img src="https://i.imgur.com/Nj9lQ4N.png" class="logo">
+</div>
+
+<div class="container">
+<h1 class="title">Catálogo Pata y Aleta</h1>
+<p class="subtitle">
+Explora nuestros productos, peces, acuarios y accesorios.
+</p>
+
+<div id="products" class="grid">
+<div class="loader">
+Cargando productos...
+</div>
+</div>
+</div>
+
+<script>
+
+const supabase = window.supabase.createClient(
+'https://vjyktubsdhpusyvnphvj.supabase.co',
+'sb_publishable_ORfJ3n0RVQ_oIJmexPkBwg_TRECBkzQ'
+)
+
+async function loadProducts(){
+
+const box = document.getElementById('products')
+
+const { data, error } = await supabase
+.from('products')
+.select('*')
+.eq('published', true)
+.order('sort_order', { ascending:true })
+
+if(error){
+box.innerHTML = `
+<div class="empty">
+Error cargando catálogo
+</div>
+`
+return
+}
+
+if(!data || data.length===0){
+box.innerHTML = `
+<div class="empty">
+Aún no hay productos publicados
+</div>
+`
+return
+}
+
+box.innerHTML = data.map(item => `
+<div class="card">
+
+<div class="image">
+<img src="${item.image_url || 'https://placehold.co/600x600'}">
+</div>
+
+<div class="content">
+
+<div class="category">
+${item.category || ''}
+</div>
+
+<div class="name">
+${item.name || ''}
+</div>
+
+<div class="desc">
+${item.description || ''}
+</div>
+
+${item.featured ? `
+<div class="badge">
+⭐ Destacado
+</div>
+` : ''}
+
+<div class="price">
+${item.price_text || 'Cotizar'}
+</div>
+
+</div>
+</div>
+`).join('')
+}
+
+loadProducts()
+
+</script>
+
+</body>
+</html>
