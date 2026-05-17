@@ -4,161 +4,316 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Catálogo | Pata y Aleta</title>
+<title>Pata y Aleta | Catálogo Premium</title>
 
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Montserrat',sans-serif;
+}
+
+:root{
+--navy:#071426;
+--teal:#007A8C;
+--aqua:#46C1CD;
+--light:#F6F8FA;
+--text:#2d3748;
 }
 
 body{
-background:#f5f7fa;
+background:var(--light);
+color:var(--text);
 }
 
 .header{
-background:white;
-padding:20px;
-box-shadow:0 2px 15px rgba(0,0,0,.08);
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(16px);
+padding:18px 6%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+
+.logoWrap{
+display:flex;
+align-items:center;
+gap:15px;
 }
 
 .logo{
-height:65px;
+height:70px;
+border-radius:12px;
 }
 
-.container{
-max-width:1400px;
-margin:auto;
-padding:40px 20px;
-}
-
-.title{
-font-size:42px;
+.brand h2{
+font-size:28px;
 font-weight:800;
-margin-bottom:10px;
-color:#0d1b2a;
+color:var(--navy);
 }
 
-.subtitle{
-color:#666;
-margin-bottom:35px;
-font-size:18px;
+.brand p{
+font-size:13px;
+color:#6b7280;
+}
+
+.hero{
+padding:70px 8% 30px;
+}
+
+.hero h1{
+font-size:clamp(42px,5vw,72px);
+font-weight:900;
+line-height:1;
+color:var(--navy);
+margin-bottom:16px;
+}
+
+.hero p{
+font-size:20px;
+max-width:800px;
+color:#556070;
+line-height:1.7;
+}
+
+.filters{
+padding:0 8% 35px;
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.filter{
+border:none;
+padding:14px 22px;
+border-radius:999px;
+background:white;
+cursor:pointer;
+font-weight:700;
+box-shadow:0 6px 20px rgba(0,0,0,.06);
+transition:.25s;
+}
+
+.filter:hover{
+transform:translateY(-2px);
+}
+
+.filter.active{
+background:var(--teal);
+color:white;
 }
 
 .grid{
+padding:0 8% 80px;
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
-gap:24px;
+grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+gap:28px;
 }
 
 .card{
 background:white;
-border-radius:24px;
+border-radius:28px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+transition:.35s;
+position:relative;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
 }
 
 .image{
-height:280px;
-background:#eee;
+height:330px;
 overflow:hidden;
+background:#eee;
 }
 
 .image img{
 width:100%;
 height:100%;
 object-fit:cover;
+transition:.4s;
+}
+
+.card:hover img{
+transform:scale(1.04);
 }
 
 .content{
-padding:20px;
+padding:24px;
 }
 
 .category{
-font-size:13px;
-color:#007A8C;
-font-weight:700;
-margin-bottom:10px;
+font-size:12px;
+font-weight:800;
+letter-spacing:1px;
+color:var(--teal);
 text-transform:uppercase;
+margin-bottom:10px;
 }
 
 .name{
-font-size:22px;
+font-size:31px;
 font-weight:800;
-margin-bottom:10px;
-color:#071426;
+line-height:1.1;
+color:var(--navy);
+margin-bottom:12px;
 }
 
 .desc{
-font-size:14px;
-line-height:1.6;
-color:#666;
-margin-bottom:15px;
+font-size:15px;
+line-height:1.7;
+color:#667085;
+margin-bottom:20px;
+min-height:65px;
+}
+
+.bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
 }
 
 .price{
-font-size:24px;
-font-weight:800;
-color:#007A8C;
+font-size:36px;
+font-weight:900;
+color:var(--teal);
 }
 
 .badge{
-display:inline-block;
-background:#eaf8fa;
-padding:8px 14px;
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:10px 15px;
+background:#EAF8FA;
 border-radius:999px;
 font-size:12px;
-font-weight:700;
-color:#007A8C;
-margin-bottom:15px;
+font-weight:800;
+color:var(--teal);
+margin-bottom:18px;
 }
 
-.loader{
-text-align:center;
-padding:80px;
-font-size:20px;
-font-weight:bold;
+.btn{
+background:linear-gradient(135deg,var(--teal),#075B6B);
+color:white;
+text-decoration:none;
+padding:14px 18px;
+border-radius:18px;
+font-weight:800;
+font-size:14px;
+transition:.25s;
+white-space:nowrap;
 }
 
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.loader,
 .empty{
+padding:120px;
 text-align:center;
-padding:80px;
-font-size:22px;
-color:#777;
+font-size:26px;
+font-weight:700;
+grid-column:1/-1;
+}
+
+@media(max-width:768px){
+
+.hero{
+padding-top:40px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.grid{
+grid-template-columns:1fr;
+padding:0 20px 60px;
+}
+
+.filters{
+padding:0 20px 30px;
+}
+
+.hero{
+padding-left:20px;
+padding-right:20px;
+}
+
+.header{
+padding:16px 20px;
+}
+
+.logo{
+height:56px;
+}
+
+.name{
+font-size:28px;
+}
+
+.price{
+font-size:30px;
+}
+
+.bottom{
+flex-direction:column;
+align-items:flex-start;
+}
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<img src="https://i.imgur.com/Nj9lQ4N.png" class="logo">
+<header class="header">
+<div class="logoWrap">
+<img src="https://pata-y-aleta.vercel.app/logo-pata-y-aleta.png" class="logo" onerror="this.style.display='none'">
+<div class="brand">
+<h2>Pata y Aleta</h2>
+<p>Acuarios • Peces • Accesorios • Mascotas</p>
 </div>
+</div>
+</header>
 
-<div class="container">
-<h1 class="title">Catálogo Pata y Aleta</h1>
-<p class="subtitle">
-Explora nuestros productos, peces, acuarios y accesorios.
+<section class="hero">
+<h1>Catálogo Premium</h1>
+<p>
+Explora peces, acuarios, accesorios y productos especializados
+para consentir a tus mascotas y crear ecosistemas increíbles.
 </p>
+</section>
 
-<div id="products" class="grid">
+<div class="filters">
+<button class="filter active" onclick="filterProducts('all')">Todo</button>
+<button class="filter" onclick="filterProducts('peces_marinos')">Peces</button>
+<button class="filter" onclick="filterProducts('filtros')">Filtros</button>
+<button class="filter" onclick="filterProducts('accesorios_mascotas')">Accesorios</button>
+</div>
+
+<section id="products" class="grid">
 <div class="loader">
-Cargando productos...
+Cargando catálogo...
 </div>
-</div>
-</div>
+</section>
 
 <script>
 const sb = window.supabase.createClient(
@@ -166,43 +321,45 @@ const sb = window.supabase.createClient(
 'sb_publishable_ORfJ3n0RVQ_oIJmexPkBwg_TRECBkzQ'
 );
 
-async function loadProducts(){
-const box = document.getElementById('products');
+let allProducts=[];
 
-const { data, error } = await sb
+async function loadProducts(){
+
+const box=document.getElementById('products');
+
+const {data,error}=await sb
 .from('products')
-.select('*')
-.order('sort_order', { ascending:true });
+.select('*');
 
 if(error){
-box.innerHTML = `
-<div class="empty">
-Error cargando catálogo: ${error.message}
-</div>
-`;
+box.innerHTML=`<div class="empty">Error cargando productos</div>`;
 return;
 }
 
-if(!data || data.length===0){
-box.innerHTML = `
-<div class="empty">
-Aún no hay productos publicados
-</div>
-`;
+allProducts=data || [];
+renderProducts(allProducts);
+}
+
+function renderProducts(items){
+
+const box=document.getElementById('products');
+
+if(!items.length){
+box.innerHTML=`<div class="empty">No encontramos productos</div>`;
 return;
 }
 
-box.innerHTML = data.map(item => `
+box.innerHTML=items.map(item=>`
 <div class="card">
 
 <div class="image">
-<img src="${item.image_url || 'https://placehold.co/600x600'}">
+<img src="${item.image_url || 'https://placehold.co/800x800'}">
 </div>
 
 <div class="content">
 
 <div class="category">
-${item.category || ''}
+${item.category?.replace('_',' ') || ''}
 </div>
 
 <div class="name">
@@ -215,17 +372,44 @@ ${item.description || ''}
 
 ${item.featured ? `
 <div class="badge">
-⭐ Destacado
-</div>
-` : ''}
+⭐ Producto destacado
+</div>`:''}
+
+<div class="bottom">
 
 <div class="price">
 ${item.price_label || 'Cotizar'}
 </div>
 
+<a class="btn"
+href="https://wa.me/525155149335?text=${encodeURIComponent('Hola, me interesa el producto: '+(item.title||''))}"
+target="_blank">
+Cotizar WhatsApp
+</a>
+
+</div>
 </div>
 </div>
 `).join('');
+}
+
+function filterProducts(category){
+
+document.querySelectorAll('.filter')
+.forEach(x=>x.classList.remove('active'));
+
+event.target.classList.add('active');
+
+if(category==='all'){
+renderProducts(allProducts);
+return;
+}
+
+const filtered=allProducts.filter(
+x=>x.category===category
+);
+
+renderProducts(filtered);
 }
 
 loadProducts();
@@ -233,3 +417,4 @@ loadProducts();
 
 </body>
 </html>
+
