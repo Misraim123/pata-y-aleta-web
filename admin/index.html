@@ -21,7 +21,7 @@ main{max-width:1220px;margin:auto;padding:28px 22px}.tabs{display:flex;gap:10px;
 </head>
 <body><div id="app"></div>
 <script>
-const DEFAULT_URL="https://vjyktubsdhpusyvnphvj.supabase.co",WA="5215514933535",ADMIN_CODE="PATA2026"state={session:true,codeOk:true};let sb=null;let state={session:null,codeOk:localStorage.getItem("pata_code_ok")==="yes",tab:"products",products:[],gallery:[],configOk:false,loaded:false};
+const DEFAULT_URL="https://vjyktubsdhpusyvnphvj.supabase.co",WA="5215514933535",ADMIN_CODE="PATA2026";let sb=null;let state={session:null,codeOk:localStorage.getItem("pata_code_ok")==="yes",tab:"products",products:[],gallery:[],configOk:false,loaded:false};
 const $=s=>document.querySelector(s);function wa(t){return "https://wa.me/"+WA+"?text="+encodeURIComponent(t)}function cfg(){return{url:localStorage.getItem("pata_supabase_url")||DEFAULT_URL,key:localStorage.getItem("pata_supabase_key")||""}}function setClient(){const c=cfg();if(!c.key){state.configOk=false;return false}sb=window.supabase.createClient(c.url.replace(/\/rest\/v1\/?$/,""),c.key);state.configOk=true;return true}
 async function init(){setClient();if(sb){let {data}=await sb.auth.getSession();state.session=data.session;sb.auth.onAuthStateChange((_e,s)=>{state.session=s;render()})}render()}
 function logo(){return '<img class="logo" src="/logo-pata-y-aleta.png" onerror="this.style.display=\'none\'">'}
