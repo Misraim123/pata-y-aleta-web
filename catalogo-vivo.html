@@ -161,29 +161,26 @@ Cargando productos...
 </div>
 
 <script>
-
-const supabase = window.supabase.createClient(
+const sb = window.supabase.createClient(
 'https://vjyktubsdhpusyvnphvj.supabase.co',
 'sb_publishable_ORfJ3n0RVQ_oIJmexPkBwg_TRECBkzQ'
-)
+);
 
 async function loadProducts(){
+const box = document.getElementById('products');
 
-const box = document.getElementById('products')
-
-const { data, error } = await supabase
+const { data, error } = await sb
 .from('products')
 .select('*')
-.eq('published', true)
-.order('sort_order', { ascending:true })
+.order('sort_order', { ascending:true });
 
 if(error){
 box.innerHTML = `
 <div class="empty">
-Error cargando catálogo
+Error cargando catálogo: ${error.message}
 </div>
-`
-return
+`;
+return;
 }
 
 if(!data || data.length===0){
@@ -191,8 +188,8 @@ box.innerHTML = `
 <div class="empty">
 Aún no hay productos publicados
 </div>
-`
-return
+`;
+return;
 }
 
 box.innerHTML = data.map(item => `
@@ -209,7 +206,7 @@ ${item.category || ''}
 </div>
 
 <div class="name">
-${item.name || ''}
+${item.title || ''}
 </div>
 
 <div class="desc">
@@ -223,16 +220,15 @@ ${item.featured ? `
 ` : ''}
 
 <div class="price">
-${item.price_text || 'Cotizar'}
+${item.price_label || 'Cotizar'}
 </div>
 
 </div>
 </div>
-`).join('')
+`).join('');
 }
 
-loadProducts()
-
+loadProducts();
 </script>
 
 </body>
