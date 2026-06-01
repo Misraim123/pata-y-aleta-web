@@ -2704,3 +2704,51 @@ box-shadow:
   }
 
 }
+@media (max-width:768px){
+
+.hero{
+flex-direction:column;
+gap:40px;
+padding-top:120px;
+}
+
+.hero-left,
+.hero-right{
+width:100%;
+max-width:100%;
+}
+
+.hero-banner{
+width:100%;
+height:auto;
+}
+
+.services-grid,
+.cards-grid,
+.testimonial-grid,
+.footer-grid,
+.experience-grid{
+grid-template-columns:1fr !important;
+}
+
+.service-card,
+.card,
+.experience-card{
+height:auto !important;
+min-height:auto !important;
+}
+
+h1{
+font-size:42px !important;
+line-height:1.1;
+}
+
+h2{
+font-size:32px !important;
+}
+
+section{
+padding:70px 20px !important;
+}
+
+}
