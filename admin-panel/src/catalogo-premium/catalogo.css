@@ -5588,3 +5588,24 @@ box-shadow:
 }
 
 }
+.hero{
+  display:block !important;
+}
+
+.hero-left{
+  width:100% !important;
+  max-width:none !important;
+}
+
+.hero-right{
+  width:100% !important;
+  max-width:none !important;
+  height:auto !important;
+  margin-top:30px !important;
+}
+
+.hero-banner{
+  width:100% !important;
+  height:auto !important;
+  display:block !important;
+}
