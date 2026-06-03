@@ -5512,191 +5512,58 @@ box-shadow:
   }
 
 }
-/* FINAL RESPONSIVE RESTORE */
+/* MOBILE CLEAN FIX */
 
 @media(max-width:768px){
 
-.hero{
-  display:grid !important;
-  grid-template-columns:1fr !important;
-  gap:30px !important;
-  padding:30px 20px !important;
-}
-
-.hero-left,
-.hero-right{
-  height:auto !important;
-  min-height:auto !important;
-  overflow:visible !important
-}
-
-.hero-banner{
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    max-height:none !important;
-    display:block !important;
-}
-
-.pet-layout{
-  grid-template-columns:1fr !important;
-  gap:20px !important;
-}
-
-.big-pet img{
-  width:100% !important;
-  height:auto !important;
-  max-height:none !important;
-}
-
-.coral-layout{
-  grid-template-columns:1fr !important;
-  gap:20px !important;
-}
-
-.big-coral{
-  height:280px !important;
-}
-
-.coral-mini-grid{
-  grid-template-columns:1fr 1fr !important;
-}
-
-.boutique-grid{
-  grid-template-columns:1fr !important;
-  gap:25px !important;
-}
-
-.boutique-card{
-  min-height:auto !important;
-  height:auto !important;
-}
-
-.boutique-card img{
-  height:220px !important;
-  object-fit:cover !important;
-}
-
-.services-grid,
-.testimonial-grid,
-.footer-grid{
-  grid-template-columns:1fr !important;
-}
-
-.stats-premium{
-  grid-template-columns:1fr !important;
-}
-
-}
-.hero{
-  display:block !important;
-}
-
-.hero-left{
-  width:100% !important;
-  max-width:none !important;
-}
-
-.hero-right{
-  width:100% !important;
-  max-width:none !important;
-  height:auto !important;
-  margin-top:30px !important;
-}
-
-.hero-banner{
-  width:100% !important;
-  height:auto !important;
-  display:block !important;
-}
-.hero{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:30px !important;
-    padding:30px 20px !important;
-}
-
-.hero-left{
-    width:100% !important;
-    max-width:100% !important;
-}
-
-.hero-right{
-    width:100% !important;
-    max-width:100% !important;
-    height:auto !important;
-    overflow:visible !important;
-}
-
-.hero-banner{
-    display:block !important;
-    width:100% !important;
-    max-width:100% !important;
-    height:auto !important;
-    border-radius:24px !important;
-}
-/* =================================
-   HERO MOBILE OVERRIDE DEFINITIVO
-================================= */
-
-@media screen and (max-width:768px){
-
   .hero{
-    display:flex !important;
-    flex-direction:column !important;
-    gap:25px !important;
-    padding:25px 20px !important;
-  }
-
-  .hero-left{
-    width:100% !important;
-    max-width:100% !important;
-    order:1 !important;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    padding:25px 20px;
   }
 
   .hero-right{
-    width:100% !important;
-    max-width:100% !important;
-    height:auto !important;
-    min-height:auto !important;
-    overflow:visible !important;
-    order:2 !important;
-    display:block !important;
+    width:100%;
+    height:280px;
+    overflow:hidden;
+    border-radius:24px;
   }
 
   .hero-banner{
-    display:block !important;
-    width:100% !important;
-    height:auto !important;
-    max-width:100% !important;
-    border-radius:24px !important;
-    object-fit:contain !important;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
   }
 
-}
-/* MOBILE MASTER FIX */
+  .pet-layout{
+    grid-template-columns:1fr;
+  }
 
-@media(max-width:768px){
+  .coral-layout{
+    grid-template-columns:1fr;
+  }
 
-.hero{
-display:flex !important;
-flex-direction:column !important;
-}
+  .big-coral{
+    height:280px;
+  }
 
-.hero-right{
-display:block !important;
-width:100% !important;
-height:280px !important;
-min-height:280px !important;
-overflow:hidden !important;
-background:red !important;
-}
+  .big-coral img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
 
-.hero-banner{
-display:block !important;
-width:100% !important;
-height:280px !important;
-object-fit:cover !important;
-}
+  .boutique-grid,
+  .services-grid,
+  .testimonial-grid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats-premium{
+    grid-template-columns:1fr;
+  }
 
 }
