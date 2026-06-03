@@ -5676,47 +5676,27 @@ box-shadow:
 }
 /* MOBILE MASTER FIX */
 
-@media screen and (max-width:768px){
+@media(max-width:768px){
 
-  .hero,
-  .pet-layout,
-  .coral-layout,
-  .aquarium-layout,
-  .boutique-grid,
-  .services-grid,
-  .testimonial-grid{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-  }
+.hero{
+display:flex !important;
+flex-direction:column !important;
+}
 
-  .hero-right{
-    position:relative !important;
-    width:100% !important;
-    height:auto !important;
-    overflow:visible !important;
-    margin-top:20px !important;
-  }
+.hero-right{
+display:block !important;
+width:100% !important;
+height:280px !important;
+min-height:280px !important;
+overflow:hidden !important;
+background:red !important;
+}
 
-  .hero-banner{
-    display:block !important;
-    width:100% !important;
-    height:auto !important;
-    position:relative !important;
-  }
-
-  .big-pet,
-  .big-coral,
-  .aquarium-image{
-    width:100% !important;
-    height:auto !important;
-  }
-
-  .big-pet img,
-  .big-coral img,
-  .aquarium-image img{
-    width:100% !important;
-    height:auto !important;
-    display:block !important;
-  }
+.hero-banner{
+display:block !important;
+width:100% !important;
+height:280px !important;
+object-fit:cover !important;
+}
 
 }
