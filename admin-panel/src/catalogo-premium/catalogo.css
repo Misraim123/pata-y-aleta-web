@@ -5517,15 +5517,25 @@ box-shadow:
 @media(max-width:768px){
 
 .hero{
+  display:grid !important;
   grid-template-columns:1fr !important;
   gap:30px !important;
   padding:30px 20px !important;
 }
 
-.hero-banner{
-  width:100% !important;
+.hero-left,
+.hero-right{
   height:auto !important;
-  max-height:none !important;
+  min-height:auto !important;
+  overflow:visible !important
+}
+
+.hero-banner{
+    width:100% !important;
+    height:auto !important;
+    max-width:100% !important;
+    max-height:none !important;
+    display:block !important;
 }
 
 .pet-layout{
