@@ -5669,6 +5669,59 @@ box-shadow:
   }
 
 }
-body{
-  background:red !important;
+/* ===== MOBILE FORCE IMAGES ===== */
+
+@media (max-width:768px){
+
+  .hero{
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  .hero-right{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:250px !important;
+    overflow:visible !important;
+  }
+
+  .hero-banner{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+
+  .big-pet{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    overflow:visible !important;
+  }
+
+  .big-pet img{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+
+  .big-coral{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    overflow:visible !important;
+  }
+
+  .big-coral img{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    opacity:1 !important;
+    visibility:visible !important;
+  }
+
 }
