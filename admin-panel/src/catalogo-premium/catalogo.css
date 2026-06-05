@@ -534,6 +534,10 @@ justify-content:center;
 
 text-align:center;
 
+text-decoration:none;
+
+color:inherit;
+
 }
 .mini-pet-card:hover{
 
@@ -1544,17 +1548,15 @@ gap:20px;
 
 .mini-coral-card{
 
-text-align:center;  
+text-align:center;
 
-background:
-rgba(255,255,255,.05);
+background:rgba(255,255,255,.05);
 
 backdrop-filter:blur(10px);
 
 transition:.3s;
 
-border:
-1px solid rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.08);
 
 border-radius:32px;
 
@@ -1568,8 +1570,11 @@ min-height:150px;
 
 padding:20px;
 
-}
+text-decoration:none;
 
+color:inherit;
+
+}
 .mini-coral-card:hover{
 
 transform:translateY(-6px);
