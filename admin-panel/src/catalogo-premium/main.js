@@ -71,6 +71,11 @@ document.querySelector('#app').innerHTML = `
           id="productTitle"
           placeholder="Nombre"
         >
+        <input
+  type="text"
+  id="TEST_CHATGPT"
+  placeholder="PRUEBA CHATGPT"
+>
 
         <input
           type="file"
