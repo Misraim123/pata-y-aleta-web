@@ -71,28 +71,75 @@ document.querySelector('#app').innerHTML = `
           id="productTitle"
           placeholder="Nombre"
         >
-        <input
-  type="text"
-  id="TEST_CHATGPT"
-  placeholder="PRUEBA CHATGPT"
->
 
         <input
           type="file"
           id="productImage"
         >
 
-        <input
-          type="text"
-          id="productCategory"
-          placeholder="Categoría"
-        >
+       <select id="productCategory">
 
-        <input
-          type="text"
-          id="productSubcategory"
-          placeholder="Subcategoría"
-        >
+  <option value="peces_marinos">
+    Peces Marinos
+  </option>
+
+  <option value="corales">
+    Corales
+  </option>
+
+  <option value="acuarios">
+    Acuarios
+  </option>
+
+  <option value="accesorios_mascotas">
+    Accesorios Mascotas
+  </option>
+
+  <option value="alimento">
+    Alimento
+  </option>
+
+</select>
+
+<select id="productSubcategory">
+
+  <option value="">
+    Seleccionar
+  </option>
+
+  <option value="sps">
+    SPS
+  </option>
+
+  <option value="lps">
+    LPS
+  </option>
+
+  <option value="zoanthus">
+    Zoanthus
+  </option>
+
+  <option value="soft_corals">
+    Soft Corals
+  </option>
+
+  <option value="marino">
+    Marino
+  </option>
+
+  <option value="dulce">
+    Dulce
+  </option>
+
+  <option value="nano_reef">
+    Nano Reef
+  </option>
+
+  <option value="premium">
+    Premium
+  </option>
+
+</select>
 
         <textarea
           id="productDescription"
