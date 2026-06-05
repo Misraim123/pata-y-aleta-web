@@ -35,11 +35,49 @@ function checkCode(){if($("#code").value===ADMIN_CODE){localStorage.setItem("pat
 function adminScreen(){return `<header><div class="nav"><div class="brand"><div style="font-size:34px;font-weight:900;color:#071426;line-height:1;">
 PATA <span style="color:#007A8C;">Y ALETA</span>
 </div><div><strong>PATA <span>Y ALETA</span></strong><br><small>Admin catálogo vivo</small></div></div><div><a class="btn secondary" href="/">Ver web</a> <button class="btn" onclick="logout()">Salir</button></div></div></header><main><h1>Panel Admin Pata y Aleta</h1><p>Sube fotos, videos, peces, accesorios, antes/después y promociones.</p><div class="tabs"><button class="tab ${state.tab==='products'?'active':''}" onclick="state.tab='products';render()">Catálogo</button><button class="tab ${state.tab==='gallery'?'active':''}" onclick="state.tab='gallery';render()">Galería / videos</button><button class="tab ${state.tab==='preview'?'active':''}" onclick="state.tab='preview';render()">Vista pública</button></div>${state.tab==='products'?productsUI():state.tab==='gallery'?galleryUI():previewUI()}</main>`}
-function productsUI(){return `<div class="grid"><div class="card"><h2>Agregar producto</h2><div class="formgrid"><div><label>Nombre</label><input id="pTitle"></div><div><label>Categoría</label><select id="pCat"><option value="peces_marinos">Peces marinos</option><option value="accesorios_acuario">Accesorios acuario</option><option value="accesorios_mascotas">Accesorios mascotas</option><option value="corales">Corales</option><option value="alimento">Alimento</option><option value="filtros">Filtros</option><option value="promociones">Promociones</option></select></div><div class="span2"><label>Descripción</label><textarea id="pDesc"></textarea></div><div><label>Precio numérico opcional</label><input id="pPrice"></div><div><label>Texto precio</label><input id="pLabel" value="Cotizar"></div><div><label>Status</label><select id="pStatus"><option>disponible</option><option>agotado</option><option>proximamente</option></select></div><div><label>Orden</label><input id="pOrder" value="0"></div></div><div class="checks"><label><input id="pShow" type="checkbox"> Mostrar precio</label><label><input id="pFeat" type="checkbox"> Destacado</label><label><input id="pPub" type="checkbox" checked> Publicado</label></div><div class="upload"><label>Foto</label><input id="pImg" type="file" accept="image/*"></div><div class="upload"><label>Video</label><input id="pVid" type="file" accept="video/*"></div><button class="btn full" onclick="saveProduct()">Publicar producto</button><div id="pMsg"></div></div><div class="card"><h2>Productos publicados</h2><div id="productList" class="list"></div></div></div>`}
-async function upload(bucket,file,folder){let ext=file.name.split(".").pop(),path=`${folder}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;let {error}=await sb.storage.from(bucket).upload(path,file,{upsert:true});if(error)throw error;return sb.storage.from(bucket).getPublicUrl(path).data.publicUrl}
-async function saveProduct(){let msg=$("#pMsg");msg.innerHTML="Guardando...";try{let image_url="",video_url="";if($("#pImg").files[0])image_url=await upload("pata-products",$("#pImg").files[0],"images");if($("#pVid").files[0])video_url=await upload("pata-products",$("#pVid").files[0],"videos");let payload={title:$("#pTitle").value,category:$("#pCat").value,description:$("#pDesc").value,price:$("#pPrice").value?Number($("#pPrice").value):null,price_label:$("#pLabel").value,show_price:$("#pShow").checked,status:$("#pStatus").value,featured:$("#pFeat").checked,published:$("#pPub").checked,sort_order:Number($("#pOrder").value||0),image_url,video_url};let {error}=await sb.from("products").insert(payload);if(error)throw error;msg.innerHTML='<div class="ok">Producto publicado.</div>';loadData(true)}catch(e){msg.innerHTML='<div class="error">'+e.message+"</div>"}}
-async function delProduct(id){if(!confirm("¿Eliminar producto?"))return;await sb.from("products").delete().eq("id",id);loadData(true)}
-function galleryUI(){return `<div class="grid"><div class="card"><h2>Agregar galería</h2><div class="formgrid"><div><label>Título</label><input id="gTitle"></div><div><label>Tipo</label><select id="gType"><option>antes_despues</option><option>instalacion</option><option>rescate</option><option>boutique</option><option>video</option><option>testimonio</option></select></div><div class="span2"><label>Descripción</label><textarea id="gDesc"></textarea></div></div><div class="upload"><label>Foto principal</label><input id="gMedia" type="file" accept="image/*"></div><div class="upload"><label>Antes</label><input id="gBefore" type="file" accept="image/*"></div><div class="upload"><label>Después</label><input id="gAfter" type="file" accept="image/*"></div><div class="upload"><label>Video</label><input id="gVideo" type="file" accept="video/*"></div><button class="btn full" onclick="saveGallery()">Guardar galería</button><div id="gMsg"></div></div><div class="card"><h2>Galería publicada</h2><div id="galleryList" class="list"></div></div></div>`}
+function productsUI(){return `<div class="grid"><div class="card"><div>
+<label>Categoría</label>
+
+<select id="pCat">
+
+<option value="peces_marinos">Peces marinos</option>
+<option value="accesorios_acuario">Accesorios acuario</option>
+<option value="accesorios_mascotas">Accesorios mascotas</option>
+<option value="corales">Corales</option>
+<option value="alimento">Alimento</option>
+<option value="filtros">Filtros</option>
+<option value="promociones">Promociones</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Subcategoría</label>
+
+<select id="pSubcat">
+
+<option value="">Seleccionar</option>
+
+<option value="sps">SPS</option>
+<option value="lps">LPS</option>
+<option value="zoanthus">Zoanthus</option>
+<option value="soft_corals">Soft Corals</option>
+
+<option value="alimento_premium">Alimento Premium</option>
+<option value="camas_boutique">Camas Boutique</option>
+<option value="juguetes_premium">Juguetes Premium</option>
+<option value="accesorios_exclusivos">Accesorios Exclusivos</option>
+
+<option value="marino">Marino</option>
+<option value="dulce">Dulce</option>
+<option value="nano_reef">Nano Reef</option>
+<option value="premium">Premium</option>
+
+</select>
+
+</div>
 async function saveGallery(){let msg=$("#gMsg");msg.innerHTML="Guardando...";try{let payload={title:$("#gTitle").value,type:$("#gType").value,description:$("#gDesc").value,published:true};if($("#gMedia").files[0])payload.media_url=await upload("pata-gallery",$("#gMedia").files[0],"media");if($("#gBefore").files[0])payload.before_url=await upload("pata-gallery",$("#gBefore").files[0],"before");if($("#gAfter").files[0])payload.after_url=await upload("pata-gallery",$("#gAfter").files[0],"after");if($("#gVideo").files[0])payload.video_url=await upload("pata-gallery",$("#gVideo").files[0],"video");let {error}=await sb.from("gallery").insert(payload);if(error)throw error;msg.innerHTML='<div class="ok">Galería guardada.</div>';loadData(true)}catch(e){msg.innerHTML='<div class="error">'+e.message+"</div>"}}
 async function delGallery(id){if(!confirm("¿Eliminar galería?"))return;await sb.from("gallery").delete().eq("id",id);loadData(true)}
 function catLabel(c){return({peces_marinos:"🐠 Peces marinos",accesorios_acuario:"🔧 Acc. acuario",accesorios_mascotas:"🐶 Acc. mascotas",corales:"🪸 Corales",alimento:"🥫 Alimento",filtros:"⚙️ Filtros",promociones:"🔥 Promociones"}[c]||c)}
