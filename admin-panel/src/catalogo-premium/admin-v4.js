@@ -1157,6 +1157,26 @@ show_home:
     previewImage.src =
       data.publicUrl
 
+      document.querySelector('#image_url').value =
+  data.publicUrl
+
+previewImage.src =
+  data.publicUrl
+
+previewImage.style.display = 'block'
+
+previewImage.style.width = '100%'
+
+previewImage.style.height = '260px'
+
+previewImage.style.objectFit = 'contain'
+previewImage.style.background =
+'#081a2d'
+previewImage.style.borderRadius = '20px'
+
+previewImage.style.border =
+'1px solid rgba(255,255,255,.1)'
+
 })
 document
   .querySelector('#video_upload')
