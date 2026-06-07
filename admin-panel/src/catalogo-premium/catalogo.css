@@ -2717,7 +2717,7 @@ box-shadow:
   position:fixed;
   border-radius:50%;
   pointer-events:none;
-  z-index:-1;
+  z-index:0;
 
   background:
   radial-gradient(
@@ -2815,6 +2815,7 @@ body{
   overflow-x:hidden;
 
   position:relative;
+  z-index:5;
 
 }
 
@@ -2825,6 +2826,9 @@ body{
   border-radius:50%;
   background:rgba(87,214,255,.08);
   animation:float 12s infinite ease-in-out;
+
+  z-index:0;
+  pointer-events:none;
 }
 
 .bubbles span:nth-child(1){
@@ -5568,7 +5572,7 @@ box-shadow:
 }
 
 .stats-premium{
-    grid-template-columns:1fr !important;
+grid-template-columns:1fr 1fr !important;
 }
 
 .hero-banner,
@@ -6047,18 +6051,18 @@ font-weight:700;
 cursor:pointer;
 
 }
-@media(max-width:768px){
+@media(max-width:480px){
 
 .featured-title h2{
 
-font-size:58px !important;
-line-height:1.05;
+font-size:30px !important;
+line-height:1.15 !important;
 
 }
 
 .featured-title p{
 
-font-size:20px !important;
+font-size:16px !important;
 
 }
 
@@ -6071,18 +6075,15 @@ max-width:320px !important;
 
 }
 
-@media(max-width:480px){
+.hero,
+.pet-luxury,
+.aquarium-section,
+.coral-premium,
+.coral-luxury,
+.featured-home,
+.footer{
 
-.featured-title h2{
-
-font-size:42px !important;
-
-}
-
-.featured-title p{
-
-font-size:18px !important;
-
-}
+position:relative;
+z-index:10;
 
 }
