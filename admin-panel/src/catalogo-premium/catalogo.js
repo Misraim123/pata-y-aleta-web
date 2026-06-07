@@ -30,10 +30,93 @@ async function loadProducts() {
 
   }
 
+const homeProducts =
+  data.filter(
+    product =>
+      product.show_home === true
+  )
+
   const productsContainer =
   document.getElementById('products')
 
   productsContainer.innerHTML = ''
+
+  const featuredContainer =
+document.getElementById('featuredProducts')
+
+if(featuredContainer){
+
+featuredContainer.innerHTML =
+
+homeProducts.map(product => `
+
+<div class="featured-card">
+
+  <div class="product-media">
+
+    ${
+      product.video_url
+
+      ?
+
+      `
+      <video
+        src="${product.video_url}"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+      `
+
+      :
+
+      `
+      <img
+        src="${product.image_url}"
+        alt="${product.title}"
+      >
+      `
+    }
+
+  </div>
+
+  <div class="featured-info">
+
+    <h3>
+      ${product.title}
+    </h3>
+
+    <p>
+      ${
+        product.description ||
+        'Producto premium'
+      }
+    </p>
+
+    <div class="featured-price">
+
+      ${
+        product.price_label ||
+        '$' + product.price
+      }
+
+    </div>
+
+    <button
+      class="featured-btn"
+      onclick="location.href='/catalogo-vivo.html'"
+    >
+      Ver producto
+    </button>
+
+  </div>
+
+</div>
+
+`).join('')
+
+}
 
   data.forEach(product => {
 
