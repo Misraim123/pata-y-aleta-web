@@ -134,3 +134,80 @@ behavior:'smooth'
 }
 
 },4000)
+setInterval(()=>{
+
+const carousel =
+document.getElementById(
+'featuredProducts'
+)
+
+if(!carousel) return
+
+const card =
+carousel.querySelector(
+'.featured-card'
+)
+
+if(!card) return
+
+carousel.scrollBy({
+
+left:
+card.offsetWidth + 30,
+
+behavior:'smooth'
+
+})
+
+if(
+
+carousel.scrollLeft +
+carousel.clientWidth >=
+carousel.scrollWidth - 100
+
+){
+
+setTimeout(()=>{
+
+carousel.scrollTo({
+
+left:0,
+
+behavior:'smooth'
+
+})
+
+},1200)
+
+}
+
+},3500)
+document
+.getElementById('featuredNext')
+?.addEventListener('click',()=>{
+
+document
+.getElementById('featuredProducts')
+.scrollBy({
+
+left:450,
+behavior:'smooth'
+
+})
+
+})
+
+document
+.getElementById('featuredPrev')
+?.addEventListener('click',()=>{
+
+document
+.getElementById('featuredProducts')
+.scrollBy({
+
+left:-450,
+behavior:'smooth'
+
+})
+
+})
