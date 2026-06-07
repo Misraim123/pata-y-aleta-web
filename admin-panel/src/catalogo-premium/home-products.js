@@ -4,7 +4,7 @@ const supabaseUrl =
 const supabaseKey =
 'sb_publishable_ORfJ3n0RVQ_oIJmexPkBwg_TRECBkzQ'
 
-const supabase =
+const homeSupabase =
 window.supabase.createClient(
   supabaseUrl,
   supabaseKey
@@ -13,7 +13,7 @@ window.supabase.createClient(
 async function loadFeatured(){
 
   const { data,error } =
-  await supabase
+  await homeSupabase
     .from('products')
     .select('*')
     .eq('published',true)
