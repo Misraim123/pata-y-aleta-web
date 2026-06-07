@@ -5852,15 +5852,19 @@ margin:auto;
 .featured-carousel{
 
 display:flex;
-
-gap:25px;
+gap:30px;
 
 overflow-x:auto;
-
-padding-bottom:20px;
-
 scroll-behavior:smooth;
 
+padding:20px 0;
+
+scrollbar-width:none;
+
+}
+
+.featured-carousel::-webkit-scrollbar{
+display:none;
 }
 
 .featured-carousel::-webkit-scrollbar{
@@ -5879,7 +5883,8 @@ border-radius:999px;
 
 .featured-card{
 
-min-width:380px;
+min-width:420px;
+max-width:420px;  
 
 background:
 

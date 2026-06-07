@@ -58,7 +58,10 @@ async function loadFeatured(){
 
         `
         <img
-          src="${product.image_url}"
+          src="${
+  product.image_url ||
+  'https://images.unsplash.com/photo-1522069169874-c58ec4b76be5'
+}"
           alt="${product.title}"
         >
         `
