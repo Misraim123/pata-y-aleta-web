@@ -6087,3 +6087,54 @@ position:relative;
 z-index:10;
 
 }
+
+/* HERO MOBILE FIX DEFINITIVO */
+
+@media(max-width:768px){
+
+  .hero-left{
+    max-width:100% !important;
+    width:100% !important;
+    overflow:visible !important;
+  }
+
+  .hero-left h1{
+    font-size:42px !important;
+    line-height:1.1 !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+  }
+
+}
+/* HERO TITULO MOBILE FINAL */
+
+.hero-left h1{
+
+font-size:72px;
+line-height:1.05;
+
+}
+
+@media(max-width:768px){
+
+.hero-left h1{
+
+font-size:48px !important;
+line-height:1.1 !important;
+
+max-width:100% !important;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-left h1{
+
+font-size:38px !important;
+line-height:1.15 !important;
+
+}
+
+}
