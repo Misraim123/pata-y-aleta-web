@@ -98,3 +98,39 @@ async function loadFeatured(){
 }
 
 loadFeatured()
+setInterval(() => {
+
+const carousel =
+document.getElementById(
+'featuredProducts'
+)
+
+if(!carousel) return
+
+carousel.scrollBy({
+
+left:450,
+
+behavior:'smooth'
+
+})
+
+if(
+
+carousel.scrollLeft +
+carousel.clientWidth >=
+carousel.scrollWidth - 50
+
+){
+
+carousel.scrollTo({
+
+left:0,
+
+behavior:'smooth'
+
+})
+
+}
+
+},4000)
