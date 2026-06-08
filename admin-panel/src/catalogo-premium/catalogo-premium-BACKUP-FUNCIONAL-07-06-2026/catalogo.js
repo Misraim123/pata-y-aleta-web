@@ -184,23 +184,10 @@ homeProducts.map(product => `
           <a
             class="buy-btn"
             target="_blank"
-href="https://wa.me/525656774264?text=${encodeURIComponent(
-`Hola Pata y Aleta 🐠
-
-Me interesa el siguiente producto:
-
-Producto: ${product.title}
-
-Categoría: ${product.category || 'General'}
-
-Precio: ${
-product.show_price
-? '$' + product.price + ' MXN'
-: product.price_label || 'Cotizar'
-}
-
-¿Podrían ayudarme con disponibilidad y tiempos de entrega?`
-)}"
+            href="
+https://wa.me/525514933535?text=Hola%20Pata%20y%20Aleta%20👋%0A%0AMe%20interesa:%20${encodeURIComponent(product.title)}
+            "
+          >
 
             Comprar por WhatsApp
 

@@ -301,7 +301,7 @@
       'sb_publishable_ORfJ3n0RVQ_oIJmexPkBwg_TRECBkzQ'
     );
 
-    const WHATSAPP = '525656774264';
+    const WHATSAPP = '525515149335';
     let allProducts = [];
 
     function mediaBlock(item) {
@@ -316,29 +316,10 @@
       return (cat || '').replaceAll('_', ' ');
     }
 
-   function whatsappLink(item) {
-
-const text =
-`Hola Pata y Aleta 🐠
-
-Me interesa el siguiente producto:
-
-Producto:
-${item.title}
-
-Categoría:
-${item.category || 'General'}
-
-Subcategoría:
-${item.subcategory || 'N/A'}
-
-Precio:
-${item.price_label || 'Cotizar'}
-
-¿Tienen disponibilidad?`;
-
-return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
-}
+    function whatsappLink(item) {
+      const text = `Hola Pata y Aleta, me interesa este producto: ${item.title || 'producto del catálogo'}. ¿Me pueden compartir información?`;
+      return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+    }
 
     function renderProducts(items) {
       const box = document.getElementById('products');
@@ -355,21 +336,7 @@ return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
       </div>
 
       <div class="content">
-       <div class="category">
-${cleanCat(item.category)}
-</div>
-
-${
-item.subcategory
-?
-`
-<div class="badge">
-${item.subcategory}
-</div>
-`
-:
-''
-}
+        <div class="category">${cleanCat(item.category)}</div>
         <div class="name">${item.title || ''}</div>
         <div class="desc">${item.description || ''}</div>
 
