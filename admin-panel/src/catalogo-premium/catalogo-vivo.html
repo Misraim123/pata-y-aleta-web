@@ -306,7 +306,7 @@ style="padding-top:0;margin-top:-10px;">
     const WHATSAPP = '525656774264';
     let allProducts = [];
     let currentCategory = 'all';
-let currentSubcategory = 'all';
+    let currentSubcategory = 'all';
 
     function mediaBlock(item) {
       if (item.video_url) {
@@ -440,6 +440,47 @@ ${item.subcategory}
       allProducts = data || [];
 
 buildCategories();
+function buildCategories(){
+
+const filters =
+document.getElementById('filters');
+
+const categories = [
+
+...new Set(
+
+allProducts
+.map(p => p.category)
+.filter(Boolean)
+
+)
+
+];
+
+filters.innerHTML = `
+<button
+class="filter active"
+data-cat="all"
+>
+Todo
+</button>
+`;
+
+categories.forEach(cat => {
+
+filters.innerHTML += `
+<button
+class="filter"
+data-cat="${cat}"
+>
+${cleanCat(cat)}
+</button>
+`;
+
+});
+
+}
+
 function buildSubcategories(category){
 
 const box =
