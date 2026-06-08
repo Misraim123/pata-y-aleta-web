@@ -323,7 +323,7 @@ return (cat || '').replaceAll('_', ' ');
 }
 
 function buildCategories() {
-
+function buildCategories(){
 const filters =
 document.getElementById('filters');
 
@@ -443,11 +443,12 @@ ${item.subcategory}
       }
 
       allProducts = data || [];
-      buildCategories();
-renderProducts(allProducts);
 
 buildCategories();
-function buildCategories(){
+
+renderProducts(allProducts);
+
+}
 
 const filters =
 document.getElementById('filters');
@@ -545,7 +546,7 @@ ${sub}
 
 });
 
-}
+
 document
 .getElementById('subfilters')
 .addEventListener('click', e => {
@@ -593,8 +594,8 @@ item.subcategory === sub
 
 });
 
+}
 renderProducts(allProducts);
-    }
 
   document
 .getElementById('filters')
