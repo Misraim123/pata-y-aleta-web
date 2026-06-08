@@ -624,14 +624,22 @@ buildSubcategories(
 currentCategory
 );
 
-renderProducts(
-
-allProducts.filter(
+const filtrados = allProducts.filter(
 item =>
 item.category === currentCategory
-)
-
 );
+
+console.log(
+'Categoria:',
+currentCategory
+);
+
+console.log(
+'Encontrados:',
+filtrados.length
+);
+
+renderProducts(filtrados);
 
 });
 
