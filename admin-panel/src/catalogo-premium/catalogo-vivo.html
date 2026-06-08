@@ -284,12 +284,14 @@
       aquí automáticamente.</p>
   </section>
 
-  <div class="filters" id="filters">
-    <button class="filter active" data-cat="all">Todo</button>
-    <button class="filter" data-cat="peces_marinos">Peces marinos</button>
-    <button class="filter" data-cat="filtros">Filtros</button>
-    <button class="filter" data-cat="accesorios_mascotas">Accesorios mascotas</button>
-  </div>
+<div class="filters" id="filters">
+</div>
+
+<div
+id="subfilters"
+class="filters"
+style="padding-top:0;margin-top:-10px;">
+</div>
 
   <section id="products" class="grid">
     <div class="loader">Cargando catálogo...</div>
@@ -303,6 +305,8 @@
 
     const WHATSAPP = '525656774264';
     let allProducts = [];
+    let currentCategory = 'all';
+let currentSubcategory = 'all';
 
     function mediaBlock(item) {
       if (item.video_url) {
@@ -313,6 +317,43 @@
     }
 
     function cleanCat(cat) {
+      function buildCategories() {
+
+const filters =
+document.getElementById('filters');
+
+const categories = [
+...new Set(
+allProducts
+.map(p => p.category)
+.filter(Boolean)
+)
+];
+
+filters.innerHTML =
+`
+<button
+class="filter active"
+data-cat="all"
+>
+Todo
+</button>
+`;
+
+categories.forEach(cat => {
+
+filters.innerHTML += `
+<button
+class="filter"
+data-cat="${cat}"
+>
+${cleanCat(cat)}
+</button>
+`;
+
+});
+
+}
       return (cat || '').replaceAll('_', ' ');
     }
 
@@ -397,23 +438,161 @@ ${item.subcategory}
       }
 
       allProducts = data || [];
-      renderProducts(allProducts);
+
+buildCategories();
+function buildSubcategories(category){
+
+const box =
+document.getElementById('subfilters');
+
+const subs = [
+
+...new Set(
+
+allProducts
+
+.filter(
+p =>
+p.category === category
+)
+
+.map(
+p =>
+p.subcategory
+)
+
+.filter(Boolean)
+
+)
+
+];
+
+if(!subs.length){
+
+box.innerHTML = '';
+return;
+
+}
+
+box.innerHTML =
+`
+<button
+class="filter active"
+data-sub="all"
+>
+Todos
+</button>
+`;
+
+subs.forEach(sub => {
+
+box.innerHTML += `
+<button
+class="filter"
+data-sub="${sub}"
+>
+${sub}
+</button>
+`;
+
+});
+
+}
+document
+.getElementById('subfilters')
+.addEventListener('click', e => {
+
+if(
+!e.target.classList.contains('filter')
+) return;
+
+document
+.querySelectorAll('#subfilters .filter')
+.forEach(btn =>
+btn.classList.remove('active')
+);
+
+e.target.classList.add('active');
+
+const sub =
+e.target.dataset.sub;
+
+if(sub === 'all'){
+
+renderProducts(
+
+allProducts.filter(
+item =>
+item.category === currentCategory
+)
+
+);
+
+return;
+
+}
+
+renderProducts(
+
+allProducts.filter(
+item =>
+item.category === currentCategory
+&&
+item.subcategory === sub
+)
+
+);
+
+});
+
+renderProducts(allProducts);
     }
 
-    document.getElementById('filters').addEventListener('click', function (e) {
-      if (!e.target.classList.contains('filter')) return;
+  document
+.getElementById('filters')
+.addEventListener('click', e => {
 
-      document.querySelectorAll('.filter').forEach(btn => btn.classList.remove('active'));
-      e.target.classList.add('active');
+if(
+!e.target.classList.contains('filter')
+) return;
 
-      const cat = e.target.dataset.cat;
+document
+.querySelectorAll('#filters .filter')
+.forEach(btn =>
+btn.classList.remove('active')
+);
 
-      if (cat === 'all') {
-        renderProducts(allProducts);
-      } else {
-        renderProducts(allProducts.filter(item => item.category === cat));
-      }
-    });
+e.target.classList.add('active');
+
+currentCategory =
+e.target.dataset.cat;
+
+if(currentCategory === 'all'){
+
+renderProducts(allProducts);
+
+document
+.getElementById('subfilters')
+.innerHTML = '';
+
+return;
+
+}
+
+buildSubcategories(
+currentCategory
+);
+
+renderProducts(
+
+allProducts.filter(
+item =>
+item.category === currentCategory
+)
+
+);
+
+});
 
     loadProducts();
   </script>
