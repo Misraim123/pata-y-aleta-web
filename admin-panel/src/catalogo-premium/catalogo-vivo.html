@@ -322,7 +322,6 @@ return (cat || '').replaceAll('_', ' ');
 
 }
 
-function buildCategories() {
 function buildCategories(){
 const filters =
 document.getElementById('filters');
@@ -346,7 +345,6 @@ data-cat="all"
 Todo
 </button>
 `;
-
 categories.forEach(cat => {
 
 filters.innerHTML += `
@@ -361,7 +359,6 @@ ${cleanCat(cat)}
 });
 
 }
-
    function whatsappLink(item) {
 
 const text =
@@ -450,21 +447,6 @@ renderProducts(allProducts);
 
 }
 
-const filters =
-document.getElementById('filters');
-
-const categories = [
-
-...new Set(
-
-allProducts
-.map(p => p.category)
-.filter(Boolean)
-
-)
-
-];
-
 filters.innerHTML = `
 <button
 class="filter active"
@@ -486,8 +468,6 @@ ${cleanCat(cat)}
 `;
 
 });
-
-}
 
 function buildSubcategories(category){
 
@@ -595,7 +575,6 @@ item.subcategory === sub
 });
 
 }
-renderProducts(allProducts);
 
   document
 .getElementById('filters')
