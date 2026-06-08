@@ -447,28 +447,6 @@ renderProducts(allProducts);
 
 }
 
-filters.innerHTML = `
-<button
-class="filter active"
-data-cat="all"
->
-Todo
-</button>
-`;
-
-categories.forEach(cat => {
-
-filters.innerHTML += `
-<button
-class="filter"
-data-cat="${cat}"
->
-${cleanCat(cat)}
-</button>
-`;
-
-});
-
 function buildSubcategories(category){
 
 const box =
