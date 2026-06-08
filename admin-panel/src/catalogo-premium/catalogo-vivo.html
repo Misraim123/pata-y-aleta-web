@@ -336,6 +336,69 @@ transform:translateY(-3px);
 
 }
 
+.promo-banner{
+
+margin:30px 7%;
+
+background:linear-gradient(
+135deg,
+#071426,
+#0b8aa0
+);
+
+border-radius:30px;
+
+padding:50px;
+
+color:white;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.15);
+
+}
+
+.promo-content h2{
+
+font-size:42px;
+
+font-weight:900;
+
+margin-bottom:15px;
+
+color:white;
+
+}
+
+.promo-content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-bottom:25px;
+
+color:white;
+
+}
+
+.promo-btn{
+
+display:inline-block;
+
+padding:15px 30px;
+
+border-radius:999px;
+
+background:white;
+
+color:#071426;
+
+font-weight:800;
+
+text-decoration:none;
+
+}
+
 @media(max-width:768px){
 
 .promo-banner{
@@ -429,16 +492,15 @@ WhatsApp
 <div class="promo-content">
 
 <h2>
-🐠 Acuarios Premium
+🐠 Boutique Premium para Acuarios y Mascotas
 </h2>
 
 <p>
-
-Diseño • Instalación • Mantenimiento
+Peces marinos • Corales • Acuarios • Mascotas • Accesorios
 
 <br>
 
-Rescate de acuarios en 48 hrs
+Diseño, instalación y mantenimiento especializado.
 
 </p>
 
@@ -590,7 +652,9 @@ ${item.subcategory}
 
         ${item.featured ? `<div class="badge">⭐ Producto destacado</div>` : ''}
 
-        <div class="price">${item.price_label || 'Cotizar disponibilidad'}</div>
+       <div class="price">
+${item.price_label || 'Consultar disponibilidad'}
+</div>
 
         <a class="btn" href="${whatsappLink(item)}" target="_blank">
           Cotizar por WhatsApp
