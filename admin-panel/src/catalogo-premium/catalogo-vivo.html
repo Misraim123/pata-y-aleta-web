@@ -316,18 +316,25 @@ style="padding-top:0;margin-top:-10px;">
       return `<img src="${item.image_url || 'https://placehold.co/800x800?text=Pata+y+Aleta'}" alt="${item.title || 'Producto'}">`;
     }
 
-    function cleanCat(cat) {
-      function buildCategories() {
+function cleanCat(cat) {
+
+return (cat || '').replaceAll('_', ' ');
+
+}
+
+function buildCategories() {
 
 const filters =
 document.getElementById('filters');
 
 const categories = [
+
 ...new Set(
 allProducts
 .map(p => p.category)
 .filter(Boolean)
 )
+
 ];
 
 filters.innerHTML =
@@ -354,8 +361,6 @@ ${cleanCat(cat)}
 });
 
 }
-      return (cat || '').replaceAll('_', ' ');
-    }
 
    function whatsappLink(item) {
 
@@ -438,6 +443,8 @@ ${item.subcategory}
       }
 
       allProducts = data || [];
+      buildCategories();
+renderProducts(allProducts);
 
 buildCategories();
 function buildCategories(){
