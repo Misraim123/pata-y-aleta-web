@@ -454,6 +454,56 @@ font-size:30px;
 
 }
 
+.promo-btn{
+
+display:inline-block;
+
+padding:15px 30px;
+
+border-radius:999px;
+
+background:white;
+
+color:#071426;
+
+font-weight:800;
+
+text-decoration:none;
+
+}
+
+.benefits{
+
+margin-top:18px;
+
+font-size:14px;
+
+line-height:1.8;
+
+color:#6c7a93;
+
+font-weight:500;
+
+}
+
+@media(max-width:768px){
+
+.promo-banner{
+
+padding:30px 25px;
+
+margin:20px;
+
+}
+
+.promo-content h2{
+
+font-size:30px;
+
+}
+
+}
+
   </style>
 </head>
 
@@ -702,13 +752,31 @@ ${item.subcategory}
 
         ${item.featured ? `<div class="badge">⭐ Producto destacado</div>` : ''}
 
-       <div class="price">
+<div class="price">
 ${item.price_label || 'Consultar disponibilidad'}
 </div>
 
+<div class="stock-badge">
+🟢 Disponible
+</div>
+
         <a class="btn" href="${whatsappLink(item)}" target="_blank">
-          Cotizar por WhatsApp
-        </a>
+  Cotizar por WhatsApp
+</a>
+
+<div class="benefits">
+
+✓ Envíos especializados
+
+<br>
+
+✓ Garantía de calidad
+
+<br>
+
+✓ Atención personalizada
+
+</div>
       </div>
     </article>
   `).join('');
