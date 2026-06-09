@@ -197,7 +197,7 @@
     }
 
     .btn {
-      margin-top: 18px;
+      margin-top: 20px;
       width: 100%;
       display: flex;
       align-items: center;
@@ -662,6 +662,51 @@ opacity:0;
 
 }
 
+.stock{
+
+margin-top:8px;
+
+font-size:18px;
+
+font-weight:600;
+
+color:#22c55e;
+
+}
+
+.image-modal{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.92);
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:99999;
+
+padding:40px;
+
+}
+
+.image-modal img{
+
+max-width:90%;
+
+max-height:90%;
+
+border-radius:20px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.5);
+
+}
+
   </style>
 </head>
 
@@ -865,6 +910,20 @@ class="whatsapp-float"
 
 </a>
 
+<div
+id="imageModal"
+class="image-modal"
+onclick="closeImage()"
+>
+
+<img
+id="modalImage"
+src=""
+alt=""
+>
+
+</div>
+
   <script>
     const sb = window.supabase.createClient(
       'https://vjyktubsdhpusyvnphvj.supabase.co',
@@ -881,8 +940,14 @@ class="whatsapp-float"
         return `<video controls poster="${item.image_url || ''}"><source src="${item.video_url}"></video>`;
       }
 
-      return `<img src="${item.image_url || 'https://placehold.co/800x800?text=Pata+y+Aleta'}" alt="${item.title || 'Producto'}">`;
-    }
+      return `
+<img
+src="${item.image_url || 'https://placehold.co/800x800?text=Pata+y+Aleta'}"
+alt="${item.title || 'Producto'}"
+onclick="openImage('${item.image_url}')"
+style="cursor:pointer;"
+>
+`;}
 
 function cleanCat(cat) {
 
@@ -987,11 +1052,15 @@ ${item.subcategory}
         ${item.featured ? `<div class="badge">⭐ Producto destacado</div>` : ''}
 
 <div class="price">
-${item.price_label || 'Consultar disponibilidad'}
+
+${item.price_label || 'Cotizar'}
+
 </div>
 
-<div class="stock-badge">
+<div class="stock">
+
 🟢 Disponible
+
 </div>
 
         <a class="btn" href="${whatsappLink(item)}" target="_blank">
@@ -1195,6 +1264,26 @@ filtrados.length
 renderProducts(filtrados);
 
 });
+
+function openImage(src){
+
+document.getElementById(
+'imageModal'
+).style.display = 'flex';
+
+document.getElementById(
+'modalImage'
+).src = src;
+
+}
+
+function closeImage(){
+
+document.getElementById(
+'imageModal'
+).style.display = 'none';
+
+}
 
     loadProducts();
   </script>
