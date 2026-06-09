@@ -191,12 +191,6 @@ document.querySelector('#app').innerHTML = `
   placeholder="URLs galería separadas por coma"
 ></textarea>
 
-<input
-  id="image_url"
-  placeholder="URL Imagen"
-  style="display:none;"
->
-
       <input
   id="image_url"
   placeholder="URL Imagen"
@@ -205,6 +199,67 @@ document.querySelector('#app').innerHTML = `
 <div class="upload-title">
 📷 Imagen Principal
 </div>
+
+<div class="upload-title">
+📷 Galería 1
+</div>
+
+<input
+  type="file"
+  id="gallery1_upload"
+  accept="image/*"
+>
+
+<input
+  id="gallery_1"
+  style="display:none;"
+>
+
+<div class="upload-title">
+📷 Galería 2
+</div>
+
+<input
+  type="file"
+  id="gallery2_upload"
+  accept="image/*"
+>
+
+<input
+  id="gallery_2"
+  style="display:none;"
+>
+
+<div class="upload-title">
+📷 Galería 3
+</div>
+
+<input
+  type="file"
+  id="gallery3_upload"
+  accept="image/*"
+>
+
+<input
+  id="gallery_3"
+  style="display:none;"
+>
+
+<div class="upload-title">
+📷 Galería 4
+</div>
+
+<input
+  type="file"
+  id="gallery4_upload"
+  accept="image/*"
+>
+
+<input
+  id="gallery_4"
+  style="display:none;"
+>
+
       <input
   type="file"
   id="image_upload"
@@ -1047,7 +1102,19 @@ medidas:
 document.querySelector('#medidas').value,
 
 galeria:
-document.querySelector('#galeria').value,  
+document.querySelector('#galeria').value,
+
+gallery_1:
+document.querySelector('#gallery_1').value,
+
+gallery_2:
+document.querySelector('#gallery_2').value,
+
+gallery_3:
+document.querySelector('#gallery_3').value,
+
+gallery_4:
+document.querySelector('#gallery_4').value,
 
       price:
         document.querySelector('#price').value,
@@ -1256,6 +1323,89 @@ previewImage.style.display =
   'none'
 
 })
+
+async function uploadGallery(file, field){
+
+  if(!file) return
+
+  const fileName =
+    Date.now() +
+    '-' +
+    file.name
+
+  const { error } =
+    await supabase
+      .storage
+      .from('pata-products')
+      .upload(
+        `gallery/${fileName}`,
+        file
+      )
+
+  if(error){
+
+    console.log(error)
+    return
+
+  }
+
+  const { data } =
+    supabase
+      .storage
+      .from('pata-products')
+      .getPublicUrl(
+        `gallery/${fileName}`
+      )
+
+  document.querySelector(field).value =
+    data.publicUrl
+
+}
+
+document
+.querySelector('#gallery1_upload')
+?.addEventListener('change',e=>{
+
+uploadGallery(
+e.target.files[0],
+'#gallery_1'
+)
+
+})
+
+document
+.querySelector('#gallery2_upload')
+?.addEventListener('change',e=>{
+
+uploadGallery(
+e.target.files[0],
+'#gallery_2'
+)
+
+})
+
+document
+.querySelector('#gallery3_upload')
+?.addEventListener('change',e=>{
+
+uploadGallery(
+e.target.files[0],
+'#gallery_3'
+)
+
+})
+
+document
+.querySelector('#gallery4_upload')
+?.addEventListener('change',e=>{
+
+uploadGallery(
+e.target.files[0],
+'#gallery_4'
+)
+
+})
+
 window.updateSortOrder = async(id,value)=>{
 
   const { error } =

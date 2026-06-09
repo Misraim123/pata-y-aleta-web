@@ -487,6 +487,44 @@ font-weight:500;
 
 }
 
+.gallery-preview{
+
+display:flex;
+
+gap:8px;
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+}
+
+.gallery-thumb{
+
+width:60px;
+
+height:60px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+cursor:pointer;
+
+border:2px solid rgba(11,138,160,.2);
+
+transition:.3s;
+
+}
+
+.gallery-thumb:hover{
+
+transform:scale(1.08);
+
+border-color:#0b8aa0;
+
+}
+
 @media(max-width:768px){
 
 .promo-banner{
@@ -1085,6 +1123,46 @@ ${item.price_label || 'Cotizar'}
 🟢 Disponible
 
 </div>
+
+${item.gallery_1 || item.gallery_2 || item.gallery_3 || item.gallery_4 ? `
+
+<div class="gallery-preview">
+
+${item.gallery_1 ? `
+<img
+class="gallery-thumb"
+src="${item.gallery_1}"
+onclick="window.open('${item.gallery_1}','_blank')"
+>
+` : ''}
+
+${item.gallery_2 ? `
+<img
+class="gallery-thumb"
+src="${item.gallery_2}"
+onclick="window.open('${item.gallery_2}','_blank')"
+>
+` : ''}
+
+${item.gallery_3 ? `
+<img
+class="gallery-thumb"
+src="${item.gallery_3}"
+onclick="window.open('${item.gallery_3}','_blank')"
+>
+` : ''}
+
+${item.gallery_4 ? `
+<img
+class="gallery-thumb"
+src="${item.gallery_4}"
+onclick="window.open('${item.gallery_4}','_blank')"
+>
+` : ''}
+
+</div>
+
+` : ''}
 
         <a class="btn" href="${whatsappLink(item)}" target="_blank">
   Cotizar por WhatsApp
