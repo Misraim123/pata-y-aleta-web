@@ -171,10 +171,31 @@ document.querySelector('#app').innerHTML = `
         placeholder="Precio numérico"
       >
 
-      <input
-        id="whatsapp"
-        placeholder="WhatsApp"
-      >
+<input
+  id="whatsapp"
+  placeholder="WhatsApp"
+>
+
+<input
+  id="stock"
+  placeholder="Stock disponible (ej. Disponible / Últimas piezas)"
+>
+
+<input
+  id="medidas"
+  placeholder="Medidas (ej. 120x50x60 cm)"
+>
+
+<textarea
+  id="galeria"
+  placeholder="URLs galería separadas por coma"
+></textarea>
+
+<input
+  id="image_url"
+  placeholder="URL Imagen"
+  style="display:none;"
+>
 
       <input
   id="image_url"
@@ -1018,6 +1039,15 @@ document
 
       subcategory:
         document.querySelector('#subcategory').value,
+
+      stock:
+document.querySelector('#stock').value,
+
+medidas:
+document.querySelector('#medidas').value,
+
+galeria:
+document.querySelector('#galeria').value,  
 
       price:
         document.querySelector('#price').value,

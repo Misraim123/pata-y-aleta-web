@@ -665,13 +665,23 @@ opacity:0;
 
 .stock{
 
-margin-top:8px;
+margin-top:10px;
 
 font-size:18px;
 
-font-weight:600;
+font-weight:700;
 
 color:#22c55e;
+
+}
+
+.medidas{
+
+margin-top:8px;
+
+font-size:15px;
+
+color:#64748b;
 
 }
 
@@ -1053,6 +1063,18 @@ ${item.subcategory}
         ${item.featured ? `<div class="badge">⭐ Producto destacado</div>` : ''}
 
 <div class="price">
+
+${item.stock ? `
+<div class="stock">
+🟢 ${item.stock}
+</div>
+` : ''}
+
+${item.medidas ? `
+<div class="medidas">
+📏 ${item.medidas}
+</div>
+` : ''}  
 
 ${item.price_label || 'Cotizar'}
 
