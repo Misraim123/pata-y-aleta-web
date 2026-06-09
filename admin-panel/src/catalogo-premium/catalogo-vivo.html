@@ -504,6 +504,164 @@ font-size:30px;
 
 }
 
+.footer-premium{
+
+margin-top:80px;
+
+background:#071426;
+
+color:white;
+
+padding:60px 7% 30px;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+3,
+1fr
+);
+
+gap:40px;
+
+}
+
+.footer-grid h3{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+}
+
+.footer-grid h4{
+
+margin-bottom:15px;
+
+color:#2dd4e8;
+
+}
+
+.footer-grid p,
+.footer-grid li{
+
+opacity:.85;
+
+line-height:1.9;
+
+list-style:none;
+
+}
+
+.footer-copy{
+
+margin-top:40px;
+
+padding-top:25px;
+
+border-top:
+1px solid rgba(255,255,255,.1);
+
+text-align:center;
+
+opacity:.7;
+
+}
+
+@media(max-width:768px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+.whatsapp-float{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#25D366;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+text-decoration:none;
+
+color:white;
+
+z-index:9999;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.25);
+
+transition:.3s;
+
+}
+
+.whatsapp-float:hover{
+
+transform:scale(1.1);
+
+}
+
+.whatsapp-pulse{
+
+position:absolute;
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#25D366;
+
+opacity:.4;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+opacity:.5;
+}
+
+70%{
+transform:scale(1.6);
+opacity:0;
+}
+
+100%{
+transform:scale(1.6);
+opacity:0;
+}
+
+}
+
   </style>
 </head>
 
@@ -630,6 +788,82 @@ style="padding-top:0;margin-top:-10px;">
   <section id="products" class="grid">
     <div class="loader">Cargando catálogo...</div>
   </section>
+
+<footer class="footer-premium">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>PATA Y ALETA</h3>
+
+<p>
+Boutique Premium de Acuarios y Mascotas
+</p>
+
+<p>
+Diseño • Instalación • Mantenimiento
+</p>
+
+<p>
+Rescate de acuarios en 48 hrs
+</p>
+
+</div>
+
+<div>
+
+<h4>Categorías</h4>
+
+<ul>
+
+<li>Acuarios</li>
+
+<li>Peces Marinos</li>
+
+<li>Corales</li>
+
+<li>Mascotas</li>
+
+<li>Accesorios</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Contacto</h4>
+
+<p>📱 WhatsApp</p>
+
+<p>📸 Instagram</p>
+
+<p>CDMX y Área Metropolitana</p>
+
+</div>
+
+</div>
+
+<div class="footer-copy">
+
+© 2026 Pata y Aleta | Todos los derechos reservados
+
+</div>
+
+</footer>
+
+<a
+href="https://wa.me/525656774264"
+target="_blank"
+class="whatsapp-float"
+>
+
+<div class="whatsapp-pulse"></div>
+
+💬
+
+</a>
 
   <script>
     const sb = window.supabase.createClient(
