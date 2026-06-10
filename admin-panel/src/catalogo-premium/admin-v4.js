@@ -483,13 +483,6 @@ class="products-grid"
 id="leadsContainer"
 style="display:none;"
 ></div>
-
-  <div
-id="leadsContainer"
-style="display:none;"
-></div>
-
-</div>
 `
 
 window.editingId = null
