@@ -1065,6 +1065,24 @@ ${cleanCat(cat)}
 });
 
 }
+
+function trackWhatsApp(producto){
+
+if(typeof gtag !== 'undefined'){
+
+gtag(
+'event',
+'generate_lead',
+{
+currency:'MXN',
+product_name:producto
+}
+);
+
+}
+
+}
+
   function whatsappLink(item) {
 
 const text =
@@ -1220,8 +1238,13 @@ this.closest('.card')
 
 ` : ''}
 
-        <a class="btn" href="${whatsappLink(item)}" target="_blank">
-  Cotizar por WhatsApp
+<a
+class="btn"
+href="${whatsappLink(item)}"
+target="_blank"
+onclick="trackWhatsApp('${item.title}')"
+>
+Cotizar por WhatsApp
 </a>
 
 <div class="benefits">
