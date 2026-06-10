@@ -1435,7 +1435,11 @@ window.updateSortOrder = async(id,value)=>{
 
   }
 
-  async function loadLeads(){
+  loadProducts()
+
+}
+
+async function loadLeads(){
 
 const { data,error } =
 await supabase
@@ -1554,7 +1558,3 @@ leads.style.display =
 'block';
 
 });
-
-  loadProducts()
-
-}
