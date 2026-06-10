@@ -474,6 +474,16 @@ Home
 
   </div>
 
+<div
+id="products"
+class="products-grid"
+></div>
+
+<div
+id="leadsContainer"
+style="display:none;"
+></div>
+
   <div
 id="leadsContainer"
 style="display:none;"
