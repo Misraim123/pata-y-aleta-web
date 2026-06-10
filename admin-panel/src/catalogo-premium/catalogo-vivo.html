@@ -1051,28 +1051,38 @@ ${cleanCat(cat)}
 });
 
 }
-   function whatsappLink(item) {
+  function whatsappLink(item) {
 
 const text =
 `Hola Pata y Aleta 🐠
 
 Me interesa el siguiente producto:
 
-Producto:
+🐾 Producto:
 ${item.title}
 
-Categoría:
-${item.category || 'General'}
+📂 Categoría:
+${cleanCat(item.category || 'General')}
 
-Subcategoría:
+🏷️ Subcategoría:
 ${item.subcategory || 'N/A'}
 
-Precio:
+📏 Medidas:
+${item.medidas || 'Por confirmar'}
+
+📦 Disponibilidad:
+${item.stock || 'Consultar'}
+
+💰 Precio:
 ${item.price_label || 'Cotizar'}
 
-¿Tienen disponibilidad?`;
+🌐 Lo vi en:
+https://www.patayaleta.com/catalogo-vivo.html
+
+¿Podrían compartirme más información, opciones de entrega y tiempo estimado? Muchas gracias.`;
 
 return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+
 }
 
     function renderProducts(items) {
