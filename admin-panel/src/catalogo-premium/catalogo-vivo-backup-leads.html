@@ -1321,7 +1321,7 @@ Cotizar por WhatsApp
 
 <button
 class="btn lead-btn"
-onclick="saveLead('${item.id}')"
+onclick='saveLead(${JSON.stringify(item)})'
 >
 Solicitar Cotización
 </button>
@@ -1565,73 +1565,6 @@ subcategory:item.subcategory
 window.open(
 whatsappLink(item),
 '_blank'
-);
-
-}
-
-async function saveLead(productId){
-
-const item =
-allProducts.find(
-p => String(p.id) === String(productId)
-);
-
-if(!item){
-alert('Producto no encontrado');
-return;
-}
-
-const nombre =
-prompt('Nombre completo');
-
-if(!nombre) return;
-
-const telefono =
-prompt('Teléfono');
-
-if(!telefono) return;
-
-const correo =
-prompt('Correo electrónico (opcional)') || '';
-
-const comentarios =
-prompt('Comentarios adicionales') || '';
-
-const { error } =
-await sb
-.from('leads')
-.insert([{
-nombre,
-telefono,
-correo,
-producto: item.title,
-categoria: item.category,
-comentarios
-}]);
-
-if(error){
-
-console.error(error);
-
-alert(
-'Error guardando lead'
-);
-
-return;
-
-}
-
-gtag(
-'event',
-'generate_lead',
-{
-product_name:item.title,
-category:item.category
-}
-);
-
-alert(
-'Gracias. Tu solicitud fue enviada correctamente.'
 );
 
 }
