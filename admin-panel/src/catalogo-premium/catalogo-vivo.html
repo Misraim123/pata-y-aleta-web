@@ -1611,11 +1611,11 @@ comentarios
 
 if(error){
 
-console.error(error);
-
 alert(
-'Error guardando lead'
+JSON.stringify(error)
 );
+
+console.error(error);
 
 return;
 
