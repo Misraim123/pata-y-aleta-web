@@ -1537,11 +1537,6 @@ document.querySelector(
 '#leadsContainer'
 );
 
-const products =
-document.querySelector(
-'#products'
-);
-
 if(
 leads.style.display === 'block'
 ){
@@ -1549,17 +1544,11 @@ leads.style.display === 'block'
 leads.style.display =
 'none';
 
-products.style.display =
-'grid';
-
 return;
 
 }
 
 await loadLeads();
-
-products.style.display =
-'none';
 
 leads.style.display =
 'block';
