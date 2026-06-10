@@ -923,3 +923,49 @@ font-weight:700;
 text-align:center;
 
 }
+#showLeadsBtn{
+
+background:#6fd7ff;
+
+color:#02111f;
+
+padding:12px 20px;
+
+border:none;
+
+border-radius:12px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+#leadsContainer table{
+
+background:#08213a;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+#leadsContainer th{
+
+background:#0d2947;
+
+padding:15px;
+
+}
+
+#leadsContainer td{
+
+padding:15px;
+
+border-bottom:
+1px solid rgba(
+255,255,255,.08
+);
+
+}

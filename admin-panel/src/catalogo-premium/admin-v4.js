@@ -99,9 +99,17 @@ document.querySelector('#app').innerHTML = `
 
 </div>
 
-    <button id="refreshBtn">
-      Actualizar
-    </button>
+    <div style="display:flex;gap:10px;">
+
+<button id="showLeadsBtn">
+📊 Leads
+</button>
+
+<button id="refreshBtn">
+Actualizar
+</button>
+
+</div>
 
   </div>
 
@@ -466,7 +474,10 @@ Home
 
   </div>
 
-  <div id="products"></div>
+  <div
+id="leadsContainer"
+style="display:none;"
+></div>
 
 </div>
 `
@@ -1423,6 +1434,137 @@ window.updateSortOrder = async(id,value)=>{
     return
 
   }
+
+  async function loadLeads(){
+
+const { data,error } =
+await supabase
+.from('leads')
+.select('*')
+.order(
+'created_at',
+{
+ascending:false
+}
+);
+
+if(error){
+
+console.log(error);
+
+return;
+
+}
+
+document.querySelector(
+'#leadsContainer'
+).innerHTML = `
+
+<table
+style="
+width:100%;
+margin-top:30px;
+border-collapse:collapse;
+"
+>
+
+<tr>
+
+<th>Fecha</th>
+
+<th>Cliente</th>
+
+<th>Teléfono</th>
+
+<th>Producto</th>
+
+<th>Acción</th>
+
+</tr>
+
+${data.map(lead => `
+
+<tr>
+
+<td>
+${new Date(
+lead.created_at
+).toLocaleString()}
+</td>
+
+<td>
+${lead.nombre || ''}
+</td>
+
+<td>
+${lead.telefono || ''}
+</td>
+
+<td>
+${lead.producto || ''}
+</td>
+
+<td>
+
+<a
+href="https://wa.me/52${lead.telefono}"
+target="_blank"
+>
+
+📲 WhatsApp
+
+</a>
+
+</td>
+
+</tr>
+
+`).join('')}
+
+</table>
+`;
+
+}
+
+document
+.querySelector('#showLeadsBtn')
+?.addEventListener(
+'click',
+async()=>{
+
+const leads =
+document.querySelector(
+'#leadsContainer'
+);
+
+const products =
+document.querySelector(
+'#products'
+);
+
+if(
+leads.style.display === 'block'
+){
+
+leads.style.display =
+'none';
+
+products.style.display =
+'grid';
+
+return;
+
+}
+
+await loadLeads();
+
+products.style.display =
+'none';
+
+leads.style.display =
+'block';
+
+});
 
   loadProducts()
 
