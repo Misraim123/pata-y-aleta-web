@@ -1132,6 +1132,18 @@ ${item.gallery_1 || item.gallery_2 || item.gallery_3 || item.gallery_4 ? `
 
 <div class="gallery-preview">
 
+${item.image_url ? `
+<img
+class="gallery-thumb"
+src="${item.image_url}"
+onclick="
+this.closest('.card')
+.querySelector('.main-product-image')
+.src='${item.image_url}'
+"
+>
+` : ''}
+
 ${item.gallery_1 ? `
 <img
 class="gallery-thumb"
