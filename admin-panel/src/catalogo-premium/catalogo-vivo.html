@@ -1083,35 +1083,40 @@ product_name:producto
 
 }
 
-  function whatsappLink(item) {
+function whatsappLink(item) {
+
+if(typeof gtag === 'function'){
+
+gtag(
+'event',
+'generate_lead',
+{
+product_name: item.title || 'Producto',
+category: item.category || 'General',
+subcategory: item.subcategory || 'N/A'
+}
+);
+
+}
 
 const text =
 `Hola Pata y Aleta 🐠
 
 Me interesa el siguiente producto:
 
-🐾 Producto:
+Producto:
 ${item.title}
 
-📂 Categoría:
-${cleanCat(item.category || 'General')}
+Categoría:
+${item.category || 'General'}
 
-🏷️ Subcategoría:
+Subcategoría:
 ${item.subcategory || 'N/A'}
 
-📏 Medidas:
-${item.medidas || 'Por confirmar'}
-
-📦 Disponibilidad:
-${item.stock || 'Consultar'}
-
-💰 Precio:
+Precio:
 ${item.price_label || 'Cotizar'}
 
-🌐 Lo vi en:
-https://www.patayaleta.com/catalogo-vivo.html
-
-¿Podrían compartirme más información, opciones de entrega y tiempo estimado? Muchas gracias.`;
+¿Tienen disponibilidad?`;
 
 return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
 
@@ -1240,9 +1245,8 @@ this.closest('.card')
 
 <a
 class="btn"
-href="${whatsappLink(item)}"
-target="_blank"
-onclick="trackWhatsApp('${item.title}')"
+href="#"
+onclick="trackWhatsapp(event, ${JSON.stringify(item).replace(/"/g,'&quot;')})"
 >
 Cotizar por WhatsApp
 </a>
@@ -1462,6 +1466,31 @@ function closeImage(){
 document.getElementById(
 'imageModal'
 ).style.display = 'none';
+
+}
+
+function trackWhatsapp(event,item){
+
+event.preventDefault();
+
+if(typeof gtag === 'function'){
+
+gtag(
+'event',
+'generate_lead',
+{
+product_name:item.title,
+category:item.category,
+subcategory:item.subcategory
+}
+);
+
+}
+
+window.open(
+whatsappLink(item),
+'_blank'
+);
 
 }
 
