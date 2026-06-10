@@ -1124,11 +1124,7 @@ ${item.medidas ? `
 </div>
 ` : ''}  
 
-${item.price_label || 'Cotizar'}onclick="
-this.closest('.card')
-.querySelector('.main-product-image')
-.src='${item.gallery_1}'
-"
+${item.price_label || 'Cotizar'}
 
 </div>
 
@@ -1140,7 +1136,11 @@ ${item.gallery_1 ? `
 <img
 class="gallery-thumb"
 src="${item.gallery_1}"
-onclick="window.open('${item.gallery_1}','_blank')"
+onclick="
+this.closest('.card')
+.querySelector('.main-product-image')
+.src='${item.gallery_1}'
+"
 >
 ` : ''}
 
