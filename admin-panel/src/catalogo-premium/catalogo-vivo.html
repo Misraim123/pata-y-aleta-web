@@ -996,14 +996,17 @@ alt=""
         return `<video controls poster="${item.image_url || ''}"><source src="${item.video_url}"></video>`;
       }
 
-      return `
+return `
 <img
+class="main-product-image"
 src="${item.image_url || 'https://placehold.co/800x800?text=Pata+y+Aleta'}"
 alt="${item.title || 'Producto'}"
-onclick="openImage('${item.image_url}')"
+onclick="openImage(this.src)"
 style="cursor:pointer;"
 >
-`;}
+`;
+
+}
 
 function cleanCat(cat) {
 
@@ -1121,7 +1124,11 @@ ${item.medidas ? `
 </div>
 ` : ''}  
 
-${item.price_label || 'Cotizar'}
+${item.price_label || 'Cotizar'}onclick="
+this.closest('.card')
+.querySelector('.main-product-image')
+.src='${item.gallery_1}'
+"
 
 </div>
 
@@ -1141,7 +1148,11 @@ ${item.gallery_2 ? `
 <img
 class="gallery-thumb"
 src="${item.gallery_2}"
-onclick="window.open('${item.gallery_2}','_blank')"
+onclick="
+this.closest('.card')
+.querySelector('.main-product-image')
+.src='${item.gallery_2}'
+"
 >
 ` : ''}
 
@@ -1149,7 +1160,11 @@ ${item.gallery_3 ? `
 <img
 class="gallery-thumb"
 src="${item.gallery_3}"
-onclick="window.open('${item.gallery_3}','_blank')"
+onclick="
+this.closest('.card')
+.querySelector('.main-product-image')
+.src='${item.gallery_3}'
+"
 >
 ` : ''}
 
@@ -1157,7 +1172,11 @@ ${item.gallery_4 ? `
 <img
 class="gallery-thumb"
 src="${item.gallery_4}"
-onclick="window.open('${item.gallery_4}','_blank')"
+onclick="
+this.closest('.card')
+.querySelector('.main-product-image')
+.src='${item.gallery_4}'
+"
 >
 ` : ''}
 
