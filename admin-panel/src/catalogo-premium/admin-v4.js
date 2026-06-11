@@ -403,32 +403,6 @@ Home
 
   </div>
 
-<div class="admin-stats">
-
-  <div class="stat-card">
-    <div class="stat-icon">📦</div>
-    <div class="stat-value" id="headerProducts">0</div>
-    <div class="stat-label">Productos</div>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-icon">⭐</div>
-    <div class="stat-value" id="headerFeatured">0</div>
-    <div class="stat-label">Destacados</div>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-icon">🟢</div>
-    <div class="stat-value" id="headerPublished">0</div>
-    <div class="stat-label">Publicados</div>
-  </div>
-
-  <div class="stat-card">
-    <div class="stat-icon">🎥</div>
-    <div class="stat-value" id="headerVideos">0</div>
-    <div class="stat-label">Videos</div>
-  </div>
-
 </div>
 
   <div class="toolbar">
