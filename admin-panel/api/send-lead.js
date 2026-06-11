@@ -52,14 +52,18 @@ export default async function handler(req, res) {
       success: true
     })
 
-  } catch(error){
+} catch(error){
 
-    console.error(error)
+  console.error('ERROR RESEND:', error)
 
-    return res.status(500).json({
-      error: error.message
-    })
+  return res.status(500).json({
 
-  }
+    error: String(error),
+
+    stack: error?.stack || null
+
+  })
+
+}
 
 }
