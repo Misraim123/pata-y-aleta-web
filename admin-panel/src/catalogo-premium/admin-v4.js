@@ -1567,3 +1567,52 @@ leads.style.display =
 'block';
 
 });
+setTimeout(() => {
+
+  const btn = document.querySelector('#showLeadsBtn');
+  const leads = document.querySelector('#leadsContainer');
+
+  if (!btn || !leads) {
+    console.log('No existe boton o contenedor');
+    return;
+  }
+
+  btn.onclick = async () => {
+
+    const { data, error } = await supabase
+      .from('leads')
+      .select('*')
+      .order('created_at', { ascending:false });
+
+    if(error){
+      alert(error.message);
+      return;
+    }
+
+    leads.innerHTML = `
+      <h2 style="margin:20px 0;color:#57d4f5;">
+        Leads Capturados
+      </h2>
+
+      <table style="width:100%;border-collapse:collapse;">
+        <tr>
+          <th>Cliente</th>
+          <th>Teléfono</th>
+          <th>Producto</th>
+        </tr>
+
+        ${data.map(l => `
+          <tr>
+            <td>${l.nombre || ''}</td>
+            <td>${l.telefono || ''}</td>
+            <td>${l.producto || ''}</td>
+          </tr>
+        `).join('')}
+      </table>
+    `;
+
+    leads.style.display = 'block';
+
+  };
+
+}, 2000);
