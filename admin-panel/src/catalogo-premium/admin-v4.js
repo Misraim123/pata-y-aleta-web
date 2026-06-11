@@ -1548,7 +1548,7 @@ console.log('ANTES DEL TIMEOUT');
 
 setTimeout(() => {
 
-  console.log('TIMEOUT EJECUTADO');
+  
 
   const btn = document.querySelector('#showLeadsBtn');
   const leads = document.querySelector('#leadsContainer');
