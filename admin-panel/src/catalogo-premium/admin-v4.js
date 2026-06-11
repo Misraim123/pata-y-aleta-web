@@ -386,6 +386,12 @@ Home
   </div>
 
   <div class="mini-stat">
+🟢
+<strong id="headerPublished">0</strong>
+<span>Publicados</span>
+</div>
+
+  <div class="mini-stat">
     🎥
     <strong id="headerVideos">0</strong>
     <span>Videos</span>
