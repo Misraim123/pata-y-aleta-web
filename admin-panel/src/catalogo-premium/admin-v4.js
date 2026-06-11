@@ -1571,16 +1571,11 @@ setTimeout(() => {
     }
 
     leads.innerHTML = `
-      <h2 style="margin:20px 0;color:#57d4f5;">
-        Leads Capturados
-      </h2>
-
-      <table style="width:100%;border-collapse:collapse;">
-        <tr>
-          <th>Cliente</th>
-          <th>Teléfono</th>
-          <th>Producto</th>
-        </tr>
+      <th>Fecha</th>
+<th>Cliente</th>
+<th>Teléfono</th>
+<th>Producto</th>
+<th>Acción</th>
 
         ${data.map(l => `
           <tr>

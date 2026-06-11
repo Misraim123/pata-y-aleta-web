@@ -1067,6 +1067,37 @@ return;
 
 }
 
+try {
+
+  await fetch('/api/send-lead', {
+
+    method:'POST',
+
+    headers:{
+      'Content-Type':'application/json'
+    },
+
+    body:JSON.stringify({
+
+      nombre,
+      telefono,
+      correo,
+      producto:item.title,
+      comentarios
+
+    })
+
+  })
+
+} catch(err){
+
+  console.log(
+    'Error enviando correo',
+    err
+  )
+
+}
+
 alert(
 'Gracias. Tu solicitud fue enviada.'
 );
