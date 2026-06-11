@@ -1461,6 +1461,8 @@ ascending:false
 }
 );
 
+console.log('LEADS:', data);
+
 if(error){
 
 console.log(error);
@@ -1567,7 +1569,12 @@ leads.style.display =
 'block';
 
 });
+
+console.log('ANTES DEL TIMEOUT');
+
 setTimeout(() => {
+
+  console.log('TIMEOUT EJECUTADO');
 
   const btn = document.querySelector('#showLeadsBtn');
   const leads = document.querySelector('#leadsContainer');
