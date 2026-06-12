@@ -791,6 +791,154 @@ box-shadow:
 
 }
 
+/* ===== CARRITO ===== */
+
+.cart-panel{
+
+position:fixed;
+
+top:0;
+
+right:-420px;
+
+width:400px;
+
+height:100vh;
+
+background:#08131d;
+
+border-left:1px solid rgba(255,255,255,.1);
+
+z-index:10000;
+
+padding:20px;
+
+transition:.3s;
+
+overflow-y:auto;
+
+}
+
+.cart-panel.active{
+
+right:0;
+
+}
+
+.cart-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.cart-header h3{
+
+color:#57d4f5;
+
+margin:0;
+
+}
+
+.cart-close{
+
+background:none;
+
+border:none;
+
+font-size:24px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.cart-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:12px;
+
+margin-bottom:10px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:10px;
+
+color:white;
+
+}
+
+.cart-item button{
+
+background:#ff4d4d;
+
+border:none;
+
+color:white;
+
+padding:6px 10px;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+.cart-footer{
+
+margin-top:20px;
+
+display:flex;
+
+gap:10px;
+
+}
+
+.cart-clear{
+
+flex:1;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+.cart-send{
+
+flex:1;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+background:#25D366;
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
   </style>
 </head>
 
@@ -879,6 +1027,49 @@ cursor:pointer;
 <span id="cartCount">
 0
 </span>
+
+</div>
+
+<div id="cartPanel" class="cart-panel">
+
+  <div class="cart-header">
+
+    <h3>
+      🛒 Mi Carrito
+    </h3>
+
+    <button
+      onclick="closeCart()"
+      class="cart-close"
+    >
+      ✕
+    </button>
+
+  </div>
+
+  <div id="cartItems">
+
+  </div>
+
+  <div class="cart-footer">
+
+    <button
+      onclick="clearCart()"
+      class="cart-clear"
+    >
+      Vaciar
+    </button>
+
+    <button
+      onclick="sendCartWhatsapp()"
+      class="cart-send"
+    >
+      WhatsApp
+    </button>
+
+  </div>
+
+</div>
 
 </div>
 
@@ -1180,25 +1371,134 @@ function addToCart(id){
 
 function showCart(){
 
-  let text = 'CARRITO\\n\\n';
+  openCart();
 
-  cart.forEach((item,index)=>{
+}
 
-    text +=
-      (index + 1) +
-      '. ' +
-      item.title +
-      '\\n';
+function openCart(){
 
-  });
+  document.getElementById(
+    'cartPanel'
+  ).classList.add('active');
+
+  renderCart();
+
+}
+
+function closeCart(){
+
+  document.getElementById(
+    'cartPanel'
+  ).classList.remove('active');
+
+}
+
+function renderCart(){
+
+  const box =
+    document.getElementById(
+      'cartItems'
+    );
+
+  if(!box) return;
 
   if(!cart.length){
 
-    text = 'Tu carrito está vacío';
+    box.innerHTML = `
+      <p>
+        Tu carrito está vacío
+      </p>
+    `;
+
+    return;
 
   }
 
-  alert(text);
+  box.innerHTML = cart.map(
+    (item,index)=>`
+
+      <div class="cart-item">
+
+        <strong>
+          ${item.title}
+        </strong>
+
+        <button
+          onclick="removeCartItem(${index})"
+        >
+          ✕
+        </button>
+
+      </div>
+
+    `
+  ).join('');
+
+}
+
+function removeCartItem(index){
+
+  cart.splice(index,1);
+
+  localStorage.setItem(
+    'cart',
+    JSON.stringify(cart)
+  );
+
+  updateCartCounter();
+
+  renderCart();
+
+}
+
+function clearCart(){
+
+  cart = [];
+
+  localStorage.setItem(
+    'cart',
+    JSON.stringify(cart)
+  );
+
+  updateCartCounter();
+
+  renderCart();
+
+}
+
+function sendCartWhatsapp(){
+
+  if(!cart.length){
+
+    alert(
+      'Tu carrito está vacío'
+    );
+
+    return;
+
+  }
+
+  const productos = cart.map(
+    item => `• ${item.title}`
+  ).join('\n');
+
+  const mensaje =
+
+`Hola Pata y Aleta 🐠
+
+Me interesan los siguientes productos:
+
+${productos}
+
+¿Me pueden ayudar con una cotización?`;
+
+  window.open(
+
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`,
+
+    '_blank'
+
+  );
 
 }
 
