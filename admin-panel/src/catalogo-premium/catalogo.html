@@ -291,7 +291,11 @@ para hogares, oficinas y espacios exclusivos.
 
 </div>
 
-<a href="#" class="btn-primary">
+<a
+href="#"
+class="btn-primary"
+id="openProjectModal"
+>
 Cotizar proyecto
 </a>
 
@@ -320,6 +324,68 @@ class="aquarium-image"
 </div>
 
 </section>
+
+<div id="projectModal" class="project-modal">
+
+<div class="project-box">
+
+<div class="project-close" id="closeProjectModal">
+✕
+</div>
+
+<h3>Diseña tu Acuario Ideal</h3>
+
+<input
+type="text"
+id="projectName"
+placeholder="Nombre"
+/>
+
+<input
+type="text"
+id="projectPhone"
+placeholder="WhatsApp"
+/>
+
+<input
+type="text"
+id="projectCity"
+placeholder="Ciudad"
+/>
+
+<select id="projectType">
+
+<option>Marino</option>
+<option>Luxury</option>
+<option>Minimalista</option>
+<option>Corporativo</option>
+
+</select>
+
+<select id="projectBudget">
+
+<option>$10k - $25k</option>
+<option>$25k - $50k</option>
+<option>$50k - $100k</option>
+<option>$100k+</option>
+
+</select>
+
+<textarea
+id="projectComment"
+placeholder="Cuéntanos tu idea..."
+></textarea>
+
+<button
+id="sendProjectLead"
+class="btn-primary"
+>
+Solicitar Proyecto
+</button>
+
+</div>
+
+</div>
 
 <!-- SERVICIOS -->
 

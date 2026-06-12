@@ -428,7 +428,11 @@ para hogares, oficinas y espacios exclusivos.
 
 </div>
 
-<a href="#contacto" class="btn-primary">
+<a
+href="#"
+class="btn-primary"
+id="openProjectModal"
+>
 Cotizar proyecto
 </a>
 
@@ -930,9 +934,150 @@ Cobertura en toda la República
 
 </footer>
 
+<div id="projectModal" class="project-modal">
+
+  <div class="project-box">
+
+    <div id="closeProjectModal" class="project-close">
+      ✕
+    </div>
+
+    <h3>Diseña tu Acuario Ideal</h3>
+
+    <input
+      id="projectName"
+      type="text"
+      placeholder="Nombre"
+    >
+
+    <input
+      id="projectPhone"
+      type="text"
+      placeholder="WhatsApp"
+    >
+
+    <input
+      id="projectCity"
+      type="text"
+      placeholder="Ciudad"
+    >
+
+    <select id="projectType">
+
+      <option>Marino</option>
+      <option>Luxury</option>
+      <option>Minimalista</option>
+      <option>Corporativo</option>
+
+    </select>
+
+    <select id="projectBudget">
+
+      <option>$10k - $25k</option>
+      <option>$25k - $50k</option>
+      <option>$50k - $100k</option>
+      <option>$100k+</option>
+
+    </select>
+
+    <textarea
+      id="projectComment"
+      placeholder="Cuéntanos tu idea..."
+    ></textarea>
+
+    <button
+      id="sendProjectLead"
+      class="btn-primary"
+    >
+      Solicitar Proyecto
+    </button>
+
+  </div>
+
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="./home-products.js"></script>
+
+<script>
+
+document
+.getElementById('openProjectModal')
+?.addEventListener(
+'click',
+e => {
+
+e.preventDefault()
+
+document
+.getElementById('projectModal')
+.style.display='flex'
+
+}
+)
+
+document
+.getElementById('closeProjectModal')
+?.addEventListener(
+'click',
+()=>{
+
+document
+.getElementById('projectModal')
+.style.display='none'
+
+}
+)
+
+document
+.getElementById('sendProjectLead')
+?.addEventListener(
+'click',
+()=>{
+
+const nombre =
+document.getElementById('projectName').value
+
+const telefono =
+document.getElementById('projectPhone').value
+
+const ciudad =
+document.getElementById('projectCity').value
+
+const tipo =
+document.getElementById('projectType').value
+
+const presupuesto =
+document.getElementById('projectBudget').value
+
+const comentario =
+document.getElementById('projectComment').value
+
+const mensaje =
+`Hola Pata y Aleta 🐠
+
+Nombre: ${nombre}
+
+WhatsApp: ${telefono}
+
+Ciudad: ${ciudad}
+
+Proyecto: ${tipo}
+
+Presupuesto: ${presupuesto}
+
+Comentarios: ${comentario}`
+
+window.open(
+`https://wa.me/525656774264?text=${encodeURIComponent(mensaje)}`,
+'_blank'
+)
+
+}
+)
+
+</script>
 
 </body>
 </html>

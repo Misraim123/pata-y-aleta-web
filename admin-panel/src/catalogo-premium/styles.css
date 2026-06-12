@@ -308,3 +308,62 @@ height:500px;
 }
 
 }
+.project-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(10px);
+z-index:99999;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.project-box{
+width:100%;
+max-width:600px;
+background:#071b2d;
+border:1px solid rgba(255,255,255,.1);
+border-radius:24px;
+padding:30px;
+display:flex;
+flex-direction:column;
+gap:14px;
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.project-box h3{
+color:#fff;
+font-size:30px;
+margin-bottom:10px;
+}
+
+.project-box input,
+.project-box select,
+.project-box textarea{
+width:100%;
+padding:14px;
+border:none;
+border-radius:14px;
+background:#0c2740;
+color:#fff;
+font-size:15px;
+}
+
+.project-box textarea{
+height:120px;
+resize:none;
+}
+
+.project-close{
+color:white;
+font-size:24px;
+cursor:pointer;
+text-align:right;
+}
+
+.project-box .btn-primary{
+width:100%;
+margin-top:10px;
+}
