@@ -6,47 +6,6 @@ const supabase = createClient(
   'sb_publishable_ORfJ3n0RVQ_oIJmexPkBwg_TRECBkzQ'
 )
 
-const totalLeads = data.length
-
-const hoy = new Date()
-
-const leadsHoy = data.filter(lead => {
-
-  const fecha = new Date(lead.created_at)
-
-  return (
-    fecha.getDate() === hoy.getDate() &&
-    fecha.getMonth() === hoy.getMonth() &&
-    fecha.getFullYear() === hoy.getFullYear()
-  )
-
-}).length
-
-const semana = new Date()
-
-semana.setDate(hoy.getDate() - 7)
-
-const leadsSemana = data.filter(lead =>
-  new Date(lead.created_at) >= semana
-).length
-
-const productos = {}
-
-data.forEach(lead => {
-
-  const nombre =
-    lead.producto || 'Sin Producto'
-
-  productos[nombre] =
-    (productos[nombre] || 0) + 1
-
-})
-
-const productoTop =
-Object.keys(productos)
-.sort((a,b)=>productos[b]-productos[a])[0]
-|| 'N/A'
-
 document.querySelector('#app').innerHTML = `
 
 <div class="admin-container">
@@ -959,7 +918,7 @@ window.editProduct = async(id)=>{
 
 previewPrice.textContent =
   data.price_label || 'Cotizar'
-  
+
   document.querySelector('#whatsapp').value =
     data.whatsapp || ''
 
