@@ -1488,8 +1488,30 @@ function renderCart(){
 
   }
 
-  box.innerHTML = cart.map(
-(item,index)=>`
+  const grouped = {};
+
+cart.forEach((item,index)=>{
+
+  if(!grouped[item.id]){
+
+    grouped[item.id] = {
+      ...item,
+      qty:1,
+      indexes:[index]
+    };
+
+  }else{
+
+    grouped[item.id].qty++;
+
+    grouped[item.id].indexes.push(index);
+
+  }
+
+});
+
+box.innerHTML = Object.values(grouped)
+.map(item=>`
 
 <div class="cart-item">
 
@@ -1502,6 +1524,7 @@ function renderCart(){
 
     <strong>
       ${item.title}
+      ${item.qty > 1 ? ` x${item.qty}` : ''}
     </strong>
 
     <small>
@@ -1515,17 +1538,28 @@ function renderCart(){
   </div>
 
   <button
-    onclick="removeCartItem(${index})"
+    onclick="removeCartItem(${item.indexes[0]})"
   >
     ✕
   </button>
 
 </div>
 
-`
-).join('');
+`).join('');
 
 const totalProductos = cart.length;
+
+const categorias = {};
+
+cart.forEach(item=>{
+
+  const cat =
+    item.category || 'Otros';
+
+  categorias[cat] =
+    (categorias[cat] || 0) + 1;
+
+});
 
 document.getElementById(
   'cartItems'
@@ -1533,7 +1567,28 @@ document.getElementById(
 
 <div class="cart-summary">
 
-  <div class="summary-row">
+  <div class="summary-title">
+    Resumen
+  </div>
+
+  ${Object.entries(categorias)
+    .map(([cat,total])=>`
+
+      <div class="summary-row">
+
+        <span>
+          ${cat}
+        </span>
+
+        <strong>
+          ${total}
+        </strong>
+
+      </div>
+
+    `).join('')}
+
+  <div class="summary-row total">
 
     <span>
       Productos
