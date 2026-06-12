@@ -1579,13 +1579,35 @@ const totalProductos = cart.length;
 
 const categorias = {};
 
+const nombresCategorias = {
+
+  peces_marinos:
+  '🐠 Peces Marinos',
+
+  accesorios_mascotas:
+  '🦴 Accesorios Mascotas',
+
+  corales:
+  '🪸 Corales',
+
+  mascotas:
+  '🐾 Mascotas',
+
+  acuarios:
+  '🏝️ Acuarios'
+
+};
+
 cart.forEach(item=>{
 
   const cat =
     item.category || 'Otros';
 
-  categorias[cat] =
-    (categorias[cat] || 0) + 1;
+  const nombre =
+    nombresCategorias[cat] || cat;
+
+  categorias[nombre] =
+    (categorias[nombre] || 0) + 1;
 
 });
 
