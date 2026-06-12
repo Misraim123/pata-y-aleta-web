@@ -294,7 +294,7 @@ para hogares, oficinas y espacios exclusivos.
 <a
 href="#"
 class="btn-primary"
-id="openProjectModal"
+onclick="document.getElementById('projectModal').style.display='flex';return false;"
 >
 Cotizar proyecto
 </a>
@@ -329,7 +329,10 @@ class="aquarium-image"
 
 <div class="project-box">
 
-<div class="project-close" id="closeProjectModal">
+<div
+class="project-close"
+onclick="document.getElementById('projectModal').style.display='none';"
+>
 ✕
 </div>
 
