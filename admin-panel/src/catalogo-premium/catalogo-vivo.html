@@ -856,6 +856,30 @@ WhatsApp
 
 </header>
 
+<div
+id="cartFloating"
+style="
+position:fixed;
+top:20px;
+right:20px;
+z-index:9999;
+background:#00cfff;
+color:#000;
+padding:10px 18px;
+border-radius:30px;
+font-weight:700;
+box-shadow:0 0 20px rgba(0,207,255,.4);
+"
+>
+
+🛒
+
+<span id="cartCount">
+0
+</span>
+
+</div>
+
   <section class="hero">
     <h1>Catálogo <span>Premium</span></h1>
     <p>Explora peces, acuarios, accesorios y productos especializados. Todo lo publicado desde el panel admin aparece
@@ -1101,6 +1125,54 @@ try {
 alert(
 'Gracias. Tu solicitud fue enviada.'
 );
+
+}
+
+// =====================
+// CARRITO
+// =====================
+
+let cart = JSON.parse(
+  localStorage.getItem('cart') || '[]'
+);
+
+function updateCartCounter(){
+
+  const badge =
+    document.querySelector('#cartCount');
+
+  if(!badge) return;
+
+  badge.textContent =
+    cart.length;
+
+}
+
+function addToCart(id){
+
+  const item =
+    allProducts.find(
+      p => p.id == id
+    );
+
+  if(!item){
+    alert('Producto no encontrado');
+    return;
+  }
+
+  cart.push(item);
+
+  localStorage.setItem(
+    'cart',
+    JSON.stringify(cart)
+  );
+
+  updateCartCounter();
+
+  alert(
+    item.title +
+    ' agregado al carrito'
+  );
 
 }
 
@@ -1355,6 +1427,13 @@ class="btn lead-btn"
 onclick="saveLead('${item.id}')"
 >
 Solicitar Cotización
+</button>
+
+<button
+class="btn cart-btn"
+onclick="addToCart('${item.id}')"
+>
+🛒 Agregar al carrito
 </button>
 
 <div class="benefits">
@@ -1668,6 +1747,14 @@ alert(
 }
 
     loadProducts();
+
+updateCartCounter();
+
+console.log(
+  'Carrito:',
+  cart.length
+);
+
   </script>
 
 </body>
