@@ -1486,46 +1486,6 @@ return;
 
 }
 
-const totalLeads = data.length
-
-const hoy = new Date()
-
-const leadsHoy = data.filter(lead => {
-
-  const fecha = new Date(lead.created_at)
-
-  return (
-    fecha.getDate() === hoy.getDate() &&
-    fecha.getMonth() === hoy.getMonth() &&
-    fecha.getFullYear() === hoy.getFullYear()
-  )
-
-}).length
-
-const semana = new Date()
-
-semana.setDate(hoy.getDate() - 7)
-
-const leadsSemana = data.filter(lead =>
-  new Date(lead.created_at) >= semana
-).length
-
-const productos = {}
-
-data.forEach(lead => {
-
-  const producto =
-    lead.producto || 'Sin Producto'
-
-  productos[producto] =
-    (productos[producto] || 0) + 1
-
-})
-
-const productoTop =
-  Object.keys(productos)
-    .sort((a,b)=>productos[b]-productos[a])[0]
-  || 'N/A'
 
 document.querySelector(
 '#leadsContainer'
@@ -1644,13 +1604,21 @@ alert(
 )
 
 loadLeads()
-loadLeads()
-
-setInterval(() => {
-  loadLeads()
-}, 15000)
 
 }
 )
 
 .subscribe()
+setInterval(() => {
+
+const leads =
+document.querySelector('#leadsContainer')
+
+if(
+leads &&
+leads.style.display === 'block'
+){
+loadLeads()
+}
+
+},15000)
