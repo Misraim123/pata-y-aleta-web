@@ -1562,6 +1562,11 @@ alert(
 )
 
 loadLeads()
+loadLeads()
+
+setInterval(() => {
+  loadLeads()
+}, 15000)
 
 }
 )
