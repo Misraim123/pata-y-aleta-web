@@ -895,6 +895,54 @@ cursor:pointer;
 
 }
 
+.cart-thumb{
+
+width:70px;
+
+height:70px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+margin-right:12px;
+
+}
+
+.cart-info{
+
+display:flex;
+
+flex-direction:column;
+
+gap:4px;
+
+flex:1;
+
+}
+
+.cart-info strong{
+
+color:white;
+
+font-size:15px;
+
+}
+
+.cart-info small{
+
+color:#8ca3b8;
+
+}
+
+.cart-info span{
+
+color:#57d4f5;
+
+font-weight:700;
+
+}
+
 .cart-footer{
 
 margin-top:20px;
@@ -936,6 +984,32 @@ color:white;
 font-weight:700;
 
 cursor:pointer;
+
+}
+
+.cart-summary{
+
+margin-top:20px;
+
+padding:15px;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.05);
+
+}
+
+.summary-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+color:white;
+
+font-size:16px;
 
 }
 
@@ -1415,24 +1489,65 @@ function renderCart(){
   }
 
   box.innerHTML = cart.map(
-    (item,index)=>`
+(item,index)=>`
 
-      <div class="cart-item">
+<div class="cart-item">
 
-        <strong>
-          ${item.title}
-        </strong>
+  <img
+    src="${item.image_url || ''}"
+    class="cart-thumb"
+  >
 
-        <button
-          onclick="removeCartItem(${index})"
-        >
-          ✕
-        </button>
+  <div class="cart-info">
 
-      </div>
+    <strong>
+      ${item.title}
+    </strong>
 
-    `
-  ).join('');
+    <small>
+      ${item.category || ''}
+    </small>
+
+    <span>
+      ${item.price_label || 'Cotizar'}
+    </span>
+
+  </div>
+
+  <button
+    onclick="removeCartItem(${index})"
+  >
+    ✕
+  </button>
+
+</div>
+
+`
+).join('');
+
+const totalProductos = cart.length;
+
+document.getElementById(
+  'cartItems'
+).innerHTML += `
+
+<div class="cart-summary">
+
+  <div class="summary-row">
+
+    <span>
+      Productos
+    </span>
+
+    <strong>
+      ${totalProductos}
+    </strong>
+
+  </div>
+
+</div>
+
+`;
 
 }
 
