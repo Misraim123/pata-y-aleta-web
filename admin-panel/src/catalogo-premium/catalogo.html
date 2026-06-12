@@ -834,7 +834,7 @@ document
 .getElementById('sendProjectLead')
 ?.addEventListener(
 'click',
-()=>{
+async()=>{
 
 const nombre =
 document.getElementById('projectName').value
@@ -855,19 +855,34 @@ const comentario =
 document.getElementById('projectComment').value
 
 const mensaje =
-`Hola Pata y Aleta 🐠
+`🐠 NUEVO PROYECTO PREMIUM
 
-Nombre: ${nombre}
+━━━━━━━━━━━━━━━
 
-WhatsApp: ${telefono}
+👤 Cliente:
+${nombre}
 
-Ciudad: ${ciudad}
+📱 WhatsApp:
+${telefono}
 
-Proyecto: ${tipo}
+📍 Ciudad:
+${ciudad}
 
-Presupuesto: ${presupuesto}
+🌊 Proyecto:
+${tipo}
 
-Comentarios: ${comentario}`
+💰 Presupuesto:
+${presupuesto}
+
+📝 Descripción:
+${comentario}
+
+━━━━━━━━━━━━━━━
+
+🌐 Origen:
+www.patayaleta.com
+
+✨ Solicitud generada desde el Constructor de Acuarios Premium`
 
 window.open(
 `https://wa.me/525656774264?text=${encodeURIComponent(mensaje)}`,
