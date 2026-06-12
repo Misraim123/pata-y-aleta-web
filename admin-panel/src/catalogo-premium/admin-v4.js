@@ -41,22 +41,22 @@ document.querySelector('#app').innerHTML = `
 
 <div class="exec-row">
 <span>📊 Total Leads</span>
-<strong>${data.length}</strong>
+<strong id="totalLeadsCard">0</strong>
 </div>
 
 <div class="exec-row">
 <span>📅 Hoy</span>
-<strong>${leadsHoy}</strong>
+<strong id="leadsHoyCard">0</strong>
 </div>
 
 <div class="exec-row">
 <span>📈 7 Días</span>
-<strong>${leadsSemana}</strong>
+<strong id="leadsSemanaCard">0</strong>
 </div>
 
 <div class="exec-row">
 <span>🔥 Top Producto</span>
-<strong>${productoTop}</strong>
+<strong id="productoTopCard">N/A</strong>
 </div>
 
   </div>
@@ -1445,6 +1445,59 @@ return;
 
 }
 
+const totalLeads = data.length
+
+const hoy = new Date()
+
+const leadsHoy = data.filter(lead => {
+
+  const fecha = new Date(lead.created_at)
+
+  return (
+    fecha.getDate() === hoy.getDate() &&
+    fecha.getMonth() === hoy.getMonth() &&
+    fecha.getFullYear() === hoy.getFullYear()
+  )
+
+}).length
+
+const semana = new Date()
+
+semana.setDate(hoy.getDate() - 7)
+
+const leadsSemana = data.filter(
+  lead =>
+    new Date(lead.created_at) >= semana
+).length
+
+const productos = {}
+
+data.forEach(lead => {
+
+  const nombre =
+    lead.producto || 'Sin Producto'
+
+  productos[nombre] =
+    (productos[nombre] || 0) + 1
+
+})
+
+const productoTop =
+Object.keys(productos)
+.sort((a,b)=>productos[b]-productos[a])[0]
+|| 'N/A'
+
+document.querySelector('#totalLeadsCard').textContent =
+totalLeads
+
+document.querySelector('#leadsHoyCard').textContent =
+leadsHoy
+
+document.querySelector('#leadsSemanaCard').textContent =
+leadsSemana
+
+document.querySelector('#productoTopCard').textContent =
+productoTop
 
 document.querySelector(
 '#leadsContainer'
