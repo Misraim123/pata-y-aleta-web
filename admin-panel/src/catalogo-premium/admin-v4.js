@@ -1621,6 +1621,13 @@ loadLeads()
 )
 
 .subscribe()
+loadProducts()
+
+loadConfig()
+
+loadFeatured()
+
+loadLeads()
 setInterval(() => {
 
 const leads =
@@ -1631,6 +1638,7 @@ leads &&
 leads.style.display === 'block'
 ){
 loadLeads()
+
 }
 
 },15000)
