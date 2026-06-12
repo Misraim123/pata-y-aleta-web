@@ -6217,3 +6217,69 @@ font-size:30px;
 }
 
 }
+/* MODAL PROYECTOS PREMIUM */
+
+.project-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(10px);
+z-index:99999;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.project-box{
+width:100%;
+max-width:650px;
+background:#04172c;
+border:1px solid rgba(87,212,245,.25);
+border-radius:30px;
+padding:35px;
+display:flex;
+flex-direction:column;
+gap:15px;
+box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+
+.project-box h3{
+font-size:32px;
+font-weight:700;
+color:#fff;
+margin-bottom:10px;
+}
+
+.project-box input,
+.project-box select,
+.project-box textarea{
+width:100%;
+padding:15px;
+border:none;
+border-radius:14px;
+background:#08233f;
+color:#fff;
+font-size:15px;
+outline:none;
+}
+
+.project-box textarea{
+min-height:120px;
+resize:none;
+}
+
+.project-close{
+position:absolute;
+margin-top:-15px;
+right:35px;
+font-size:28px;
+cursor:pointer;
+color:#57d4f5;
+font-weight:700;
+}
+
+.project-box .btn-primary{
+width:100%;
+margin-top:10px;
+}
