@@ -955,11 +955,11 @@ window.editProduct = async(id)=>{
     data.price || ''
 
   document.querySelector('#price_label').value =
-    data.price_label || ''
+  data.price_label || ''
 
-    previewPrice.textContent =
-  e.target.value || 'Cotizar'
-
+previewPrice.textContent =
+  data.price_label || 'Cotizar'
+  
   document.querySelector('#whatsapp').value =
     data.whatsapp || ''
 
