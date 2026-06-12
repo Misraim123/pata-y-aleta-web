@@ -1544,51 +1544,26 @@ leads.style.display =
 
 });
 
-console.log('ANTES DEL TIMEOUT');
+supabase
+.channel('leads-realtime')
 
-setTimeout(() => {
+.on(
+'postgres_changes',
+{
+event:'INSERT',
+schema:'public',
+table:'leads'
+},
+payload => {
 
-  
+alert(
+'🚨 Nuevo Lead: ' +
+(payload.new.nombre || 'Cliente')
+)
 
-  const btn = document.querySelector('#showLeadsBtn');
-  const leads = document.querySelector('#leadsContainer');
+loadLeads()
 
-  if (!btn || !leads) {
-    console.log('No existe boton o contenedor');
-    return;
-  }
+}
+)
 
-  btn.onclick = async () => {
-
-    const { data, error } = await supabase
-      .from('leads')
-      .select('*')
-      .order('created_at', { ascending:false });
-
-    if(error){
-      alert(error.message);
-      return;
-    }
-
-    leads.innerHTML = `
-      <th>Fecha</th>
-<th>Cliente</th>
-<th>Teléfono</th>
-<th>Producto</th>
-<th>Acción</th>
-
-        ${data.map(l => `
-          <tr>
-            <td>${l.nombre || ''}</td>
-            <td>${l.telefono || ''}</td>
-            <td>${l.producto || ''}</td>
-          </tr>
-        `).join('')}
-      </table>
-    `;
-
-    leads.style.display = 'block';
-
-  };
-
-}, 2000);
+.subscribe()
