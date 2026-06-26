@@ -539,69 +539,37 @@ transform:translateX(-100%);
 }
 
 /*==================================================
-PATA Y ALETA PLATFORM
-Premium Live Banner v1.0
+PATA Y ALETA LIVE RIBBON
+v1.0
 ==================================================*/
 
-.announcement{
-
-width:100%;
+.live-ribbon{
 
 display:flex;
 
-justify-content:center;
+align-items:center;
 
-padding:22px 24px 8px;
+width:100%;
 
-position:relative;
+height:48px;
 
-z-index:20;
+background:rgba(5,18,32,.95);
 
-}
+border-top:1px solid rgba(0,213,255,.12);
 
-.announcement-card{
-
-width:min(1200px,95%);
-
-background:rgba(14,24,40,.55);
-
-backdrop-filter:blur(18px);
-
--webkit-backdrop-filter:blur(18px);
-
-border:1px solid rgba(0,213,255,.12);
-
-border-radius:22px;
+border-bottom:1px solid rgba(0,213,255,.12);
 
 overflow:hidden;
 
-box-shadow:
-
-0 10px 40px rgba(0,0,0,.25),
-
-0 0 30px rgba(0,213,255,.05);
-
-transition:.35s ease;
+position:relative;
 
 }
 
-.announcement-card:hover{
+.live-label{
 
-transform:translateY(-2px);
+min-width:180px;
 
-border-color:rgba(0,213,255,.28);
-
-box-shadow:
-
-0 18px 55px rgba(0,0,0,.30),
-
-0 0 40px rgba(0,213,255,.10);
-
-}
-
-#announcement-slider{
-
-min-height:74px;
+height:100%;
 
 display:flex;
 
@@ -609,67 +577,157 @@ align-items:center;
 
 justify-content:center;
 
-padding:18px 28px;
+gap:10px;
+
+font-weight:700;
+
+font-size:14px;
+
+letter-spacing:.8px;
+
+color:#7fe8ff;
+
+border-right:1px solid rgba(255,255,255,.08);
+
+background:linear-gradient(
+90deg,
+rgba(0,213,255,.08),
+rgba(255,255,255,0)
+);
+
+z-index:2;
 
 }
 
-#announcement-dots{
+.live-dot{
 
-display:flex;
+width:10px;
 
-justify-content:center;
-
-gap:8px;
-
-padding:0 0 14px;
-
-}
-
-#announcement-dots span{
-
-width:7px;
-
-height:7px;
+height:10px;
 
 border-radius:50%;
 
-background:rgba(255,255,255,.18);
+background:#00d5ff;
 
-transition:.35s;
+box-shadow:
+0 0 8px #00d5ff,
+0 0 18px #00d5ff;
+
+animation:pulseLive 1.8s infinite;
 
 }
 
-#announcement-dots span.active{
+.live-ribbon-track{
 
-width:28px;
+flex:1;
 
-border-radius:50px;
+overflow:hidden;
 
-background:#00d5ff;
+position:relative;
 
-box-shadow:0 0 12px rgba(0,213,255,.45);
+height:100%;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.live-ribbon-content{
+
+display:flex;
+
+align-items:center;
+
+gap:40px;
+
+white-space:nowrap;
+
+padding-left:40px;
+
+animation:liveMove 35s linear infinite;
+
+font-size:15px;
+
+font-weight:500;
+
+color:#f4f8fb;
+
+}
+
+.live-ribbon:hover .live-ribbon-content{
+
+animation-play-state:paused;
+
+}
+
+@keyframes liveMove{
+
+0%{
+
+transform:translateX(100%);
+
+}
+
+100%{
+
+transform:translateX(-100%);
+
+}
+
+}
+
+@keyframes pulseLive{
+
+0%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:.4;
+
+transform:scale(.8);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
 
 }
 
 @media(max-width:768px){
 
-.announcement{
+.live-label{
 
-padding:16px 14px 4px;
+min-width:120px;
 
-}
-
-.announcement-card{
-
-border-radius:18px;
+font-size:12px;
 
 }
 
-#announcement-slider{
+.live-ribbon{
 
-padding:16px;
+height:44px;
 
-min-height:84px;
+}
+
+.live-ribbon-content{
+
+font-size:13px;
+
+gap:28px;
+
+animation-duration:28s;
 
 }
 
