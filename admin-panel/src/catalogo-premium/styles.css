@@ -674,3 +674,73 @@ min-height:84px;
 }
 
 }
+
+/*=========================================
+HERO LAYOUT V2
+=========================================*/
+
+.hero{
+
+max-width:1400px;
+
+margin:40px auto 0;
+
+padding:0 40px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:70px;
+
+}
+
+.hero-left{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.hero-right{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.hero-banner{
+
+width:100%;
+
+max-width:850px;
+
+display:block;
+
+border-radius:28px;
+
+}
+
+.hero-subcats{
+
+grid-column:1 / -1;
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
