@@ -539,107 +539,137 @@ transform:translateX(-100%);
 }
 
 /*==================================================
-TRUST KPIs
-Pata y Aleta Platform v1.0
+PATA Y ALETA PLATFORM
+Premium Live Banner v1.0
 ==================================================*/
 
-.trust-kpis{
+.announcement{
 
-display:grid;
+width:100%;
 
-grid-template-columns:repeat(4,1fr);
+display:flex;
 
-gap:16px;
+justify-content:center;
 
-margin:34px 0 28px;
+padding:22px 24px 8px;
 
-}
+position:relative;
 
-.trust-item{
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:18px;
-
-padding:18px 14px;
-
-text-align:center;
-
-backdrop-filter:blur(14px);
-
-transition:.35s ease;
-
-cursor:default;
+z-index:20;
 
 }
 
-.trust-item:hover{
+.announcement-card{
 
-transform:translateY(-6px);
+width:min(1200px,95%);
 
-border-color:rgba(0,213,255,.45);
+background:rgba(14,24,40,.55);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(0,213,255,.12);
+
+border-radius:22px;
+
+overflow:hidden;
 
 box-shadow:
 
-0 12px 35px rgba(0,213,255,.12);
+0 10px 40px rgba(0,0,0,.25),
+
+0 0 30px rgba(0,213,255,.05);
+
+transition:.35s ease;
 
 }
 
-.trust-icon{
+.announcement-card:hover{
 
-display:block;
+transform:translateY(-2px);
 
-font-size:28px;
+border-color:rgba(0,213,255,.28);
 
-margin-bottom:10px;
+box-shadow:
 
-}
+0 18px 55px rgba(0,0,0,.30),
 
-.trust-item strong{
-
-display:block;
-
-font-size:16px;
-
-font-weight:700;
-
-color:#fff;
-
-margin-bottom:6px;
+0 0 40px rgba(0,213,255,.10);
 
 }
 
-.trust-item small{
+#announcement-slider{
 
-display:block;
+min-height:74px;
 
-font-size:13px;
+display:flex;
 
-color:#b8c6d8;
+align-items:center;
 
-line-height:1.5;
+justify-content:center;
 
-}
-
-@media(max-width:900px){
-
-.trust-kpis{
-
-grid-template-columns:repeat(2,1fr);
+padding:18px 28px;
 
 }
 
+#announcement-dots{
+
+display:flex;
+
+justify-content:center;
+
+gap:8px;
+
+padding:0 0 14px;
+
 }
 
-@media(max-width:600px){
+#announcement-dots span{
 
-.trust-kpis{
+width:7px;
 
-grid-template-columns:1fr;
+height:7px;
 
-gap:12px;
+border-radius:50%;
+
+background:rgba(255,255,255,.18);
+
+transition:.35s;
+
+}
+
+#announcement-dots span.active{
+
+width:28px;
+
+border-radius:50px;
+
+background:#00d5ff;
+
+box-shadow:0 0 12px rgba(0,213,255,.45);
+
+}
+
+@media(max-width:768px){
+
+.announcement{
+
+padding:16px 14px 4px;
+
+}
+
+.announcement-card{
+
+border-radius:18px;
+
+}
+
+#announcement-slider{
+
+padding:16px;
+
+min-height:84px;
 
 }
 
