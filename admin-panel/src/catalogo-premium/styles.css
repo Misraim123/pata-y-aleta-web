@@ -539,35 +539,32 @@ transform:translateX(-100%);
 }
 
 /*==================================================
-PATA Y ALETA LIVE RIBBON
-v1.0
+PATA Y ALETA LIVE
 ==================================================*/
 
 .live-ribbon{
+
+width:100%;
+
+height:52px;
 
 display:flex;
 
 align-items:center;
 
-width:100%;
+background:#071522;
 
-height:48px;
+border-top:1px solid rgba(255,255,255,.05);
 
-background:rgba(5,18,32,.95);
-
-border-top:1px solid rgba(0,213,255,.12);
-
-border-bottom:1px solid rgba(0,213,255,.12);
+border-bottom:1px solid rgba(255,255,255,.05);
 
 overflow:hidden;
-
-position:relative;
 
 }
 
 .live-label{
 
-min-width:180px;
+flex:0 0 150px;
 
 height:100%;
 
@@ -579,23 +576,15 @@ justify-content:center;
 
 gap:10px;
 
-font-weight:700;
-
 font-size:14px;
 
-letter-spacing:.8px;
+font-weight:700;
 
-color:#7fe8ff;
+color:#63d8ff;
 
 border-right:1px solid rgba(255,255,255,.08);
 
-background:linear-gradient(
-90deg,
-rgba(0,213,255,.08),
-rgba(255,255,255,0)
-);
-
-z-index:2;
+background:rgba(0,213,255,.05);
 
 }
 
@@ -609,11 +598,9 @@ border-radius:50%;
 
 background:#00d5ff;
 
-box-shadow:
-0 0 8px #00d5ff,
-0 0 18px #00d5ff;
+box-shadow:0 0 15px #00d5ff;
 
-animation:pulseLive 1.8s infinite;
+animation:livePulse 2s infinite;
 
 }
 
@@ -625,33 +612,31 @@ overflow:hidden;
 
 position:relative;
 
-height:100%;
-
-display:flex;
-
-align-items:center;
-
 }
 
 .live-ribbon-content{
 
+height:52px;
+
 display:flex;
 
 align-items:center;
 
-gap:40px;
+gap:36px;
 
 white-space:nowrap;
 
-padding-left:40px;
+width:max-content;
 
-animation:liveMove 35s linear infinite;
+padding-left:100%;
+
+animation:liveTicker 32s linear infinite;
+
+color:white;
 
 font-size:15px;
 
 font-weight:500;
-
-color:#f4f8fb;
 
 }
 
@@ -661,11 +646,11 @@ animation-play-state:paused;
 
 }
 
-@keyframes liveMove{
+@keyframes liveTicker{
 
 0%{
 
-transform:translateX(100%);
+transform:translateX(0);
 
 }
 
@@ -677,7 +662,7 @@ transform:translateX(-100%);
 
 }
 
-@keyframes pulseLive{
+@keyframes livePulse{
 
 0%{
 
@@ -689,7 +674,7 @@ transform:scale(1);
 
 50%{
 
-opacity:.4;
+opacity:.45;
 
 transform:scale(.8);
 
@@ -700,34 +685,6 @@ transform:scale(.8);
 opacity:1;
 
 transform:scale(1);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.live-label{
-
-min-width:120px;
-
-font-size:12px;
-
-}
-
-.live-ribbon{
-
-height:44px;
-
-}
-
-.live-ribbon-content{
-
-font-size:13px;
-
-gap:28px;
-
-animation-duration:28s;
 
 }
 
