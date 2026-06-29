@@ -237,3 +237,57 @@ section p{
 line-height:1.8;
 
 }
+
+/*==================================================
+LIVE RIBBON FIX
+==================================================*/
+
+.live-ribbon{
+
+display:flex !important;
+
+align-items:center !important;
+
+overflow:hidden !important;
+
+position:relative;
+
+z-index:50;
+
+}
+
+.live-label{
+
+display:flex !important;
+
+align-items:center;
+
+justify-content:center;
+
+flex:0 0 150px;
+
+}
+
+.live-ribbon-track{
+
+display:flex;
+
+align-items:center;
+
+flex:1;
+
+overflow:hidden;
+
+}
+
+.live-ribbon-content{
+
+display:flex;
+
+align-items:center;
+
+white-space:nowrap;
+
+width:max-content;
+
+}
