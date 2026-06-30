@@ -24,40 +24,18 @@ function renderPromotion(container){
 
     container.innerHTML = `
 
-<div class="op-card">
+<div class="op-compact">
 
-    <div class="op-left">
-
-        <div
+    <div
         class="op-icon"
         style="color:${promo.color}"
-        >
-
-            ${promo.icon}
-
-        </div>
-
+    >
+        ${promo.icon}
     </div>
 
-    <div class="op-right">
+    <div class="op-title">
 
-        <span class="op-badge">
-
-            ${promo.badge}
-
-        </span>
-
-        <h3>
-
-            ${promo.title}
-
-        </h3>
-
-        <p>
-
-            ${promo.subtitle}
-
-        </p>
+        ${promo.title}
 
     </div>
 
