@@ -1,280 +1,212 @@
 /*=========================================
 OCEAN PULSE
-v0.1
+v1.0 FOUNDATION
 =========================================*/
 
 #ocean-pulse{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+height:52px;
 
 width:100%;
 
+padding:0 14px;
+
+}
+
+/*========================*/
+
+.op-wrapper{
+
+position:relative;
+
+width:100%;
+
+}
+
+/*========================*/
+
+.op-bar{
+
 height:52px;
 
 display:flex;
 
 align-items:center;
 
-padding:0 24px;
+gap:14px;
 
-}
+padding:0 18px;
 
-.op-card{
+border-radius:16px;
 
-display:flex;
+background:rgba(255,255,255,.03);
 
-align-items:center;
+border:1px solid rgba(255,255,255,.05);
 
-gap:18px;
-
-color:white;
-
-}
-
-.op-left{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-width:52px;
-
-height:52px;
-
-}
-
-.op-icon{
-
-font-size:28px;
-
-}
-
-.op-right{
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-}
-
-.op-badge{
-
-display:inline-flex;
-
-width:max-content;
-
-padding:3px 10px;
-
-border-radius:999px;
-
-font-size:11px;
-
-font-weight:700;
-
-letter-spacing:.4px;
-
-background:rgba(255,255,255,.08);
-
-margin-bottom:4px;
-
-}
-
-.op-right h3{
-
-margin:0;
-
-font-size:18px;
-
-font-weight:700;
-
-line-height:1.1;
-
-}
-
-.op-right p{
-
-margin:2px 0 0;
-
-font-size:14px;
-
-opacity:.8;
-
-}
-
-/*=========================================
-OCEAN PULSE LUXURY UI
-v0.2
-=========================================*/
-
-#ocean-pulse{
-
-display:flex;
-align-items:center;
-height:52px;
-padding:0 24px;
-
-}
-
-.op-card{
-
-display:flex;
-align-items:center;
-gap:16px;
-
-padding:8px 18px;
-
-border-radius:18px;
-
-background:rgba(255,255,255,.04);
-
-border:1px solid rgba(255,255,255,.06);
-
-backdrop-filter:blur(12px);
+cursor:pointer;
 
 transition:.35s;
 
-cursor:pointer;
+}
+
+.op-bar:hover{
+
+background:rgba(255,255,255,.05);
+
+border-color:rgba(0,213,255,.22);
 
 }
 
-.op-card:hover{
-
-background:rgba(0,213,255,.08);
-
-border-color:rgba(0,213,255,.25);
-
-transform:translateY(-1px);
-
-}
-
-.op-left{
-
-width:44px;
-height:44px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-}
-
-.op-icon{
-
-font-size:28px;
-
-filter:drop-shadow(
-0 0 12px rgba(0,213,255,.25)
-);
-
-}
-
-.op-right{
-
-display:flex;
-flex-direction:column;
-
-}
-
-.op-badge{
-
-display:inline-flex;
-
-width:max-content;
-
-padding:4px 10px;
-
-margin-bottom:5px;
-
-border-radius:999px;
-
-font-size:10px;
-
-font-weight:700;
-
-letter-spacing:1px;
-
-text-transform:uppercase;
-
-background:rgba(0,213,255,.12);
-
-color:#6adfff;
-
-}
-
-.op-right h3{
-
-margin:0;
-
-font-size:28px;
-
-font-weight:800;
-
-line-height:1;
-
-}
-
-.op-right p{
-
-margin-top:5px;
-
-font-size:15px;
-
-color:rgba(255,255,255,.75);
-
-}
-
-/*=========================================
-OCEAN PULSE COMPACT
-=========================================*/
-
-.op-compact{
-
-display:flex;
-align-items:center;
-gap:14px;
-
-height:52px;
-
-padding:0 10px;
-
-color:white;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.30s;
-
-}
-
-.op-compact:hover{
-
-color:#63d8ff;
-
-}
-
-.op-title{
-
-font-size:17px;
-
-font-weight:700;
-
-letter-spacing:.2px;
-
-white-space:nowrap;
-
-}
+/*========================*/
 
 .op-icon{
 
 font-size:24px;
 
 display:flex;
+
 align-items:center;
+
 justify-content:center;
 
-width:28px;
+width:30px;
+
+flex-shrink:0;
+
+}
+
+/*========================*/
+
+.op-title{
+
+flex:1;
+
+font-size:16px;
+
+font-weight:700;
+
+color:#fff;
+
+letter-spacing:.2px;
+
+}
+
+/*========================*/
+
+.op-arrow{
+
+width:18px;
+
+height:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#74ddff;
+
+animation:oceanArrow 2.2s infinite;
+
+transition:.35s;
+
+}
+
+.op-bar:hover .op-arrow{
+
+transform:rotate(180deg);
+
+}
+
+.op-arrow svg{
+
+width:16px;
+
+height:16px;
+
+}
+
+/*========================*/
+
+.op-panel{
+
+position:absolute;
+
+left:0;
+
+top:58px;
+
+width:100%;
+
+min-height:260px;
+
+border-radius:22px;
+
+background:rgba(7,21,34,.82);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 30px 60px rgba(0,0,0,.35);
+
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(-12px);
+
+transition:.35s;
+
+z-index:100;
+
+overflow:hidden;
+
+}
+
+/*========================*/
+
+.op-wrapper:hover .op-panel{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateY(0);
+
+}
+
+/*========================*/
+
+@keyframes oceanArrow{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(4px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
 
 }
