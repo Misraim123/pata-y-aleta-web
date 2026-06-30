@@ -58,6 +58,68 @@ function renderPromotion(container){
 
     <div class="op-panel">
 
+    <div class="op-item">
+
+        <div class="op-item-icon">⚡</div>
+
+        <div class="op-item-text">
+
+            <h4>Rescate 48 hrs</h4>
+
+            <p>Agenda hoy mismo</p>
+
+        </div>
+
+        <div class="op-go">→</div>
+
+    </div>
+
+    <div class="op-item">
+
+        <div class="op-item-icon">🐠</div>
+
+        <div class="op-item-text">
+
+            <h4>Corales Australianos</h4>
+
+            <p>Nueva colección disponible</p>
+
+        </div>
+
+        <div class="op-go">→</div>
+
+    </div>
+
+    <div class="op-item">
+
+        <div class="op-item-icon">💎</div>
+
+        <div class="op-item-text">
+
+            <h4>Diseño Premium</h4>
+
+            <p>Creamos tu ecosistema ideal</p>
+
+        </div>
+
+        <div class="op-go">→</div>
+
+    </div>
+
+    <div class="op-item">
+
+        <div class="op-item-icon">🎁</div>
+
+        <div class="op-item-text">
+
+            <h4>Promoción del mes</h4>
+
+            <p>10% primer mantenimiento</p>
+
+        </div>
+
+        <div class="op-go">→</div>
+
     </div>
 
 </div>
