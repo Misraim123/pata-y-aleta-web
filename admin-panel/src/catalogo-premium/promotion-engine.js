@@ -124,6 +124,8 @@ function renderPromotion(container){
 
 </div>
 
+</div>
+
 `;
 
 }

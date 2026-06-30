@@ -59,6 +59,10 @@ cursor:pointer;
 
 transition:.35s;
 
+position:relative;
+
+z-index:1000;
+
 }
 
 .op-bar:hover{
@@ -153,6 +157,8 @@ transform:translateX(-50%) translateY(-12px);
 
 width:620px;
 
+pointer-events:none;
+
 min-height:420px;
 
 border-radius:28px;
@@ -197,6 +203,8 @@ z-index:999;
 .op-wrapper:hover .op-panel{
 
 opacity:1;
+
+pointer-events:auto;
 
 visibility:visible;
 
