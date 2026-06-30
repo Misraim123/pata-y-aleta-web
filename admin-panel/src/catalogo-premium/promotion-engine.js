@@ -1,7 +1,7 @@
 /*=========================================
 PATA Y ALETA
 OCEAN PULSE ENGINE
-v1.0
+v0.2
 =========================================*/
 
 let currentPromotion = 0;
@@ -9,9 +9,9 @@ let currentPromotion = 0;
 document.addEventListener("DOMContentLoaded", () => {
 
     const container =
-        document.querySelector(".live-ribbon-content");
+        document.querySelector("#ocean-pulse");
 
-    if (!container) return;
+    if(!container) return;
 
     renderPromotion(container);
 
@@ -24,13 +24,44 @@ function renderPromotion(container){
 
     container.innerHTML = `
 
-<span>${promo.icon}</span>
+<div class="op-card">
 
-<span>${promo.badge}</span>
+    <div class="op-left">
 
-<span>${promo.title}</span>
+        <div
+        class="op-icon"
+        style="color:${promo.color}"
+        >
 
-<span>${promo.subtitle}</span>
+            ${promo.icon}
+
+        </div>
+
+    </div>
+
+    <div class="op-right">
+
+        <span class="op-badge">
+
+            ${promo.badge}
+
+        </span>
+
+        <h3>
+
+            ${promo.title}
+
+        </h3>
+
+        <p>
+
+            ${promo.subtitle}
+
+        </p>
+
+    </div>
+
+</div>
 
 `;
 
