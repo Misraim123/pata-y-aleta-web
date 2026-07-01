@@ -844,3 +844,19 @@ color:#63f0ed;
 flex-shrink:0;
 
 }
+
+.promo-emoji{
+
+font-size:26px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:34px;
+
+flex-shrink:0;
+
+}

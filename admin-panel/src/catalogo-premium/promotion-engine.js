@@ -618,13 +618,32 @@ function updateBar(promotion){
             '.ocean-pulse__promo-subtitle'
         );
 
-    if(title){
+const ICON_MAP = {
 
-    title.innerHTML =
-        `${iconMarkup(promotion.icon)}
-        <span>${promotion.title}</span>`;
+shipping:"🚚",
 
-}
+service:"⚡",
+
+new:"🐠",
+
+promo:"🎁",
+
+premium:"💎"
+
+};
+
+const icon =
+ICON_MAP[promotion.type] || "🐠";
+
+title.innerHTML = `
+<span class="promo-emoji">
+${icon}
+</span>
+
+<span>
+${promotion.title}
+</span>
+`;
 
     if(subtitle){
 
