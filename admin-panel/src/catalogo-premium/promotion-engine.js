@@ -946,7 +946,11 @@ ${promotion.title}
 
     createBar();
     // createPanel();
+    if (state.track) {
     renderPromotions();
+} else {
+    updateBar(state.promotions[state.activeIndex]);
+}
     bindEvents();
     startRotation();
 
