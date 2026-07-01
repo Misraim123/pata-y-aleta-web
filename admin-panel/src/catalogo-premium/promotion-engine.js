@@ -803,24 +803,26 @@ ${promotion.title}
     });
 
     state.track.addEventListener('click', event => {
-      const link = event.target.closest(
-        '[data-ocean-pulse-id]'
-      );
 
-      if (!link) {
-        return;
-      }
+  const link = event.target.closest(
+    '[data-ocean-pulse-id]'
+  );
 
-      const promotion = state.promotions.find(
-        item => item.id === link.dataset.oceanPulseId
-      );
+  if (!link) {
+    return;
+  }
 
-      document.dispatchEvent(
-        new CustomEvent('oceanpulse:select', {
-          detail: promotion || null
-        })
-      );
-    });
+  event.preventDefault();
+
+  event.stopPropagation();
+
+  document.dispatchEvent(
+    new CustomEvent('oceanpulse:cta', {
+      detail: state.promotions[state.activeIndex]
+    })
+  );
+
+});
 
     document.addEventListener('keydown', event => {
       if (!isOpen()) {
