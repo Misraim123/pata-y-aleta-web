@@ -480,7 +480,7 @@
       </div>
     `;
 
-    document.body.appendChild(panel);
+   // document.body.appendChild(panel);
 
     state.panel = panel;
     state.track = panel.querySelector('.ocean-pulse-panel__track');
@@ -719,12 +719,16 @@ ${promotion.title}
   '.ocean-pulse__bar-main'
 );
 
-    state.panel.classList.toggle('is-open', open);
+    if (state.panel) {
 
-    state.panel.setAttribute(
-      'aria-hidden',
-      open ? 'false' : 'true'
-    );
+  state.panel.classList.toggle('is-open', open);
+
+  state.panel.setAttribute(
+    'aria-hidden',
+    open ? 'false' : 'true'
+  );
+
+}
 
    bar?.setAttribute(
   'aria-expanded',
@@ -941,7 +945,7 @@ ${promotion.title}
     state.promotions = promotions;
 
     createBar();
-    createPanel();
+    // createPanel();
     renderPromotions();
     bindEvents();
     startRotation();
