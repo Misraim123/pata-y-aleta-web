@@ -4,7 +4,7 @@ OCEAN PULSE
 Promotion Data
 =========================================*/
 
-const OCEAN_PULSE = [
+window.OCEAN_PULSE_PROMOTIONS = [
 
 {
 
