@@ -487,44 +487,62 @@
     state.dots = panel.querySelector('.ocean-pulse-panel__dots');
   }
 
-  function createBar() {
-    state.root.innerHTML = `
-      <button
-        class="ocean-pulse-bar"
-        type="button"
-        aria-expanded="false"
-        aria-controls="${PANEL_ID}"
-      >
-        <span
-          class="ocean-pulse-bar__waterline"
-          aria-hidden="true"
-        ></span>
+ function createBar() {
 
-        <span
-          class="ocean-pulse-bar__signal"
-          aria-hidden="true"
-        >
-          <span class="ocean-pulse-bar__signal-core"></span>
+  state.root.innerHTML = `
+  
+  <div class="ocean-pulse__bar">
+
+    <button
+      class="ocean-pulse__bar-main"
+      type="button"
+      aria-expanded="false"
+      aria-controls="${PANEL_ID}"
+    >
+
+      <span class="ocean-pulse__ripple"></span>
+
+      <span class="ocean-pulse__mini-icon">
+
+        ${ICONS.ocean}
+
+      </span>
+
+      <span class="ocean-pulse__copy">
+
+        <span class="ocean-pulse__eyebrow">
+
+          OCEAN PULSE
+
         </span>
 
-        <span class="ocean-pulse-bar__copy">
-          <span class="ocean-pulse-bar__eyebrow">
-            OCEAN PULSE
-          </span>
+        <span class="ocean-pulse__bar-message">
 
-          <span class="ocean-pulse-bar__message"></span>
         </span>
 
-        <span
-          class="ocean-pulse-bar__arrow"
-          aria-hidden="true"
-        >
-          ${ICONS.chevron}
-        </span>
-      </button>
-    `;
-  }
+        <span class="ocean-pulse__live">
 
+          <i></i>
+
+          EN VIVO
+
+        </span>
+
+      </span>
+
+      <span class="ocean-pulse__arrow">
+
+        ${ICONS.chevron}
+
+      </span>
+
+    </button>
+
+  </div>
+
+  `;
+
+}
   function renderPromotions() {
     const current = state.promotions[state.activeIndex];
 
