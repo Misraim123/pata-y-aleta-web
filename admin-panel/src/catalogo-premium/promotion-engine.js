@@ -654,40 +654,38 @@ ${promotion.title}
 
 }
 
-  function updateActive() {
-    const promotion = state.promotions[state.activeIndex];
+ function updateActive() {
+
+    const promotion =
+        state.promotions[state.activeIndex];
 
     if (!promotion) {
-      return;
+        return;
     }
 
-    state.cards.forEach((card, index) => {
-      const isActive = index === state.activeIndex;
+    if (state.cards) {
 
-      card.classList.toggle('is-active', isActive);
+        state.cards.forEach((card, index) => {
 
-      card.setAttribute(
-        'aria-hidden',
-        isActive ? 'false' : 'true'
-      );
-    });
+            const isActive =
+                index === state.activeIndex;
 
-    state.dots
-      .querySelectorAll('.ocean-pulse-panel__dot')
-      .forEach((dot, index) => {
-        dot.classList.toggle(
-          'is-active',
-          index === state.activeIndex
-        );
-      });
+            card.classList.toggle(
+                'is-active',
+                isActive
+            );
+
+            card.setAttribute(
+                'aria-hidden',
+                isActive ? 'false' : 'true'
+            );
+
+        });
+
+    }
 
     updateBar(promotion);
 
-    document.dispatchEvent(
-      new CustomEvent('oceanpulse:change', {
-        detail: promotion
-      })
-    );
   }
 
   function goTo(index) {
