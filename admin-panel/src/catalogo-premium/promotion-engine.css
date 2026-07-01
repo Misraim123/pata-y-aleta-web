@@ -34,11 +34,15 @@ body.ocean-pulse-open {
 
 position:relative;
 
-right:auto;
+display:flex;
 
-bottom:auto;
+align-items:center;
 
 width:100%;
+
+max-width:none;
+
+padding:0;
 
 opacity:1;
 
@@ -60,11 +64,11 @@ pointer-events:auto;
   align-items: center;
   gap: 11px;
   width: 100%;
-  min-height: 59px;
-  padding: 8px 12px 8px 9px;
+  min-height: 66px;
+  padding:10px 18px;
   overflow: hidden;
   border: 1px solid rgba(108, 238, 255, .34);
-  border-radius: 18px;
+  border-radius:20px;
   background:
     linear-gradient(115deg, rgba(5, 35, 53, .94), rgba(3, 17, 31, .9)),
     rgba(3, 17, 31, .9);
@@ -155,29 +159,47 @@ pointer-events:auto;
   stroke-width: 1.2;
 }
 
-.ocean-pulse__copy {
-  display: grid;
-  flex: 1 1 auto;
-  min-width: 0;
-  gap: 2px;
+.ocean-pulse__copy{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+flex:1;
+
+min-width:0;
+
+gap:2px;
+
 }
 
 .ocean-pulse__eyebrow {
   color: var(--ocean-pulse-cyan);
-  font-size: 9px;
+  font-size:11px;
   font-weight: 800;
   letter-spacing: .17em;
   line-height: 1.2;
+  opacity:.75;
 }
 
-.ocean-pulse__bar-message {
-  overflow: hidden;
-  color: #edfaff;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.3;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.ocean-pulse__bar-message{
+
+font-size:22px;
+
+font-weight:800;
+
+color:#ffffff;
+
+letter-spacing:-.4px;
+
+white-space:nowrap;
+
+overflow:hidden;
+
+text-overflow:ellipsis;
+
 }
 
 .ocean-pulse__live {
@@ -207,6 +229,7 @@ pointer-events:auto;
   height: 28px;
   color: var(--ocean-pulse-aqua);
   transition: transform .25s ease;
+  margin-left:auto;
 }
 
 .ocean-pulse__arrow svg {
