@@ -906,10 +906,15 @@ ${promotion.title}
     }
 
     state.promotions = nextPromotions;
-    state.activeIndex = 0;
+state.activeIndex = 0;
 
+if (state.track) {
     renderPromotions();
-    startRotation();
+} else {
+    updateBar(state.promotions[state.activeIndex]);
+}
+
+startRotation();
   }
 
   function init() {
