@@ -487,7 +487,7 @@
     state.dots = panel.querySelector('.ocean-pulse-panel__dots');
   }
 
- function createBar() {
+function createBar() {
 
   state.root.innerHTML = `
   
@@ -500,41 +500,23 @@
       aria-controls="${PANEL_ID}"
     >
 
-      <span class="ocean-pulse__ripple"></span>
+      <div class="ocean-pulse__promo">
 
-      <span class="ocean-pulse__mini-icon">
+        <div class="ocean-pulse__promo-title">
 
-        ${ICONS.ocean}
+        </div>
 
-      </span>
+        <div class="ocean-pulse__promo-subtitle">
 
-      <span class="ocean-pulse__copy">
+        </div>
 
-        <span class="ocean-pulse__eyebrow">
+      </div>
 
-          OCEAN PULSE
-
-        </span>
-
-        <span class="ocean-pulse__bar-message">
-
-        </span>
-
-        <span class="ocean-pulse__live">
-
-          <i></i>
-
-          EN VIVO
-
-        </span>
-
-      </span>
-
-      <span class="ocean-pulse__arrow">
+      <div class="ocean-pulse__arrow">
 
         ${ICONS.chevron}
 
-      </span>
+      </div>
 
     </button>
 
@@ -622,18 +604,35 @@
     );
   }
 
-  function updateBar(promotion) {
-    const message = state.root.querySelector(
-      '.ocean-pulse-bar__message'
-    );
+function updateBar(promotion){
 
-    if (!message || !promotion) {
-      return;
+    if(!promotion) return;
+
+    const title =
+        state.root.querySelector(
+            '.ocean-pulse__promo-title'
+        );
+
+    const subtitle =
+        state.root.querySelector(
+            '.ocean-pulse__promo-subtitle'
+        );
+
+    if(title){
+
+        title.textContent =
+            `${promotion.icon} ${promotion.title}`;
+
     }
 
-    message.textContent =
-      `${promotion.label} · ${promotion.title}`;
-  }
+    if(subtitle){
+
+        subtitle.textContent =
+            promotion.subtitle;
+
+    }
+
+}
 
   function updateActive() {
     const promotion = state.promotions[state.activeIndex];
