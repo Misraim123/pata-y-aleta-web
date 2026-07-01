@@ -695,9 +695,9 @@ function updateBar(promotion){
       return;
     }
 
-    const bar = state.root.querySelector(
-      '.ocean-pulse-bar'
-    );
+   const bar = state.root.querySelector(
+  '.ocean-pulse__bar-main'
+);
 
     state.panel.classList.toggle('is-open', open);
 
@@ -706,10 +706,10 @@ function updateBar(promotion){
       open ? 'false' : 'true'
     );
 
-    bar?.setAttribute(
-      'aria-expanded',
-      open ? 'true' : 'false'
-    );
+   bar?.setAttribute(
+  'aria-expanded',
+  open ? 'true' : 'false'
+);
 
     document.body.classList.toggle(
       'ocean-pulse-is-open',
@@ -741,8 +741,8 @@ function updateBar(promotion){
 
   function bindEvents() {
     const bar = state.root.querySelector(
-      '.ocean-pulse-bar'
-    );
+  '.ocean-pulse__bar-main'
+);
 
     bar?.addEventListener('click', () => {
       setOpen(!isOpen());
