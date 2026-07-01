@@ -5,14 +5,14 @@
  * Montaje oficial: <div id="ocean-pulse"></div>
  */
 (() => {
-  'use strict';
+    'use strict';
 
-  const ROOT_ID = 'ocean-pulse';
-  const PANEL_ID = 'oceanPulsePanel';
-  const DEFAULT_INTERVAL = 6500;
+    const ROOT_ID = 'ocean-pulse';
+    const PANEL_ID = 'oceanPulsePanel';
+    const DEFAULT_INTERVAL = 6500;
 
-  const ICONS = {
-    ocean: `
+    const ICONS = {
+        ocean: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 15c2.2 0 2.2-2 4.4-2s2.2 2 4.4 2 2.2-2 4.4-2 2.2 2 4.4 2"/>
         <path d="M3 19c2.2 0 2.2-2 4.4-2s2.2 2 4.4 2 2.2-2 4.4-2 2.2 2 4.4 2"/>
@@ -20,13 +20,13 @@
         <path d="m8.5 6.5 3.5-3.5 3.5 3.5"/>
       </svg>`,
 
-    fish: `
+        fish: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M4 12c2.1-3.6 5-5.4 8.5-5.4 2.1 0 4.1.7 5.7 2.2L21 6.8v10.4l-2.8-2.1a9 9 0 0 1-5.7 2.1C9 17.2 6.1 15.4 4 12Z"/>
         <path d="M10 12h.01"/>
       </svg>`,
 
-    coral: `
+        coral: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 21V9"/>
         <path d="M12 14 7 9V5"/>
@@ -35,19 +35,19 @@
         <path d="M7 5h3M17 7h3M15 3h3"/>
       </svg>`,
 
-    rescue: `
+        rescue: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 21s7-4.7 7-10.5A4.3 4.3 0 0 0 12 7.2a4.3 4.3 0 0 0-7 3.3C5 16.3 12 21 12 21Z"/>
         <path d="M9.4 12h5.2M12 9.4v5.2"/>
       </svg>`,
 
-    care: `
+        care: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 21s-7-4.7-7-10.2A4.5 4.5 0 0 1 12 7.7a4.5 4.5 0 0 1 7 3.1C19 16.3 12 21 12 21Z"/>
         <path d="M9.5 12h5M12 9.5v5"/>
       </svg>`,
 
-    gift: `
+        gift: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M4 10h16v10H4z"/>
         <path d="M12 10v10M3 6h18v4H3z"/>
@@ -55,326 +55,326 @@
         <path d="M12 6h3.2a2 2 0 1 0-2-2C13.2 5.1 12 6 12 6Z"/>
       </svg>`,
 
-    diamond: `
+        diamond: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="m4 9 4-5h8l4 5-8 11L4 9Z"/>
         <path d="M4 9h16M8 4l4 5 4-5M12 9l-2 11M12 9l2 11"/>
       </svg>`,
 
-    arrow: `
+        arrow: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M5 12h13"/>
         <path d="m13 6 6 6-6 6"/>
       </svg>`,
 
-    close: `
+        close: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="m6 6 12 12M18 6 6 18"/>
       </svg>`,
 
-    chevron: `
+        chevron: `
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="m8 10 4 4 4-4"/>
       </svg>`
-  };
-
-  const state = {
-    root: null,
-    panel: null,
-    track: null,
-    dots: null,
-    cards: [],
-    promotions: [],
-    activeIndex: 0,
-    intervalId: null,
-    initialized: false
-  };
-
-  function valueOf(...values) {
-    return values.find(
-      value =>
-        value !== undefined &&
-        value !== null &&
-        value !== ''
-    );
-  }
-
-  function cleanText(value) {
-    return String(value || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-  }
-
-  function iconFor(type) {
-    const normalized = String(type || '').toLowerCase();
-
-    if (['rescate', 'rescue', 'urgente', 'emergency'].includes(normalized)) {
-      return 'rescue';
-    }
-
-    if (['mantenimiento', 'maintenance', 'servicio', 'service', 'cuidado', 'care'].includes(normalized)) {
-      return 'care';
-    }
-
-    if (['corales', 'coral', 'reef'].includes(normalized)) {
-      return 'coral';
-    }
-
-    if (['oferta', 'promo', 'promocion', 'promoción', 'gift'].includes(normalized)) {
-      return 'gift';
-    }
-
-    if (['premium', 'luxury', 'especial'].includes(normalized)) {
-      return 'diamond';
-    }
-
-    if (['peces', 'fish', 'marino', 'marine'].includes(normalized)) {
-      return 'fish';
-    }
-
-    return 'ocean';
-  }
-
-  function labelFor(type) {
-    const normalized = String(type || '').toLowerCase();
-
-    if (['rescate', 'rescue', 'urgente', 'emergency'].includes(normalized)) {
-      return 'RESCATE 48 HRS';
-    }
-
-    if (['mantenimiento', 'maintenance', 'servicio', 'service', 'cuidado', 'care'].includes(normalized)) {
-      return 'CUIDADO PREMIUM';
-    }
-
-    if (['corales', 'coral', 'reef'].includes(normalized)) {
-      return 'ARRECIFE VIVO';
-    }
-
-    if (['oferta', 'promo', 'promocion', 'promoción', 'gift'].includes(normalized)) {
-      return 'SELECCIÓN ESPECIAL';
-    }
-
-    if (['premium', 'luxury', 'especial'].includes(normalized)) {
-      return 'EXPERIENCIA PREMIUM';
-    }
-
-    return 'OCEAN PULSE';
-  }
-
-  function iconMarkup(iconName) {
-    return ICONS[iconName] || ICONS.ocean;
-  }
-
-  function rawPromotions() {
-    const candidates = [
-      window.OCEAN_PULSE_PROMOTIONS,
-      window.promotionData,
-      window.PROMOTION_DATA,
-      window.oceanPulseData,
-      window.OCEAN_PULSE_DATA,
-      window.promotions
-    ];
-
-    for (const candidate of candidates) {
-      if (Array.isArray(candidate)) {
-        return candidate;
-      }
-
-      if (candidate && Array.isArray(candidate.promotions)) {
-        return candidate.promotions;
-      }
-
-      if (candidate && Array.isArray(candidate.items)) {
-        return candidate.items;
-      }
-
-      if (candidate && Array.isArray(candidate.data)) {
-        return candidate.data;
-      }
-    }
-
-    return [];
-  }
-
-  function normalizePromotion(item, position) {
-    const promotion = item || {};
-
-    const type = String(
-      valueOf(
-        promotion.type,
-        promotion.category,
-        promotion.kind,
-        promotion.tag,
-        'premium'
-      )
-    ).toLowerCase();
-
-    const rawIcon = valueOf(
-      promotion.icon,
-      promotion.iconName,
-      iconFor(type)
-    );
-
-    const icon = ICONS[rawIcon]
-      ? rawIcon
-      : iconFor(type);
-
-    return {
-      id: String(
-        valueOf(
-          promotion.id,
-          `ocean-pulse-${position + 1}`
-        )
-      ),
-
-      active: valueOf(
-        promotion.active,
-        promotion.enabled,
-        promotion.visible,
-        true
-      ) !== false,
-
-      priority: Number(
-        valueOf(
-          promotion.priority,
-          promotion.order,
-          promotion.position,
-          position
-        )
-      ) || position,
-
-      startDate: valueOf(
-        promotion.startDate,
-        promotion.startsAt,
-        promotion.start,
-        null
-      ),
-
-      endDate: valueOf(
-        promotion.endDate,
-        promotion.endsAt,
-        promotion.end,
-        null
-      ),
-
-      type,
-      icon,
-
-      label: String(
-        valueOf(
-          promotion.label,
-          promotion.badge,
-          labelFor(type)
-        )
-      ),
-
-      title: String(
-        valueOf(
-          promotion.title,
-          promotion.headline,
-          promotion.name,
-          'Experiencias premium para tu mundo acuático'
-        )
-      ),
-
-      description: String(
-        valueOf(
-          promotion.description,
-          promotion.subtitle,
-          promotion.text,
-          promotion.message,
-          'Descubre soluciones boutique para acuarios, peces, corales y mascotas.'
-        )
-      ),
-
-      cta: String(
-        valueOf(
-          promotion.cta,
-          promotion.buttonText,
-          promotion.actionText,
-          promotion.button,
-          'Conocer más'
-        )
-      ),
-
-      href: String(
-        valueOf(
-          promotion.href,
-          promotion.link,
-          promotion.url,
-          promotion.ctaUrl,
-          '#contacto'
-        )
-      ),
-
-      external: Boolean(
-        valueOf(
-          promotion.external,
-          promotion.newTab,
-          false
-        )
-      )
     };
-  }
 
-  function dateAllows(promotion) {
-    const now = new Date();
-
-    const start = promotion.startDate
-      ? new Date(promotion.startDate)
-      : null;
-
-    const end = promotion.endDate
-      ? new Date(promotion.endDate)
-      : null;
-
-    if (
-      start &&
-      !Number.isNaN(start.getTime()) &&
-      start > now
-    ) {
-      return false;
-    }
-
-    if (
-      end &&
-      !Number.isNaN(end.getTime()) &&
-      end < now
-    ) {
-      return false;
-    }
-
-    return promotion.active;
-  }
-
-  function config() {
-    const source =
-      window.OCEAN_PULSE_CONFIG ||
-      window.oceanPulseConfig ||
-      {};
-
-    return {
-      autoRotate: source.autoRotate !== false,
-
-      interval: Math.max(
-        3200,
-        Number(source.interval || DEFAULT_INTERVAL)
-      )
+    const state = {
+        root: null,
+        panel: null,
+        track: null,
+        dots: null,
+        cards: [],
+        promotions: [],
+        activeIndex: 0,
+        intervalId: null,
+        initialized: false
     };
-  }
 
-  function createPanel() {
-    const panel = document.createElement('section');
+    function valueOf(...values) {
+        return values.find(
+            value =>
+                value !== undefined &&
+                value !== null &&
+                value !== ''
+        );
+    }
 
-    panel.id = PANEL_ID;
-    panel.className = 'ocean-pulse-panel';
-    panel.setAttribute('aria-hidden', 'true');
-    panel.setAttribute('aria-label', 'Ocean Pulse');
+    function cleanText(value) {
+        return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
 
-    panel.innerHTML = `
+    function iconFor(type) {
+        const normalized = String(type || '').toLowerCase();
+
+        if (['rescate', 'rescue', 'urgente', 'emergency'].includes(normalized)) {
+            return 'rescue';
+        }
+
+        if (['mantenimiento', 'maintenance', 'servicio', 'service', 'cuidado', 'care'].includes(normalized)) {
+            return 'care';
+        }
+
+        if (['corales', 'coral', 'reef'].includes(normalized)) {
+            return 'coral';
+        }
+
+        if (['oferta', 'promo', 'promocion', 'promoción', 'gift'].includes(normalized)) {
+            return 'gift';
+        }
+
+        if (['premium', 'luxury', 'especial'].includes(normalized)) {
+            return 'diamond';
+        }
+
+        if (['peces', 'fish', 'marino', 'marine'].includes(normalized)) {
+            return 'fish';
+        }
+
+        return 'ocean';
+    }
+
+    function labelFor(type) {
+        const normalized = String(type || '').toLowerCase();
+
+        if (['rescate', 'rescue', 'urgente', 'emergency'].includes(normalized)) {
+            return 'RESCATE 48 HRS';
+        }
+
+        if (['mantenimiento', 'maintenance', 'servicio', 'service', 'cuidado', 'care'].includes(normalized)) {
+            return 'CUIDADO PREMIUM';
+        }
+
+        if (['corales', 'coral', 'reef'].includes(normalized)) {
+            return 'ARRECIFE VIVO';
+        }
+
+        if (['oferta', 'promo', 'promocion', 'promoción', 'gift'].includes(normalized)) {
+            return 'SELECCIÓN ESPECIAL';
+        }
+
+        if (['premium', 'luxury', 'especial'].includes(normalized)) {
+            return 'EXPERIENCIA PREMIUM';
+        }
+
+        return 'OCEAN PULSE';
+    }
+
+    function iconMarkup(iconName) {
+        return ICONS[iconName] || ICONS.ocean;
+    }
+
+    function rawPromotions() {
+        const candidates = [
+            window.OCEAN_PULSE_PROMOTIONS,
+            window.promotionData,
+            window.PROMOTION_DATA,
+            window.oceanPulseData,
+            window.OCEAN_PULSE_DATA,
+            window.promotions
+        ];
+
+        for (const candidate of candidates) {
+            if (Array.isArray(candidate)) {
+                return candidate;
+            }
+
+            if (candidate && Array.isArray(candidate.promotions)) {
+                return candidate.promotions;
+            }
+
+            if (candidate && Array.isArray(candidate.items)) {
+                return candidate.items;
+            }
+
+            if (candidate && Array.isArray(candidate.data)) {
+                return candidate.data;
+            }
+        }
+
+        return [];
+    }
+
+    function normalizePromotion(item, position) {
+        const promotion = item || {};
+
+        const type = String(
+            valueOf(
+                promotion.type,
+                promotion.category,
+                promotion.kind,
+                promotion.tag,
+                'premium'
+            )
+        ).toLowerCase();
+
+        const rawIcon = valueOf(
+            promotion.icon,
+            promotion.iconName,
+            iconFor(type)
+        );
+
+        const icon = ICONS[rawIcon]
+            ? rawIcon
+            : iconFor(type);
+
+        return {
+            id: String(
+                valueOf(
+                    promotion.id,
+                    `ocean-pulse-${position + 1}`
+                )
+            ),
+
+            active: valueOf(
+                promotion.active,
+                promotion.enabled,
+                promotion.visible,
+                true
+            ) !== false,
+
+            priority: Number(
+                valueOf(
+                    promotion.priority,
+                    promotion.order,
+                    promotion.position,
+                    position
+                )
+            ) || position,
+
+            startDate: valueOf(
+                promotion.startDate,
+                promotion.startsAt,
+                promotion.start,
+                null
+            ),
+
+            endDate: valueOf(
+                promotion.endDate,
+                promotion.endsAt,
+                promotion.end,
+                null
+            ),
+
+            type,
+            icon,
+
+            label: String(
+                valueOf(
+                    promotion.label,
+                    promotion.badge,
+                    labelFor(type)
+                )
+            ),
+
+            title: String(
+                valueOf(
+                    promotion.title,
+                    promotion.headline,
+                    promotion.name,
+                    'Experiencias premium para tu mundo acuático'
+                )
+            ),
+
+            description: String(
+                valueOf(
+                    promotion.description,
+                    promotion.subtitle,
+                    promotion.text,
+                    promotion.message,
+                    'Descubre soluciones boutique para acuarios, peces, corales y mascotas.'
+                )
+            ),
+
+            cta: String(
+                valueOf(
+                    promotion.cta,
+                    promotion.buttonText,
+                    promotion.actionText,
+                    promotion.button,
+                    'Conocer más'
+                )
+            ),
+
+            href: String(
+                valueOf(
+                    promotion.href,
+                    promotion.link,
+                    promotion.url,
+                    promotion.ctaUrl,
+                    '#contacto'
+                )
+            ),
+
+            external: Boolean(
+                valueOf(
+                    promotion.external,
+                    promotion.newTab,
+                    false
+                )
+            )
+        };
+    }
+
+    function dateAllows(promotion) {
+        const now = new Date();
+
+        const start = promotion.startDate
+            ? new Date(promotion.startDate)
+            : null;
+
+        const end = promotion.endDate
+            ? new Date(promotion.endDate)
+            : null;
+
+        if (
+            start &&
+            !Number.isNaN(start.getTime()) &&
+            start > now
+        ) {
+            return false;
+        }
+
+        if (
+            end &&
+            !Number.isNaN(end.getTime()) &&
+            end < now
+        ) {
+            return false;
+        }
+
+        return promotion.active;
+    }
+
+    function config() {
+        const source =
+            window.OCEAN_PULSE_CONFIG ||
+            window.oceanPulseConfig ||
+            {};
+
+        return {
+            autoRotate: source.autoRotate !== false,
+
+            interval: Math.max(
+                3200,
+                Number(source.interval || DEFAULT_INTERVAL)
+            )
+        };
+    }
+
+    function createPanel() {
+        const panel = document.createElement('section');
+
+        panel.id = PANEL_ID;
+        panel.className = 'ocean-pulse-panel';
+        panel.setAttribute('aria-hidden', 'true');
+        panel.setAttribute('aria-label', 'Ocean Pulse');
+
+        panel.innerHTML = `
       <div
         class="ocean-pulse-panel__backdrop"
         data-ocean-pulse-close
@@ -480,16 +480,16 @@
       </div>
     `;
 
-   // document.body.appendChild(panel);
+        // document.body.appendChild(panel);
 
-    state.panel = panel;
-    state.track = panel.querySelector('.ocean-pulse-panel__track');
-    state.dots = panel.querySelector('.ocean-pulse-panel__dots');
-  }
+        state.panel = panel;
+        state.track = panel.querySelector('.ocean-pulse-panel__track');
+        state.dots = panel.querySelector('.ocean-pulse-panel__dots');
+    }
 
-function createBar() {
+    function createBar() {
 
-  state.root.innerHTML = `
+        state.root.innerHTML = `
   
   <div class="ocean-pulse__bar">
 
@@ -524,13 +524,13 @@ function createBar() {
 
   `;
 
-}
-  function renderPromotions() {
-    const current = state.promotions[state.activeIndex];
+    }
+    function renderPromotions() {
+        const current = state.promotions[state.activeIndex];
 
-    state.track.innerHTML = state.promotions
-      .map((promotion, index) => {
-        return `
+        state.track.innerHTML = state.promotions
+            .map((promotion, index) => {
+                return `
           <article
             class="ocean-pulse-card ocean-pulse-card--${cleanText(promotion.type)} ${index === state.activeIndex ? 'is-active' : ''}"
             data-ocean-pulse-index="${index}"
@@ -578,12 +578,12 @@ function createBar() {
             </div>
           </article>
         `;
-      })
-      .join('');
+            })
+            .join('');
 
-    state.dots.innerHTML = state.promotions
-      .map((promotion, index) => {
-        return `
+        state.dots.innerHTML = state.promotions
+            .map((promotion, index) => {
+                return `
           <button
             type="button"
             class="ocean-pulse-panel__dot ${index === state.activeIndex ? 'is-active' : ''}"
@@ -591,51 +591,51 @@ function createBar() {
             aria-label="Ver promoción ${index + 1}: ${cleanText(promotion.title)}"
           ></button>
         `;
-      })
-      .join('');
+            })
+            .join('');
 
-    updateBar(current);
-    cacheCards();
-  }
+        updateBar(current);
+        cacheCards();
+    }
 
-  function cacheCards() {
-    state.cards = Array.from(
-      state.track.querySelectorAll('.ocean-pulse-card')
-    );
-  }
-
-function updateBar(promotion){
-
-    if(!promotion) return;
-
-    const title =
-        state.root.querySelector(
-            '.ocean-pulse__promo-title'
+    function cacheCards() {
+        state.cards = Array.from(
+            state.track.querySelectorAll('.ocean-pulse-card')
         );
+    }
 
-    const subtitle =
-        state.root.querySelector(
-            '.ocean-pulse__promo-subtitle'
-        );
+    function updateBar(promotion) {
 
-const ICON_MAP = {
+        if (!promotion) return;
 
-shipping:"🚚",
+        const title =
+            state.root.querySelector(
+                '.ocean-pulse__promo-title'
+            );
 
-service:"⚡",
+        const subtitle =
+            state.root.querySelector(
+                '.ocean-pulse__promo-subtitle'
+            );
 
-new:"🐠",
+        const ICON_MAP = {
 
-promo:"🎁",
+            shipping: "🚚",
 
-premium:"💎"
+            service: "⚡",
 
-};
+            new: "🐠",
 
-const icon =
-ICON_MAP[promotion.type] || "🐠";
+            promo: "🎁",
 
-title.innerHTML = `
+            premium: "💎"
+
+        };
+
+        const icon =
+            ICON_MAP[promotion.type] || "🐠";
+
+        title.innerHTML = `
 <span class="promo-emoji">
 ${icon}
 </span>
@@ -645,369 +645,371 @@ ${promotion.title}
 </span>
 `;
 
-    if(subtitle){
+        if (subtitle) {
 
-   subtitle.textContent =
-    promotion.description;
+            subtitle.textContent =
+                promotion.description;
 
-}
-
- function updateActive() {
-
-    const promotion =
-        state.promotions[state.activeIndex];
-
-    if (!promotion) {
-        return;
-    }
-
-    if (state.cards) {
-
-        state.cards.forEach((card, index) => {
-
-            const isActive =
-                index === state.activeIndex;
-
-            card.classList.toggle(
-                'is-active',
-                isActive
-            );
-
-            card.setAttribute(
-                'aria-hidden',
-                isActive ? 'false' : 'true'
-            );
-
-        });
-
-    }
-
-    updateBar(promotion);
-
-  }
-
-  function goTo(index) {
-    const total = state.promotions.length;
-
-    if (!total) {
-      return;
-    }
-
-    state.activeIndex =
-      ((index % total) + total) % total;
-
-      console.log('Ocean Pulse:', state.activeIndex);
-
-    updateActive();
-  }
-
-  function isOpen() {
-    return Boolean(
-      state.panel &&
-      state.panel.classList.contains('is-open')
-    );
-  }
-
-  function setOpen(open) {
-    if (!state.panel || !state.root) {
-      return;
-    }
-
-   const bar = state.root.querySelector(
-  '.ocean-pulse__bar-main'
-);
-
-    if (state.panel) {
-
-  state.panel.classList.toggle('is-open', open);
-
-  state.panel.setAttribute(
-    'aria-hidden',
-    open ? 'false' : 'true'
-  );
-
-}
-
-   bar?.setAttribute(
-  'aria-expanded',
-  open ? 'true' : 'false'
-);
-
-    document.body.classList.toggle(
-      'ocean-pulse-is-open',
-      open
-    );
-
-    if (open) {
-      window.setTimeout(() => {
-        state.panel
-          .querySelector('.ocean-pulse-panel__close')
-          ?.focus();
-      }, 30);
-
-      document.dispatchEvent(
-        new CustomEvent('oceanpulse:open', {
-          detail: state.promotions[state.activeIndex]
-        })
-      );
-
-      return;
-    }
-
-    bar?.focus();
-
-    document.dispatchEvent(
-      new CustomEvent('oceanpulse:close')
-    );
-  }
-
-function bindEvents() {
-
-  const bar = state.root.querySelector(
-    '.ocean-pulse__bar-main'
-  );
-
-  bar?.addEventListener('click', () => {
-
-    if (state.panel) {
-      setOpen(!isOpen());
-    }
-
-  });
-
-  if (state.panel && state.track && state.dots) {
-
-    state.panel
-      .querySelectorAll('[data-ocean-pulse-close]')
-      .forEach(element => {
-
-        element.addEventListener('click', () => {
-          setOpen(false);
-        });
-
-      });
-
-    state.panel
-      .querySelector('.ocean-pulse-panel__nav--prev')
-      ?.addEventListener('click', () => {
-        goTo(state.activeIndex - 1);
-      });
-
-    state.panel
-      .querySelector('.ocean-pulse-panel__nav--next')
-      ?.addEventListener('click', () => {
-        goTo(state.activeIndex + 1);
-      });
-
-    state.dots.addEventListener('click', event => {
-
-      const button = event.target.closest(
-        '[data-ocean-pulse-dot]'
-      );
-
-      if (!button) {
-        return;
-      }
-
-      goTo(
-        Number(button.dataset.oceanPulseDot)
-      );
-
-    });
-
-    state.track.addEventListener('click', event => {
-
-      const link = event.target.closest(
-        '[data-ocean-pulse-id]'
-      );
-
-      if (!link) {
-        return;
-      }
-
-      event.preventDefault();
-
-      event.stopPropagation();
-
-      document.dispatchEvent(
-        new CustomEvent('oceanpulse:cta', {
-          detail: state.promotions[state.activeIndex]
-        })
-      );
-
-    });
-
-    let touchStartX = 0;
-
-    state.track.addEventListener(
-      'touchstart',
-      event => {
-
-        touchStartX =
-          event.changedTouches[0].clientX;
-
-      },
-      { passive: true }
-    );
-
-    state.track.addEventListener(
-      'touchend',
-      event => {
-
-        const distance =
-          event.changedTouches[0].clientX -
-          touchStartX;
-
-        if (Math.abs(distance) < 40) {
-          return;
         }
 
-        goTo(
-          state.activeIndex +
-          (distance > 0 ? -1 : 1)
-        );
+        }
 
-      },
-      { passive: true }
-    );
+        function updateActive() {
 
-  }
+            const promotion =
+                state.promotions[state.activeIndex];
 
-  document.addEventListener('keydown', event => {
+            if (!promotion) {
+                return;
+            }
 
-    if (!state.panel || !isOpen()) {
-      return;
-    }
+            if (state.cards) {
 
-    if (event.key === 'Escape') {
-      setOpen(false);
-    }
+                state.cards.forEach((card, index) => {
 
-    if (event.key === 'ArrowRight') {
-      goTo(state.activeIndex + 1);
-    }
+                    const isActive =
+                        index === state.activeIndex;
 
-    if (event.key === 'ArrowLeft') {
-      goTo(state.activeIndex - 1);
-    }
+                    card.classList.toggle(
+                        'is-active',
+                        isActive
+                    );
 
-  });
+                    card.setAttribute(
+                        'aria-hidden',
+                        isActive ? 'false' : 'true'
+                    );
 
-}
+                });
 
-  function startRotation() {
-    const options = config();
+            }
 
-    if (
-      !options.autoRotate ||
-      state.promotions.length < 2
-    ) {
-      return;
-    }
+            updateBar(promotion);
 
-    window.clearInterval(state.intervalId);
+        }
 
-    state.intervalId = window.setInterval(() => {
-      if (!isOpen()) {
-        goTo(state.activeIndex + 1);
-      }
-    }, options.interval);
-  }
+        function goTo(index) {
+            const total = state.promotions.length;
 
-  function refresh() {
-    const nextPromotions = rawPromotions()
-      .map(normalizePromotion)
-      .filter(dateAllows)
-      .sort((a, b) => a.priority - b.priority);
+            if (!total) {
+                return;
+            }
 
-    if (!nextPromotions.length) {
-      state.root.innerHTML = '';
-      return;
-    }
+            state.activeIndex =
+                ((index % total) + total) % total;
 
-    state.promotions = nextPromotions;
-state.activeIndex = 0;
+            console.log('Ocean Pulse:', state.activeIndex);
 
-if (state.track) {
-    renderPromotions();
-} else {
-    updateBar(state.promotions[state.activeIndex]);
-}
+            updateActive();
+        }
 
-startRotation();
-  }
+        function isOpen() {
+            return Boolean(
+                state.panel &&
+                state.panel.classList.contains('is-open')
+            );
+        }
 
-  function init() {
-    if (state.initialized) {
-      return window.OceanPulse;
-    }
+        function setOpen(open) {
+            if (!state.panel || !state.root) {
+                return;
+            }
 
-    state.root = document.getElementById(ROOT_ID);
+            const bar = state.root.querySelector(
+                '.ocean-pulse__bar-main'
+            );
 
-    if (!state.root) {
-      console.warn(
-        '[Ocean Pulse] No existe #ocean-pulse en index.html.'
-      );
+            if (state.panel) {
 
-      return null;
-    }
+                state.panel.classList.toggle('is-open', open);
 
-    const promotions = rawPromotions()
-      .map(normalizePromotion)
-      .filter(dateAllows)
-      .sort((a, b) => a.priority - b.priority);
+                state.panel.setAttribute(
+                    'aria-hidden',
+                    open ? 'false' : 'true'
+                );
 
-    if (!promotions.length) {
-      console.info(
-        '[Ocean Pulse] promotion-data.js no contiene promociones activas.'
-      );
+            }
 
-      return null;
-    }
+            bar?.setAttribute(
+                'aria-expanded',
+                open ? 'true' : 'false'
+            );
 
-    state.promotions = promotions;
+            document.body.classList.toggle(
+                'ocean-pulse-is-open',
+                open
+            );
 
-    createBar();
-    // createPanel();
-    if (state.track) {
-    renderPromotions();
-} else {
-    updateBar(state.promotions[state.activeIndex]);
-}
-    bindEvents();
-    startRotation();
+            if (open) {
+                window.setTimeout(() => {
+                    state.panel
+                        .querySelector('.ocean-pulse-panel__close')
+                        ?.focus();
+                }, 30);
 
-    state.initialized = true;
+                document.dispatchEvent(
+                    new CustomEvent('oceanpulse:open', {
+                        detail: state.promotions[state.activeIndex]
+                    })
+                );
 
-    const api = {
-      open: () => setOpen(true),
-      close: () => setOpen(false),
-      next: () => goTo(state.activeIndex + 1),
-      prev: () => goTo(state.activeIndex - 1),
-      goTo,
-      refresh,
-      getActive: () => state.promotions[state.activeIndex] || null,
-      getAll: () => [...state.promotions]
-    };
+                return;
+            }
 
-    window.OceanPulse = api;
+            bar?.focus();
 
-    document.dispatchEvent(
-      new CustomEvent('oceanpulse:ready', {
-        detail: api
-      })
-    );
+            document.dispatchEvent(
+                new CustomEvent('oceanpulse:close')
+            );
+        }
 
-    return api;
-  }
+        function bindEvents() {
 
-  if (document.readyState === 'loading') {
-    document.addEventListener(
-      'DOMContentLoaded',
-      init,
-      { once: true }
-    );
-  } else {
-    init();
-  }
-})();
+            const bar = state.root.querySelector(
+                '.ocean-pulse__bar-main'
+            );
+
+            bar?.addEventListener('click', () => {
+
+                if (state.panel) {
+                    setOpen(!isOpen());
+                }
+
+            });
+
+            if (state.panel && state.track && state.dots) {
+
+                state.panel
+                    .querySelectorAll('[data-ocean-pulse-close]')
+                    .forEach(element => {
+
+                        element.addEventListener('click', () => {
+                            setOpen(false);
+                        });
+
+                    });
+
+                state.panel
+                    .querySelector('.ocean-pulse-panel__nav--prev')
+                    ?.addEventListener('click', () => {
+                        goTo(state.activeIndex - 1);
+                    });
+
+                state.panel
+                    .querySelector('.ocean-pulse-panel__nav--next')
+                    ?.addEventListener('click', () => {
+                        goTo(state.activeIndex + 1);
+                    });
+
+                state.dots.addEventListener('click', event => {
+
+                    const button = event.target.closest(
+                        '[data-ocean-pulse-dot]'
+                    );
+
+                    if (!button) {
+                        return;
+                    }
+
+                    goTo(
+                        Number(button.dataset.oceanPulseDot)
+                    );
+
+                });
+
+                state.track.addEventListener('click', event => {
+
+                    const link = event.target.closest(
+                        '[data-ocean-pulse-id]'
+                    );
+
+                    if (!link) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+                    document.dispatchEvent(
+                        new CustomEvent('oceanpulse:cta', {
+                            detail: state.promotions[state.activeIndex]
+                        })
+                    );
+
+                });
+
+                let touchStartX = 0;
+
+                state.track.addEventListener(
+                    'touchstart',
+                    event => {
+
+                        touchStartX =
+                            event.changedTouches[0].clientX;
+
+                    },
+                    { passive: true }
+                );
+
+                state.track.addEventListener(
+                    'touchend',
+                    event => {
+
+                        const distance =
+                            event.changedTouches[0].clientX -
+                            touchStartX;
+
+                        if (Math.abs(distance) < 40) {
+                            return;
+                        }
+
+                        goTo(
+                            state.activeIndex +
+                            (distance > 0 ? -1 : 1)
+                        );
+
+                    },
+                    { passive: true }
+                );
+
+            }
+
+            document.addEventListener('keydown', event => {
+
+                if (!state.panel || !isOpen()) {
+                    return;
+                }
+
+                if (event.key === 'Escape') {
+                    setOpen(false);
+                }
+
+                if (event.key === 'ArrowRight') {
+                    goTo(state.activeIndex + 1);
+                }
+
+                if (event.key === 'ArrowLeft') {
+                    goTo(state.activeIndex - 1);
+                }
+
+            });
+
+        }
+
+        function startRotation() {
+            const options = config();
+
+            if (
+                !options.autoRotate ||
+                state.promotions.length < 2
+            ) {
+                return;
+            }
+
+            window.clearInterval(state.intervalId);
+
+            state.intervalId = window.setInterval(() => {
+                if (!isOpen()) {
+                    goTo(state.activeIndex + 1);
+                }
+            }, options.interval);
+        }
+
+        function refresh() {
+            const nextPromotions = rawPromotions()
+                .map(normalizePromotion)
+                .filter(dateAllows)
+                .sort((a, b) => a.priority - b.priority);
+
+            if (!nextPromotions.length) {
+                state.root.innerHTML = '';
+                return;
+            }
+
+            state.promotions = nextPromotions;
+            state.activeIndex = 0;
+
+            if (state.track) {
+                renderPromotions();
+            } else {
+                updateBar(state.promotions[state.activeIndex]);
+            }
+
+            startRotation();
+        }
+
+        function init() {
+            if (state.initialized) {
+                return window.OceanPulse;
+            }
+
+            state.root = document.getElementById(ROOT_ID);
+
+            if (!state.root) {
+                console.warn(
+                    '[Ocean Pulse] No existe #ocean-pulse en index.html.'
+                );
+
+                return null;
+            }
+
+            const promotions = rawPromotions()
+                .map(normalizePromotion)
+                .filter(dateAllows)
+                .sort((a, b) => a.priority - b.priority);
+
+            if (!promotions.length) {
+                console.info(
+                    '[Ocean Pulse] promotion-data.js no contiene promociones activas.'
+                );
+
+                return null;
+            }
+
+            state.promotions = promotions;
+
+            createBar();
+            // createPanel();
+            if (state.track) {
+                renderPromotions();
+            } else {
+                updateBar(state.promotions[state.activeIndex]);
+            }
+            bindEvents();
+            startRotation();
+
+            state.initialized = true;
+
+            const api = {
+                open: () => setOpen(true),
+                close: () => setOpen(false),
+                next: () => goTo(state.activeIndex + 1),
+                prev: () => goTo(state.activeIndex - 1),
+                goTo,
+                refresh,
+                getActive: () => state.promotions[state.activeIndex] || null,
+                getAll: () => [...state.promotions]
+            };
+
+            window.OceanPulse = api;
+
+            document.dispatchEvent(
+                new CustomEvent('oceanpulse:ready', {
+                    detail: api
+                })
+            );
+
+            return api;
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener(
+                'DOMContentLoaded',
+                init,
+                { once: true }
+            );
+        } else {
+            init();
+        }
+    }) ();
