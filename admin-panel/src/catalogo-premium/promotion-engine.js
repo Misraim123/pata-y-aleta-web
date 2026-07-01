@@ -647,10 +647,8 @@ ${promotion.title}
 
     if(subtitle){
 
-        subtitle.textContent =
-            promotion.subtitle;
-
-    }
+   subtitle.textContent =
+    promotion.description;
 
 }
 
@@ -697,6 +695,8 @@ ${promotion.title}
 
     state.activeIndex =
       ((index % total) + total) % total;
+
+      console.log('Ocean Pulse:', state.activeIndex);
 
     updateActive();
   }
@@ -761,21 +761,30 @@ ${promotion.title}
     );
   }
 
-  function bindEvents() {
-    const bar = state.root.querySelector(
-  '.ocean-pulse__bar-main'
-);
+function bindEvents() {
 
-    bar?.addEventListener('click', () => {
+  const bar = state.root.querySelector(
+    '.ocean-pulse__bar-main'
+  );
+
+  bar?.addEventListener('click', () => {
+
+    if (state.panel) {
       setOpen(!isOpen());
-    });
+    }
+
+  });
+
+  if (state.panel && state.track && state.dots) {
 
     state.panel
       .querySelectorAll('[data-ocean-pulse-close]')
       .forEach(element => {
+
         element.addEventListener('click', () => {
           setOpen(false);
         });
+
       });
 
     state.panel
@@ -791,6 +800,7 @@ ${promotion.title}
       });
 
     state.dots.addEventListener('click', event => {
+
       const button = event.target.closest(
         '[data-ocean-pulse-dot]'
       );
@@ -802,46 +812,29 @@ ${promotion.title}
       goTo(
         Number(button.dataset.oceanPulseDot)
       );
+
     });
 
     state.track.addEventListener('click', event => {
 
-  const link = event.target.closest(
-    '[data-ocean-pulse-id]'
-  );
+      const link = event.target.closest(
+        '[data-ocean-pulse-id]'
+      );
 
-  if (!link) {
-    return;
-  }
-
-  event.preventDefault();
-
-  event.stopPropagation();
-
-  document.dispatchEvent(
-    new CustomEvent('oceanpulse:cta', {
-      detail: state.promotions[state.activeIndex]
-    })
-  );
-
-});
-
-    document.addEventListener('keydown', event => {
-      if (!isOpen()) {
+      if (!link) {
         return;
       }
 
-      if (event.key === 'Escape') {
-        setOpen(false);
-      }
+      event.preventDefault();
 
-      if (event.key === 'ArrowRight') {
-        goTo(state.activeIndex + 1);
-      }
+      event.stopPropagation();
 
-      if (event.key === 'ArrowLeft') {
-        goTo(state.activeIndex - 1);
-      }
+      document.dispatchEvent(
+        new CustomEvent('oceanpulse:cta', {
+          detail: state.promotions[state.activeIndex]
+        })
+      );
+
     });
 
     let touchStartX = 0;
@@ -849,8 +842,10 @@ ${promotion.title}
     state.track.addEventListener(
       'touchstart',
       event => {
+
         touchStartX =
           event.changedTouches[0].clientX;
+
       },
       { passive: true }
     );
@@ -858,6 +853,7 @@ ${promotion.title}
     state.track.addEventListener(
       'touchend',
       event => {
+
         const distance =
           event.changedTouches[0].clientX -
           touchStartX;
@@ -870,10 +866,34 @@ ${promotion.title}
           state.activeIndex +
           (distance > 0 ? -1 : 1)
         );
+
       },
       { passive: true }
     );
+
   }
+
+  document.addEventListener('keydown', event => {
+
+    if (!state.panel || !isOpen()) {
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      setOpen(false);
+    }
+
+    if (event.key === 'ArrowRight') {
+      goTo(state.activeIndex + 1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+      goTo(state.activeIndex - 1);
+    }
+
+  });
+
+}
 
   function startRotation() {
     const options = config();
