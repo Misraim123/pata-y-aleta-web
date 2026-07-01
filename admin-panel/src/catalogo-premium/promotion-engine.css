@@ -816,3 +816,31 @@ text-overflow:ellipsis;
     transition-duration: .001ms !important;
   }
 }
+
+.ocean-pulse__promo-title{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:22px;
+
+font-weight:800;
+
+color:#fff;
+
+}
+
+.ocean-pulse__promo-title svg{
+
+width:22px;
+
+height:22px;
+
+color:#63f0ed;
+
+flex-shrink:0;
+
+}

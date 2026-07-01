@@ -620,10 +620,11 @@ function updateBar(promotion){
 
     if(title){
 
-        title.textContent =
-            `${promotion.icon} ${promotion.title}`;
+    title.innerHTML =
+        `${iconMarkup(promotion.icon)}
+        <span>${promotion.title}</span>`;
 
-    }
+}
 
     if(subtitle){
 
