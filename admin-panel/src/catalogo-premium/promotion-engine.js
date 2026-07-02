@@ -971,6 +971,7 @@ ${promotion.title}
 
             createBar();
             // createPanel();
+            state.root.classList.add('is-ready');
             if (state.track) {
                 renderPromotions();
             } else {
