@@ -230,11 +230,15 @@ text-overflow:ellipsis;
 
 .ocean-pulse__live{
 
-display:inline-flex;
+display:flex;
 
 align-items:center;
 
 justify-content:center;
+
+flex-shrink:0;
+
+min-width:max-content;
 
 gap:8px;
 
@@ -269,6 +273,10 @@ white-space:nowrap;
 }
 
 .ocean-pulse__live i{
+
+display:block;
+
+visibility:visible;    
 
 width:10px;
 
