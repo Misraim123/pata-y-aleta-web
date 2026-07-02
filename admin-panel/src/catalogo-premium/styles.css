@@ -544,6 +544,16 @@ PATA Y ALETA LIVE
 
 .live-ribbon{
 
+position:fixed;
+
+top:92px;
+
+left:0;
+
+right:0;
+
+z-index:999;
+
 width:100%;
 
 height:52px;
@@ -558,7 +568,7 @@ border-top:1px solid rgba(255,255,255,.05);
 
 border-bottom:1px solid rgba(255,255,255,.05);
 
-overflow:hidden;
+overflow:visible;
 
 }
 
@@ -608,9 +618,9 @@ animation:livePulse 2s infinite;
 
 flex:1;
 
-overflow:hidden;
-
 position:relative;
+
+overflow:visible;
 
 }
 
