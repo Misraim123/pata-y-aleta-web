@@ -829,21 +829,21 @@ box-shadow:
 @media (max-width: 720px) {
   .ocean-pulse__bar{
 
-position:fixed;
+position:relative;
 
-left:50%;
+left:auto;
 
 right:auto;
 
-bottom:12px;
+bottom:auto;
 
-width:calc(100vw - 24px);
+width:100%;
 
-max-width:430px;
+max-width:none;
 
-transform:translateX(-50%);
+transform:none;
 
-}
+ }
 
   .ocean-pulse__live {
     display: none;
