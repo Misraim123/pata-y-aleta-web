@@ -32,17 +32,25 @@ body.ocean-pulse-open {
 
 .ocean-pulse__bar{
 
-left:50%;
+position:fixed;
 
-right:auto;
+z-index:80;
 
-bottom:18px;
+right:28px;
 
-transform:translateX(-50%);
+bottom:28px;
 
-width:calc(100vw - 24px);
+width:min(620px,calc(100vw - 50px));
 
-max-width:430px;
+opacity:0;
+
+transform:translateY(18px);
+
+pointer-events:none;
+
+transition:
+opacity .45s ease,
+transform .45s cubic-bezier(.2,.8,.2,1);
 
 }
 
@@ -817,11 +825,23 @@ box-shadow:
 }
 
 @media (max-width: 720px) {
-  .ocean-pulse__bar {
-    right: 12px;
-    bottom: 12px;
-    width: min(440px, calc(100vw - 24px));
-  }
+  .ocean-pulse__bar{
+
+position:fixed;
+
+left:50%;
+
+right:auto;
+
+bottom:12px;
+
+width:calc(100vw - 24px);
+
+max-width:430px;
+
+transform:translateX(-50%);
+
+}
 
   .ocean-pulse__live {
     display: none;
