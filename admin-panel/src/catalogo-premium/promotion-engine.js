@@ -970,7 +970,7 @@ ${promotion.title}
             state.promotions = promotions;
 
             createBar();
-            createPanel();
+            // createPanel();
             state.root.classList.add('is-ready');
             if (state.track) {
                 renderPromotions();
