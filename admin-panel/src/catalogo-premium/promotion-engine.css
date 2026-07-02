@@ -32,23 +32,17 @@ body.ocean-pulse-open {
 
 .ocean-pulse__bar{
 
-position:relative;
+left:50%;
 
-display:flex;
+right:auto;
 
-align-items:center;
+bottom:18px;
 
-width:100%;
+transform:translateX(-50%);
 
-max-width:none;
+width:calc(100vw - 24px);
 
-padding:0;
-
-opacity:1;
-
-transform:none;
-
-pointer-events:auto;
+max-width:430px;
 
 }
 
