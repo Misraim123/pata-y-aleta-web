@@ -54,7 +54,7 @@ transform .45s cubic-bezier(.2,.8,.2,1);
 
 }
 
-.ocean-pulse.is-ready .ocean-pulse__bar {
+#ocean-pulse.is-ready .ocean-pulse__bar {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -306,7 +306,7 @@ flex-shrink:0;
   height: 18px;
 }
 
-.ocean-pulse.is-open .ocean-pulse__arrow {
+#ocean-pulse.is-open .ocean-pulse__arrow {
   transform: rotate(180deg);
 }
 
@@ -324,7 +324,7 @@ flex-shrink:0;
   transition: opacity .28s ease, visibility .28s ease;
 }
 
-.ocean-pulse.is-open .ocean-pulse__panel {
+#ocean-pulse.is-open .ocean-pulse__panel {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -360,7 +360,7 @@ flex-shrink:0;
   -webkit-backdrop-filter: blur(22px) saturate(140%);
 }
 
-.ocean-pulse.is-open .ocean-pulse__glass {
+#ocean-pulse.is-open .ocean-pulse__glass {
   transform: translateY(0) scale(1);
 }
 
