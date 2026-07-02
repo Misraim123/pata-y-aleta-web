@@ -480,7 +480,7 @@
       </div>
     `;
 
-        // document.body.appendChild(panel);
+        document.body.appendChild(panel);
 
         state.panel = panel;
         state.track = panel.querySelector('.ocean-pulse-panel__track');
