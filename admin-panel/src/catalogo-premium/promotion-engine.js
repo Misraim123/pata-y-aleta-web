@@ -588,6 +588,7 @@ WhatsApp
   `;
 
     }
+
     function renderPromotions() {
         const current = state.promotions[state.activeIndex];
 
@@ -659,6 +660,7 @@ WhatsApp
 
         updateBar(current);
         cacheCards();
+        updateActive();
     }
 
     function cacheCards() {
