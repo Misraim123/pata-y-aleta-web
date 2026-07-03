@@ -929,7 +929,13 @@ drawer.element.innerHTML = `
 
     <div class="ocean-drawer__tabs">
 
+    <div class="ocean-chip active">
+
+        ⭐ Destacado
+
     </div>
+
+</div>
 
     <div class="ocean-drawer__content">
 

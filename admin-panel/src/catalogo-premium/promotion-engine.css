@@ -1179,3 +1179,63 @@ display:flex;
 justify-content:flex-end;
 
 }
+
+.ocean-chip{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(99,240,237,.14);
+
+color:#dffcff;
+
+font-size:13px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.30s;
+
+backdrop-filter:blur(10px);
+
+-webkit-backdrop-filter:blur(10px);
+
+}
+
+.ocean-chip:hover{
+
+transform:translateY(-2px);
+
+border-color:rgba(99,240,237,.35);
+
+box-shadow:
+
+0 8px 24px rgba(0,213,255,.12);
+
+}
+
+.ocean-chip.active{
+
+background:linear-gradient(
+135deg,
+rgba(0,213,255,.18),
+rgba(25,217,255,.08)
+);
+
+border-color:#63f0ed;
+
+box-shadow:
+
+0 0 22px rgba(99,240,237,.18);
+
+}
