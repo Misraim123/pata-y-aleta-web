@@ -775,8 +775,6 @@ ${promotion.title}
         setOpen(!isOpen());
     }
 
-    toggleDrawer();
-
 });
 
             if (state.panel && state.track && state.dots) {
@@ -905,6 +903,7 @@ ${promotion.title}
  No modificar Ocean Pulse Engine
 ******************************************************************/
 
+/*
 const drawer = {
 
     initialized: false,
@@ -914,7 +913,8 @@ const drawer = {
     isOpen: false
 
 };
-
+*/
+/*
 function createDrawer(){
 
     if(drawer.initialized){
@@ -953,11 +953,12 @@ drawer.element.innerHTML = `
 
 state.root.appendChild(drawer.element);
 
-drawer.element.classList.add("is-open");
+// drawer.element.classList.add("is-open");
 
     drawer.initialized = true;
 
 }
+    */
 
 /******************************************************************/
 
@@ -1034,7 +1035,7 @@ drawer.element.classList.add("is-open");
             state.promotions = promotions;
 
             createBar();
-createDrawer();
+// createDrawer();
 // createPanel();
 state.root.classList.add('is-ready');
             if (state.track) {
