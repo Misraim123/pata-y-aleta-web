@@ -504,9 +504,15 @@ WhatsApp
 
 <div class="ocean-particles"></div>
 
-<div class="ocean-coral coral-left"></div>
+<div class="ocean-reef">
 
-<div class="ocean-coral coral-right"></div>
+<div class="reef-back"></div>
+
+<div class="reef-mid"></div>
+
+<div class="reef-front"></div>
+
+</div>
 
 <div class="ocean-fish-layer"></div>
 

@@ -2063,3 +2063,101 @@ background-position:0 -220px;
 }
 
 }
+
+/*==========================================
+REEF ENGINE V1
+==========================================*/
+
+.ocean-reef{
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+height:42%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.reef-back,
+.reef-mid,
+.reef-front{
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+}
+
+.reef-back{
+
+height:45%;
+
+opacity:.18;
+
+background:
+
+radial-gradient(circle at 10% 100%,#1b4965 0 14%,transparent 15%),
+
+radial-gradient(circle at 28% 100%,#163d54 0 12%,transparent 13%),
+
+radial-gradient(circle at 52% 100%,#1d4e89 0 16%,transparent 17%),
+
+radial-gradient(circle at 82% 100%,#163d54 0 13%,transparent 14%);
+
+filter:blur(4px);
+
+}
+
+.reef-mid{
+
+height:65%;
+
+opacity:.45;
+
+background:
+
+radial-gradient(circle at 15% 100%,#7c3aed 0 10%,transparent 11%),
+
+radial-gradient(circle at 34% 100%,#06b6d4 0 12%,transparent 13%),
+
+radial-gradient(circle at 61% 100%,#8b5cf6 0 9%,transparent 10%),
+
+radial-gradient(circle at 86% 100%,#14b8a6 0 11%,transparent 12%);
+
+filter:blur(2px);
+
+}
+
+.reef-front{
+
+height:85%;
+
+background:
+
+radial-gradient(circle at 12% 100%,#22d3ee 0 7%,transparent 8%),
+
+radial-gradient(circle at 26% 100%,#a855f7 0 8%,transparent 9%),
+
+radial-gradient(circle at 48% 100%,#38bdf8 0 9%,transparent 10%),
+
+radial-gradient(circle at 70% 100%,#ec4899 0 8%,transparent 9%),
+
+radial-gradient(circle at 92% 100%,#34d399 0 7%,transparent 8%);
+
+filter:
+
+drop-shadow(0 0 12px rgba(34,211,238,.35));
+
+}
