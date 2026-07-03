@@ -924,14 +924,26 @@ function createDrawer(){
     drawer.element.className = "ocean-drawer";
 
     drawer.element.innerHTML = `
-        <div class="ocean-drawer__surface">
+<div class="ocean-drawer__surface">
 
-        </div>
-    `;
+    <div class="ocean-drawer__header">
 
-    drawer.element.style.display = "none";
+        <span>
+            Ocean Drawer V2
+        </span>
+
+    </div>
+
+    <div class="ocean-drawer__body">
+
+    </div>
+
+</div>
+`;
 
 state.root.appendChild(drawer.element);
+
+drawer.element.classList.add("is-open");
 
     drawer.initialized = true;
 
