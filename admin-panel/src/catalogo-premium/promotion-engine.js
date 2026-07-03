@@ -1046,7 +1046,8 @@ state.root.appendChild(drawer.element);
 
             createBar();
 // createDrawer();
-// createPanel();
+createPanel();
+console.log("CREATE PANEL", state.panel);
 state.root.classList.add('is-ready');
             if (state.track) {
                 renderPromotions();
