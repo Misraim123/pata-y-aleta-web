@@ -496,14 +496,9 @@ WhatsApp
 
     <div class="ocean-pulse-panel__hero-media">
 
-    <div class="ocean-hero-image">
+  <div class="ocean-hero-image">
 
-        <img
-        id="oceanHeroImage"
-        src="/img/banner-premium.jpg"
-        alt="Ocean Pulse">
-
-    </div>
+</div>
 
 </div>
 
