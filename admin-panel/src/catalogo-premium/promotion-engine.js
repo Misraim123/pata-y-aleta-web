@@ -449,6 +449,54 @@
 
           </header>
 
+          <section class="ocean-pulse-panel__hero">
+
+    <div class="ocean-pulse-panel__hero-info">
+
+        <span class="ocean-hero-badge">
+
+            ⭐ PROMOCIÓN DESTACADA
+
+        </span>
+
+        <h3 class="ocean-hero-title">
+
+            Bienvenido a Ocean Pulse
+
+        </h3>
+
+        <p class="ocean-hero-description">
+
+            Descubre promociones exclusivas, nuevos productos, servicios premium y experiencias para acuarios y mascotas.
+
+        </p>
+
+        <div class="ocean-hero-buttons">
+
+            <button class="ocean-btn-primary">
+
+                Explorar
+
+            </button>
+
+            <button class="ocean-btn-secondary">
+
+                WhatsApp
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="ocean-pulse-panel__hero-media">
+
+        🌊
+
+    </div>
+
+</section>
+
           <div class="ocean-pulse-panel__carousel">
 
             <button
