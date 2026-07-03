@@ -2264,3 +2264,51 @@ transparent
 opacity:.65;
 
 }
+
+/*==========================================
+REEF ORGANIC SHAPES
+==========================================*/
+
+.reef-front::before{
+
+border-radius:
+55% 45%
+30% 70%
+/
+70% 60%
+40% 30%;
+
+}
+
+.reef-front::after{
+
+border-radius:
+40% 60%
+65% 35%
+/
+65% 45%
+55% 35%;
+
+}
+
+.reef-mid::before{
+
+border-radius:
+60% 40%
+50% 50%
+/
+75% 45%
+35% 25%;
+
+}
+
+.reef-mid::after{
+
+border-radius:
+45% 55%
+35% 65%
+/
+70% 35%
+60% 30%;
+
+}
