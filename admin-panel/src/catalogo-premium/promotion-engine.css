@@ -1078,7 +1078,7 @@ opacity .35s ease;
 
 .ocean-drawer.is-open{
 
-max-height:500px;
+max-height:0;
 
 opacity:1;
 
@@ -1143,5 +1143,39 @@ justify-content:center;
 color:rgba(255,255,255,.55);
 
 font-size:14px;
+
+}
+
+.ocean-drawer__tabs{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-bottom:18px;
+
+}
+
+.ocean-drawer__content{
+
+min-height:180px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.02);
+
+border:1px solid rgba(99,240,237,.08);
+
+}
+
+.ocean-drawer__footer{
+
+margin-top:18px;
+
+display:flex;
+
+justify-content:flex-end;
 
 }

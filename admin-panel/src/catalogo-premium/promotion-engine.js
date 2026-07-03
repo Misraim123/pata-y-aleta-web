@@ -923,22 +923,24 @@ function createDrawer(){
 
     drawer.element.className = "ocean-drawer";
 
-    drawer.element.innerHTML = `
+drawer.element.innerHTML = `
+
 <div class="ocean-drawer__surface">
 
-    <div class="ocean-drawer__header">
-
-        <span>
-            Ocean Drawer V2
-        </span>
+    <div class="ocean-drawer__tabs">
 
     </div>
 
-    <div class="ocean-drawer__body">
+    <div class="ocean-drawer__content">
+
+    </div>
+
+    <div class="ocean-drawer__footer">
 
     </div>
 
 </div>
+
 `;
 
 state.root.appendChild(drawer.element);
