@@ -769,13 +769,15 @@ ${promotion.title}
                 '.ocean-pulse__bar-main'
             );
 
-            bar?.addEventListener('click', () => {
+          bar?.addEventListener('click', () => {
 
-                if (state.panel) {
-                    setOpen(!isOpen());
-                }
+    if (state.panel) {
+        setOpen(!isOpen());
+    }
 
-            });
+    toggleDrawer();
+
+});
 
             if (state.panel && state.track && state.dots) {
 
