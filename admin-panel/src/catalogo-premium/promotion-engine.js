@@ -929,7 +929,9 @@ function createDrawer(){
         </div>
     `;
 
-    state.root.appendChild(drawer.element);
+    drawer.element.style.display = "none";
+
+state.root.appendChild(drawer.element);
 
     drawer.initialized = true;
 
@@ -1010,8 +1012,9 @@ function createDrawer(){
             state.promotions = promotions;
 
             createBar();
-            // createPanel();
-            state.root.classList.add('is-ready');
+createDrawer();
+// createPanel();
+state.root.classList.add('is-ready');
             if (state.track) {
                 renderPromotions();
             } else {
