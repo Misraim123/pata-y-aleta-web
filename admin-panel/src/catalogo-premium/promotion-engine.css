@@ -1455,3 +1455,51 @@ justify-content:center;
 font-size:140px;
 
 }
+
+/*==========================================
+OCEAN HERO IMAGE
+==========================================*/
+
+.ocean-hero-image{
+
+position:relative;
+
+width:100%;
+
+height:340px;
+
+border-radius:28px;
+
+overflow:hidden;
+
+background:#071824;
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.ocean-hero-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:
+
+transform .6s ease,
+
+opacity .35s ease;
+
+}
+
+.ocean-hero-image:hover img{
+
+transform:scale(1.04);
+
+}
