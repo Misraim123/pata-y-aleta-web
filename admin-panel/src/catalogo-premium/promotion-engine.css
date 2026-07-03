@@ -2161,3 +2161,106 @@ filter:
 drop-shadow(0 0 12px rgba(34,211,238,.35));
 
 }
+
+/*==========================================
+REEF SCULPT V1
+==========================================*/
+
+.reef-front::before,
+.reef-front::after,
+.reef-mid::before,
+.reef-mid::after{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+
+border-radius:50% 50% 15% 15%;
+
+filter:blur(1px);
+
+}
+
+.reef-front::before{
+
+left:8%;
+
+width:80px;
+
+height:150px;
+
+background:
+linear-gradient(
+to top,
+#14b8a6,
+#5eead4 55%,
+transparent
+);
+
+transform:rotate(-8deg);
+
+opacity:.9;
+
+}
+
+.reef-front::after{
+
+right:12%;
+
+width:90px;
+
+height:180px;
+
+background:
+linear-gradient(
+to top,
+#ec4899,
+#fb7185 60%,
+transparent
+);
+
+transform:rotate(7deg);
+
+opacity:.9;
+
+}
+
+.reef-mid::before{
+
+left:34%;
+
+width:65px;
+
+height:120px;
+
+background:
+linear-gradient(
+to top,
+#8b5cf6,
+transparent
+);
+
+opacity:.65;
+
+}
+
+.reef-mid::after{
+
+right:36%;
+
+width:60px;
+
+height:110px;
+
+background:
+linear-gradient(
+to top,
+#38bdf8,
+transparent
+);
+
+opacity:.65;
+
+}
