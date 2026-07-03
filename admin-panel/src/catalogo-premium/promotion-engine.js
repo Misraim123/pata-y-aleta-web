@@ -496,7 +496,16 @@ WhatsApp
 
     <div class="ocean-pulse-panel__hero-media">
 
-  <div class="ocean-hero-image">
+<div class="ocean-hero-image">
+
+    <span class="ocean-bubble bubble-1"></span>
+    <span class="ocean-bubble bubble-2"></span>
+    <span class="ocean-bubble bubble-3"></span>
+    <span class="ocean-bubble bubble-4"></span>
+    <span class="ocean-bubble bubble-5"></span>
+    <span class="ocean-bubble bubble-6"></span>
+    <span class="ocean-bubble bubble-7"></span>
+    <span class="ocean-bubble bubble-8"></span>
 
 </div>
 
