@@ -473,21 +473,23 @@ id="oceanHeroDescription">
 
         <div class="ocean-hero-buttons">
 
-            <button
+<button
 class="ocean-btn-primary"
-id="oceanHeroButton">
+id="oceanHeroButton"
+type="button">
 
 Ver promoción
 
 </button>
 
 <button
-class="ocean-btn-secondary">
+class="ocean-btn-secondary"
+id="oceanHeroWhatsapp"
+type="button">
 
 WhatsApp
 
 </button>
-
         </div>
 
     </div>
@@ -740,6 +742,38 @@ ${promotion.title}
 
         title.textContent =
             promotion.title;
+
+     const primaryButton =
+document.getElementById(
+'oceanHeroButton'
+);
+
+if(primaryButton){
+
+primaryButton.onclick = ()=>{
+
+window.location.href =
+promotion.href;
+
+};
+
+}
+
+const whatsappButton =
+document.getElementById(
+'oceanHeroWhatsapp'
+);
+
+if(whatsappButton){
+
+whatsappButton.onclick = ()=>{
+
+window.location.href =
+'#contacto';
+
+};
+
+}       
 
     }
 
