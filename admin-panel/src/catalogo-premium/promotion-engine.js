@@ -428,6 +428,16 @@
               </h2>
             </div>
 
+            <div class="ocean-pulse-panel__chips">
+
+    <button class="ocean-chip active">
+
+        ⭐ Destacado
+
+    </button>
+
+</div>
+
             <button
               class="ocean-pulse-panel__close"
               type="button"
