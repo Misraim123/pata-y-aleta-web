@@ -518,6 +518,8 @@ WhatsApp
 
 <div class="ocean-fish-layer"></div>
 
+<div class="ocean-fish fish-blue"></div>
+
     <span class="ocean-bubble bubble-1"></span>
     <span class="ocean-bubble bubble-2"></span>
     <span class="ocean-bubble bubble-3"></span>
