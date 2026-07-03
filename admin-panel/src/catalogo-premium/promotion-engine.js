@@ -721,7 +721,7 @@ ${promotion.title}
 
         function updateHero(promotion){
     
-    console.log("HERO UPDATE", promotion);        
+      console.log("HERO UPDATE", promotion);         
 
     if(!promotion) return;
 
@@ -1180,15 +1180,17 @@ state.root.appendChild(drawer.element);
             createBar();
 // createDrawer();
 createPanel();
-console.log("CREATE PANEL", state.panel);
 state.root.classList.add('is-ready');
             if (state.track) {
-                renderPromotions();
-            } else {
-                updateBar(state.promotions[state.activeIndex]);
-            }
-            bindEvents();
-            startRotation();
+
+    renderPromotions();
+
+}
+
+updateActive();
+
+bindEvents();
+startRotation();
 
             state.initialized = true;
 
