@@ -720,6 +720,8 @@ ${promotion.title}
         }
 
         function updateHero(promotion){
+    
+    console.log("HERO UPDATE", promotion);        
 
     if(!promotion) return;
 
