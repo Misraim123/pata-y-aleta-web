@@ -498,6 +498,18 @@ WhatsApp
 
 <div class="ocean-hero-image">
 
+<div class="ocean-light"></div>
+
+<div class="ocean-caustics"></div>
+
+<div class="ocean-particles"></div>
+
+<div class="ocean-coral coral-left"></div>
+
+<div class="ocean-coral coral-right"></div>
+
+<div class="ocean-fish-layer"></div>
+
     <span class="ocean-bubble bubble-1"></span>
     <span class="ocean-bubble bubble-2"></span>
     <span class="ocean-bubble bubble-3"></span>

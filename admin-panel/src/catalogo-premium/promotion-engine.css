@@ -1876,3 +1876,190 @@ opacity:0;
 }
 
 }
+
+/*==========================================
+OCEAN FOUNDATION
+==========================================*/
+
+.ocean-light{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at 50% -15%,
+rgba(120,240,255,.22),
+transparent 60%);
+
+filter:blur(30px);
+
+animation:
+
+oceanLightMove 9s ease-in-out infinite;
+
+}
+
+.ocean-caustics{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+repeating-linear-gradient(
+115deg,
+transparent 0px,
+rgba(255,255,255,.03) 6px,
+transparent 12px
+);
+
+mix-blend-mode:screen;
+
+opacity:.25;
+
+animation:
+
+causticsMove 18s linear infinite;
+
+}
+
+.ocean-particles{
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+radial-gradient(circle,
+rgba(255,255,255,.18) 1px,
+transparent 2px);
+
+background-size:120px 120px;
+
+opacity:.25;
+
+animation:
+
+particlesFloat 20s linear infinite;
+
+}
+
+.ocean-coral{
+
+position:absolute;
+
+bottom:-20px;
+
+width:170px;
+
+height:180px;
+
+filter:blur(.2px);
+
+opacity:.92;
+
+}
+
+.coral-left{
+
+left:-20px;
+
+background:
+
+radial-gradient(circle at bottom,
+#5eead4,
+transparent 72%),
+
+radial-gradient(circle at 40% 70%,
+#7c3aed,
+transparent 60%),
+
+radial-gradient(circle at 60% 30%,
+#0ea5e9,
+transparent 70%);
+
+}
+
+.coral-right{
+
+right:-30px;
+
+background:
+
+radial-gradient(circle at bottom,
+#fb7185,
+transparent 70%),
+
+radial-gradient(circle at 30% 60%,
+#38bdf8,
+transparent 60%),
+
+radial-gradient(circle at 70% 40%,
+#5eead4,
+transparent 65%);
+
+}
+
+@keyframes oceanLightMove{
+
+0%{
+
+opacity:.5;
+
+transform:translateY(0);
+
+}
+
+50%{
+
+opacity:.9;
+
+transform:translateY(12px);
+
+}
+
+100%{
+
+opacity:.5;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes causticsMove{
+
+from{
+
+transform:translateX(0);
+
+}
+
+to{
+
+transform:translateX(-120px);
+
+}
+
+}
+
+@keyframes particlesFloat{
+
+from{
+
+background-position:0 0;
+
+}
+
+to{
+
+background-position:0 -220px;
+
+}
+
+}
