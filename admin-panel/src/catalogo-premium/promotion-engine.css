@@ -1503,3 +1503,131 @@ opacity .35s ease;
 transform:scale(1.04);
 
 }
+
+/*==================================================
+OCEAN SCENE V1
+==================================================*/
+
+.ocean-pulse-panel__hero-media{
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+border-radius:32px;
+
+background:
+radial-gradient(circle at 50% 0%,
+rgba(83,214,255,.20),
+transparent 45%),
+
+linear-gradient(
+180deg,
+#0d2940 0%,
+#081c2d 40%,
+#061521 100%
+);
+
+box-shadow:
+inset 0 0 80px rgba(0,220,255,.08),
+0 20px 60px rgba(0,0,0,.35);
+
+}
+
+/* Luz superior */
+
+.ocean-pulse-panel__hero-media::before{
+
+content:"";
+
+position:absolute;
+
+top:-25%;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:140%;
+
+height:90%;
+
+background:
+
+radial-gradient(circle,
+rgba(120,235,255,.35),
+transparent 70%);
+
+filter:blur(35px);
+
+opacity:.7;
+
+animation:
+oceanLight 8s ease-in-out infinite;
+
+}
+
+/* Brillo cristal */
+
+.ocean-pulse-panel__hero-media::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+120deg,
+transparent 0%,
+rgba(255,255,255,.05) 40%,
+transparent 70%
+);
+
+mix-blend-mode:screen;
+
+pointer-events:none;
+
+}
+
+@keyframes oceanLight{
+
+0%{
+
+transform:
+translateX(-50%)
+translateY(0);
+
+opacity:.55;
+
+}
+
+50%{
+
+transform:
+translateX(-50%)
+translateY(8px);
+
+opacity:.9;
+
+}
+
+100%{
+
+transform:
+translateX(-50%)
+translateY(0);
+
+opacity:.55;
+
+}
+
+}
