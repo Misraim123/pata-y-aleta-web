@@ -459,31 +459,34 @@
 
         </span>
 
-        <h3 class="ocean-hero-title">
+        <h3
+class="ocean-hero-title"
+id="oceanHeroTitle">
 
-            Bienvenido a Ocean Pulse
+</h3>
 
-        </h3>
+<p
+class="ocean-hero-description"
+id="oceanHeroDescription">
 
-        <p class="ocean-hero-description">
-
-            Descubre promociones exclusivas, nuevos productos, servicios premium y experiencias para acuarios y mascotas.
-
-        </p>
+</p>
 
         <div class="ocean-hero-buttons">
 
-            <button class="ocean-btn-primary">
+            <button
+class="ocean-btn-primary"
+id="oceanHeroButton">
 
-                Explorar
+Ver promoción
 
-            </button>
+</button>
 
-            <button class="ocean-btn-secondary">
+<button
+class="ocean-btn-secondary">
 
-                WhatsApp
+WhatsApp
 
-            </button>
+</button>
 
         </div>
 
@@ -688,6 +691,8 @@
 
             premium: "💎"
 
+            
+
         };
 
         const icon =
@@ -711,6 +716,48 @@ ${promotion.title}
         }
 
         }
+
+        function updateHero(promotion){
+
+    if(!promotion) return;
+
+    const title =
+        document.getElementById(
+            'oceanHeroTitle'
+        );
+
+    const description =
+        document.getElementById(
+            'oceanHeroDescription'
+        );
+
+    const button =
+        document.getElementById(
+            'oceanHeroButton'
+        );
+
+    if(title){
+
+        title.textContent =
+            promotion.title;
+
+    }
+
+    if(description){
+
+        description.textContent =
+            promotion.description;
+
+    }
+
+    if(button){
+
+        button.textContent =
+            promotion.cta;
+
+    }
+
+}
 
         function updateActive() {
 
@@ -743,6 +790,8 @@ ${promotion.title}
             }
 
             updateBar(promotion);
+
+            updateHero(promotion);
 
         }
 
