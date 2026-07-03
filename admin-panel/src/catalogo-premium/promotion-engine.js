@@ -752,12 +752,47 @@ document.getElementById(
 
 if(primaryButton){
 
-primaryButton.onclick = ()=>{
+    primaryButton.onclick = ()=>{
 
-window.location.href =
-promotion.href;
+        setOpen(false);
 
-};
+        setTimeout(()=>{
+
+            switch(promotion.type){
+
+                case "shipping":
+
+                case "service":
+
+                    document
+                    .querySelector("#contacto")
+                    ?.scrollIntoView({
+                        behavior:"smooth"
+                    });
+
+                    break;
+
+                case "premium":
+
+                    window.location.href =
+                    "/catalogo-vivo.html";
+
+                    break;
+
+                default:
+
+                    if(promotion.href){
+
+                        window.location.href =
+                        promotion.href;
+
+                    }
+
+            }
+
+        },250);
+
+    };
 
 }
 
@@ -768,14 +803,31 @@ document.getElementById(
 
 if(whatsappButton){
 
-whatsappButton.onclick = ()=>{
+    whatsappButton.onclick = ()=>{
 
-window.location.href =
-'#contacto';
+        const mensaje = encodeURIComponent(
 
-};
+`Hola Pata y Aleta.
 
-}       
+Me interesa la promoción:
+
+${promotion.title}
+
+¿Podrían darme más información?`
+
+        );
+
+        window.open(
+
+`https://wa.me/525656774264?text=${mensaje}`,
+
+"_blank"
+
+        );
+
+    };
+
+}      
 
     }
 
