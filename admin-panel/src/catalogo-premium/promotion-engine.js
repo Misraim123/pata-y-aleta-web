@@ -897,6 +897,46 @@ ${promotion.title}
 
         }
 
+        /******************************************************************
+ OCEAN DRAWER V2
+ Arquitectura oficial
+ No modificar Ocean Pulse Engine
+******************************************************************/
+
+const drawer = {
+
+    initialized: false,
+
+    element: null,
+
+    isOpen: false
+
+};
+
+function createDrawer(){
+
+    if(drawer.initialized){
+        return;
+    }
+
+    drawer.element = document.createElement("div");
+
+    drawer.element.className = "ocean-drawer";
+
+    drawer.element.innerHTML = `
+        <div class="ocean-drawer__surface">
+
+        </div>
+    `;
+
+    state.root.appendChild(drawer.element);
+
+    drawer.initialized = true;
+
+}
+
+/******************************************************************/
+
         function startRotation() {
             const options = config();
 
