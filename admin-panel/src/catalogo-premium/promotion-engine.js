@@ -506,13 +506,13 @@ WhatsApp
 
 <div class="ocean-particles"></div>
 
-<div class="ocean-reef">
+<div class="op-reef">
 
-<div class="reef-back"></div>
+<div class="op-reef-back"></div>
 
-<div class="reef-mid"></div>
+<div class="op-reef-mid"></div>
 
-<div class="reef-front"></div>
+<div class="op-reef-front"></div>
 
 </div>
 

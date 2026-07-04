@@ -1964,7 +1964,7 @@ opacity:.92;
 
 }
 
-.coral-left{
+.op-coral-left{
 
 left:-20px;
 
@@ -2068,7 +2068,7 @@ background-position:0 -220px;
 REEF ENGINE V1
 ==========================================*/
 
-.ocean-reef{
+.op-reef{
 
 position:absolute;
 
@@ -2086,9 +2086,9 @@ overflow:hidden;
 
 }
 
-.reef-back,
-.reef-mid,
-.reef-front{
+.op-reef-back,
+.op-reef-mid,
+.op-reef-front{
 
 position:absolute;
 
