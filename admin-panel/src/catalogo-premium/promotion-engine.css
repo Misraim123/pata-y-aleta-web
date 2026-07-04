@@ -1984,11 +1984,11 @@ transparent 70%);
 
 }
 
-.coral-right{
+.op-coral-right{
 
 right:-30px;
 
-background:
+background: transparent;
 
 radial-gradient(circle at bottom,
 #fb7185,
