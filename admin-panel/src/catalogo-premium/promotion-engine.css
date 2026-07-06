@@ -1472,7 +1472,15 @@ border-radius:28px;
 
 overflow:hidden;
 
-background:#071824;
+background:
+
+url("../img/ocean-pulse-bg.webp")
+
+center center /
+
+cover
+
+no-repeat;
 
 box-shadow:
 
@@ -1887,6 +1895,8 @@ position:absolute;
 
 inset:0;
 
+opacity:.55;
+
 background:
 
 radial-gradient(circle at 50% -15%,
@@ -1918,7 +1928,7 @@ transparent 12px
 
 mix-blend-mode:screen;
 
-opacity:.25;
+opacity:.18;
 
 animation:
 
