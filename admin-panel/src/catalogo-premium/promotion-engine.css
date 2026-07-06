@@ -1472,15 +1472,11 @@ border-radius:28px;
 
 overflow:hidden;
 
-background:
-
-url("../img/ocean-pulse-bg.webp")
-
-center center /
-
-cover
-
-no-repeat;
+background-image: url("/img/ocean-pulse-bg.webp");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-color: #071824;
 
 box-shadow:
 
