@@ -500,6 +500,13 @@ WhatsApp
 
 <div class="ocean-light"></div>
 
+<div class="ocean-glass-image">
+    <img
+        src="/img/ocean-premium.jpg"
+        alt="Ocean Premium"
+    >
+</div>
+
 <div class="ocean-water-flow"></div>
 
 <div class="ocean-caustics"></div>
