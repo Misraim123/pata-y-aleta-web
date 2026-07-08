@@ -1286,6 +1286,51 @@ visibility .35s ease;
 
 z-index:9999;
 
+backdrop-filter:blur(22px);
+
+-webkit-backdrop-filter:blur(22px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.45),
+
+inset 0 1px 0 rgba(255,255,255,.08),
+
+0 0 40px rgba(56,189,248,.08);
+
+overflow:hidden;
+
+}
+
+.ocean-pulse-panel::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+top:0;
+
+height:1px;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.45),
+transparent
+);
+
+opacity:.55;
+
+pointer-events:none;
+
 }
 
 .ocean-pulse-panel.is-open{
