@@ -517,6 +517,34 @@ WhatsApp
 
 <div class="ocean-fish fish-blue"></div>
 
+<div class="ocean-live-panel">
+
+  <div class="live-card">
+    <span class="live-icon">🚚</span>
+    <div>
+      <strong>ENVÍO GRATIS</strong>
+      <small>Compras mayores a $1,000</small>
+    </div>
+  </div>
+
+  <div class="live-card">
+    <span class="live-icon">⚡</span>
+    <div>
+      <strong>RESCATE 48 HRS</strong>
+      <small>Agenda hoy mismo</small>
+    </div>
+  </div>
+
+  <div class="live-card">
+    <span class="live-icon">🐠</span>
+    <div>
+      <strong>CORALES PREMIUM</strong>
+      <small>Nueva colección</small>
+    </div>
+  </div>
+
+</div>
+
     <span class="ocean-bubble bubble-1"></span>
     <span class="ocean-bubble bubble-2"></span>
     <span class="ocean-bubble bubble-3"></span>
@@ -1108,9 +1136,10 @@ ${promotion.title}
                     return;
                 }
 
-                if (event.key === 'Escape') {
-                    setOpen(false);
-                }
+if (event.key === 'Escape' && isOpen()) {
+    event.preventDefault();
+    setOpen(false);
+}
 
                 if (event.key === 'ArrowRight') {
                     goTo(state.activeIndex + 1);
