@@ -1527,6 +1527,12 @@ box-shadow:
 
 0 20px 60px rgba(0,0,0,.35);
 
+display:flex;
+
+align-items:flex-end;
+
+justify-content:center;
+
 }
 
 .ocean-hero-image img{
@@ -2190,7 +2196,7 @@ z-index:8;
 
 position:absolute;
 
-width:72px;
+width:135px;
 
 height:34px;
 
@@ -2203,10 +2209,7 @@ border:
 1px solid rgba(255,255,255,.08);
 
 filter:
-
-drop-shadow(
-0 0 8px rgba(45,212,255,.45)
-);
+drop-shadow(0 0 22px rgba(56,189,248,.75));
 
 transform:scaleX(-1);
 
@@ -2230,6 +2233,8 @@ animation:
 fishSwim 20s linear infinite,
 
 fishFloat 4s ease-in-out infinite;
+
+bottom:28%;
 
 }
 
