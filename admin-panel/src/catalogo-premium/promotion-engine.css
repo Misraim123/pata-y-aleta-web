@@ -1975,7 +1975,7 @@ transparent 12px
 
 mix-blend-mode:screen;
 
-opacity:.18;
+opacity:.12;
 
 animation:
 
@@ -2123,7 +2123,7 @@ overflow:hidden;
 
 pointer-events:none;
 
-opacity:.18;
+opacity:.10;
 
 }
 
@@ -2364,6 +2364,8 @@ z-index:1;
 
 overflow:hidden;
 
+border-radius:28px;
+
 }
 
 .ocean-glass-image img{
@@ -2374,17 +2376,19 @@ height:100%;
 
 object-fit:cover;
 
-opacity:.28;
+display:block;
 
-transform:scale(1.08);
+opacity:.82;
+
+transform:scale(1.03);
 
 filter:
-brightness(.45)
-contrast(1.15)
-saturate(1.15);
 
-animation:
-glassDrift 26s ease-in-out infinite alternate;
+saturate(1.35)
+
+contrast(1.08)
+
+brightness(.92);
 
 }
 
@@ -2440,7 +2444,7 @@ left:24px;
 
 right:24px;
 
-bottom:24px;
+bottom:18px;
 
 display:flex;
 
@@ -2460,9 +2464,9 @@ display:flex;
 
 align-items:center;
 
-gap:16px;
+gap:12px;
 
-padding:14px 18px;
+padding:10px 16px;
 
 border-radius:18px;
 
