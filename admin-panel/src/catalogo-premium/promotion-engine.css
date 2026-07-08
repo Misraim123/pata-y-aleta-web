@@ -2450,7 +2450,7 @@ gap:14px;
 
 z-index:20;
 
-pointer-events:none;
+pointer-events:auto;
 
 }
 
@@ -2582,11 +2582,14 @@ font-size:18px;
 
 font-weight:600;
 
+pointer-events:auto;
+
+z-index:999;
+
 cursor:pointer;
 
-z-index:40;
-
 transition:.25s;
+
 
 }
 
