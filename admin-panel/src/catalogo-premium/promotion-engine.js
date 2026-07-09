@@ -517,10 +517,6 @@ WhatsApp
 
 <div class="ocean-fish fish-blue"></div>
 
-<div class="ocean-panel-close" id="oceanPanelClose">
-    ✕
-</div>
-
 <div class="ocean-live-panel">
 
     <div class="live-card">
@@ -996,6 +992,20 @@ ${promotion.title}
         function setOpen(open) {
             if (!state.panel || !state.root) {
                 return;
+
+                if (open) {
+
+    state.panel.onmouseleave = () => {
+
+        setOpen(false);
+
+    };
+
+} else {
+
+    state.panel.onmouseleave = null;
+
+}
             }
 
             const bar = state.root.querySelector(
@@ -1163,22 +1173,6 @@ ${promotion.title}
                 if (!state.panel || !isOpen()) {
                     return;
                 }
-
-                const closeBtn = document.getElementById('oceanPanelClose');
-
-if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-        setOpen(false);
-    });
-
-    }
-
-if (event.key === 'Escape' && isOpen()) {
-    event.preventDefault();
-    setOpen(false);
-
-
-}
 
                 if (event.key === 'ArrowRight') {
                     goTo(state.activeIndex + 1);
