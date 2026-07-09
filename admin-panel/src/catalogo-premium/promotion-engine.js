@@ -523,29 +523,53 @@ WhatsApp
 
 <div class="ocean-live-panel">
 
-  <div class="live-card">
-    <span class="live-icon">🚚</span>
-    <div>
-      <strong>ENVÍO GRATIS</strong>
-      <small>Compras mayores a $1,000</small>
-    </div>
-  </div>
+    <div class="live-card">
 
-  <div class="live-card">
-    <span class="live-icon">⚡</span>
-    <div>
-      <strong>RESCATE 48 HRS</strong>
-      <small>Agenda hoy mismo</small>
-    </div>
-  </div>
+        <div class="live-card-icon">
+            🚚
+        </div>
 
-  <div class="live-card">
-    <span class="live-icon">🐠</span>
-    <div>
-      <strong>CORALES PREMIUM</strong>
-      <small>Nueva colección</small>
+        <div class="live-card-content">
+
+            <h4>ENVÍO GRATIS</h4>
+
+            <p>Compras mayores a $1,000</p>
+
+        </div>
+
     </div>
-  </div>
+
+    <div class="live-card">
+
+        <div class="live-card-icon">
+            ⚡
+        </div>
+
+        <div class="live-card-content">
+
+            <h4>RESCATE 48 HRS</h4>
+
+            <p>Agenda hoy mismo</p>
+
+        </div>
+
+    </div>
+
+    <div class="live-card">
+
+        <div class="live-card-icon">
+            🐠
+        </div>
+
+        <div class="live-card-content">
+
+            <h4>CORALES PREMIUM</h4>
+
+            <p>Nueva colección</p>
+
+        </div>
+
+    </div>
 
 </div>
 
