@@ -1752,6 +1752,13 @@ document.getElementById('products');
 const oceanAdmin =
 document.getElementById('oceanAdmin');
 
+console.log({
+  productsViewBtn,
+  oceanViewBtn,
+  productsContainer,
+  oceanAdmin
+});
+
 productsViewBtn?.addEventListener('click',()=>{
 
 productsContainer.style.display='grid';
