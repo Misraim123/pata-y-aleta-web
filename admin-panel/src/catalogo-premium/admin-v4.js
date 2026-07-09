@@ -99,7 +99,15 @@ document.querySelector('#app').innerHTML = `
 
 </div>
 
-    <div style="display:flex;gap:10px;">
+<div style="display:flex;gap:10px;">
+
+<button id="productsViewBtn">
+📦 Productos
+</button>
+
+<button id="oceanViewBtn">
+🌊 Ocean Pulse
+</button>
 
 <button id="showLeadsBtn">
 📊 Leads
@@ -458,6 +466,31 @@ Home
 id="products"
 class="products-grid"
 ></div>
+
+<div
+id="oceanAdmin"
+style="
+display:none;
+margin-top:40px;
+background:#071c31;
+padding:30px;
+border-radius:24px;
+"
+>
+
+<h2 style="margin-bottom:25px;">
+🌊 Ocean Pulse
+</h2>
+
+<p style="opacity:.75;margin-bottom:25px;">
+Aquí administraremos todas las promociones del Home.
+</p>
+
+<button id="newPromotionBtn">
++ Nueva Promoción
+</button>
+
+</div>
 
 <div
 id="leadsContainer"
@@ -1642,3 +1675,29 @@ loadLeads()
 }
 
 },15000)
+
+const productsViewBtn =
+document.getElementById('productsViewBtn');
+
+const oceanViewBtn =
+document.getElementById('oceanViewBtn');
+
+const productsContainer =
+document.getElementById('products');
+
+const oceanAdmin =
+document.getElementById('oceanAdmin');
+
+productsViewBtn?.addEventListener('click',()=>{
+
+productsContainer.style.display='grid';
+oceanAdmin.style.display='none';
+
+});
+
+oceanViewBtn?.addEventListener('click',()=>{
+
+productsContainer.style.display='none';
+oceanAdmin.style.display='block';
+
+});
