@@ -479,16 +479,80 @@ border-radius:24px;
 >
 
 <h2 style="margin-bottom:25px;">
-🌊 Ocean Pulse
+🌊 Ocean Pulse Manager
 </h2>
 
-<p style="opacity:.75;margin-bottom:25px;">
-Aquí administraremos todas las promociones del Home.
-</p>
+<div class="ocean-admin-grid">
 
-<button id="newPromotionBtn">
-+ Nueva Promoción
-</button>
+    <div class="ocean-form">
+
+        <h3>Nueva Promoción</h3>
+
+        <input
+        id="promoTitle"
+        type="text"
+        placeholder="Título de la promoción"
+        >
+
+        <input
+        id="promoSubtitle"
+        type="text"
+        placeholder="Subtítulo"
+        >
+
+        <input
+        id="promoButton"
+        type="text"
+        placeholder="Texto del botón"
+        >
+
+        <select id="promoColor">
+
+            <option value="blue">🔵 Azul</option>
+            <option value="green">🟢 Verde</option>
+            <option value="orange">🟠 Naranja</option>
+            <option value="purple">🟣 Morado</option>
+
+        </select>
+
+        <input
+        id="promoImage"
+        type="file"
+        >
+
+        <label>
+
+            <input
+            id="promoActive"
+            type="checkbox"
+            checked
+            >
+
+            Promoción activa
+
+        </label>
+
+        <button id="savePromotion">
+
+            💾 Guardar Promoción
+
+        </button>
+
+    </div>
+
+    <div class="ocean-list">
+
+        <h3>Promociones</h3>
+
+        <div id="promotionCards">
+
+            Sin promociones.
+
+        </div>
+
+    </div>
+
+</div>
 
 </div>
 
