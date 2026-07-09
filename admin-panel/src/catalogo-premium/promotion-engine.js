@@ -1058,15 +1058,6 @@ ${promotion.title}
 
 });
 
-state.root.addEventListener('mouseleave', () => {
-
-    if (isOpen()) {
-
-        setOpen(false);
-
-    }
-
-});
 
             if (state.panel && state.track && state.dots) {
 
