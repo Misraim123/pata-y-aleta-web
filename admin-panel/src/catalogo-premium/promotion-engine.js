@@ -993,19 +993,7 @@ ${promotion.title}
             if (!state.panel || !state.root) {
                 return;
 
-                if (open) {
-
-    state.panel.onmouseleave = () => {
-
-        setOpen(false);
-
-    };
-
-} else {
-
-    state.panel.onmouseleave = null;
-
-}
+                
             }
 
             const bar = state.root.querySelector(
@@ -1066,6 +1054,16 @@ ${promotion.title}
 
     if (state.panel) {
         setOpen(!isOpen());
+    }
+
+});
+
+state.root.addEventListener('mouseleave', () => {
+
+    if (isOpen()) {
+
+        setOpen(false);
+
     }
 
 });
