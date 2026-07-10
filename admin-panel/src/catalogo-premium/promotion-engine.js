@@ -518,8 +518,14 @@ WhatsApp
 <div class="ocean-fish fish-blue"></div>
 
 <div
-class="ocean-live-panel"
-id="oceanLivePanel">
+class="ocean-live-wrapper"
+id="oceanLiveWrapper">
+
+    <div
+    class="ocean-live-panel"
+    id="oceanLivePanel">
+
+    </div>
 
 </div>
 
@@ -882,6 +888,19 @@ ${promotion.title}
             promotion.cta;
 
     }
+
+    const liveWrapper =
+document.getElementById('oceanLiveWrapper');
+
+if(
+    liveWrapper &&
+    promotion.image
+){
+
+    liveWrapper.style.backgroundImage =
+    `url(${promotion.image})`;
+
+}
 
     const livePanel =
 document.getElementById('oceanLivePanel');
