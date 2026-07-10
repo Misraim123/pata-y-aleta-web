@@ -315,6 +315,9 @@ transition:.3s;
 transform:translateY(-2px);
 }
 .admin-container{
+display:flex;
+flex-direction:column;
+gap:30px;    
 max-width:1600px;
 margin:auto;
 padding:30px;
@@ -1038,5 +1041,19 @@ padding:30px;
 border-radius:22px;
 
 min-height:520px;
+
+}
+
+#productsWorkspace,
+#oceanAdmin,
+#leadsContainer{
+
+width:100%;
+
+}
+
+#oceanAdmin{
+
+margin-top:0 !important;
 
 }
