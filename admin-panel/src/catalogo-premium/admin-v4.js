@@ -4,7 +4,10 @@ import { createClient } from '@supabase/supabase-js'
 const supabase = createClient(
   'https://vjyktubsdhpusyvnphvj.supabase.co',
   'sb_publishable_ORfJ3n0RVQ_oIJmexPkBwg_TRECBkzQ'
+  
 )
+
+const PROMOTION_TABLE = 'ocean_promotions';
 
 document.querySelector('#app').innerHTML = `
 
@@ -1779,3 +1782,119 @@ productsWorkspace.style.display='none';
 oceanAdmin.style.display='block';
 
 });
+
+document
+.getElementById('savePromotion')
+?.addEventListener('click', savePromotion);
+
+async function savePromotion(){
+
+const title =
+document.getElementById('promoTitle').value.trim();
+
+if(!title){
+
+alert('Escribe un título.');
+
+return;
+
+}
+
+const subtitle =
+document.getElementById('promoSubtitle').value;
+
+const button =
+document.getElementById('promoButton').value;
+
+const color =
+document.getElementById('promoColor').value;
+
+const active =
+document.getElementById('promoActive').checked;
+
+const imageInput =
+document.getElementById('promoImage');
+
+let image='';
+
+if(imageInput.files.length){
+
+image=imageInput.files[0].name;
+
+}
+
+const {error}=await supabase
+.from(PROMOTION_TABLE)
+.insert({
+
+title,
+
+subtitle,
+
+button_text:button,
+
+color,
+
+image,
+
+active
+
+});
+
+if(error){
+
+console.log(error);
+
+alert(error.message);
+
+return;
+
+}
+
+alert('Promoción guardada.');
+
+loadPromotions();
+
+}
+
+async function loadPromotions(){
+
+const {data,error}=await supabase
+.from(PROMOTION_TABLE)
+.select('*')
+.order('created_at',{ascending:false});
+
+if(error){
+
+console.log(error);
+
+return;
+
+}
+
+const cards=
+document.getElementById('promotionCards');
+
+if(!data.length){
+
+cards.innerHTML='Sin promociones.';
+
+return;
+
+}
+
+cards.innerHTML=data.map(item=>`
+
+<div class="promo-card">
+
+<strong>${item.title}</strong>
+
+<br>
+
+${item.subtitle}
+
+</div>
+
+`).join('');
+
+}
