@@ -1756,10 +1756,13 @@ document.getElementById('productsWorkspace');
 const oceanAdmin =
 document.getElementById('oceanAdmin');
 
+console.log('productsWorkspace', productsWorkspace);
+console.log('oceanAdmin', oceanAdmin)
+
 console.log({
   productsViewBtn,
   oceanViewBtn,
-  productsContainer,
+  productsWorkspace,
   oceanAdmin
 });
 
