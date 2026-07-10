@@ -121,6 +121,8 @@ Actualizar
 
   </div>
 
+  <div id="productsWorkspace">
+
   <div class="top-grid">
 
     <div class="admin-form">
@@ -466,6 +468,8 @@ Home
 id="products"
 class="products-grid"
 ></div>
+
+</div>
 
 <div
 id="oceanAdmin"
@@ -1720,9 +1724,9 @@ loadLeads()
 .subscribe()
 loadProducts()
 
-loadConfig()
+// loadConfig()
 
-loadFeatured()
+// loadFeatured()
 
 loadLeads()
 setInterval(() => {
@@ -1746,8 +1750,8 @@ document.getElementById('productsViewBtn');
 const oceanViewBtn =
 document.getElementById('oceanViewBtn');
 
-const productsContainer =
-document.getElementById('products');
+const productsWorkspace =
+document.getElementById('productsWorkspace');
 
 const oceanAdmin =
 document.getElementById('oceanAdmin');
@@ -1761,14 +1765,14 @@ console.log({
 
 productsViewBtn?.addEventListener('click',()=>{
 
-productsContainer.style.display='grid';
+productsWorkspace.style.display='block';
 oceanAdmin.style.display='none';
 
 });
 
 oceanViewBtn?.addEventListener('click',()=>{
 
-productsContainer.style.display='none';
+productsWorkspace.style.display='none';
 oceanAdmin.style.display='block';
 
 });
