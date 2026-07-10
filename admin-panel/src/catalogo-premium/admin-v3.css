@@ -1057,3 +1057,113 @@ width:100%;
 margin-top:0 !important;
 
 }
+
+/* ===========================
+   ADMIN NAVIGATION PREMIUM
+=========================== */
+
+.admin-header button{
+
+height:54px;
+
+padding:0 26px;
+
+border:none;
+
+border-radius:16px;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.30s;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+}
+
+#productsViewBtn{
+
+background:#132537;
+
+color:#ffffff;
+
+border:1px solid rgba(80,210,255,.18);
+
+}
+
+#productsViewBtn:hover{
+
+background:#1b3550;
+
+transform:translateY(-2px);
+
+}
+
+#oceanViewBtn{
+
+background:linear-gradient(
+135deg,
+#009dff,
+#34d5ff
+);
+
+color:#fff;
+
+}
+
+#oceanViewBtn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 28px rgba(0,180,255,.35);
+
+}
+
+#showLeadsBtn{
+
+background:#19c5ff;
+
+color:#04121f;
+
+font-weight:700;
+
+}
+
+#showLeadsBtn:hover{
+
+background:#39d4ff;
+
+}
+
+#refreshBtn{
+
+background:#38bdf8;
+
+color:#04121f;
+
+font-weight:700;
+
+}
+
+#refreshBtn:hover{
+
+background:#5ccfff;
+
+}
+
+.admin-header button:focus{
+
+outline:none;
+
+box-shadow:0 0 0 3px rgba(70,210,255,.30);
+
+}
