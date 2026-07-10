@@ -517,55 +517,9 @@ WhatsApp
 
 <div class="ocean-fish fish-blue"></div>
 
-<div class="ocean-live-panel">
-
-    <div class="live-card">
-
-        <div class="live-card-icon">
-            🚚
-        </div>
-
-        <div class="live-card-content">
-
-            <h4>ENVÍO GRATIS</h4>
-
-            <p>Compras mayores a $1,000</p>
-
-        </div>
-
-    </div>
-
-    <div class="live-card">
-
-        <div class="live-card-icon">
-            ⚡
-        </div>
-
-        <div class="live-card-content">
-
-            <h4>RESCATE 48 HRS</h4>
-
-            <p>Agenda hoy mismo</p>
-
-        </div>
-
-    </div>
-
-    <div class="live-card">
-
-        <div class="live-card-icon">
-            🐠
-        </div>
-
-        <div class="live-card-content">
-
-            <h4>CORALES PREMIUM</h4>
-
-            <p>Nueva colección</p>
-
-        </div>
-
-    </div>
+<div
+class="ocean-live-panel"
+id="oceanLivePanel">
 
 </div>
 
@@ -928,6 +882,50 @@ ${promotion.title}
             promotion.cta;
 
     }
+
+    const livePanel =
+document.getElementById('oceanLivePanel');
+
+if(livePanel){
+
+    livePanel.innerHTML = '';
+
+    [
+    ...state.promotions.slice(state.activeIndex),
+    ...state.promotions.slice(0, state.activeIndex)
+]
+.slice(0,3)
+        .forEach(item=>{
+
+            livePanel.innerHTML += `
+
+<div class="live-card">
+
+    <div class="live-card-icon">
+
+        ${item.type === 'shipping'
+            ? '🚚'
+            : item.type === 'service'
+            ? '⚡'
+            : '🐠'}
+
+    </div>
+
+    <div class="live-card-content">
+
+        <h4>${item.title}</h4>
+
+        <p>${item.description}</p>
+
+    </div>
+
+</div>
+
+`;
+
+        });
+
+}
 
 }
 
