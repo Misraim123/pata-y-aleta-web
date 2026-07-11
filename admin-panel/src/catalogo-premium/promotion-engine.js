@@ -449,7 +449,9 @@
 
           </header>
 
-          <section class="ocean-pulse-panel__hero">
+         <section
+class="ocean-pulse-panel__hero"
+id="oceanHeroBackground">
 
     <div class="ocean-pulse-panel__hero-info">
 
@@ -888,6 +890,34 @@ ${promotion.title}
             promotion.cta;
 
     }
+
+    const heroBackground =
+document.getElementById('oceanHeroBackground');
+
+if(
+    heroBackground &&
+    promotion.image
+){
+
+    heroBackground.style.backgroundImage =
+`
+linear-gradient(
+rgba(3,18,34,.78),
+rgba(3,18,34,.88)
+),
+url(${promotion.image})
+`;
+
+    heroBackground.style.backgroundSize =
+    "cover";
+
+    heroBackground.style.backgroundPosition =
+    "center";
+
+    heroBackground.style.backgroundRepeat =
+    "no-repeat";
+
+}
 
     const liveWrapper =
 document.getElementById('oceanLiveWrapper');
