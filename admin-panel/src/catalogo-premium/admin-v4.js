@@ -1846,8 +1846,11 @@ if (imageInput.files.length) {
         .getPublicUrl(fileName);
 
     image = data.publicUrl;
+    console.log(data);
+console.log(data.publicUrl);
 
 }
+console.log("URL FINAL:", image);
 const {error}=await supabase
 .from(PROMOTION_TABLE)
 .insert({
