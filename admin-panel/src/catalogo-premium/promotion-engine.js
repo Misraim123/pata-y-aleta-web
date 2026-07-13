@@ -300,6 +300,14 @@
                 )
             ),
 
+            image: valueOf(
+    promotion.image,
+    promotion.imageUrl,
+    promotion.banner,
+    promotion.photo,
+    ''
+),
+
             href: String(
                 valueOf(
                     promotion.href,
