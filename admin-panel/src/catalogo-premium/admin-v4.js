@@ -1726,6 +1726,7 @@ loadLeads()
 
 .subscribe()
 loadProducts()
+loadPromotions();
 
 // loadConfig()
 
@@ -1815,14 +1816,38 @@ document.getElementById('promoActive').checked;
 const imageInput =
 document.getElementById('promoImage');
 
-let image='';
+let image = '';
 
-if(imageInput.files.length){
+if (imageInput.files.length) {
 
-image=imageInput.files[0].name;
+    const file = imageInput.files[0];
+
+    const fileName =
+        Date.now() + '_' + file.name;
+
+    const { error: uploadError } =
+    await supabase.storage
+        .from('ocean-promotions')
+        .upload(fileName, file, {
+            upsert: true
+        });
+
+    if (uploadError) {
+
+        alert(uploadError.message);
+
+        return;
+
+    }
+
+    const { data } =
+    supabase.storage
+        .from('ocean-promotions')
+        .getPublicUrl(fileName);
+
+    image = data.publicUrl;
 
 }
-
 const {error}=await supabase
 .from(PROMOTION_TABLE)
 .insert({

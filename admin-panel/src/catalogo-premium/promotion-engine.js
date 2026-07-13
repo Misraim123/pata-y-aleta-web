@@ -767,7 +767,11 @@ ${promotion.title}
 
         function updateHero(promotion){
     
-      console.log("HERO UPDATE", promotion);         
+      console.log("HERO UPDATE", promotion);  
+      
+      console.log("IMAGEN:", promotion.image);
+
+console.log(promotion);
 
     if(!promotion) return;
 
@@ -780,6 +784,17 @@ ${promotion.title}
         document.getElementById(
             'oceanHeroDescription'
         );
+
+    const heroImage =
+document.querySelector(
+'.ocean-glass-image img'
+);
+
+if(heroImage && promotion.image){
+
+    heroImage.src = promotion.image;
+
+}    
 
     const button =
         document.getElementById(
@@ -890,6 +905,24 @@ ${promotion.title}
             promotion.cta;
 
     }
+
+    const heroWrapper =
+document.querySelector(
+'.ocean-pulse-panel__hero-media'
+);
+
+if(heroWrapper && promotion.image){
+
+    heroWrapper.style.backgroundImage =
+        `url(${promotion.image})`;
+
+    heroWrapper.style.backgroundSize =
+        'cover';
+
+    heroWrapper.style.backgroundPosition =
+        'center';
+
+}
 
     const heroBackground =
 document.getElementById('oceanHeroBackground');
