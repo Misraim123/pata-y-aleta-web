@@ -506,6 +506,50 @@ WhatsApp
 
     <div class="ocean-pulse-panel__hero-media">
 
+    <span class="reef-bubble"></span>
+<span class="reef-bubble"></span>
+<span class="reef-bubble"></span>
+<span class="reef-bubble"></span>
+<span class="reef-bubble"></span>
+<span class="reef-bubble"></span>
+<span class="reef-bubble"></span>
+
+<div class="reef-fish emperor-fish">
+
+<img
+src="./fish-emperor.png"
+alt="Ángel Emperador Juvenil"
+>
+
+</div>
+
+<div class="reef-fish puffer-fish">
+
+<img
+src="./fish-puffer.png"
+alt="Pez Globo"
+>
+
+</div>
+
+<div class="reef-fish emperor-fish">
+
+<img
+src="./fish-emperor.png"
+alt=""
+>
+
+</div>
+
+<div class="reef-fish puffer-fish">
+
+<img
+src="./fish-puffer.png"
+alt=""
+>
+
+</div>
+
 <div class="ocean-hero-image">
 
 <div class="ocean-light"></div>
@@ -793,16 +837,17 @@ console.log(promotion);
             'oceanHeroDescription'
         );
 
-    const heroImage =
+const heroImage =
 document.querySelector(
 '.ocean-glass-image img'
 );
 
-if(heroImage && promotion.image){
+if(heroImage){
 
-    heroImage.src = promotion.image;
+    heroImage.src =
+    './ocean-reef-premium.jpg';
 
-}    
+}   
 
     const button =
         document.getElementById(
@@ -914,15 +959,15 @@ ${promotion.title}
 
     }
 
-    const heroWrapper =
+const heroWrapper =
 document.querySelector(
 '.ocean-pulse-panel__hero-media'
 );
 
-if(heroWrapper && promotion.image){
+if(heroWrapper){
 
     heroWrapper.style.backgroundImage =
-        `url(${promotion.image})`;
+        "url('./ocean-reef-premium.jpg')";
 
     heroWrapper.style.backgroundSize =
         'cover';
@@ -930,33 +975,29 @@ if(heroWrapper && promotion.image){
     heroWrapper.style.backgroundPosition =
         'center';
 
+    heroWrapper.style.backgroundRepeat =
+        'no-repeat';
+
 }
 
     const heroBackground =
 document.getElementById('oceanHeroBackground');
 
-if(
-    heroBackground &&
-    promotion.image
-){
+if(heroBackground){
 
-    heroBackground.style.backgroundImage =
-`
+    heroBackground.style.backgroundImage = `
 linear-gradient(
-rgba(3,18,34,.78),
-rgba(3,18,34,.88)
+rgba(2,15,28,.45),
+rgba(2,15,28,.72)
 ),
-url(${promotion.image})
+url('./ocean-reef-premium.jpg')
 `;
 
-    heroBackground.style.backgroundSize =
-    "cover";
+    heroBackground.style.backgroundSize = "cover";
 
-    heroBackground.style.backgroundPosition =
-    "center";
+    heroBackground.style.backgroundPosition = "center";
 
-    heroBackground.style.backgroundRepeat =
-    "no-repeat";
+    heroBackground.style.backgroundRepeat = "no-repeat";
 
 }
 
