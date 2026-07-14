@@ -1368,12 +1368,27 @@ state.root.appendChild(drawer.element);
             }
 
             startRotation();
+
+            document.addEventListener(
+
+    "OceanPulseReload",
+
+    ()=>{
+
+        refresh();
+
+    }
+
+);
         }
+        
 
         function init() {
             if (state.initialized) {
                 return window.OceanPulse;
             }
+
+            
 
             state.root = document.getElementById(ROOT_ID);
 
@@ -1385,21 +1400,41 @@ state.root.appendChild(drawer.element);
                 return null;
             }
 
-            const promotions = rawPromotions()
-                .map(normalizePromotion)
-                .filter(dateAllows)
-                .sort((a, b) => a.priority - b.priority);
+            let promotions = [];
 
-            if (!promotions.length) {
-                console.info(
-                    '[Ocean Pulse] promotion-data.js no contiene promociones activas.'
-                );
+if(
+    window.OCEAN_PULSE_PROMOTIONS &&
+    Array.isArray(window.OCEAN_PULSE_PROMOTIONS) &&
+    window.OCEAN_PULSE_PROMOTIONS.length
+){
 
-                return null;
-            }
+    promotions =
+    window.OCEAN_PULSE_PROMOTIONS
+        .map(normalizePromotion)
+        .filter(dateAllows)
+        .sort((a,b)=>a.priority-b.priority);
 
-            state.promotions = promotions;
+}else{
 
+    promotions =
+    rawPromotions()
+        .map(normalizePromotion)
+        .filter(dateAllows)
+        .sort((a,b)=>a.priority-b.priority);
+
+}
+
+if(!promotions.length){
+
+    console.info(
+        '[Ocean Pulse] Sin promociones.'
+    );
+
+    return null;
+
+}
+
+state.promotions = promotions;
             createBar();
 // createDrawer();
 createPanel();
