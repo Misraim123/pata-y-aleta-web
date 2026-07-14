@@ -3352,9 +3352,11 @@ BARRA SUPERIOR
 
 display:grid !important;
 
-grid-template-rows:110px 1fr !important;
+grid-template-rows:60px 1fr !important;
 
 overflow:hidden;
+
+background:#02111d !important;
 
 }
 
@@ -3370,9 +3372,11 @@ display:flex;
 
 align-items:center;
 
-justify-content:space-between;
+justify-content:center;
 
-padding:18px 34px;
+padding:12px 24px;
+
+height:60px;
 
 background:
 
@@ -3380,9 +3384,9 @@ linear-gradient(
 
 180deg,
 
-rgba(2,18,35,.92),
+rgba(2,18,35,.94),
 
-rgba(2,18,35,.72)
+rgba(2,18,35,.82)
 
 );
 
@@ -3390,9 +3394,7 @@ backdrop-filter:blur(18px);
 
 border-bottom:
 
-1px solid
-
-rgba(75,214,255,.18);
+1px solid rgba(75,214,255,.15);
 
 z-index:50;
 
@@ -3404,31 +3406,25 @@ TIMER
 
 .ocean-pulse-panel__header::after{
 
-content:
-
-"⏳ PROMOCIÓN TERMINA EN 06 DÍAS 18 HRS 42 MIN";
-
-font-size:15px;
-
-font-weight:700;
-
-letter-spacing:1px;
-
-color:#74f0ff;
+content:"⏳ 06 DÍAS 18 HRS 42 MIN";
 
 position:absolute;
 
-right:35px;
+right:24px;
 
 top:50%;
 
 transform:translateY(-50%);
 
-animation:
+font-size:18px;
 
-pulseTimer
+font-weight:800;
 
-2.5s infinite;
+letter-spacing:1px;
+
+color:#69ecff;
+
+animation:pulseTimer 2s infinite;
 
 }
 
@@ -3438,25 +3434,23 @@ FORMAS DE PAGO
 
 .ocean-pulse-panel__header::before{
 
-content:
-
-"💳 VISA   •   MASTERCARD   •   AMEX   •   MERCADO PAGO   •   DÉBITO";
+content:"💳 VISA   •   MC   •   AMEX   •   MERCADO PAGO";
 
 position:absolute;
 
-left:35px;
+left:24px;
 
-bottom:12px;
+top:50%;
 
-font-size:13px;
+transform:translateY(-50%);
+
+font-size:12px;
 
 font-weight:600;
 
-color:#cdefff;
+opacity:.75;
 
-opacity:.92;
-
-letter-spacing:.5px;
+color:#dff9ff;
 
 }
 
@@ -3468,13 +3462,15 @@ HERO
 
 padding:0 !important;
 
-min-height:640px !important;
+margin-top:-50px;
+
+min-height:700px !important;
 
 display:grid;
 
 grid-template-columns:1.45fr .82fr;
 
-align-items:center;
+align-items:flex-start;
 
 }
 
@@ -3505,8 +3501,14 @@ PANEL DERECHO
 =========================*/
 
 .ocean-live-panel{
-
+    
 backdrop-filter:blur(24px);
+
+margin-top:-80px;
+
+position:relative;
+
+z-index:40;
 
 background:
 
