@@ -541,15 +541,6 @@ alt=""
 
 </div>
 
-<div class="reef-fish puffer-fish">
-
-<img
-src="./fish-puffer.png"
-alt=""
->
-
-</div>
-
 <div class="ocean-hero-image">
 
 <div class="ocean-light"></div>
