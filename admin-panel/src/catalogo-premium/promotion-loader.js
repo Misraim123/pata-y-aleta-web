@@ -22,7 +22,7 @@
     .from('ocean_promotions')
     .select('*')
     .eq('active', true)
-    .order('priority', { ascending:true });
+   .order('creado_en', { ascending:false });
     console.log("ERROR COMPLETO");
 console.dir(error);
 
