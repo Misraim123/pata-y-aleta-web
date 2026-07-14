@@ -1049,6 +1049,11 @@ if(livePanel){
 
             }
 
+            console.log("PROMOCION COMPLETA:");
+console.dir(promotion);
+
+console.log("IMAGE FINAL:", promotion.image);
+
             updateBar(promotion);
 
             updateHero(promotion);
