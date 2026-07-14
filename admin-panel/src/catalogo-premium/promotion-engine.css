@@ -3170,3 +3170,171 @@ position:relative;
 z-index:20;
 
 }
+
+/*==================================================
+OCEAN PULSE FINAL OVERRIDE
+==================================================*/
+
+.ocean-pulse-panel__glass{
+
+background:#02111d !important;
+
+}
+
+.ocean-pulse-panel__hero{
+
+position:relative !important;
+
+min-height:620px !important;
+
+padding:0 !important;
+
+overflow:hidden;
+
+}
+
+.ocean-pulse-panel__hero-media{
+
+position:absolute !important;
+
+inset:0 !important;
+
+border-radius:0 !important;
+
+background-image:
+
+linear-gradient(
+
+180deg,
+
+rgba(0,18,34,.18),
+
+rgba(0,18,34,.58)
+
+),
+
+url('./ocean-reef-premium.jpg') !important;
+
+background-size:cover !important;
+
+background-position:center center !important;
+
+background-repeat:no-repeat !important;
+
+filter:
+
+saturate(1.35)
+
+contrast(1.08)
+
+brightness(1.02);
+
+animation:
+
+oceanBackgroundMove
+
+28s ease-in-out infinite;
+
+z-index:1 !important;
+
+}
+
+.ocean-pulse-panel__hero-info,
+
+.ocean-live-panel,
+
+.ocean-glass-image,
+
+.ocean-pulse-panel__chips{
+
+position:relative !important;
+
+z-index:20 !important;
+
+}
+
+.ocean-hero-title{
+
+font-size:54px !important;
+
+font-weight:900 !important;
+
+color:#ffffff !important;
+
+text-shadow:
+
+0 4px 18px rgba(0,0,0,.65),
+
+0 0 30px rgba(0,213,255,.28);
+
+}
+
+.ocean-hero-description{
+
+font-size:19px !important;
+
+color:#eefcff !important;
+
+text-shadow:
+
+0 2px 12px rgba(0,0,0,.55);
+
+}
+
+.ocean-hero-badge{
+
+background:rgba(0,213,255,.22) !important;
+
+border:1px solid rgba(99,240,237,.45);
+
+box-shadow:
+
+0 0 24px rgba(0,213,255,.20);
+
+}
+
+.ocean-btn-primary{
+
+box-shadow:
+
+0 15px 40px rgba(0,213,255,.35);
+
+}
+
+.ocean-live-wrapper::before{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(2,18,35,.15),
+
+rgba(2,18,35,.45)
+
+) !important;
+
+}
+
+@keyframes oceanBackgroundMove{
+
+0%{
+
+background-position:center center;
+
+}
+
+50%{
+
+background-position:center 47%;
+
+}
+
+100%{
+
+background-position:center center;
+
+}
+
+}
