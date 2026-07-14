@@ -23,6 +23,8 @@
     .select('*')
     .eq('active', true)
     .order('priority', { ascending:true });
+    console.log("ERROR:", error);
+console.log("DATA:", data);
 
     if(error){
 
@@ -65,3 +67,5 @@
     );
 
 })();
+
+console.log("LOADER EJECUTADO");
