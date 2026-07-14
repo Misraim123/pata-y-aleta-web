@@ -514,32 +514,6 @@ WhatsApp
 <span class="reef-bubble"></span>
 <span class="reef-bubble"></span>
 
-<div class="reef-fish emperor-fish">
-
-<img
-src="./fish-emperor.png"
-alt="Ángel Emperador Juvenil"
->
-
-</div>
-
-<div class="reef-fish puffer-fish">
-
-<img
-src="./fish-puffer.png"
-alt="Pez Globo"
->
-
-</div>
-
-<div class="reef-fish emperor-fish">
-
-<img
-src="./fish-emperor.png"
-alt=""
->
-
-</div>
 
 <div class="ocean-hero-image">
 

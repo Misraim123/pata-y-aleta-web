@@ -1386,24 +1386,23 @@ OCEAN HERO V1
 
 .ocean-pulse-panel__hero{
 
+position:relative;
+
+z-index:15;
+
 display:grid;
 
-transition:background .6s ease;
-
-overflow:hidden;
-
-grid-template-columns:1.2fr .8fr;
-
-gap:40px;
+grid-template-columns:1.4fr .9fr;
 
 align-items:center;
 
-padding:32px 40px;
+gap:40px;
 
-border-bottom:1px solid rgba(255,255,255,.08);
+padding:60px;
+
+min-height:560px;
 
 }
-
 .ocean-pulse-panel__hero-info{
 
 display:flex;
@@ -1502,19 +1501,24 @@ position:absolute;
 
 inset:0;
 
+z-index:0;
+
 overflow:hidden;
 
-border-radius:30px;
+background-image:
 
-background:url('./ocean-reef-premium.jpg');
+linear-gradient(
+rgba(2,12,24,.30),
+rgba(2,12,24,.58)
+),
+
+url('./ocean-reef-premium.jpg');
 
 background-size:cover;
 
-background-position:center;
+background-position:center center;
 
 background-repeat:no-repeat;
-
-z-index:0;
 
 }
 
@@ -3125,369 +3129,13 @@ will-change:transform;
 
 }
 
-.reef-fish img{
 
-display:block;
-
-width:100%;
-
-height:auto;
-
-}
-
-.emperor-fish{
-
-width:170px;
-
-left:-220px;
-
-top:24%;
-
-animation:
-
-swimEmperor 34s linear infinite;
-
-}
-
-.puffer-fish{
-
-width:120px;
-
-right:-180px;
-
-bottom:12%;
-
-animation:
-
-swimPuffer 42s linear infinite;
-
-}
-
-@keyframes swimEmperor{
-
-0%{
-
-transform:
-
-translateX(0)
-
-translateY(0)
-
-rotate(0deg);
-
-}
-
-25%{
-
-transform:
-
-translateX(35vw)
-
-translateY(-12px)
-
-rotate(-2deg);
-
-}
-
-50%{
-
-transform:
-
-translateX(65vw)
-
-translateY(8px)
-
-rotate(2deg);
-
-}
-
-75%{
-
-transform:
-
-translateX(92vw)
-
-translateY(-8px)
-
-rotate(-1deg);
-
-}
-
-100%{
-
-transform:
-
-translateX(125vw)
-
-translateY(0)
-
-rotate(0deg);
-
-}
-
-}
-
-@keyframes swimPuffer{
-
-0%{
-
-transform:
-
-translateX(0)
-
-translateY(0);
-
-}
-
-20%{
-
-transform:
-
-translateX(-18vw)
-
-translateY(-6px);
-
-}
-
-40%{
-
-transform:
-
-translateX(-36vw)
-
-translateY(8px);
-
-}
-
-60%{
-
-transform:
-
-translateX(-54vw)
-
-translateY(-4px);
-
-}
-
-80%{
-
-transform:
-
-translateX(-78vw)
-
-translateY(10px);
-
-}
-
-100%{
-
-transform:
-
-translateX(-120vw)
-
-translateY(0);
-
-}
-
-}
 
 /*======================================
 PECES PREMIUM
 ======================================*/
 
-.reef-fish{
 
-position:absolute;
-
-pointer-events:none;
-
-z-index:15;
-
-transition:all .3s ease;
-
-filter:
-
-drop-shadow(0 15px 25px rgba(0,0,0,.45))
-
-drop-shadow(0 0 12px rgba(0,180,255,.15));
-
-}
-
-.reef-fish img{
-
-display:block;
-
-width:100%;
-
-height:auto;
-
-user-select:none;
-
--webkit-user-drag:none;
-
-}
-
-.emperor-fish{
-
-width:90px;
-
-left:-120px;
-
-bottom:40px;
-
-top:auto;
-
-opacity:.85;
-
-z-index:3;
-
-animation:
-
-swimEmperor 42s linear infinite;
-
-}
-
-.puffer-fish{
-
-width:120px;
-
-right:-180px;
-
-bottom:12%;
-
-animation:
-
-swimPuffer 40s linear infinite;
-
-}
-
-@keyframes swimEmperor{
-
-0%{
-
-transform:
-
-translateX(0)
-
-translateY(0)
-
-rotate(2deg);
-
-}
-
-25%{
-
-transform:
-
-translateX(28vw)
-
-translateY(-5px)
-
-rotate(-1deg);
-
-}
-
-50%{
-
-transform:
-
-translateX(55vw)
-
-translateY(4px)
-
-rotate(1deg);
-
-}
-
-75%{
-
-transform:
-
-translateX(82vw)
-
-translateY(-4px)
-
-rotate(-1deg);
-
-}
-
-100%{
-
-transform:
-
-translateX(125vw)
-
-translateY(0)
-
-rotate(2deg);
-
-}
-
-}
-
-@keyframes swimPuffer{
-
-0%{
-
-transform:
-
-translateX(0)
-
-translateY(0)
-
-scale(1);
-
-}
-
-20%{
-
-transform:
-
-translateX(-15vw)
-
-translateY(-6px)
-
-scale(1.02);
-
-}
-
-45%{
-
-transform:
-
-translateX(-35vw)
-
-translateY(8px)
-
-scale(.98);
-
-}
-
-70%{
-
-transform:
-
-translateX(-60vw)
-
-translateY(-8px)
-
-scale(1.04);
-
-}
-
-100%{
-
-transform:
-
-translateX(-120vw)
-
-translateY(0)
-
-scale(1);
-
-}
-
-}
 
 /*======================================
 CAPAS OCEAN PULSE
