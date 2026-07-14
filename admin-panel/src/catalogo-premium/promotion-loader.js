@@ -23,8 +23,11 @@
     .select('*')
     .eq('active', true)
     .order('priority', { ascending:true });
-    console.log("ERROR:", error);
-console.log("DATA:", data);
+    console.log("ERROR COMPLETO");
+console.dir(error);
+
+console.log("DATA");
+console.dir(data);
 
     if(error){
 
