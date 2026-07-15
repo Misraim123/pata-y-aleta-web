@@ -502,6 +502,18 @@ WhatsApp
 </button>
         </div>
 
+    <div
+class="ocean-live-wrapper"
+id="oceanLiveWrapper">
+
+    <div
+    class="ocean-live-panel"
+    id="oceanLivePanel">
+
+    </div>
+
+</div>    
+
     </div>
 
     <div class="ocean-pulse-panel__hero-media">
@@ -530,22 +542,12 @@ WhatsApp
     <span class="ocean-bubble bubble-7"></span>
     <span class="ocean-bubble bubble-8"></span>
 
-    
+
 </div>
 
 </section>
 
-<div
-class="ocean-live-wrapper"
-id="oceanLiveWrapper">
 
-    <div
-    class="ocean-live-panel"
-    id="oceanLivePanel">
-
-    </div>
-
-</div>
 
           <div class="ocean-pulse-panel__carousel">
 
