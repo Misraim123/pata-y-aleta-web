@@ -3994,8 +3994,6 @@ OCEAN PULSE CINEMATIC TUNE V2
 
 .ocean-pulse-panel__hero::before,
 .ocean-pulse-panel__hero::after,
-.ocean-live-wrapper::before,
-.ocean-live-wrapper::after,
 .ocean-water-flow,
 .ocean-caustics{
 
@@ -4110,17 +4108,29 @@ min-height:108px;
 
 .ocean-pulse-panel__hero-media{
 
+position:absolute !important;
+
+inset:0 !important;
+
+overflow:hidden !important;
+
+border-radius:0 !important;
+
+background-image:url("./ocean-reef-premium.jpg") !important;
+
 background-size:cover !important;
 
 background-position:center center !important;
 
+background-repeat:no-repeat !important;
+
 filter:
 
-brightness(1.08)
+brightness(1.04)
 
-contrast(1.08)
+contrast(1.05)
 
-saturate(1.28);
+saturate(1.20);
 
 }
 
@@ -4128,9 +4138,15 @@ saturate(1.28);
 
 .ocean-live-panel{
 
-backdrop-filter:blur(30px);
+background:transparent !important;
 
--webkit-backdrop-filter:blur(30px);
+border:none !important;
+
+box-shadow:none !important;
+
+backdrop-filter:none !important;
+
+-webkit-backdrop-filter:none !important;
 
 }
 
