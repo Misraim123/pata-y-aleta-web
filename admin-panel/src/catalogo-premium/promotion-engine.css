@@ -1445,6 +1445,10 @@ color:#fff;
 
 .ocean-hero-description{
 
+position:relative;
+
+z-index:35;    
+
 font-size:18px;
 
 line-height:1.7;
@@ -3939,16 +3943,21 @@ opacity:0 !important;
 
 .ocean-pulse-panel__hero{
 
-padding:90px 70px 70px !important;
+position:relative;
 
-display:grid !important;
+display:grid;
 
-grid-template-columns:
-58% 42%;
+grid-template-columns:1fr;
 
-align-items:center !important;
+min-height:640px;
 
-column-gap:70px;
+overflow:hidden;
+
+border-radius:28px;
+
+padding:0;
+
+background:transparent !important;
 
 }
 
@@ -3956,15 +3965,35 @@ column-gap:70px;
 
 .ocean-pulse-panel__hero-info{
 
-padding-left:20px;
+position:absolute;
 
-max-width:620px;
+left:80px;
+
+top:110px;
+
+width:560px;
 
 z-index:30;
+
+background:transparent !important;
+
+padding:0;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+align-items:flex-start;
 
 }
 
 .ocean-hero-title{
+
+position:relative;
+
+z-index:35;    
 
 font-size:72px !important;
 
@@ -3977,6 +4006,10 @@ max-width:560px;
 }
 
 .ocean-hero-description{
+
+position:relative;
+
+z-index:35;    
 
 font-size:21px;
 
@@ -3991,6 +4024,11 @@ margin-bottom:34px;
 /* Botones */
 
 .ocean-hero-buttons{
+
+
+position:relative;
+
+z-index:35;    
 
 display:flex;
 
@@ -4040,29 +4078,15 @@ min-height:108px;
 
 .ocean-pulse-panel__hero-media{
 
-position:absolute !important;
+position:absolute;
 
-inset:0 !important;
+inset:0;
 
-overflow:hidden !important;
+z-index:1;
 
-border-radius:0 !important;
+overflow:hidden;
 
-background-image:url("./ocean-reef-premium.jpg") !important;
-
-background-size:cover !important;
-
-background-position:center center !important;
-
-background-repeat:no-repeat !important;
-
-filter:
-
-brightness(1.04)
-
-contrast(1.05)
-
-saturate(1.20);
+border-radius:28px;
 
 }
 
