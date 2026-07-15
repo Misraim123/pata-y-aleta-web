@@ -2753,21 +2753,35 @@ box-shadow:
 
 position:absolute;
 
-inset:0;
+top:170px;
 
-border-radius:34px;
+right:55px;
 
-overflow:hidden;
+width:430px;
 
-background-size:cover;
+display:flex;
 
-background-position:center;
+justify-content:flex-end;
 
-background-repeat:no-repeat;
+align-items:flex-start;
 
-transition:
-background-image .45s ease,
-filter .35s ease;
+z-index:90;
+
+pointer-events:none;
+
+}
+
+.ocean-live-panel{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+width:100%;
+
+pointer-events:auto;
 
 }
 
@@ -3999,7 +4013,8 @@ padding:90px 70px 70px !important;
 
 display:grid !important;
 
-grid-template-columns:1.15fr .85fr !important;
+grid-template-columns:
+58% 42%;
 
 align-items:center !important;
 

@@ -506,14 +506,13 @@ WhatsApp
 
     <div class="ocean-pulse-panel__hero-media">
 
-    <span class="reef-bubble"></span>
 <span class="reef-bubble"></span>
 <span class="reef-bubble"></span>
 <span class="reef-bubble"></span>
 <span class="reef-bubble"></span>
 <span class="reef-bubble"></span>
 <span class="reef-bubble"></span>
-
+<span class="reef-bubble"></span>
 
 <div class="ocean-hero-image">
 
@@ -536,18 +535,6 @@ WhatsApp
 
 <div class="ocean-fish fish-blue"></div>
 
-<div
-class="ocean-live-wrapper"
-id="oceanLiveWrapper">
-
-    <div
-    class="ocean-live-panel"
-    id="oceanLivePanel">
-
-    </div>
-
-</div>
-
     <span class="ocean-bubble bubble-1"></span>
     <span class="ocean-bubble bubble-2"></span>
     <span class="ocean-bubble bubble-3"></span>
@@ -562,6 +549,18 @@ id="oceanLiveWrapper">
 </div>
 
 </section>
+
+<div
+class="ocean-live-wrapper"
+id="oceanLiveWrapper">
+
+    <div
+    class="ocean-live-panel"
+    id="oceanLivePanel">
+
+    </div>
+
+</div>
 
           <div class="ocean-pulse-panel__carousel">
 
