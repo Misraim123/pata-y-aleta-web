@@ -3986,19 +3986,23 @@ position:relative;
 
 display:grid;
 
-grid-template-columns:minmax(0,1fr) 430px;
+grid-template-columns:minmax(0,1fr) 420px;
+
+grid-template-areas:
+
+"hero cards";
 
 align-items:center;
 
+column-gap:42px;
+
 min-height:650px;
+
+padding:0 50px;
 
 overflow:hidden;
 
 border-radius:28px;
-
-padding:0;
-
-background:transparent;
 
 }
 
@@ -4010,27 +4014,21 @@ inset:0;
 
 z-index:1;
 
-overflow:hidden;
-
 }
 
 .ocean-pulse-panel__hero-info{
 
+grid-area:hero;
+
 position:relative;
 
-z-index:30;
+z-index:20;
 
-padding-left:70px;
+max-width:560px;
 
-max-width:620px;
+padding-left:30px;
 
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:flex-start;
+align-self:center;
 
 }
 
@@ -4072,17 +4070,27 @@ gap:18px;
 
 .ocean-live-wrapper{
 
+grid-area:cards;
+
 position:relative;
 
-z-index:40;
+z-index:30;
+
+width:100%;
 
 display:flex;
 
-justify-content:center;
+justify-content:flex-end;
 
 align-items:center;
 
-padding-right:45px;
+padding-right:10px;
+
+transform:none;
+
+top:auto;
+
+right:auto;
 
 }
 
