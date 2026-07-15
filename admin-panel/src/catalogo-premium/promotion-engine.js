@@ -923,27 +923,6 @@ ${promotion.title}
 
     }
 
-const heroWrapper =
-document.querySelector(
-'.ocean-pulse-panel__hero-media'
-);
-
-if(heroWrapper){
-
-    heroWrapper.style.backgroundImage =
-        "url('./ocean-reef-premium.jpg')";
-
-    heroWrapper.style.backgroundSize =
-        'cover';
-
-    heroWrapper.style.backgroundPosition =
-        'center';
-
-    heroWrapper.style.backgroundRepeat =
-        'no-repeat';
-
-}
-
     const heroBackground =
 document.getElementById('oceanHeroBackground');
 
