@@ -481,28 +481,31 @@ id="oceanHeroDescription">
 
 </p>
 
-        <div class="ocean-hero-buttons">
+ <div class="ocean-hero-buttons">
 
-<button
-class="ocean-btn-primary"
-id="oceanHeroButton"
-type="button">
+    <button
+    class="ocean-btn-primary"
+    id="oceanHeroButton"
+    type="button">
 
-Ver promoción
+        Ver promoción
 
-</button>
+    </button>
 
-<button
-class="ocean-btn-secondary"
-id="oceanHeroWhatsapp"
-type="button">
+    <button
+    class="ocean-btn-secondary"
+    id="oceanHeroWhatsapp"
+    type="button">
 
-WhatsApp
+        WhatsApp
 
-</button>
-        </div>
+    </button>
 
-    <div
+</div>
+
+</div>
+
+<div
 class="ocean-live-wrapper"
 id="oceanLiveWrapper">
 
@@ -512,11 +515,9 @@ id="oceanLiveWrapper">
 
     </div>
 
-</div>    
+</div>
 
-    </div>
-
-    <div class="ocean-pulse-panel__hero-media">
+<div class="ocean-pulse-panel__hero-media">
 
     <div class="ocean-glass-image">
 
@@ -541,7 +542,6 @@ id="oceanLiveWrapper">
     <span class="ocean-bubble bubble-6"></span>
     <span class="ocean-bubble bubble-7"></span>
     <span class="ocean-bubble bubble-8"></span>
-
 
 </div>
 
