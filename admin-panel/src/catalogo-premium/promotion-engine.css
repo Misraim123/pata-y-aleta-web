@@ -2399,7 +2399,7 @@ object-fit:cover;
 
 display:block;
 
-opacity:.82;
+opacity:1;
 
 transform:scale(1.03);
 
@@ -2409,27 +2409,13 @@ saturate(1.35)
 
 contrast(1.08)
 
-brightness(.92);
+brightness(1)
 
 }
 
 .ocean-glass-image::after{
 
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-
-linear-gradient(
-180deg,
-rgba(3,18,35,.18) 0%,
-rgba(3,18,35,.42) 100%
-);
-
-pointer-events:none;
+display:none;
 
 }
 
@@ -2843,67 +2829,13 @@ box-shadow:
 
 .ocean-pulse-panel__hero-media::before{
 
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-
-linear-gradient(
-
-180deg,
-
-rgba(255,255,255,.05),
-
-rgba(0,0,0,.20)
-
-);
-
-mix-blend-mode:screen;
-
-pointer-events:none;
+display:none;
 
 }
 
 .ocean-pulse-panel__hero-media::after{
 
-content:"";
-
-position:absolute;
-
-left:-25%;
-
-top:-35%;
-
-width:160%;
-
-height:170%;
-
-background:
-
-radial-gradient(
-
-circle,
-
-rgba(255,255,255,.28),
-
-transparent 65%
-
-);
-
-transform:rotate(-18deg);
-
-animation:
-
-oceanSunLight
-
-12s ease-in-out infinite;
-
-pointer-events:none;
-
-opacity:.75;
+display:none;
 
 }
 
