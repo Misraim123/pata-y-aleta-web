@@ -800,18 +800,7 @@ console.log(promotion);
         document.getElementById(
             'oceanHeroDescription'
         );
-
-const heroImage =
-document.querySelector(
-'.ocean-glass-image img'
-);
-
-if(heroImage){
-
-    heroImage.src =
-    './ocean-reef-premium.jpg';
-
-}   
+   
 
     const button =
         document.getElementById(
@@ -939,25 +928,6 @@ heroBackground.style.backgroundPosition =
 
 heroBackground.style.backgroundRepeat =
 "no-repeat";
-
-    heroBackground.style.backgroundSize = "cover";
-
-    heroBackground.style.backgroundPosition = "center";
-
-    heroBackground.style.backgroundRepeat = "no-repeat";
-
-}
-
-    const liveWrapper =
-document.getElementById('oceanLiveWrapper');
-
-if(
-    liveWrapper &&
-    promotion.image
-){
-
-    liveWrapper.style.backgroundImage =
-    `url(${promotion.image})`;
 
 }
 
