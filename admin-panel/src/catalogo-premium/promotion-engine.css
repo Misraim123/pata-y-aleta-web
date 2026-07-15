@@ -4159,3 +4159,75 @@ letter-spacing:.3px;
 transform:scale(.90);
 
 }
+
+/*==========================================
+OCEAN LIVE PANEL RECOVERY
+==========================================*/
+
+.ocean-live-wrapper{
+
+position:absolute !important;
+
+top:185px !important;
+
+right:55px !important;
+
+width:390px !important;
+
+z-index:120 !important;
+
+display:flex !important;
+
+justify-content:flex-end;
+
+align-items:flex-start;
+
+}
+
+.ocean-live-panel{
+
+display:flex !important;
+
+flex-direction:column;
+
+gap:16px;
+
+width:100%;
+
+}
+
+.live-card{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+min-height:96px;
+
+padding:18px 22px;
+
+border-radius:22px;
+
+background:rgba(6,20,36,.72);
+
+backdrop-filter:blur(26px);
+
+-webkit-backdrop-filter:blur(26px);
+
+border:1px solid rgba(78,223,255,.18);
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.30);
+
+}
+
+.live-card:hover{
+
+transform:translateX(-5px);
+
+transition:.35s;
+
+}

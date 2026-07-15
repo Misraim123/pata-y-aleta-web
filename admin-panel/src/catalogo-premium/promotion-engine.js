@@ -949,13 +949,17 @@ document.getElementById('oceanHeroBackground');
 
 if(heroBackground){
 
-    heroBackground.style.backgroundImage = `
-linear-gradient(
-rgba(2,15,28,.45),
-rgba(2,15,28,.72)
-),
-url('./ocean-reef-premium.jpg')
-`;
+heroBackground.style.backgroundImage =
+"url('./ocean-reef-premium.jpg')";
+
+heroBackground.style.backgroundSize =
+"cover";
+
+heroBackground.style.backgroundPosition =
+"center";
+
+heroBackground.style.backgroundRepeat =
+"no-repeat";
 
     heroBackground.style.backgroundSize = "cover";
 
