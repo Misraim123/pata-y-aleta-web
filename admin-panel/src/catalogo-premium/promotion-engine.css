@@ -1481,6 +1481,26 @@ font-weight:700;
 
 cursor:pointer;
 
+box-shadow:
+
+0 0 35px rgba(0,214,255,.35),
+
+0 12px 40px rgba(0,0,0,.30);
+
+transition:.35s;
+
+}
+
+.ocean-btn-primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 0 60px rgba(0,214,255,.60),
+
+0 20px 50px rgba(0,0,0,.45);
+
 }
 
 .ocean-btn-secondary{
@@ -2028,6 +2048,10 @@ animation:
 
 particlesFloat 20s linear infinite;
 
+animation:
+
+oceanFloat 14s ease-in-out infinite;
+
 }
 
 .ocean-coral{
@@ -2214,6 +2238,13 @@ pointer-events:none;
 overflow:hidden;
 
 z-index:8;
+
+}
+
+.ocean-fish,
+.fish-blue{
+
+display:none !important;
 
 }
 
@@ -2743,21 +2774,13 @@ box-shadow:
 
 position:absolute;
 
-top:170px;
+right:48px;
 
-right:55px;
+top:145px;
 
-width:430px;
+width:470px;
 
-display:flex;
-
-justify-content:flex-end;
-
-align-items:flex-start;
-
-z-index:90;
-
-pointer-events:none;
+z-index:60;
 
 }
 
@@ -3967,25 +3990,15 @@ background:transparent !important;
 
 position:absolute;
 
-left:80px;
+left:72px;
 
-top:110px;
+top:155px;
 
 width:560px;
 
-z-index:30;
+z-index:70;
 
-background:transparent !important;
-
-padding:0;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:flex-start;
-
-align-items:flex-start;
+background:transparent;
 
 }
 
@@ -4201,5 +4214,27 @@ box-shadow:
 transform:translateX(-5px);
 
 transition:.35s;
+
+}
+
+@keyframes oceanFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
 
 }
