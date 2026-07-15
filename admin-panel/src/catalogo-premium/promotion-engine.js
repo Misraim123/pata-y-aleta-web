@@ -461,7 +461,23 @@
 class="ocean-pulse-panel__hero"
 id="oceanHeroBackground">
 
-    <div class="ocean-pulse-panel__hero-info">
+<div class="ocean-pulse-panel__hero-media">
+
+    <div class="ocean-glass-image">
+
+        <img
+        src="./ocean-reef-premium.jpg"
+        alt="Ocean Premium">
+
+    </div>
+
+    <div class="ocean-overlay"></div>
+
+</div>
+
+<div class="ocean-pulse-panel__hero-content">
+
+    <div class="ocean-left">
 
         <span class="ocean-hero-badge">
 
@@ -470,84 +486,51 @@ id="oceanHeroBackground">
         </span>
 
         <h3
-class="ocean-hero-title"
-id="oceanHeroTitle">
+        class="ocean-hero-title"
+        id="oceanHeroTitle">
+        </h3>
 
-</h3>
+        <p
+        class="ocean-hero-description"
+        id="oceanHeroDescription">
+        </p>
 
-<p
-class="ocean-hero-description"
-id="oceanHeroDescription">
+        <div class="ocean-hero-buttons">
 
-</p>
+            <button
+            class="ocean-btn-primary"
+            id="oceanHeroButton">
 
- <div class="ocean-hero-buttons">
+                Ver promoción
 
-    <button
-    class="ocean-btn-primary"
-    id="oceanHeroButton"
-    type="button">
+            </button>
 
-        Ver promoción
+            <button
+            class="ocean-btn-secondary"
+            id="oceanHeroWhatsapp">
 
-    </button>
+                WhatsApp
 
-    <button
-    class="ocean-btn-secondary"
-    id="oceanHeroWhatsapp"
-    type="button">
+            </button>
 
-        WhatsApp
+        </div>
 
-    </button>
-
-</div>
-
-</div>
-
-<div
-class="ocean-live-wrapper"
-id="oceanLiveWrapper">
+    </div>
 
     <div
-    class="ocean-live-panel"
-    id="oceanLivePanel">
+    class="ocean-live-wrapper"
+    id="oceanLiveWrapper">
+
+        <div
+        class="ocean-live-panel"
+        id="oceanLivePanel">
+        </div>
 
     </div>
-
-</div>
-
-<div class="ocean-pulse-panel__hero-media">
-
-    <div class="ocean-glass-image">
-
-        <img
-            src="./ocean-reef-premium.jpg"
-            alt="Ocean Premium"
-        >
-
-    </div>
-
-    <div class="ocean-light"></div>
-
-    <div class="ocean-particles"></div>
-
-    <div class="ocean-fish-layer"></div>
-
-    <span class="ocean-bubble bubble-1"></span>
-    <span class="ocean-bubble bubble-2"></span>
-    <span class="ocean-bubble bubble-3"></span>
-    <span class="ocean-bubble bubble-4"></span>
-    <span class="ocean-bubble bubble-5"></span>
-    <span class="ocean-bubble bubble-6"></span>
-    <span class="ocean-bubble bubble-7"></span>
-    <span class="ocean-bubble bubble-8"></span>
 
 </div>
 
 </section>
-
-
 
           <div class="ocean-pulse-panel__carousel">
 
