@@ -4018,45 +4018,53 @@ position:relative;
 
 z-index:40;
 
-max-width:560px;
+max-width:620px;
 
 align-self:center;
 
-margin-top:-85px;
+margin-top:-140px;
 
-margin-left:18px;
+margin-left:28px;
 
 }
 
 .ocean-hero-title{
 
-font-size:68px;
+font-size:78px;
 
-line-height:.92;
+line-height:.95;
 
 letter-spacing:-2px;
 
-max-width:560px;
+max-width:620px;
 
-margin:0 0 22px;
+margin:18px 0 26px;
+
+font-weight:900;
+
+white-space:normal;
+
+word-break:normal;
+
+overflow-wrap:normal;
 
 text-shadow:
 
-0 10px 35px rgba(0,0,0,.45);
+0 12px 40px rgba(0,0,0,.45);
 
 }
 
 .ocean-hero-description{
 
-margin-top:8px;
+margin-top:18px;
 
-font-size:21px;
+font-size:24px;
 
-line-height:1.55;
+line-height:1.45;
 
-max-width:470px;
+max-width:520px;
 
-color:rgba(255,255,255,.94);
+color:rgba(255,255,255,.95);
 
 }
 
@@ -4066,25 +4074,25 @@ display:flex;
 
 align-items:center;
 
-gap:20px;
+gap:22px;
 
-margin-top:42px;
+margin-top:46px;
+
+flex-wrap:nowrap;
 
 }
 
 .ocean-live-wrapper{
 
-position:relative;
+position:absolute;
 
-justify-self:end;
+right:48px;
 
-align-self:center;
+top:50%;
 
-width:395px;
+transform:translateY(-56%);
 
-margin-top:-70px;
-
-margin-right:10px;
+width:400px;
 
 z-index:60;
 
@@ -4096,7 +4104,7 @@ display:flex;
 
 flex-direction:column;
 
-gap:18px;
+gap:22px;
 
 width:100%;
 
@@ -4104,13 +4112,13 @@ width:100%;
 
 .live-card{
 
-min-height:104px;
+min-height:110px;
 
-padding:22px;
+padding:24px;
 
 border-radius:24px;
 
-background:rgba(7,18,38,.82);
+background:rgba(8,20,42,.84);
 
 border:1px solid rgba(255,255,255,.08);
 
@@ -4118,9 +4126,7 @@ backdrop-filter:blur(18px);
 
 box-shadow:
 
-0 18px 45px rgba(0,0,0,.35);
-
-transition:.35s;
+0 20px 55px rgba(0,0,0,.38);
 
 }
 

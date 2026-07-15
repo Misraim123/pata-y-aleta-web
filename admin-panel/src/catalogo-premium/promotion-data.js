@@ -16,7 +16,7 @@ icon:"🚚",
 
 badge:"ENVÍO",
 
-title:"ENVÍO GRATIS",
+title: "ENVÍO GRATIS",
 
 subtitle:"En compras mayores a $1,000",
 
