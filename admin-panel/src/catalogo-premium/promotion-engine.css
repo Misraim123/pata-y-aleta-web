@@ -4292,3 +4292,85 @@ LAYOUT
     width:430px;
 
 }
+
+/*==========================================================
+TEXT LAYER
+==========================================================*/
+
+.ocean-pulse-panel__hero-info{
+
+    position:relative;
+
+    z-index:100;
+
+    align-self:center;
+
+    justify-self:start;
+
+    max-width:560px;
+
+    margin-left:30px;
+
+}
+
+.ocean-hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(4,30,55,.45);
+
+    border:1px solid rgba(0,255,255,.18);
+
+}
+
+.ocean-hero-title{
+
+    margin-top:26px;
+
+    font-size:84px;
+
+    line-height:.92;
+
+    font-weight:900;
+
+    letter-spacing:-3px;
+
+    color:#fff;
+
+    text-shadow:
+
+        0 10px 45px rgba(0,0,0,.55);
+
+}
+
+.ocean-hero-description{
+
+    margin-top:26px;
+
+    font-size:22px;
+
+    color:rgba(255,255,255,.95);
+
+    max-width:480px;
+
+}
+
+.ocean-hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:40px;
+
+}
