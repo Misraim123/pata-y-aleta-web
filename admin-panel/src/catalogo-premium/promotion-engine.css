@@ -3231,14 +3231,15 @@ z-index:1 !important;
 
 .ocean-pulse-panel__chips{
 
-margin-right:130px;    
+margin-left:auto;
 
-position:relative !important;
+margin-right:170px;
 
-z-index:20 !important;
+position:relative;
+
+z-index:20;
 
 }
-
 .ocean-hero-title{
 
 font-size:54px !important;
@@ -3352,7 +3353,7 @@ display:flex;
 
 align-items:center;
 
-justify-content:center;
+justify-content:flex-start;
 
 padding:12px 24px;
 
@@ -4478,24 +4479,6 @@ white-space:nowrap;
 
 }
 
-.ocean-pulse-panel__header h2{
-
-position:absolute;
-
-left:50%;
-
-top:50%;
-
-transform:translate(-50%,-50%);
-
-margin:0;
-
-font-size:25px;
-
-white-space:nowrap;
-
-}
-
 .ocean-pulse__bar-main svg{
 
 transition:.35s;
@@ -4523,5 +4506,41 @@ transform:translateY(0);
 transform:translateY(6px);
 
 }
+
+}
+
+.ocean-payment-methods{
+
+position:absolute;
+
+left:24px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:12px;
+
+font-weight:600;
+
+color:#dff9ff;
+
+opacity:.75;
+
+white-space:nowrap;
+
+}
+
+.ocean-pulse-panel__header h2{
+
+flex:1;
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:800;
+
+margin:0;
 
 }
