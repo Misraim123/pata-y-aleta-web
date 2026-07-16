@@ -1052,6 +1052,8 @@ console.log("IMAGE FINAL:", promotion.image);
 
                 state.panel.classList.toggle('is-open', open);
 
+                state.panel.style.display = open ? 'block' : 'none';
+
                 state.panel.setAttribute(
                     'aria-hidden',
                     open ? 'false' : 'true'
@@ -1115,6 +1117,7 @@ console.log("IMAGE FINAL:", promotion.image);
 
 
                         element.addEventListener('click', () => {
+                            console.log('CLICK X');
                             setOpen(false);
                         });
 
