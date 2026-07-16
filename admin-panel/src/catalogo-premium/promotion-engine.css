@@ -1379,7 +1379,7 @@ flex-direction:column;
 position:relative;
 
 }
-
+ 
 /*==================================================
 OCEAN HERO V1
 ==================================================*/
@@ -4155,5 +4155,140 @@ transform:scale(.92);
 50%{transform:translateY(-10px)}
 
 100%{transform:translateY(0)}
+
+}
+
+/*==========================================================
+OCEAN HERO V3
+REBUILD CLEAN
+==========================================================*/
+
+/*==========================================================
+FOUNDATION
+==========================================================*/
+
+.ocean-pulse-panel__hero{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:minmax(0,1fr) 430px;
+
+    align-items:center;
+
+    gap:70px;
+
+    min-height:720px;
+
+    padding:70px;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    isolation:isolate;
+
+}
+
+/*==========================================================
+BACKGROUND
+==========================================================*/
+
+.ocean-pulse-panel__hero-media{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+}
+
+.ocean-glass-image{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.ocean-glass-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transform:scale(1.02);
+
+    filter:
+
+        saturate(1.15)
+
+        contrast(1.05)
+
+        brightness(.95);
+
+}
+
+/* oscurece ligeramente la foto para que el texto siempre sea legible */
+
+.ocean-glass-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        rgba(4,18,35,.60) 0%,
+
+        rgba(4,18,35,.28) 42%,
+
+        rgba(4,18,35,.12) 65%,
+
+        rgba(4,18,35,.18) 100%
+
+    );
+
+}
+
+/*==========================================================
+LAYOUT
+==========================================================*/
+
+.ocean-pulse-panel__hero-info{
+
+    position:relative;
+
+    z-index:20;
+
+    max-width:620px;
+
+}
+
+.ocean-live-wrapper{
+
+    position:relative;
+
+    z-index:25;
+
+    justify-self:end;
+
+    width:430px;
 
 }
