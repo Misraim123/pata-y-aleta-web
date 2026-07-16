@@ -3231,6 +3231,8 @@ z-index:1 !important;
 
 .ocean-pulse-panel__chips{
 
+margin-right:130px;    
+
 position:relative !important;
 
 z-index:20 !important;
@@ -3388,27 +3390,6 @@ TIMER
 FORMAS DE PAGO
 =========================*/
 
-.ocean-pulse-panel__header::before{
-
-content:"💳 VISA • MC • AMEX • DÉBITO • MERCADO PAGO";
-
-position:absolute;
-
-left:24px;
-
-top:50%;
-
-transform:translateY(-50%);
-
-font-size:12px;
-
-font-weight:600;
-
-opacity:.75;
-
-color:#dff9ff;
-
-}
 
 /*=========================
 HERO
@@ -4305,6 +4286,8 @@ backdrop-filter:none !important;
 
 -webkit-backdrop-filter:none !important;
 
+top:120px;
+
 }
 
 /*==========================================================
@@ -4399,7 +4382,7 @@ justify-content:center;
 
 gap:10px;
 
-padding:18px 30px;
+padding:16px 34px;
 
 border-radius:16px;
 
@@ -4449,7 +4432,7 @@ backdrop-filter:none !important;
 
 position:absolute;
 
-right:26px;
+right:30px;
 
 top:50%;
 
@@ -4479,9 +4462,9 @@ gap:10px;
 
 position:absolute;
 
-right:70px;
+right:18px;
 
-top:50%;
+top:52%;
 
 transform:translateY(-50%);
 
@@ -4492,5 +4475,53 @@ font-weight:800;
 color:#69ecff;
 
 white-space:nowrap;
+
+}
+
+.ocean-pulse-panel__header h2{
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+margin:0;
+
+font-size:25px;
+
+white-space:nowrap;
+
+}
+
+.ocean-pulse__bar-main svg{
+
+transition:.35s;
+
+animation:oceanArrow 2s infinite;
+
+}
+
+.ocean-pulse-is-open .ocean-pulse__bar-main svg{
+
+transform:rotate(180deg);
+
+}
+
+@keyframes oceanArrow{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(6px);
+
+}
 
 }
