@@ -1763,3 +1763,141 @@ transform:translateY(-3px);
 background:#1ebe5d;
 
 }
+
+/*==================================================
+OCEAN FINAL MAGIC
+==================================================*/
+
+/* HEADER */
+
+.ocean-pulse-panel__header{
+
+position:relative;
+
+padding:18px 30px 12px;
+
+min-height:95px;
+
+}
+
+/* Timer totalmente a la derecha */
+
+#oceanCountdown{
+
+position:absolute !important;
+
+right:28px !important;
+
+top:50% !important;
+
+transform:translateY(-50%) !important;
+
+margin:0 !important;
+
+font-size:18px;
+
+font-weight:800;
+
+color:#66f5ff;
+
+z-index:999;
+
+}
+
+/* Chip exactamente al centro */
+
+.ocean-pulse-panel__chips{
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+margin:0 !important;
+
+z-index:999;
+
+}
+
+/* Hero completo sube */
+
+.ocean-pulse-panel__hero-content{
+
+padding-top:18px !important;
+
+align-items:flex-start !important;
+
+}
+
+/* Todo el contenido izquierdo sube */
+
+.ocean-left{
+
+top:55px !important;
+
+left:70px !important;
+
+}
+
+/* Tarjetas suben */
+
+.ocean-live-wrapper{
+
+top:75px !important;
+
+right:55px !important;
+
+}
+
+/* Más aire entre tarjetas */
+
+.ocean-live-panel{
+
+gap:26px;
+
+}
+
+/* Botones premium */
+
+.ocean-hero-buttons{
+
+margin-top:40px;
+
+gap:18px;
+
+}
+
+/* Sombra espectacular */
+
+.ocean-hero-title{
+
+text-shadow:
+
+0 8px 30px rgba(0,0,0,.55),
+
+0 0 45px rgba(0,213,255,.15);
+
+}
+
+/* Tarjetas flotantes */
+
+.live-card{
+
+transition:.35s;
+
+}
+
+.live-card:hover{
+
+transform:translateX(-8px) translateY(-3px);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.45),
+
+0 0 35px rgba(0,213,255,.12);
+
+}
