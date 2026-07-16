@@ -1901,3 +1901,315 @@ box-shadow:
 0 0 35px rgba(0,213,255,.12);
 
 }
+
+/*=========================================================
+OCEAN ULTIMATE EDITION - PART 1
+Glass • Glow • Luxury
+=========================================================*/
+
+/*---------------------------------------------------------
+Glass Cards
+---------------------------------------------------------*/
+
+.live-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+145deg,
+rgba(13,25,50,.78),
+rgba(7,18,38,.88)
+) !important;
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(30px);
+
+-webkit-backdrop-filter:blur(30px);
+
+box-shadow:
+
+0 18px 45px rgba(0,0,0,.45),
+
+0 0 30px rgba(0,213,255,.05),
+
+inset 0 1px rgba(255,255,255,.08);
+
+transition:
+
+transform .45s,
+
+box-shadow .45s,
+
+border-color .45s;
+
+}
+
+/*---------------------------------------------------------
+Reflejo superior
+---------------------------------------------------------*/
+
+.live-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-40%;
+
+top:0;
+
+width:180%;
+
+height:1px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.60),
+
+transparent
+
+);
+
+opacity:.45;
+
+}
+
+/*---------------------------------------------------------
+Shine Animation
+---------------------------------------------------------*/
+
+.live-card::after{
+
+content:"";
+
+position:absolute;
+
+top:-120%;
+
+left:-55%;
+
+width:45%;
+
+height:300%;
+
+transform:rotate(22deg);
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.20),
+
+transparent
+
+);
+
+transition:1s;
+
+pointer-events:none;
+
+}
+
+.live-card:hover::after{
+
+left:145%;
+
+}
+
+/*---------------------------------------------------------
+Hover
+---------------------------------------------------------*/
+
+.live-card:hover{
+
+transform:
+
+translateY(-6px)
+
+translateX(-5px)
+
+scale(1.015);
+
+border-color:
+
+rgba(92,244,255,.40);
+
+box-shadow:
+
+0 35px 75px rgba(0,0,0,.52),
+
+0 0 45px rgba(0,213,255,.18),
+
+0 0 90px rgba(0,213,255,.06);
+
+}
+
+/*---------------------------------------------------------
+Hero Glow
+---------------------------------------------------------*/
+
+.ocean-hero-title{
+
+text-shadow:
+
+0 5px 30px rgba(0,0,0,.45),
+
+0 0 35px rgba(0,213,255,.12),
+
+0 0 70px rgba(0,213,255,.05);
+
+}
+
+/*---------------------------------------------------------
+Buttons
+---------------------------------------------------------*/
+
+.ocean-btn-primary,
+
+.ocean-btn-whatsapp{
+
+overflow:hidden;
+
+position:relative;
+
+transition:.40s;
+
+}
+
+.ocean-btn-primary::before,
+
+.ocean-btn-whatsapp::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:70%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
+
+transform:skewX(-22deg);
+
+transition:.8s;
+
+}
+
+.ocean-btn-primary:hover::before,
+
+.ocean-btn-whatsapp:hover::before{
+
+left:180%;
+
+}
+
+.ocean-btn-primary:hover{
+
+box-shadow:
+
+0 20px 45px rgba(0,200,255,.35);
+
+}
+
+.ocean-btn-whatsapp:hover{
+
+box-shadow:
+
+0 20px 45px rgba(37,211,102,.40);
+
+}
+
+/*---------------------------------------------------------
+Badge Glow
+---------------------------------------------------------*/
+
+.ocean-hero-badge{
+
+animation:
+
+badgePulse 4s ease-in-out infinite;
+
+}
+
+@keyframes badgePulse{
+
+0%,100%{
+
+box-shadow:
+
+0 0 0 rgba(0,213,255,0);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 28px rgba(0,213,255,.28);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Timer
+---------------------------------------------------------*/
+
+#oceanCountdown{
+
+animation:
+
+timerGlow 3s ease-in-out infinite;
+
+}
+
+@keyframes timerGlow{
+
+0%,100%{
+
+opacity:.9;
+
+}
+
+50%{
+
+opacity:1;
+
+text-shadow:
+
+0 0 18px rgba(0,213,255,.55);
+
+}
+
+}
