@@ -1468,35 +1468,35 @@ pointer-events:none;
 
 .ocean-hero-title{
 
-font-size:74px;
+display:block !important;
 
-line-height:.95;
+font-size:78px !important;
 
-font-weight:900;
+line-height:.92 !important;
 
-letter-spacing:-2px;
+font-weight:900 !important;
 
-margin:18px 0 20px;
+color:#fff !important;
 
-max-width:560px;
+margin:18px 0 18px !important;
 
 text-shadow:
 
-0 12px 40px rgba(0,0,0,.45);
+0 12px 40px rgba(0,0,0,.55);
 
 }
 
 .ocean-hero-description{
 
+display:block !important;
+
 font-size:22px;
 
-line-height:1.45;
+color:#fff;
 
-margin:0 0 34px;
+max-width:470px;
 
-max-width:480px;
-
-color:rgba(255,255,255,.95);
+margin-bottom:35px;
 
 }
 
@@ -1592,3 +1592,22 @@ transform:scale(.92);
 
 }
 
+.ocean-left{
+
+position:absolute;
+
+left:70px;
+
+top:140px;
+
+width:560px;
+
+z-index:100;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
