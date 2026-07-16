@@ -1,0 +1,327 @@
+[33mb409594[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Ocean Pulse - Restore hero layout and center live panel
+[33mf58de79[m Ocean Pulse - Header alignment and countdown positioning
+[33mdabb724[m Ocean Pulse - Remove V3 rebuild overrides
+[33m8525027[m Ocean Pulse Final - Header alignment cleanup and premium layout
+[33m8f0353b[m Ocean Pulse Final - Header alignment, live cards and premium polish
+[33m4fac42c[m Ocean Pulse Final - Fix header layout with live countdown
+[33m603428a[m Ocean Pulse Final - Live countdown and premium header
+[33m941aba5[m Ocean Hero V3 - Adapt layout to rebuilt HTML
+[33ma55ac03[m Ocean Hero V3 - Text Layer
+[33m611578a[m Ocean Hero V3 - Foundation & Layout
+[33m9f51d19[m Ocean Pulse Hero v2 - Rebuild Premium Layout
+[33m6b26f53[m Ocean Pulse Final Hero Alignment and Typography
+[33mf76f91b[m Ocean Pulse Final Premium Hero Polish
+[33m1007411[m Ocean Pulse Final Hero Layout and Premium Alignment
+[33m4b8b527[m Ocean Pulse Hero Grid v3 - hero and live panel layout
+[33m0982ed4[m Implement Ocean Hero two-column grid layout
+[33m7e8aab0[m Move Ocean Live panel inside Hero grid
+[33m2a237ab[m Ocean Hero V2 Grid Layout
+[33m024a313[m Refine Ocean Pulse hero layout and premium card alignment
+[33mf795c02[m Ocean Pulse final premium polish
+[33m766f79a[m Simplify Ocean Hero structure
+[33me2fb475[m Hero layout recovery
+[33m773e29a[m Remove duplicated hero image rendering
+[33mc494c5d[m Ocean Pulse - Glass cleanup and hero overlays removed
+[33m1f9b3b3[m Remove duplicated hero background
+[33mf8b0f75[m Clean hero background and floating live cards
+[33m651e0a1[m Recover Ocean Live Panel and remove hero gradient
+[33m7006dd0[m Ocean Pulse Structure V1
+[33me57b358[m Ocean Pulse Cinematic Tune V2
+[33ma0f3c9e[m Refina Ocean Pulse Live Cards Layout
+[33mf1abaa6[m Ocean Pulse Layout Final
+[33mcaa303c[m Ocean Pulse Cinematic Final
+[33md0d6817[m Ocean Pulse Final Visual Override
+[33me0bed6e[m Ocean Pulse - Full Reef Background
+[33m0975ed6[m Ocean Pulse Premium Reef Final Layout
+[33m2061059[m Ocean Pulse Premium Reef Stage 1
+[33mbf7269c[m Debug Ocean Pulse promotion object
+[33m263f01a[m Fix Ocean Pulse loader ordering
+[33m72cbc9c[m Fix Ocean Loader Order
+[33mc98cfee[m Debug Supabase Ocean Loader
+[33mba10954[m Debug Ocean Loader
+[33m869d348[m Ocean Pulse Loader Integration
+[33m17734da[m Debug Ocean Pulse image upload
+[33m6fa2913[m Ocean Pulse: add image field to normalizePromotion
+[33m2582115[m Ocean Pulse: debug hero image binding
+[33m89bd0fe[m feat(hero): dynamic hero background
+[33m20e284d[m feat(ocean): dynamic background for live panel
+[33m9e56188[m feat(ocean): dynamic live panel from Supabase promotions
+[33mc1bce9a[m feat(ocean): first Ocean Pulse CMS
+[33m9b916db[m style(admin): premium navigation buttons
+[33m6f745d6[m fix(admin): normalize workspace layout
+[33m08a80d1[m fix(admin): remove obsolete productsContainer reference
+[33ma451da6[m refactor(admin): create products workspace
+[33med66e6e[m feat(admin): Ocean Pulse admin workspace and CMS layout
+[33m65bb6bf[m feat(admin): create Ocean Pulse CMS structure
+[33mb009893[m feat(admin): create Ocean Pulse CMS layout
+[33mc56ab3c[m feat(admin): add Ocean Pulse workspace
+[33m8ece58a[m fix(ocean-pulse): restore stable panel behavior
+[33m9fa2a60[m fix(ocean-pulse): close panel on root mouseleave
+[33mcd3f011[m feat(ocean-pulse): close panel on mouse leave
+[33m1af39f8[m refactor(ocean-pulse): normalize live cards structure
+[33m9a367b4[m feat(ocean-pulse): premium live cards polish v4
+[33maac9716[m feat(ocean-pulse): premium live cards v3
+[33m1959dad[m feat(ocean-pulse): enhance hdr background and compact live cards
+[33maa40222[m fix(ocean-pulse): enable close button interaction
+[33m0743112[m feat(ocean-pulse): add close button support
+[33m5b2314a[m feat(ocean-pulse): add live panel v1 structure
+[33m10be79c[m feat(ocean-pulse): improve fish focus and premium composition
+[33m3095074[m feat(ocean-pulse): premium glass panel v1
+[33m3cec2e6[m fix(ocean-pulse): preparar integración de fondo UHD
+[33m600f116[m feat(ocean-pulse): integrar fondo cinematográfico UHD
+[33m50968a1[m Add premium aquarium background layer
+[33ma53ff35[m Remove legacy coral background gradient from home section
+[33m945727d[m Remove experimental Reef Engine and simplify Ocean Pulse architecture
+[33m533b0a2[m Isolate Ocean Pulse gradients and validate home styling
+[33maeaeed9[m Encapsulate Ocean Pulse reef and coral classes
+[33m577428a[m Improve Blue Tang appearance
+[33mac24a28[m Add Fish Engine V1
+[33mcc43e81[m Add dynamic water current layer
+[33m544c296[m Organic reef silhouettes
+[33mc719666[m Sculpt reef silhouettes
+[33m066f243[m Create layered reef foundation
+[33m25bca55[m Create Ocean Scene architecture foundation
+[33ma588fef[m Add animated premium ocean bubbles
+[33m902db84[m Remove temporary hero image and prepare glass ocean scene
+[33m7434cc4[m Create Ocean Scene foundation with underwater lighting
+[33mb481d0d[m Replace Ocean Hero icon with premium image container
+[33m965c3eb[m Sync promotion carousel with active state
+[33m961dd1a[m Add smart CTA navigation and WhatsApp integration to Ocean Hero
+[33mcca2919[m Initialize Ocean Hero through updateActive
+[33m44c1fb9[m Debug Ocean Hero update
+[33mc5fce0e[m Connect Ocean Hero actions and CTA navigation
+[33m8ce316f[m Sync Ocean Hero with active promotion engine
+[33mc6c7b91[m Add Ocean Pulse hero section
+[33m23635a2[m Restore Ocean Panel foundation
+[33m3ace597[m Add premium chips area to Ocean Pulse panel
+[33m7bd9124[m Remove temporary drawer prototype
+[33m7c8ae3a[m Connect Ocean Drawer toggle to Ocean Pulse
+[33m30ffdf8[m Add Ocean Drawer premium chips foundation
+[33m707b173[m Refactor Ocean Drawer architecture
+[33m546d325[m Create Ocean Drawer V2 container
+[33mc0744cf[m Initialize Ocean Drawer V2
+[33md7a689b[m Foundation Ocean Drawer V2
+[33mf85cb86[m Rollback legacy Ocean Pulse panel
+[33m07cb22c[m Enable Ocean Pulse premium panel
+[33m9c88828[m Mount Ocean Pulse panel to body
+[33md300a5a[m Fix live badge rendering on mobile portrait
+[33m7474fb0[m Fix live badge on mobile
+[33m93c9bde[m Fix Ocean Pulse mobile ribbon layout
+[33mbcf982f[m Integrate Ocean Pulse into live ribbon
+[33mc45119b[m Fix Ocean Pulse sticky live ribbon
+[33ma36ba53[m Fix Ocean Pulse root selector
+[33m57b8a81[m Ocean Pulse - Add root class
+[33ma9012ff[m Ocean Pulse V2 - Restore ready state
+[33m6ff6a53[m Ocean Pulse V2 - Fix desktop and mobile layout
+[33m13bb9f6[m Ocean Pulse V2 - Mobile Responsive
+[33m9997228[m Ocean Pulse V2 - Live Badge
+[33md75591e[m Ocean Pulse V2 - Live Premium Indicator
+[33m11a70d4[m Ocean Pulse V2 - Luxury Bar Phase 1
+[33m764d370[m Fix Ocean Pulse syntax
+[33mcfad6a3[m Debug Ocean Pulse - verificar rotación
+[33m35e6ba4[m Hotfix Ocean Pulse - desacople del panel y recuperación del motor
+[33m0159755[m Hotfix Ocean Pulse: desacoplar panel y recuperar Home
+[33m464201a[m Hotfix Ocean Pulse - desacoplar panel
+[33mb815bed[m Hotfix: desacoplar panel Ocean Pulse
+[33me714c4a[m Ocean Pulse - Corrige navegación del CTA y evita scroll
+[33md938282[m Ocean Pulse - Agrega subtítulo premium en barra
+[33mfccd115[m Ocean Pulse - Iconografía oficial de promociones
+[33mb2090fc[m Ocean Pulse - Corrige iconos dinámicos en barra
+[33m2d7f4a1[m Ocean Pulse - Unifica barra principal
+[33m7e603af[m Ocean Pulse - Nueva barra premium sincronizada
+[33m6ce19d9[m Ocean Pulse - Barra Premium V2
+[33m1218d94[m Ocean Pulse - Sincroniza createBar con CSS
+[33m7815413[m Ocean Pulse - Conecta promotion-data con nuevo motor
+[33m396043c[m Ocean Pulse - Integración barra oficial
+[33m63ab7b7[m Ocean Pulse: barra y panel glass premium
+[33m53ffd60[m Ocean Pulse v1.4 - Hover interaction fixed
+[33m04002fb[m Ocean Pulse v1.3 - Floating Glass Panel
+[33m778dd1e[m Ocean Pulse v1.1 - Luxury Glass Panel
+[33m3b0cafc[m Ocean Pulse v1.0 - Luxury Reveal Foundation
+[33m3bfc128[m Ocean Pulse v0.5 - Compact mode
+[33m335f263[m Ocean Pulse v0.4 - Luxury compact card
+[33me52991d[m Ocean Pulse v0.3 - Fixed layout and prepared independent container
+[33m1c1da88[m Ocean Pulse v0.3 - Initial Layout
+[33m2c80c69[m Ocean Pulse v0.2 - Independent Engine
+[33m57de176[m Ocean Pulse v0.1 - Engine initialized
+[33m591e108[m Luxury Evolution v1.0 - Foundation
+[33m55762eb[m Luxury Evolution v1 - Design System Foundation
+[33m3321dfb[m Sprint 002 - Live Ribbon Engine
+[33m4b5943d[m Sprint 002 - Pata y Aleta LIVE Ribbon
+[33mf32ecb3[m Sprint 001 - Hero Layout V2
+[33ma7dc2a7[m Sprint 001 - Base Premium Live Banner
+[33m26f2fbd[m Sprint 001 - Módulo 001 Trust KPIs v1.0
+[33madd0faf[m Módulo 001 - Premium Live Announcement Bar v2
+[33mb744709[m Módulo 001 - Premium Live Bar
+[33m0b327cd[m improve premium project whatsapp
+[33mad7b43b[m add project modal css
+[33mf4bd354[m fix project modal open close
+[33m619134b[m activate project modal
+[33m35ea229[m builder premium modal
+[33m4ca7611[m fix admin startup loads
+[33mdb87832[m fix admin leads dashboard
+[33m2d709bd[m remove duplicated dashboard stats
+[33m78bafb4[m fix admin leads realtime
+[33m7078eee[m fix leads dashboard
+[33mc452343[m Dashboard leads metrics
+[33m7b4ec91[m Admin realtime refresh + leads panel stable
+[33me8e0464[m fix leads realtime admin
+[33m58d5c32[m fix send-lead remove runtime config
+[33ma122cfa[m Forzar runtime nodejs
+[33mf65382c[m Prueba API unica
+[33mb72a5e3[m Mejora visual total carrito
+[33m73c8dab[m Categorias premium carrito
+[33m82317fa[m Mejora visual titulo resumen carrito
+[33ma4e1025[m Mejora UX carrito movil
+[33me2be4dc[m Carrito premium agrupado y resumen por categorias
+[33m1bbc510[m cart summary and premium cart improvements
+[33m77fd68d[m premium cart panel
+[33m05f441f[m add cart preview
+[33mcaf7213[m activate cart counter
+[33m4a5815d[m move api into root directory
+[33m8f5c12f[m move api into root directory
+[33mca1f86a[m test resend env variable
+[33m37f9b08[m test env vars
+[33md058256[m test resend env
+[33m4ba39e8[m test api
+[33mfa83bb6[m add resend dependency
+[33m0f534f2[m debug resend error
+[33m006b04b[m install resend
+[33m8aa9be1[m lead email notifications
+[33m46795bb[m final leads dashboard
+[33m2d5c5e1[m remove duplicate stats
+[33m50e07d9[m debug leads
+[33mf5df643[m force leads panel
+[33mfc8146a[m fix headerPublished
+[33mb55f55c[m fix products container
+[33m2dcb92a[m restore products container
+[33m9d3bf4b[m fix loadLeads scope
+[33m79332f7[m Fix leads panel admin
+[33m79f2d02[m admin leads dashboard
+[33m86692dc[m show lead error
+[33m25dd694[m lead form stable
+[33mdbb263d[m analytics producto lead tracking
+[33m210d02f[m tracking whatsapp
+[33m4911d50[m fix analytics
+[33m5e0f5c7[m analytics google
+[33mc0b2fa4[m Google Search Console verification
+[33m0c5afa6[m WhatsApp premium message
+[33ma22aacd[m Galeria estilo Amazon funcional
+[33m9d492db[m Fix gallery onclick stray code
+[33mfacd798[m Galeria estilo Amazon
+[33m0accc7a[m Eliminar disponible duplicado
+[33m4a1900d[m Fix imagen principal catalogo
+[33m72e13e8[m Agregar galeria multiple productos
+[33m161f8b1[m Mostrar stock y medidas en catalogo
+[33mc6974a7[m SEO base sitemap robots
+[33m17dfc6f[m Fix favicon
+[33m007dac5[m Modal imagen premium
+[33mc6f4e01[m WhatsApp flotante premium
+[33m0868019[m Mejoras catalogo premium y beneficios
+[33m36089ef[m Catalogo premium v2 con categorias dinamicas y banner comercial
+[33md4a5fc5[m Catalogo premium funcional con banner y filtros
+[33m7bca619[m Banner premium catalogo
+[33ma548eeb[m Premium catalog banner and header
+[33m9a8ddf0[m Fix catalog categories loading
+[33m52f1074[m Fix catalog filters and categories
+[33mb248bdb[m Fix category and subcategory filters
+[33mc64444a[m Fix dynamic category filters
+[33mf443d73[m Debug category filters
+[33m5ebe33e[m Catalog dynamic categories
+[33m3c33879[m Dynamic categories and subcategories
+[33maa755a0[m Catalogo whatsapp y subcategorias
+[33mc5c6683[m Mobile fixes, Instagram update and premium carousel improvements
+[33m36b459b[m Hero mobile fix
+[33m683debe[m Final production polish
+[33mbb0ea49[m SEO and social metadata
+[33ma3e32e8[m Home carousel arrows and responsive
+[33m644bc9a[m Premium home carousel
+[33mb9ed36c[m Refine featured products section
+[33m52f3f80[m Featured carousel premium
+[33m53bc169[m Featured carousel css
+[33m80a3e56[m Fix featured products
+[33mfbe2d12[m Fix home featured section
+[33m18400bf[m Fix home featured products
+[33m0805f39[m Carrusel premium seleccion de la semana
+[33m5de05f9[m Home destacados
+[33m29a8f94[m Home destacados
+[33m4b8c2fe[m Admin Premium V5 - videos, dashboard ejecutivo y home products
+[33mab9731f[m admin v3 funcionando
+[33m7edd268[m restore admin v2
+[33m68d2bfa[m remove broken admin html
+[33mb50ace2[m admin v2 categorias subcategorias
+[33mf356c12[m restore admin
+[33m77a0974[m test admin
+[33mfb1f3a3[m Fix admin route
+[33m26bc904[m prueba
+[33m56bf284[m texto badge mascotas
+[33m8b9e1ed[m badges mascotas y corales
+[33m872204c[m Conecta mascotas y corales
+[33m7c93da8[m fix admin build
+[33mb9f3519[m fix vite main path
+[33mdd91bcb[m fix admin path
+[33m55197db[m crear ruta admin
+[33m7a07f34[m mover catalogo vivo a catalogo premium
+[33m7e4e059[m hero botones y navegacion premium
+[33m7538adc[m test real index
+[33m1dc374e[m html badge test
+[33m1c3ac38[m force mobile images
+[33m203a893[m title test
+[33mf42503d[m restore css backup
+[33m712cb20[m remove duplicated css
+[33m802426a[m force mobile images
+[33m1bae64f[m mobile cleanup
+[33m2fd51cc[m hero debug
+[33m0b41372[m mobile layout master fix
+[33m4877129[m force mobile hero
+[33m2e95ac4[m fix hero mobile grid
+[33m240600f[m hero mobile force
+[33m9e320d9[m fix hero mobile height
+[33md04c6c5[m restore final mobile responsive
+[33m050e7ac[m final responsive mobile launch
+[33mb5209c8[m Responsive movil premium
+[33m666ec6b[m Mover imagenes premium a raiz
+[33mdf3318a[m Agregar imagenes premium
+[33me768618[m Agregar catalogo css premium
+[33m6f555c9[m Resolver conflicto index premium
+[33m8255818[m Version premium completa
+[33mcea9a49[m Add files via upload
+[33mf54c195[m featured products connect to superbase
+[33mb5abbd6[m Create script.js
+[33m86dec38[m Create styles.css
+[33m010f201[m Update index.html
+[33m442d8a3[m Add files via upload
+[33m6c61b07[m Add files via upload
+[33m1d84bd1[m Rename index.html.html to index.html
+[33m87df9cf[m Add files via upload
+[33mbfe8a15[m Delete index.html
+[33m4dd3e7d[m Rename index.html.html to index.html
+[33m4aa6a9b[m Add files via upload
+[33mb298d17[m Delete index.html
+[33m816df91[m Rename index.html (2).html to index.html
+[33md8d5cc8[m Add files via upload
+[33m3d61e50[m Delete index.html
+[33mb1e265c[m Update index.html
+[33m18bb959[m Rename index (3).html to index.html
+[33mce31769[m Add files via upload
+[33m4a7a22a[m Delete index.html
+[33m825103b[m Delete index.html123
+[33m5608eae[m Rename index.html. to index.html
+[33m24265bd[m Rename index.html to index.html123
+[33m8013092[m Rename index.html.html to index.html.
+[33m44d4cc6[m Add files via upload
+[33m25825b8[m Update index.html
+[33m6b39d1d[m Update index.html
+[33m11bb125[m Update catalogo-vivo.html
+[33m78532fa[m Update catalogo-vivo.html
+[33m1c07ce7[m Update catalogo-vivo.html
+[33me522cdf[m Update catalogo-vivo.html
+[33m5847325[m Create catalogo-vivo.html
+[33m6837764[m Update index.html
+[33m9697ac4[m Update index.html
+[33m76e7ede[m Update index.html
+[33m9547dfa[m Update index.html
+[33m30830a5[m Add files via upload
+[33mea42ee3[m Add files via upload
+[33m84ec339[m Update index.html
+[33m177ee97[m Add files via upload
