@@ -436,6 +436,20 @@
             Una corriente de experiencias premium.
         </h2>
 
+        <div class="ocean-status">
+
+<span>🪸 Nuevas especies</span>
+
+<span>🚚 Envío Nacional</span>
+
+<span>🛡 Garantía Viva</span>
+
+<span>💬 WhatsApp 24/7</span>
+
+<span>✨ Promociones dinámicas</span>
+
+</div>
+
     </div>
 
     <div class="ocean-pulse-panel__chips">
@@ -585,6 +599,22 @@ WhatsApp
         </div>
       </div>
     `;
+
+const close = document.createElement("button");
+
+close.className = "ocean-close";
+
+close.innerHTML = "✕";
+
+close.onclick = () => {
+
+    panel.classList.remove("ocean-open");
+
+    panel.classList.remove("ocean-pulse-is-open");
+
+};
+
+panel.appendChild(close);
 
         document.body.appendChild(panel);
 
