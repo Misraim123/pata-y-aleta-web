@@ -4169,6 +4169,12 @@ FOUNDATION
 
 .ocean-pulse-panel__hero{
 
+    display:grid;
+
+grid-template-rows:1fr;
+
+position:relative;
+
     position:relative;
 
     display:grid;
@@ -4188,6 +4194,32 @@ FOUNDATION
     border-radius:30px;
 
     isolation:isolate;
+
+}
+
+.ocean-pulse-panel__hero-content{
+
+position:absolute;
+
+inset:0;
+
+display:grid;
+
+grid-template-columns:1fr 430px;
+
+align-items:center;
+
+padding:70px;
+
+z-index:30;
+
+}
+
+.ocean-left{
+
+max-width:560px;
+
+align-self:center;
 
 }
 
@@ -4283,13 +4315,15 @@ LAYOUT
 
 .ocean-live-wrapper{
 
-    position:relative;
+position:relative;
 
-    z-index:25;
+width:430px;
 
-    justify-self:end;
+justify-self:end;
 
-    width:430px;
+align-self:center;
+
+z-index:40;
 
 }
 
