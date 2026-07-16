@@ -1389,7 +1389,7 @@ OCEAN HERO V2
 
 position:relative;
 
-padding:70px;
+padding:24px 70px 40px;
 
 display:grid;
 
@@ -1399,7 +1399,7 @@ align-items:center;
 
 column-gap:56px;
 
-min-height:720px;
+min-height:640px;
 
 overflow:hidden;
 
@@ -1518,7 +1518,7 @@ position:absolute;
 
 right:55px;
 
-top:170px;
+top:55px;
 
 width:400px;
 
@@ -1598,7 +1598,7 @@ position:absolute;
 
 left:70px;
 
-top:140px;
+top:35px;
 
 width:560px;
 
@@ -1774,9 +1774,15 @@ OCEAN FINAL MAGIC
 
 position:relative;
 
-padding:18px 30px 12px;
+padding:14px 30px 4px;
 
-min-height:95px;
+min-height:72px;
+
+display:flex;
+
+align-items:flex-start;
+
+justify-content:space-between;
 
 }
 
@@ -1836,9 +1842,21 @@ align-items:flex-start !important;
 
 .ocean-left{
 
-top:55px !important;
+position:absolute;
 
-left:70px !important;
+left:70px;
+
+top:35px;
+
+width:560px;
+
+z-index:100;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
 
 }
 
@@ -1846,12 +1864,23 @@ left:70px !important;
 
 .ocean-live-wrapper{
 
-top:75px !important;
+position:absolute;
 
-right:55px !important;
+right:55px;
+
+top:55px;
+
+width:400px;
+
+z-index:60;
+
+display:flex;
+
+justify-content:flex-end;
+
+align-items:flex-start;
 
 }
-
 /* Más aire entre tarjetas */
 
 .ocean-live-panel{
@@ -2228,6 +2257,10 @@ Profundidad del Hero
 transform:translateZ(0);
 
 overflow:hidden;
+
+padding:24px 70px 40px;
+
+min-height:640px;
 
 }
 
@@ -2830,15 +2863,13 @@ OCEAN STATUS BAR
 
 .ocean-status{
 
-display:flex;
+margin-top:10px;
 
-flex-wrap:wrap;
+margin-bottom:-8px;
 
-gap:12px;
+transform:scale(.90);
 
-margin-top:18px;
-
-margin-bottom:8px;
+transform-origin:left center;
 
 }
 
@@ -3037,44 +3068,6 @@ box-shadow:
 0 30px 75px rgba(0,0,0,.50),
 
 0 0 45px rgba(0,213,255,.18);
-
-}
-
-.ocean-close{
-
-position:absolute;
-
-top:20px;
-
-right:20px;
-
-width:42px;
-
-height:42px;
-
-border-radius:50%;
-
-border:1px solid rgba(255,255,255,.10);
-
-background:rgba(8,20,38,.55);
-
-backdrop-filter:blur(18px);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-cursor:pointer;
-
-color:white;
-
-font-size:18px;
-
-transition:.35s;
-
-z-index:9999;
 
 }
 

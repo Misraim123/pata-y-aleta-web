@@ -600,22 +600,6 @@ WhatsApp
       </div>
     `;
 
-const close = document.createElement("button");
-
-close.className = "ocean-close";
-
-close.innerHTML = "✕";
-
-close.onclick = () => {
-
-    panel.classList.remove("ocean-open");
-
-    panel.classList.remove("ocean-pulse-is-open");
-
-};
-
-panel.appendChild(close);
-
         document.body.appendChild(panel);
 
         state.panel = panel;
@@ -1128,6 +1112,7 @@ console.log("IMAGE FINAL:", promotion.image);
                 state.panel
                     .querySelectorAll('[data-ocean-pulse-close]')
                     .forEach(element => {
+
 
                         element.addEventListener('click', () => {
                             setOpen(false);
