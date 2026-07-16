@@ -424,43 +424,41 @@
 
         <div class="ocean-pulse-panel__content">
 
-          <header class="ocean-pulse-panel__header">
+         <header class="ocean-pulse-panel__header">
 
-         </div>   
+    <div class="ocean-header-left">
 
-<div class="ocean-payment-methods">
+        <div class="ocean-payment-methods">
+            💳 VISA • MC • AMEX • DÉBITO • MERCADO PAGO
+        </div>
 
-💳 VISA • MC • AMEX • DÉBITO • MERCADO PAGO
+        <h2 id="oceanPulseTitle">
+            Una corriente de experiencias premium.
+        </h2>
 
-</div>
+    </div>
 
-<div id="oceanCountdown"></div>
-              <h2 id="oceanPulseTitle">
-                Una corriente de experiencias premium.
-              </h2>
-            </div>
+    <div class="ocean-pulse-panel__chips">
 
-            <div class="ocean-pulse-panel__chips">
+        <button class="ocean-chip active">
+            ⭐ Destacado
+        </button>
 
-    <button class="ocean-chip active">
+    </div>
 
-        ⭐ Destacado
+    <div id="oceanCountdown"></div>
+
+    <button
+        class="ocean-pulse-panel__close"
+        type="button"
+        aria-label="Cerrar Ocean Pulse"
+        data-ocean-pulse-close>
+
+        ${ICONS.close}
 
     </button>
 
-</div>
-
-            <button
-              class="ocean-pulse-panel__close"
-              type="button"
-              aria-label="Cerrar Ocean Pulse"
-              data-ocean-pulse-close
-            >
-              ${ICONS.close}
-            </button>
-
-          </header>
-
+</header>
          <section
 class="ocean-pulse-panel__hero"
 id="oceanHeroBackground">
