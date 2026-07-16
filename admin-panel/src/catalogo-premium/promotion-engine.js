@@ -426,11 +426,15 @@
 
           <header class="ocean-pulse-panel__header">
 
-            <div>
-              <span class="ocean-pulse-panel__eyebrow">
-                PATA Y ALETA · OCEAN PULSE
-              </span>
+         </div>   
 
+<div class="ocean-payment-methods">
+
+💳 VISA • MC • AMEX • DÉBITO • MERCADO PAGO
+
+</div>
+
+<div id="oceanCountdown"></div>
               <h2 id="oceanPulseTitle">
                 Una corriente de experiencias premium.
               </h2>
@@ -505,13 +509,24 @@ id="oceanHeroBackground">
 
             </button>
 
-            <button
-            class="ocean-btn-secondary"
-            id="oceanHeroWhatsapp">
+           <button
+class="ocean-btn-whatsapp"
+id="oceanHeroWhatsapp"
+type="button">
 
-                WhatsApp
+<svg xmlns="http://www.w3.org/2000/svg"
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="currentColor">
 
-            </button>
+<path d="M20.52 3.48A11.79 11.79 0 0012.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.86 11.86 0 005.76 1.47h.01c6.56 0 11.9-5.34 11.9-11.9a11.8 11.8 0 00-3.45-8.44z"/>
+
+</svg>
+
+WhatsApp
+
+</button>
 
         </div>
 
@@ -1314,6 +1329,59 @@ state.root.appendChild(drawer.element);
 
 );
         }
+
+        /******************************************************************
+OCEAN COUNTDOWN
+******************************************************************/
+
+function startCountdown(){
+
+    const end = new Date();
+
+    end.setDate(end.getDate()+6);
+
+    end.setHours(23,59,59,999);
+
+    const label =
+    document.getElementById("oceanCountdown");
+
+    if(!label) return;
+
+    function update(){
+
+        const diff = end - new Date();
+
+        if(diff<=0){
+
+            label.innerHTML =
+            "🔥 FINALIZADA";
+
+            return;
+
+        }
+
+        const d =
+        Math.floor(diff/86400000);
+
+        const h =
+        Math.floor(diff%86400000/3600000);
+
+        const m =
+        Math.floor(diff%3600000/60000);
+
+        const s =
+        Math.floor(diff%60000/1000);
+
+        label.innerHTML =
+        `⏳ ${d} DÍAS ${h} HRS ${m} MIN ${s} SEG`;
+
+    }
+
+    update();
+
+    setInterval(update,1000);
+
+}
         
 
         function init() {
@@ -1381,6 +1449,9 @@ state.root.classList.add('is-ready');
 updateActive();
 
 bindEvents();
+
+startCountdown();
+
 startRotation();
 
             state.initialized = true;
