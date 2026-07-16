@@ -1612,88 +1612,43 @@ align-items:flex-start;
 
 }
 
-/*==================================================
-OCEAN PULSE FINAL POLISH V1
-NO BORRAR NADA - SOLO PEGAR AL FINAL
-==================================================*/
+/*==========================
+RESTORE HERO COMPONENTS
+==========================*/
 
-/*---------------- HEADER ----------------*/
+.ocean-pulse-panel__hero-content{
 
-.ocean-pulse-panel__header{
+position:absolute;
 
-display:grid !important;
+inset:0;
 
-grid-template-columns:320px 1fr 320px !important;
+display:grid;
 
-align-items:center !important;
+grid-template-columns:1fr 400px;
 
-padding:18px 28px !important;
+align-items:center;
 
-min-height:84px !important;
+padding:70px;
+
+z-index:20;
+
+}
+
+.ocean-overlay{
+
+position:absolute;
+
+inset:0;
 
 background:linear-gradient(
-180deg,
-rgba(3,18,33,.96),
-rgba(4,20,36,.90)
+90deg,
+rgba(4,18,35,.58) 0%,
+rgba(4,18,35,.24) 42%,
+rgba(4,18,35,.08) 70%,
+rgba(4,18,35,.18) 100%
 );
 
-backdrop-filter:blur(18px);
-
-}
-
-.ocean-payment-methods{
-
-justify-self:start;
-
-font-size:14px;
-
-font-weight:700;
-
-color:#eafcff;
-
-opacity:.92;
-
-}
-
-.ocean-pulse-panel__chips{
-
-justify-self:center;
-
-margin:0 !important;
-
-}
-
-#oceanCountdown{
-
-justify-self:end;
-
-position:relative !important;
-
-top:auto !important;
-
-right:auto !important;
-
-transform:none !important;
-
-font-size:18px;
-
-font-weight:800;
-
-color:#63f0ed;
-
-}
-
-/*---------------- HERO ----------------*/
-
-.ocean-left{
-
-left:72px !important;
-
-top:110px !important;
-
-width:560px !important;
-
-z-index:120 !important;
+z-index:2;
 
 }
 
@@ -1711,53 +1666,33 @@ border-radius:999px;
 
 background:linear-gradient(
 135deg,
-rgba(0,213,255,.28),
-rgba(0,120,255,.20)
+rgba(16,114,255,.55),
+rgba(25,217,255,.25)
 );
 
 border:1px solid rgba(99,240,237,.35);
 
-backdrop-filter:blur(18px);
+color:#fff;
+
+font-size:15px;
 
 font-weight:700;
 
-}
-
-.ocean-hero-title{
-
-font-size:82px !important;
-
-line-height:.90 !important;
-
-margin:22px 0 !important;
-
-letter-spacing:-3px;
-
-}
-
-.ocean-hero-description{
-
-font-size:23px !important;
-
-max-width:500px;
-
-margin-bottom:36px !important;
-
-}
-
-/*---------------- BOTONES ----------------*/
-
-.ocean-hero-buttons{
-
-display:flex;
-
-gap:18px;
+margin-bottom:22px;
 
 }
 
 .ocean-btn-primary{
 
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
 padding:18px 34px;
+
+border:none;
 
 border-radius:16px;
 
@@ -1769,13 +1704,16 @@ background:linear-gradient(
 
 color:#04121e;
 
+font-size:16px;
+
 font-weight:800;
 
-border:none;
+cursor:pointer;
 
 box-shadow:
+0 18px 40px rgba(34,211,238,.30);
 
-0 18px 40px rgba(34,211,238,.28);
+transition:.30s;
 
 }
 
@@ -1791,9 +1729,13 @@ display:flex;
 
 align-items:center;
 
+justify-content:center;
+
 gap:10px;
 
-padding:18px 32px;
+padding:18px 34px;
+
+border:none;
 
 border-radius:16px;
 
@@ -1801,93 +1743,23 @@ background:#25D366;
 
 color:#fff;
 
+font-size:16px;
+
 font-weight:800;
 
-border:none;
+cursor:pointer;
 
 box-shadow:
-
 0 18px 40px rgba(37,211,102,.35);
+
+transition:.30s;
 
 }
 
 .ocean-btn-whatsapp:hover{
 
-background:#1ebe5d;
-
 transform:translateY(-3px);
 
-}
-
-/*---------------- LIVE ----------------*/
-
-.ocean-live-wrapper{
-
-top:130px !important;
-
-right:58px !important;
-
-}
-
-.live-card{
-
-background:
-
-linear-gradient(
-145deg,
-rgba(14,30,56,.95),
-rgba(8,18,38,.92)
-) !important;
-
-border:1px solid rgba(99,240,237,.16);
-
-box-shadow:
-
-0 22px 55px rgba(0,0,0,.40),
-
-0 0 25px rgba(34,211,238,.08);
-
-transition:.35s;
-
-}
-
-.live-card:hover{
-
-transform:translateX(-8px);
-
-border-color:#63f0ed;
-
-box-shadow:
-
-0 26px 70px rgba(0,0,0,.48),
-
-0 0 36px rgba(34,211,238,.16);
-
-}
-
-/*---------------- FONDO ----------------*/
-
-.ocean-pulse-panel__hero::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-
-radial-gradient(circle at top,rgba(255,255,255,.10),transparent 45%),
-
-linear-gradient(
-90deg,
-rgba(3,16,30,.58),
-rgba(3,16,30,.12) 45%,
-transparent
-);
-
-pointer-events:none;
-
-z-index:2;
+background:#1ebe5d;
 
 }
