@@ -2213,3 +2213,370 @@ text-shadow:
 }
 
 }
+
+/*=========================================================
+OCEAN ULTIMATE EDITION PART 2
+CINEMATIC • DEPTH • LUXURY
+=========================================================*/
+
+/*---------------------------------------------------------
+Profundidad del Hero
+---------------------------------------------------------*/
+
+.ocean-pulse-panel__hero{
+
+transform:translateZ(0);
+
+overflow:hidden;
+
+}
+
+/*---------------------------------------------------------
+Movimiento submarino
+---------------------------------------------------------*/
+
+.ocean-pulse-panel__hero-media img{
+
+animation:oceanCamera 22s ease-in-out infinite alternate;
+
+will-change:transform;
+
+}
+
+@keyframes oceanCamera{
+
+0%{
+
+transform:scale(1.03) translateY(0) translateX(0);
+
+}
+
+50%{
+
+transform:scale(1.045) translateY(-6px) translateX(-3px);
+
+}
+
+100%{
+
+transform:scale(1.055) translateY(3px) translateX(4px);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Caústicas
+---------------------------------------------------------*/
+
+.ocean-pulse-panel__hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:-20%;
+
+background:
+
+radial-gradient(circle at 20% 10%,rgba(255,255,255,.08),transparent 35%),
+
+radial-gradient(circle at 80% 30%,rgba(255,255,255,.05),transparent 28%),
+
+radial-gradient(circle at 60% 80%,rgba(255,255,255,.04),transparent 26%);
+
+mix-blend-mode:screen;
+
+pointer-events:none;
+
+opacity:.55;
+
+animation:causticsMove 18s linear infinite;
+
+z-index:3;
+
+}
+
+@keyframes causticsMove{
+
+0%{
+
+transform:translateX(-2%) translateY(-2%) rotate(0deg);
+
+}
+
+50%{
+
+transform:translateX(2%) translateY(1%) rotate(.8deg);
+
+}
+
+100%{
+
+transform:translateX(-2%) translateY(-2%) rotate(0deg);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Respiración del Hero
+---------------------------------------------------------*/
+
+.ocean-left{
+
+animation:heroFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-4px);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Tarjetas Ultra Premium
+---------------------------------------------------------*/
+
+.live-card{
+
+overflow:hidden;
+
+}
+
+.live-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.12),
+
+transparent 28%
+
+);
+
+pointer-events:none;
+
+opacity:.45;
+
+}
+
+.live-card::after{
+
+content:"";
+
+position:absolute;
+
+left:-130%;
+
+top:0;
+
+width:60%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.18),
+
+transparent
+
+);
+
+transform:skewX(-22deg);
+
+transition:1.2s;
+
+}
+
+.live-card:hover::after{
+
+left:180%;
+
+}
+
+.live-card:hover{
+
+box-shadow:
+
+0 28px 70px rgba(0,0,0,.50),
+
+0 0 50px rgba(0,213,255,.12);
+
+}
+
+/*---------------------------------------------------------
+Badge
+---------------------------------------------------------*/
+
+.ocean-hero-badge{
+
+animation:badgeBreath 4s ease-in-out infinite;
+
+}
+
+@keyframes badgeBreath{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.03);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Botones
+---------------------------------------------------------*/
+
+.ocean-btn-primary,
+
+.ocean-btn-whatsapp{
+
+transition:
+
+transform .35s,
+
+box-shadow .35s;
+
+}
+
+.ocean-btn-primary:hover,
+
+.ocean-btn-whatsapp:hover{
+
+transform:
+
+translateY(-4px)
+
+scale(1.03);
+
+}
+
+/*---------------------------------------------------------
+Timer
+---------------------------------------------------------*/
+
+#oceanCountdown{
+
+animation:timerBreath 2.8s ease-in-out infinite;
+
+}
+
+@keyframes timerBreath{
+
+0%,100%{
+
+filter:drop-shadow(0 0 0 rgba(0,213,255,0));
+
+}
+
+50%{
+
+filter:drop-shadow(0 0 12px rgba(0,213,255,.75));
+
+}
+
+}
+
+/*---------------------------------------------------------
+Entrada cinematográfica
+---------------------------------------------------------*/
+
+.ocean-left>*{
+
+opacity:0;
+
+animation:fadeLuxury .8s forwards;
+
+}
+
+.ocean-left>*:nth-child(1){animation-delay:.10s;}
+.ocean-left>*:nth-child(2){animation-delay:.22s;}
+.ocean-left>*:nth-child(3){animation-delay:.34s;}
+.ocean-left>*:nth-child(4){animation-delay:.46s;}
+
+.live-card{
+
+opacity:0;
+
+animation:cardRise .7s forwards;
+
+}
+
+.live-card:nth-child(1){animation-delay:.60s;}
+.live-card:nth-child(2){animation-delay:.78s;}
+.live-card:nth-child(3){animation-delay:.96s;}
+.live-card:nth-child(4){animation-delay:1.14s;}
+
+@keyframes fadeLuxury{
+
+from{
+
+opacity:0;
+
+transform:translateY(22px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes cardRise{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px) scale(.96);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
