@@ -3318,3 +3318,31 @@ height:auto !important;
 }
 
 }
+
+/*==================================================
+FIX #2 LEFT COLUMN MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.ocean-left{
+
+position:relative !important;
+
+left:auto !important;
+
+top:auto !important;
+
+width:100% !important;
+
+z-index:1 !important;
+
+padding:0 !important;
+
+margin:0 !important;
+
+align-items:flex-start !important;
+
+}
+
+}
