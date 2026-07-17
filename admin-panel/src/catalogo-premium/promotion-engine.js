@@ -1050,16 +1050,17 @@ console.log("IMAGE FINAL:", promotion.image);
 
             if (state.panel) {
 
-                state.panel.classList.toggle('is-open', open);
+    state.panel.classList.toggle(
+        'is-open',
+        open
+    );
 
-                state.panel.style.display = open ? 'block' : 'none';
+    state.panel.setAttribute(
+        'aria-hidden',
+        open ? 'false' : 'true'
+    );
 
-                state.panel.setAttribute(
-                    'aria-hidden',
-                    open ? 'false' : 'true'
-                );
-
-            }
+}
 
             bar?.setAttribute(
                 'aria-expanded',
@@ -1455,6 +1456,13 @@ state.promotions = promotions;
             createBar();
 // createDrawer();
 createPanel();
+state.panel.style.display = "none";
+
+setTimeout(() => {
+
+    state.panel.style.display = "";
+
+},100);
 state.root.classList.add('is-ready');
             if (state.track) {
 
@@ -1470,7 +1478,7 @@ startCountdown();
 
 startRotation();
 
-            state.initialized = true;
+state.initialized = true;
 
             const api = {
                 open: () => setOpen(true),

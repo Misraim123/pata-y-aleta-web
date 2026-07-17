@@ -1259,7 +1259,6 @@ OCEAN PANEL V1
 .ocean-pulse-panel{
 
 position:fixed;
-
 inset:0;
 
 display:flex;
@@ -1269,10 +1268,17 @@ align-items:flex-start;
 padding:28px;
 
 background:rgba(2,10,18,.72);
-
 backdrop-filter:blur(22px);
 
 z-index:9999;
+
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+
+transition:
+opacity .35s ease,
+visibility .35s ease;
 
 }
 
@@ -1772,6 +1778,8 @@ display:flex;
 
 #oceanCountdown{
 
+padding-right:70px;    
+
 position:absolute !important;
 
 right:28px !important;
@@ -2203,6 +2211,8 @@ animation:
 
 timerGlow 3s ease-in-out infinite;
 
+padding-right:70px;
+
 }
 
 @keyframes timerGlow{
@@ -2507,6 +2517,8 @@ Timer
 #oceanCountdown{
 
 animation:timerBreath 2.8s ease-in-out infinite;
+
+padding-right:70px;
 
 }
 
@@ -3069,9 +3081,9 @@ box-shadow:
 
 position:absolute;
 
-top:18px;
+top:20px;
 
-right:18px;
+right:20px;
 
 width:46px;
 height:46px;
@@ -3092,7 +3104,7 @@ color:#fff;
 
 cursor:pointer;
 
-z-index:999999;
+z-index:500;
 
 transition:.25s;
 
