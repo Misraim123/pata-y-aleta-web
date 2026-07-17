@@ -468,7 +468,7 @@
         aria-label="Cerrar Ocean Pulse"
         data-ocean-pulse-close>
 
-        ${ICONS.close}
+       <span class="ocean-close-icon">✕</span>
 
     </button>
 

@@ -1260,9 +1260,15 @@ OCEAN PANEL V1
 
 position:fixed;
 
-top:0;
+top:28px;
 
-left:0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:min(1500px,96vw);
+
+margin:0;
 
 right:0;
 
@@ -1313,6 +1319,14 @@ inset 0 1px 0 rgba(255,255,255,.08),
 0 0 40px rgba(56,189,248,.08);
 
 overflow:hidden;
+
+}
+
+.ocean-pulse-panel__content{
+
+    width:100%;
+
+    margin:0 auto;
 
 }
 
@@ -2272,7 +2286,7 @@ transform:translateZ(0);
 
 overflow:hidden;
 
-padding:24px 70px 40px;
+padding:32px 56px;
 
 min-height:640px;
 
@@ -3101,13 +3115,13 @@ box-shadow:
 
 position:absolute;
 
-top:12px;
+top:18px;
 
-right:12px;
+right:-52px;
 
-width:42px;
+width:46px;
 
-height:42px;
+height:46px;
 
 display:flex;
 
@@ -3117,11 +3131,11 @@ justify-content:center;
 
 border-radius:50%;
 
+background:rgba(8,18,30,.72);
+
+backdrop-filter:blur(18px);
+
 border:1px solid rgba(255,255,255,.12);
-
-background:rgba(8,18,30,.65);
-
-backdrop-filter:blur(20px);
 
 color:#fff;
 
@@ -3131,12 +3145,32 @@ z-index:999999;
 
 transition:.25s;
 
+box-shadow:
+0 8px 25px rgba(0,0,0,.35);
+
 }
 
 .ocean-pulse-panel__close:hover{
 
 transform:scale(1.08);
 
-background:rgba(0,212,255,.18);
+background:rgba(0,212,255,.20);
+
+}
+
+.ocean-close-icon{
+
+text-shadow:
+0 0 8px rgba(255,255,255,.45);    
+
+font-size:22px;
+
+font-weight:700;
+
+line-height:1;
+
+color:#ffffff;
+
+display:block;
 
 }
