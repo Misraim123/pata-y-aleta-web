@@ -3139,195 +3139,152 @@ display:block;
 }
 
 /* ==========================================================
-   OCEAN PULSE MOBILE
+   OCEAN PULSE RESPONSIVE FINAL
    ==========================================================*/
 
 @media (max-width:768px){
 
 .ocean-pulse-panel{
-padding:14px;
+padding:12px;
 align-items:flex-start;
 overflow-y:auto;
 }
 
 .ocean-pulse-panel__content{
 width:100%;
-max-width:100%;
-border-radius:26px;
+max-width:430px;
+margin:0 auto;
+border-radius:24px;
 overflow:hidden;
 }
 
 .ocean-pulse-panel__header{
-
-display:flex;
-flex-direction:column;
-align-items:flex-start;
+display:grid;
+grid-template-columns:1fr auto;
+grid-template-areas:
+"info close"
+"timer timer"
+"chips chips";
 gap:16px;
-
-padding:22px 20px 14px;
-
+padding:22px;
 position:relative;
+}
 
+.ocean-header-left{
+grid-area:info;
 }
 
 .ocean-payment-methods{
-font-size:13px;
+font-size:12px;
 line-height:1.4;
 }
 
 #oceanPulseTitle{
-
-font-size:20px;
+margin-top:6px;
+font-size:17px;
 line-height:1.15;
-
-max-width:90%;
-
-}
-
-.ocean-status{
-
-display:flex;
-overflow-x:auto;
-
-gap:10px;
-
-padding-bottom:4px;
-
-width:100%;
-
-scrollbar-width:none;
-
-}
-
-.ocean-status::-webkit-scrollbar{
-display:none;
-}
-
-.ocean-status span{
-
-flex:none;
-
-font-size:13px;
-
-padding:8px 14px;
-
-white-space:nowrap;
-
-}
-
-.ocean-pulse-panel__chips{
-
-width:100%;
-
-display:flex;
-
-justify-content:center;
-
+max-width:95%;
 }
 
 #oceanCountdown{
-
-width:100%;
-
+grid-area:timer;
 text-align:center;
-
 font-size:15px;
-
 font-weight:700;
+}
 
+.ocean-pulse-panel__chips{
+grid-area:chips;
+display:flex;
+overflow-x:auto;
+gap:10px;
+padding-bottom:4px;
+scrollbar-width:none;
+}
+
+.ocean-pulse-panel__chips::-webkit-scrollbar{
+display:none;
+}
+
+.ocean-chip{
+flex:none;
+white-space:nowrap;
 }
 
 .ocean-pulse-panel__close{
-
-position:absolute;
-
-top:16px;
-
-right:16px;
-
-width:54px;
-
-height:54px;
-
-font-size:26px;
-
-z-index:50;
-
+grid-area:close;
+position:relative;
+top:auto;
+right:auto;
+width:56px;
+height:56px;
+margin:0;
+z-index:20;
 }
 
 .ocean-pulse-panel__hero-content{
-
-display:flex;
-
-flex-direction:column;
-
-gap:22px;
-
+display:block;
 padding:0;
-
 }
 
 .ocean-left{
+padding:18px;
+}
 
-padding:24px;
-
+.ocean-hero-badge{
+margin-bottom:18px;
 }
 
 .ocean-hero-title{
-
-font-size:52px;
-
+font-size:48px;
 line-height:.95;
-
+margin-bottom:14px;
+word-break:break-word;
 }
 
 .ocean-hero-description{
-
-font-size:17px;
-
+font-size:18px;
+line-height:1.4;
+margin-bottom:24px;
 }
 
 .ocean-hero-buttons{
-
 display:flex;
-
 flex-direction:column;
-
 gap:14px;
-
 }
 
 .ocean-btn-primary,
 .ocean-btn-whatsapp{
-
 width:100%;
-
 justify-content:center;
-
 }
 
 .ocean-live-wrapper{
-
-width:100%;
-
+margin-top:24px;
 padding:0 18px 22px;
-
 }
 
 .ocean-live-panel{
-
 display:flex;
-
 flex-direction:column;
-
-gap:14px;
-
+gap:16px;
 }
 
 .ocean-live-card{
-
 width:100%;
+margin:0;
+}
 
+.ocean-pulse-panel__hero-media{
+height:240px;
+overflow:hidden;
+}
+
+.ocean-pulse-panel__hero-media img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 }
