@@ -1260,6 +1260,14 @@ OCEAN PANEL V1
 
 position:fixed;
 
+top:0;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
 inset:0;
 
 display:flex;
@@ -1269,6 +1277,10 @@ align-items:center;
 justify-content:center;
 
 padding:40px;
+
+display:flex;
+
+align-items:flex-start;
 
 background:rgba(2,10,18,.72);
 
@@ -1774,15 +1786,17 @@ OCEAN FINAL MAGIC
 
 position:relative;
 
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;    
+
 padding:14px 30px 4px;
 
 min-height:72px;
 
 display:flex;
-
-align-items:flex-start;
-
-justify-content:space-between;
 
 }
 
@@ -3080,5 +3094,49 @@ background:rgba(0,213,255,.18);
 box-shadow:
 
 0 0 24px rgba(0,213,255,.35);
+
+}
+
+.ocean-pulse-panel__close{
+
+position:absolute;
+
+top:12px;
+
+right:12px;
+
+width:42px;
+
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+border:1px solid rgba(255,255,255,.12);
+
+background:rgba(8,18,30,.65);
+
+backdrop-filter:blur(20px);
+
+color:#fff;
+
+cursor:pointer;
+
+z-index:999999;
+
+transition:.25s;
+
+}
+
+.ocean-pulse-panel__close:hover{
+
+transform:scale(1.08);
+
+background:rgba(0,212,255,.18);
 
 }
