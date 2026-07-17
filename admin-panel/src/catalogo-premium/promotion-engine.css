@@ -1260,65 +1260,19 @@ OCEAN PANEL V1
 
 position:fixed;
 
-top:28px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:min(1500px,96vw);
-
-margin:0;
-
-right:0;
-
-bottom:0;
-
 inset:0;
 
 display:flex;
-
-align-items:center;
-
 justify-content:center;
-
-padding:40px;
-
-display:flex;
-
 align-items:flex-start;
+
+padding:28px;
 
 background:rgba(2,10,18,.72);
 
-backdrop-filter:blur(14px);
-
-opacity:0;
-
-visibility:hidden;
-
-pointer-events:none;
-
-transition:
-opacity .35s ease,
-visibility .35s ease;
-
-z-index:9999;
-
 backdrop-filter:blur(22px);
 
--webkit-backdrop-filter:blur(22px);
-
-border:1px solid rgba(255,255,255,.08);
-
-box-shadow:
-
-0 30px 80px rgba(0,0,0,.45),
-
-inset 0 1px 0 rgba(255,255,255,.08),
-
-0 0 40px rgba(56,189,248,.08);
-
-overflow:hidden;
+z-index:9999;
 
 }
 
@@ -3117,16 +3071,13 @@ position:absolute;
 
 top:18px;
 
-right:-52px;
+right:18px;
 
 width:46px;
-
 height:46px;
 
 display:flex;
-
 align-items:center;
-
 justify-content:center;
 
 border-radius:50%;
