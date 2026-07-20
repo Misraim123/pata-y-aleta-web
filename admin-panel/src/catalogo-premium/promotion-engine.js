@@ -237,6 +237,13 @@
                 true
             ) !== false,
 
+            showCountdown: Boolean(
+    valueOf(
+        promotion.showCountdown,
+        false
+    )
+),
+
             priority: Number(
                 valueOf(
                     promotion.priority,
@@ -327,6 +334,7 @@
             )
         };
     }
+
 
     function dateAllows(promotion) {
         const now = new Date();
@@ -787,10 +795,13 @@ if(!container) return;
 
 if(
 !promotion ||
+!promotion.showCountdown ||
 !promotion.endDate
 ){
 
 container.innerHTML = "";
+
+clearInterval(container._timer);
 
 return;
 

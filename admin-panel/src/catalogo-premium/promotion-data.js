@@ -16,13 +16,19 @@ icon:"🚚",
 
 badge:"ENVÍO",
 
-title: "ENVÍO GRATIS",
+title:"ENVÍO GRATIS",
 
 subtitle:"En compras mayores a $1,000",
 
 color:"#26C6FF",
 
-active:true
+active:true,
+
+startDate:"2026-07-20T00:00:00",
+
+endDate:"2026-07-24T23:59:59",
+
+showCountdown:true
 
 },
 
@@ -42,7 +48,13 @@ subtitle:"Agenda hoy mismo",
 
 color:"#FFD54A",
 
-active:true
+active:true,
+
+startDate:"2026-07-20T00:00:00",
+
+endDate:"2026-07-24T23:59:59",
+
+showCountdown:false
 
 },
 
@@ -62,7 +74,13 @@ subtitle:"Nueva colección disponible",
 
 color:"#34D7FF",
 
-active:true
+active:true,
+
+startDate:"2026-07-20T00:00:00",
+
+endDate:"2026-07-24T23:59:59",
+
+showCountdown:false
 
 },
 
@@ -82,7 +100,13 @@ subtitle:"En tu primer mantenimiento",
 
 color:"#B45BFF",
 
-active:true
+active:true,
+
+startDate:"2026-07-20T00:00:00",
+
+endDate:"2026-07-24T23:59:59",
+
+showCountdown:false
 
 },
 
@@ -102,7 +126,13 @@ subtitle:"Creamos el proyecto ideal",
 
 color:"#45D9FF",
 
-active:true
+active:true,
+
+startDate:"2026-07-20T00:00:00",
+
+endDate:"2026-07-24T23:59:59",
+
+showCountdown:false
 
 }
 
