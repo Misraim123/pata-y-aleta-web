@@ -1428,11 +1428,11 @@ state.root.appendChild(drawer.element);
             state.promotions = nextPromotions;
             state.activeIndex = 0;
 
-            if (state.track) {
-                renderPromotions();
-            } else {
-                updateBar(state.promotions[state.activeIndex]);
-            }
+           if (state.track) {
+    renderPromotions();
+}
+
+updateActive();
 
             startRotation();
 
