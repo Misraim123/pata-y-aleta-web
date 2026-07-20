@@ -583,10 +583,18 @@ WhatsApp
 
           </div>
 
-          <footer
-class="ocean-pulse-panel__footer"
-style="display:none">
-</footer>
+          <footer class="ocean-pulse-panel__footer">
+
+            <div
+              class="ocean-pulse-panel__dots"
+              aria-label="Seleccionar promoción"
+            ></div>
+
+            <span class="ocean-pulse-panel__signature">
+              Bajo el cristal, vive el océano.
+            </span>
+
+          </footer>
 
         </div>
       </div>
