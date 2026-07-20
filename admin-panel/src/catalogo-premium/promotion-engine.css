@@ -2965,77 +2965,9 @@ overflow:hidden;
 
 /* Luz superior */
 
-.live-card::before{
-
-content:"";
-
-position:absolute;
-
-left:-40%;
-
-top:0;
-
-width:180%;
-
-height:1px;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(255,255,255,.65),
-
-transparent
-
-);
-
-opacity:.55;
-
-}
 
 /* Línea de luz viajando */
 
-.live-card::after{
-
-content:"";
-
-position:absolute;
-
-top:-20%;
-
-left:-65%;
-
-width:38%;
-
-height:160%;
-
-transform:rotate(22deg);
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(255,255,255,.22),
-
-transparent
-
-);
-
-animation:
-
-cardShine 7s linear infinite;
-
-pointer-events:none;
-
-}
 
 @keyframes cardShine{
 
@@ -3702,4 +3634,13 @@ padding-bottom:36px !important;
 
 }
 
+}
+
+/*==================================================
+OCEAN CLEANUP
+Oculta footer legado del carrusel
+==================================================*/
+
+.ocean-pulse-panel__footer{
+    display:none !important;
 }
