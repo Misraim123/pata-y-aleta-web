@@ -300,33 +300,49 @@ flex-shrink:0;
 
 }
 
-.ocean-pulse__arrow {
+.ocean-pulse__arrow{
 
-  display:flex;
-  align-items:center;  
-  display: grid;
-  flex: 0 0 auto;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  color: var(--ocean-pulse-aqua);
-  transition: transform .25s ease;
-  margin-left:auto;
+margin-left:auto;
+
+width:38px;
+
+height:38px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(99,240,237,.20);
+
+color:#63f0ed;
+
+transition:.35s;
+
+flex-shrink:0;
+
 }
 
 .ocean-pulse__arrow svg{
 
-display:block !important;
+width:20px;
 
-width:18px !important;
+height:20px;
 
-height:18px !important;
+stroke:#63f0ed !important;
 
-opacity:1 !important;
+stroke-width:2.6;
 
-visibility:visible !important;
+fill:none;
 
-color:#63f0ed;
+opacity:1;
+
+display:block;
 
 }
 
