@@ -344,10 +344,16 @@ opacity:1;
 
 display:block;
 
+transition:transform .35s ease;
+
 }
 
-#ocean-pulse.is-open .ocean-pulse__arrow {
-  transform: rotate(180deg);
+#ocean-pulse.is-open .ocean-pulse__arrow svg{
+
+transform:rotate(180deg);
+
+transition:transform .35s ease;
+
 }
 
 /* Modal glass */
