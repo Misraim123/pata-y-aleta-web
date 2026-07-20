@@ -652,26 +652,26 @@ WhatsApp
         state.track.innerHTML = state.promotions
             .map((promotion, index) => {
                 return `
-          <article
-            class="ocean-pulse-card ocean-pulse-card--${cleanText(promotion.type)} ${index === state.activeIndex ? 'is-active' : ''}"
+         <article
+class="ocean-pulse__card ocean-pulse__card--${cleanText(promotion.type)} ${index === state.activeIndex ? 'is-active' : ''}"
             data-ocean-pulse-index="${index}"
             aria-hidden="${index === state.activeIndex ? 'false' : 'true'}"
           >
             <div
-              class="ocean-pulse-card__surface"
+class="ocean-pulse__card-glow"
               aria-hidden="true"
             ></div>
 
             <div
-              class="ocean-pulse-card__icon"
+class="ocean-pulse__card-icon"
               aria-hidden="true"
             >
               ${iconMarkup(promotion.icon)}
             </div>
 
-            <div class="ocean-pulse-card__body">
+           <div class="ocean-pulse__card-content">
 
-              <span class="ocean-pulse-card__label">
+              <span class="ocean-pulse__badge">
                 ${cleanText(promotion.label)}
               </span>
 
@@ -684,7 +684,7 @@ WhatsApp
               </p>
 
               <a
-                class="ocean-pulse-card__cta"
+class="ocean-pulse__card-link"
                 href="${cleanText(promotion.href)}"
                 ${promotion.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
                 data-ocean-pulse-id="${cleanText(promotion.id)}"
