@@ -778,6 +778,69 @@ ${promotion.title}
 
         }
 
+        function updateCountdown(promotion){
+
+const container =
+document.getElementById("oceanCountdown");
+
+if(!container) return;
+
+if(
+!promotion ||
+!promotion.endDate
+){
+
+container.innerHTML = "";
+
+return;
+
+}
+
+const end =
+new Date(promotion.endDate);
+
+function render(){
+
+const now = new Date();
+
+const diff =
+end.getTime() - now.getTime();
+
+if(diff <= 0){
+
+container.innerHTML =
+"⌛ PROMOCIÓN FINALIZADA";
+
+return;
+
+}
+
+const days =
+Math.floor(diff/86400000);
+
+const hours =
+Math.floor((diff%86400000)/3600000);
+
+const minutes =
+Math.floor((diff%3600000)/60000);
+
+const seconds =
+Math.floor((diff%60000)/1000);
+
+container.innerHTML =
+`⏳ ${days} DÍAS ${hours} HRS ${minutes} MIN ${seconds} SEG`;
+
+}
+
+render();
+
+clearInterval(container._timer);
+
+container._timer =
+setInterval(render,1000);
+
+}
+
         function updateHero(promotion){
     
       console.log("HERO UPDATE", promotion);  
@@ -1012,6 +1075,8 @@ console.log("IMAGE FINAL:", promotion.image);
             updateBar(promotion);
 
             updateHero(promotion);
+
+            updateCountdown(promotion);
 
         }
 
