@@ -786,7 +786,7 @@ ${promotion.title}
 
         }
 
-        function updateCountdown(promotion){
+       function updateCountdown(promotion){
 
 const container =
 document.getElementById("oceanCountdown");
@@ -812,15 +812,18 @@ new Date(promotion.endDate);
 
 function render(){
 
-const now = new Date();
+const now =
+new Date();
 
 const diff =
 end.getTime() - now.getTime();
 
 if(diff <= 0){
 
+clearInterval(container._timer);
+
 container.innerHTML =
-"⌛ PROMOCIÓN FINALIZADA";
+"🎉 PROMOCIÓN FINALIZADA";
 
 return;
 
@@ -838,8 +841,31 @@ Math.floor((diff%3600000)/60000);
 const seconds =
 Math.floor((diff%60000)/1000);
 
-container.innerHTML =
-`⏳ ${days} DÍAS ${hours} HRS ${minutes} MIN ${seconds} SEG`;
+let text = "";
+
+if(days > 0){
+
+text =
+`⏳ ${days} DÍAS · ${hours} HRS`;
+
+}else if(hours > 0){
+
+text =
+`⏳ ${hours} HRS · ${minutes} MIN`;
+
+}else if(minutes > 0){
+
+text =
+`⏳ ${minutes} MIN · ${seconds} SEG`;
+
+}else{
+
+text =
+`⏳ ${seconds} SEG`;
+
+}
+
+container.innerHTML = text;
 
 }
 
