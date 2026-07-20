@@ -1431,6 +1431,9 @@ function startCountdown(){
 
     const end = new Date();
 
+    console.log("PROMOCIÓN ACTIVA:", promotion);
+    console.log("END DATE:", promotion.endDate);
+
     end.setDate(end.getDate()+6);
 
     end.setHours(23,59,59,999);
