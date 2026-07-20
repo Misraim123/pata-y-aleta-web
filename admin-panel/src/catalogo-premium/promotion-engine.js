@@ -729,10 +729,18 @@ class="ocean-pulse__card-link"
     }
 
     function cacheCards() {
-        state.cards = Array.from(
-            state.track.querySelectorAll('.ocean-pulse-card')
-        );
-    }
+
+    state.cards = Array.from(
+
+        state.track.querySelectorAll(
+
+            '.ocean-pulse__card'
+
+        )
+
+    );
+
+}
 
     function updateBar(promotion) {
 
@@ -1579,7 +1587,7 @@ updateActive();
 
 bindEvents();
 
-startCountdown();
+/*startCountdown();*/
 
 startRotation();
 
