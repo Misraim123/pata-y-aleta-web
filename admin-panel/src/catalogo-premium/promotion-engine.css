@@ -301,6 +301,9 @@ flex-shrink:0;
 }
 
 .ocean-pulse__arrow {
+
+  display:flex;
+  align-items:center;  
   display: grid;
   flex: 0 0 auto;
   place-items: center;
@@ -311,9 +314,20 @@ flex-shrink:0;
   margin-left:auto;
 }
 
-.ocean-pulse__arrow svg {
-  width: 18px;
-  height: 18px;
+.ocean-pulse__arrow svg{
+
+display:block !important;
+
+width:18px !important;
+
+height:18px !important;
+
+opacity:1 !important;
+
+visibility:visible !important;
+
+color:#63f0ed;
+
 }
 
 #ocean-pulse.is-open .ocean-pulse__arrow {
