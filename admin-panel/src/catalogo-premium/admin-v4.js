@@ -1774,6 +1774,12 @@ document.getElementById('productsWorkspace');
 const oceanAdmin =
 document.getElementById('oceanAdmin');
 
+const newPromotionBtn =
+document.getElementById('newPromotionBtn');
+
+const promotionEditor =
+document.getElementById('promotionEditor');
+
 console.log('productsWorkspace', productsWorkspace);
 console.log('oceanAdmin', oceanAdmin)
 
@@ -1795,6 +1801,21 @@ oceanViewBtn?.addEventListener('click',()=>{
 
 productsWorkspace.style.display='none';
 oceanAdmin.style.display='block';
+
+});
+
+newPromotionBtn?.addEventListener('click',()=>{
+
+const opened =
+promotionEditor.style.display === 'block';
+
+promotionEditor.style.display =
+opened ? 'none' : 'block';
+
+newPromotionBtn.innerHTML =
+opened
+? '➕ Nueva Campaña'
+: '✖ Cancelar';
 
 });
 
@@ -1925,15 +1946,53 @@ return;
 
 }
 
-cards.innerHTML=data.map(item=>`
+cards.innerHTML = data.map(item => `
 
 <div class="promo-card">
 
-<strong>${item.title}</strong>
+    <div class="promo-top">
 
-<br>
+        <strong>${item.title}</strong>
 
-${item.subtitle}
+        <span class="${
+            item.active
+            ? 'promo-active'
+            : 'promo-inactive'
+        }">
+
+            ${
+                item.active
+                ? '🟢 Activa'
+                : '⚪ Inactiva'
+            }
+
+        </span>
+
+    </div>
+
+    <div class="promo-subtitle">
+
+        ${item.subtitle || ''}
+
+    </div>
+
+    <div class="promo-actions">
+
+        <button
+            class="promo-edit"
+            data-id="${item.id}"
+        >
+            ✏ Editar
+        </button>
+
+        <button
+            class="promo-delete"
+            data-id="${item.id}"
+        >
+            🗑 Eliminar
+        </button>
+
+    </div>
 
 </div>
 
