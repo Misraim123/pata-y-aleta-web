@@ -493,6 +493,18 @@ border-radius:24px;
 
     <div class="ocean-form">
 
+    <button
+        id="newPromotionBtn"
+        class="ocean-new-btn"
+    >
+        ➕ Nueva Campaña
+    </button>
+
+    <div
+        id="promotionEditor"
+        style="display:none;"
+    >
+
         <h3>Nueva Promoción</h3>
 
         <input
@@ -544,6 +556,8 @@ border-radius:24px;
             💾 Guardar Promoción
 
         </button>
+
+        </div>
 
     </div>
 
