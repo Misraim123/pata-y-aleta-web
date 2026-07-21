@@ -2016,12 +2016,12 @@ document.getElementById('promoCountdown').checked = false;
 
 document.getElementById('promoActive').checked = true;
 
-const priority =
+const priorityInput =
 document.getElementById('promoPriority');
 
-if(priority){
+if(priorityInput){
 
-    priority.value = 0;
+    priorityInput.value = 0;
 
 }
 
