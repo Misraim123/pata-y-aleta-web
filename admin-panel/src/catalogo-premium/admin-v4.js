@@ -9,6 +9,8 @@ const supabase = createClient(
 
 const PROMOTION_TABLE = 'ocean_promotions';
 
+let editingPromotionId = null;
+
 document.querySelector('#app').innerHTML = `
 
 <div class="admin-container">
@@ -534,6 +536,28 @@ border-radius:24px;
 
         </select>
 
+        <label>📅 Inicio</label>
+
+<input
+type="date"
+id="promoStart">
+
+<label>📅 Fin</label>
+
+<input
+type="date"
+id="promoEnd">
+
+<label class="check-row">
+
+<input
+type="checkbox"
+id="promoCountdown">
+
+Mostrar Countdown
+
+</label>
+
         <input
         id="promoImage"
         type="file"
@@ -553,7 +577,7 @@ border-radius:24px;
 
         <button id="savePromotion">
 
-            💾 Guardar Promoción
+            💾 Crear Promoción
 
         </button>
 
@@ -1848,6 +1872,20 @@ document.getElementById('promoColor').value;
 const active =
 document.getElementById('promoActive').checked;
 
+const startDate =
+document.getElementById('promoStart')?.value || null;
+
+const endDate =
+document.getElementById('promoEnd')?.value || null;
+
+const showCountdown =
+document.getElementById('promoCountdown')?.checked || false;
+
+const priority =
+Number(
+document.getElementById('promoPriority')?.value || 0
+);
+
 const imageInput =
 document.getElementById('promoImage');
 
@@ -1885,25 +1923,70 @@ if (imageInput.files.length) {
 console.log(data.publicUrl);
 
 }
+
 console.log("URL FINAL:", image);
-const {error}=await supabase
-.from(PROMOTION_TABLE)
-.insert({
+let response;
 
-title,
+if(editingPromotionId){
 
-subtitle,
+    response = await supabase
+    .from(PROMOTION_TABLE)
+    .update({
 
-button_text:button,
+        title,
 
-color,
+        subtitle,
 
-image,
+        button_text:button,
 
-active
+        color,
 
-});
+        ...(image ? { image } : {}),
 
+        active,
+
+        start_date:startDate,
+
+        end_date:endDate,
+
+        show_countdown:showCountdown,
+
+        priority
+
+    })
+    .eq('id', editingPromotionId);
+
+}else{
+
+    response = await supabase
+    .from(PROMOTION_TABLE)
+    .insert({
+
+        title,
+
+        subtitle,
+
+        button_text:button,
+
+        color,
+
+        image,
+
+        active,
+
+        start_date:startDate,
+
+        end_date:endDate,
+
+        show_countdown:showCountdown,
+
+        priority
+
+    });
+
+}
+
+const { error } = response;
 if(error){
 
 console.log(error);
@@ -1911,6 +1994,34 @@ console.log(error);
 alert(error.message);
 
 return;
+
+}
+
+editingPromotionId = null;
+
+document.getElementById('savePromotion').innerHTML =
+'💾 Crear Promoción';
+
+document.getElementById('promoTitle').value = '';
+
+document.getElementById('promoSubtitle').value = '';
+
+document.getElementById('promoButton').value = '';
+
+document.getElementById('promoStart').value = '';
+
+document.getElementById('promoEnd').value = '';
+
+document.getElementById('promoCountdown').checked = false;
+
+document.getElementById('promoActive').checked = true;
+
+const priority =
+document.getElementById('promoPriority');
+
+if(priority){
+
+    priority.value = 0;
 
 }
 
@@ -1954,19 +2065,39 @@ cards.innerHTML = data.map(item => `
 
         <strong>${item.title}</strong>
 
-        <span class="${
-            item.active
-            ? 'promo-active'
-            : 'promo-inactive'
-        }">
+        ${(() => {
 
-            ${
-                item.active
-                ? '🟢 Activa'
-                : '⚪ Inactiva'
-            }
+    const now = new Date();
 
-        </span>
+    const start = item.start_date
+        ? new Date(item.start_date)
+        : null;
+
+    const end = item.end_date
+        ? new Date(item.end_date)
+        : null;
+
+    if (!item.active) {
+
+        return `<span class="promo-inactive">⚪ Inactiva</span>`;
+
+    }
+
+    if (start && now < start) {
+
+        return `<span class="promo-pending">🟡 Programada</span>`;
+
+    }
+
+    if (end && now > end) {
+
+        return `<span class="promo-expired">🔴 Expirada</span>`;
+
+    }
+
+    return `<span class="promo-active">🟢 Activa</span>`;
+
+})()}
 
     </div>
 
@@ -1975,6 +2106,53 @@ cards.innerHTML = data.map(item => `
         ${item.subtitle || ''}
 
     </div>
+
+    <div class="promo-dates">
+
+📅 ${
+item.start_date
+? new Date(item.start_date)
+    .toLocaleDateString(
+        'es-MX',
+        {
+            day:'2-digit',
+            month:'short'
+        }
+    )
+: '--'
+}
+
+&nbsp;&nbsp;→&nbsp;&nbsp;
+
+${
+item.end_date
+? new Date(item.end_date)
+    .toLocaleDateString(
+        'es-MX',
+        {
+            day:'2-digit',
+            month:'short'
+        }
+    )
+: '--'
+}
+
+</div>
+
+${
+item.show_countdown
+?
+
+`<div class="promo-countdown">
+
+⏳ Countdown Activo
+
+</div>`
+
+:
+
+''
+}
 
     <div class="promo-actions">
 
@@ -1998,4 +2176,119 @@ cards.innerHTML = data.map(item => `
 
 `).join('');
 
+document
+.querySelectorAll('.promo-edit')
+.forEach(btn=>{
+
+    btn.onclick = async ()=>{
+
+        const id = btn.dataset.id;
+
+        editingPromotionId = id;
+
+        const { data, error } =
+        await supabase
+        .from(PROMOTION_TABLE)
+        .select('*')
+        .eq('id', id)
+        .single();
+
+        if(error){
+
+            console.log(error);
+
+            return;
+
+        }
+
+        document.getElementById('promoTitle').value =
+        data.title || '';
+
+        document.getElementById('promoSubtitle').value =
+        data.subtitle || '';
+
+        document.getElementById('promoButton').value =
+        data.button_text || '';
+
+        document.getElementById('promoColor').value =
+        data.color || 'blue';
+
+        document.getElementById('promoActive').checked =
+        data.active;
+
+        document.getElementById('promoStart').value =
+        data.start_date || '';
+
+        document.getElementById('promoEnd').value =
+        data.end_date || '';
+
+        document.getElementById('promoCountdown').checked =
+        data.show_countdown || false;
+
+        const priority =
+        document.getElementById('promoPriority');
+
+        if(priority){
+
+            priority.value =
+            data.priority || 0;
+
+        }
+
+        promotionEditor.style.display = 'block';
+
+        document.getElementById('savePromotion').innerHTML =
+'💾 Actualizar Promoción';
+
+        newPromotionBtn.innerHTML =
+        '✖ Cancelar';
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:'smooth'
+
+        });
+   
+
+    };
+
+});
+
+document
+.querySelectorAll('.promo-delete')
+.forEach(btn=>{
+
+    btn.onclick = async ()=>{
+
+        if(!confirm('¿Eliminar esta promoción?')){
+
+            return;
+
+        }
+
+        const { error } =
+        await supabase
+        .from(PROMOTION_TABLE)
+        .delete()
+        .eq('id', btn.dataset.id);
+
+        if(error){
+
+            console.log(error);
+
+            alert(error.message);
+
+            return;
+
+        }
+
+        loadPromotions();
+
+    };
+
+});
+
 }
+
