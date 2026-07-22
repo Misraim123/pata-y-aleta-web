@@ -1,47 +1,46 @@
 /*
 ====================================================
 PATA Y ALETA
-Premium Status Bar
-Data Module
+Premium Customer Confidence Strip
+Version 2.0
 ====================================================
 */
 
-const TRUST_MESSAGES = [
+const TRUST_ITEMS = [
 
 {
-id:"payments",
-icon:"shield",
-title:"Pagos Seguros"
+icon:"visa",
+title:"Visa"
 },
 
 {
-id:"shipping",
+icon:"mastercard",
+title:"Mastercard"
+},
+
+{
+icon:"amex",
+title:"American Express"
+},
+
+{
+icon:"bank",
+title:"Transferencia Bancaria"
+},
+
+{
 icon:"truck",
 title:"Cobertura Nacional"
 },
 
 {
-id:"reef",
-icon:"reef",
-title:"Especialistas Reef"
-},
-
-{
-id:"install",
 icon:"tools",
 title:"Instalación Profesional"
 },
 
 {
-id:"support",
 icon:"support",
-title:"Atención Personalizada"
-},
-
-{
-id:"premium",
-icon:"premium",
-title:"Boutique Premium"
+title:"Asesoría Especializada"
 }
 
 ];
