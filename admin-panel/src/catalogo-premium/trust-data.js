@@ -2,7 +2,7 @@
 ====================================================
 PATA Y ALETA
 Premium Customer Confidence Strip
-Version 2.0
+Version 3.0
 ====================================================
 */
 
@@ -10,37 +10,44 @@ const TRUST_ITEMS = [
 
 {
 icon:"visa",
-title:"Visa"
+title:"VISA",
+subtitle:"Crédito / Débito"
 },
 
 {
 icon:"mastercard",
-title:"Mastercard"
+title:"Mastercard",
+subtitle:"Crédito / Débito"
 },
 
 {
 icon:"amex",
-title:"American Express"
+title:"AMEX",
+subtitle:"American Express"
 },
 
 {
 icon:"bank",
-title:"Transferencia Bancaria"
+title:"Transferencia",
+subtitle:"Bancaria"
 },
 
 {
 icon:"truck",
-title:"Cobertura Nacional"
+title:"Cobertura",
+subtitle:"Nacional"
 },
 
 {
 icon:"tools",
-title:"Instalación Profesional"
+title:"Instalación",
+subtitle:"Profesional"
 },
 
 {
 icon:"support",
-title:"Asesoría Especializada"
+title:"Asesoría",
+subtitle:"Especializada"
 }
 
 ];

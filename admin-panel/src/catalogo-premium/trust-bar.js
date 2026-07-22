@@ -30,14 +30,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         icon.textContent = getIcon(item.icon);
 
-        const title = document.createElement("span");
-        title.className = "trust-chip-title";
-        title.textContent = item.title;
+       const content = document.createElement("div");
+content.className = "trust-chip-content";
 
-        chip.appendChild(icon);
-        chip.appendChild(title);
+const title = document.createElement("div");
+title.className = "trust-chip-title";
+title.textContent = item.title;
 
-        container.appendChild(chip);
+const subtitle = document.createElement("div");
+subtitle.className = "trust-chip-subtitle";
+subtitle.textContent = item.subtitle;
+
+content.appendChild(title);
+content.appendChild(subtitle);
+
+chip.appendChild(icon);
+chip.appendChild(content);
+
+container.appendChild(chip);
 
     });
 
@@ -53,13 +63,13 @@ function getIcon(type){
     switch(type){
 
         case "visa":
-            return "💳";
+    return "💳";
 
-        case "mastercard":
-            return "💳";
+case "mastercard":
+    return "💳";
 
-        case "amex":
-            return "💳";
+case "amex":
+    return "💳";
 
         case "bank":
             return "🏦";
