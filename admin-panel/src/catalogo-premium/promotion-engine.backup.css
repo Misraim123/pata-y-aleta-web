@@ -1,0 +1,3705 @@
+/*!
+ * Ocean Pulse — Promotion Engine Styles
+ * Pata y Aleta
+ * Scope: .ocean-pulse only
+ * No modifica branding, hero, fotografías ni tipografía global.
+ */
+
+:root {
+  --ocean-pulse-navy: #061826;
+  --ocean-pulse-deep: #020b13;
+  --ocean-pulse-cyan: #19d9ff;
+  --ocean-pulse-aqua: #63f0ed;
+  --ocean-pulse-white: #f4fbff;
+  --ocean-pulse-text: #c5d8e4;
+}
+
+body.ocean-pulse-open {
+  overflow: hidden;
+}
+
+.ocean-pulse,
+.ocean-pulse * {
+  box-sizing: border-box;
+}
+
+.ocean-pulse {
+  position: relative;
+  z-index: 60;
+  color: var(--ocean-pulse-white);
+  font-family: inherit;
+}
+
+.ocean-pulse__bar{
+
+position:relative;
+
+z-index:80;
+
+right:auto;
+
+bottom:auto;
+
+width:100%;
+
+max-width:none;
+
+opacity:0;
+
+transform:translateY(18px);
+
+pointer-events:none;
+
+transition:
+opacity .45s ease,
+transform .45s cubic-bezier(.2,.8,.2,1);
+
+}
+
+#ocean-pulse.is-ready .ocean-pulse__bar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.ocean-pulse__bar-main{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+width:100%;
+
+min-height:82px;
+
+padding:16px 24px;
+
+overflow:hidden;
+
+border-radius:24px;
+
+border:1px solid rgba(99,240,237,.28);
+
+background:
+linear-gradient(
+135deg,
+rgba(5,28,45,.96),
+rgba(3,15,28,.93)
+);
+
+backdrop-filter:blur(24px);
+-webkit-backdrop-filter:blur(24px);
+
+box-shadow:
+0 20px 55px rgba(0,0,0,.45),
+0 0 35px rgba(25,217,255,.08),
+inset 0 1px 0 rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.ocean-pulse__bar-main::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(36, 225, 255, .1), transparent);
+  transform: translateX(-130%);
+  animation: ocean-pulse-sweep 5.5s ease-in-out infinite;
+  content: "";
+}
+
+.ocean-pulse__bar-main:hover{
+
+transform:translateY(-3px);
+
+border-color:#63f0ed;
+
+box-shadow:
+
+0 24px 65px rgba(0,0,0,.50),
+
+0 0 45px rgba(25,217,255,.18),
+
+inset 0 1px 0 rgba(255,255,255,.10);
+
+}
+
+.ocean-pulse__bar-main:focus-visible,
+.ocean-pulse button:focus-visible,
+.ocean-pulse a:focus-visible {
+  outline: 2px solid var(--ocean-pulse-aqua);
+  outline-offset: 3px;
+}
+
+.ocean-pulse__ripple {
+  position: absolute;
+  z-index: -1;
+  width: 72px;
+  height: 72px;
+  left: -18px;
+  top: -8px;
+  border: 1px solid rgba(99, 240, 237, .24);
+  border-radius: 50%;
+  animation: ocean-pulse-ripple 3.7s ease-out infinite;
+}
+
+.ocean-pulse__mini-icon,
+.ocean-pulse__card-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+}
+
+.ocean-pulse__mini-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(98, 241, 237, .35);
+  border-radius: 13px;
+  background: linear-gradient(145deg, rgba(30, 233, 255, .2), rgba(0, 83, 126, .1));
+  color: var(--ocean-pulse-aqua);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.13), 0 0 18px rgba(25,217,255,.14);
+}
+
+.ocean-pulse svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+}
+
+.ocean-pulse__mini-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  stroke-width: 1.2;
+}
+
+.ocean-pulse__copy{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+flex:1;
+
+min-width:0;
+
+gap:2px;
+
+}
+
+.ocean-pulse__eyebrow {
+  color: var(--ocean-pulse-cyan);
+  font-size:11px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  line-height: 1.2;
+  opacity:.75;
+}
+
+.ocean-pulse__bar-message{
+
+font-size:22px;
+
+font-weight:800;
+
+color:#ffffff;
+
+letter-spacing:-.4px;
+
+white-space:nowrap;
+
+overflow:hidden;
+
+text-overflow:ellipsis;
+
+}
+
+.ocean-pulse__live{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+flex-shrink:0;
+
+min-width:max-content;
+
+gap:8px;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+background:linear-gradient(
+180deg,
+rgba(60,8,8,.82),
+rgba(32,5,5,.90)
+);
+
+border:1px solid rgba(255,75,75,.28);
+
+box-shadow:
+0 0 20px rgba(255,60,60,.08),
+inset 0 1px 0 rgba(255,255,255,.08);
+
+color:#ffe7e7;
+
+font-size:11px;
+
+font-weight:800;
+
+letter-spacing:.18em;
+
+text-transform:uppercase;
+
+white-space:nowrap;
+
+}
+
+.ocean-pulse__live i{
+
+display:block;
+
+visibility:visible;    
+
+width:10px;
+
+height:10px;
+
+border-radius:50%;
+
+background:#ff3b30;
+
+box-shadow:
+
+0 0 10px rgba(255,59,48,.95),
+
+0 0 24px rgba(255,59,48,.75);
+
+animation:
+
+ocean-pulse-live 2s ease-in-out infinite;
+
+flex-shrink:0;
+
+}
+
+.ocean-pulse__arrow {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--ocean-pulse-aqua);
+  transition: transform .25s ease;
+  margin-left:auto;
+}
+
+.ocean-pulse__arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+#ocean-pulse.is-open .ocean-pulse__arrow {
+  transform: rotate(180deg);
+}
+
+/* Modal glass */
+.ocean-pulse__panel {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: end center;
+  padding: 22px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .28s ease, visibility .28s ease;
+}
+
+#ocean-pulse.is-open .ocean-pulse__panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.ocean-pulse__veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 9, 16, .56);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.ocean-pulse__glass {
+  position: relative;
+  width: min(1020px, 100%);
+  max-height: min(720px, calc(100vh - 44px));
+  padding: 27px;
+  overflow: hidden;
+  border: 1px solid rgba(105, 239, 255, .4);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(45, 213, 242, .15), transparent 30%),
+    radial-gradient(circle at 90% 85%, rgba(27, 108, 180, .2), transparent 29%),
+    linear-gradient(135deg, rgba(5, 30, 48, .95), rgba(1, 12, 23, .97));
+  box-shadow:
+    0 32px 90px rgba(0, 0, 0, .62),
+    0 0 0 1px rgba(255, 255, 255, .04) inset,
+    0 0 42px rgba(25, 217, 255, .14);
+  transform: translateY(26px) scale(.985);
+  transition: transform .38s cubic-bezier(.2,.8,.2,1);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+#ocean-pulse.is-open .ocean-pulse__glass {
+  transform: translateY(0) scale(1);
+}
+
+.ocean-pulse__glass::before,
+.ocean-pulse__glass::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+}
+
+.ocean-pulse__glass::before {
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(110deg, rgba(255,255,255,.08), transparent 21%, transparent 78%, rgba(99,240,237,.06));
+}
+
+.ocean-pulse__glass::after {
+  width: 340px;
+  height: 340px;
+  top: -240px;
+  left: 19%;
+  border: 1px solid rgba(87, 233, 255, .18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 48px rgba(87, 233, 255, .025), 0 0 0 96px rgba(87, 233, 255, .018);
+}
+
+.ocean-pulse__waterline {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: -8%;
+  width: 116%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #6df8ff 13%, #b1ffff 49%, #6df8ff 86%, transparent);
+  box-shadow: 0 0 14px rgba(76, 242, 255, .78);
+  opacity: .75;
+  animation: ocean-pulse-waterline 7s ease-in-out infinite;
+}
+
+.ocean-pulse__rays {
+  position: absolute;
+  z-index: 0;
+  inset: -20% -5% auto auto;
+  width: 56%;
+  height: 125%;
+  pointer-events: none;
+  opacity: .42;
+  background:
+    linear-gradient(121deg, transparent 14%, rgba(89, 246, 255, .09) 15%, transparent 28%),
+    linear-gradient(112deg, transparent 31%, rgba(145, 253, 255, .07) 32%, transparent 43%),
+    linear-gradient(105deg, transparent 52%, rgba(111, 239, 255, .06) 53%, transparent 64%);
+  transform: rotate(4deg);
+  animation: ocean-pulse-rays 12s ease-in-out infinite alternate;
+}
+
+.ocean-pulse__bubbles {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ocean-pulse__bubbles i {
+  position: absolute;
+  bottom: -28px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(136, 246, 255, .35);
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 3px rgba(255,255,255,.24);
+  opacity: .46;
+  animation: ocean-pulse-bubble 10s linear infinite;
+}
+
+.ocean-pulse__bubbles i:nth-child(1) { left: 7%; animation-delay: -1s; animation-duration: 9s; }
+.ocean-pulse__bubbles i:nth-child(2) { left: 21%; width: 5px; height: 5px; animation-delay: -6s; animation-duration: 12s; }
+.ocean-pulse__bubbles i:nth-child(3) { left: 45%; width: 11px; height: 11px; animation-delay: -3s; animation-duration: 14s; }
+.ocean-pulse__bubbles i:nth-child(4) { left: 65%; width: 6px; height: 6px; animation-delay: -8s; animation-duration: 10s; }
+.ocean-pulse__bubbles i:nth-child(5) { left: 82%; width: 12px; height: 12px; animation-delay: -4s; animation-duration: 13s; }
+.ocean-pulse__bubbles i:nth-child(6) { left: 94%; width: 5px; height: 5px; animation-delay: -10s; animation-duration: 11s; }
+
+.ocean-pulse__panel-head,
+.ocean-pulse__carousel,
+.ocean-pulse__panel-foot {
+  position: relative;
+  z-index: 1;
+}
+
+.ocean-pulse__panel-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 23px;
+}
+
+.ocean-pulse__panel-head h2 {
+  max-width: 560px;
+  margin: 5px 0 0;
+  color: #f2fcff;
+  font: inherit;
+  font-size: clamp(21px, 2.55vw, 34px);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+
+.ocean-pulse__close,
+.ocean-pulse__nav,
+.ocean-pulse__dot {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ocean-pulse__close {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(149, 241, 255, .22);
+  border-radius: 12px;
+  background: rgba(255,255,255,.055);
+  color: #dffcff;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.ocean-pulse__close:hover {
+  background: rgba(25,217,255,.16);
+  color: var(--ocean-pulse-aqua);
+  transform: rotate(90deg);
+}
+
+.ocean-pulse__carousel {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 42px;
+  gap: 14px;
+  align-items: center;
+}
+
+.ocean-pulse__viewport {
+  min-height: 245px;
+}
+
+.ocean-pulse__track {
+  position: relative;
+  min-height: 245px;
+}
+
+.ocean-pulse__card {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 94px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(131, 240, 255, .16);
+  border-radius: 21px;
+  background: linear-gradient(120deg, rgba(8, 47, 70, .58), rgba(3, 20, 34, .46));
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(18px) scale(.985);
+  transition: opacity .35s ease, transform .42s cubic-bezier(.2,.75,.2,1);
+}
+
+.ocean-pulse__card.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+}
+
+.ocean-pulse__card-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -108px;
+  bottom: -160px;
+  border-radius: 50%;
+  background: rgba(24, 218, 255, .13);
+  filter: blur(24px);
+}
+
+.ocean-pulse__card-icon {
+  position: relative;
+  z-index: 1;
+  width: 94px;
+  height: 94px;
+  border: 1px solid rgba(107, 245, 255, .34);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(25,217,255,.23), rgba(8,98,149,.07));
+  color: var(--ocean-pulse-aqua);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 0 28px rgba(25,217,255,.12);
+}
+
+.ocean-pulse__card-icon svg {
+  width: 43px;
+  height: 43px;
+}
+
+.ocean-pulse__card-content {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.ocean-pulse__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 4px 9px;
+  border: 1px solid rgba(99, 240, 237, .3);
+  border-radius: 999px;
+  background: rgba(19, 217, 255, .1);
+  color: #88f7f2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.ocean-pulse__card h3 {
+  margin: 11px 0 7px;
+  color: #f5fdff;
+  font: inherit;
+  font-size: clamp(20px, 2.3vw, 31px);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.08;
+}
+
+.ocean-pulse__card p {
+  max-width: 630px;
+  margin: 0;
+  color: var(--ocean-pulse-text);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ocean-pulse__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 17px;
+  color: var(--ocean-pulse-aqua);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap .2s ease, color .2s ease;
+}
+
+.ocean-pulse__card-link:hover {
+  gap: 13px;
+  color: #d6ffff;
+}
+
+.ocean-pulse__card-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.ocean-pulse__nav {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(108, 237, 255, .23);
+  border-radius: 14px;
+  background: rgba(6, 39, 58, .62);
+  color: var(--ocean-pulse-aqua);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.ocean-pulse__nav:hover {
+  border-color: rgba(108, 237, 255, .65);
+  background: rgba(24, 199, 225, .17);
+  transform: translateY(-2px);
+}
+
+.ocean-pulse__nav--prev svg {
+  transform: rotate(180deg);
+}
+
+.ocean-pulse__panel-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 21px;
+}
+
+.ocean-pulse__dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ocean-pulse__dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(164, 213, 224, .32);
+  transition: width .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.ocean-pulse__dot.is-active {
+  width: 25px;
+  background: var(--ocean-pulse-aqua);
+  box-shadow: 0 0 11px rgba(99, 240, 237, .58);
+}
+
+.ocean-pulse__signature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #87aebb;
+}
+
+.ocean-pulse__signature span {
+  width: 20px;
+  height: 1px;
+  background: var(--ocean-pulse-cyan);
+  box-shadow: 0 0 8px rgba(25,217,255,.5);
+}
+
+.ocean-pulse__signature small {
+  font: inherit;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+/* Accent types */
+.ocean-pulse__card--rescue .ocean-pulse__badge,
+.ocean-pulse__card--service .ocean-pulse__badge {
+  border-color: rgba(255, 210, 105, .38);
+  background: rgba(255, 191, 49, .13);
+  color: #ffe099;
+}
+
+.ocean-pulse__card--rescue .ocean-pulse__card-icon,
+.ocean-pulse__card--service .ocean-pulse__card-icon {
+  border-color: rgba(255, 213, 100, .38);
+  background: linear-gradient(145deg, rgba(255,190,47,.21), rgba(125,73,0,.06));
+  color: #ffd76d;
+  box-shadow: 0 0 28px rgba(255,190,47,.12);
+}
+
+.ocean-pulse__card--promo .ocean-pulse__badge {
+  border-color: rgba(220, 148, 255, .38);
+  background: rgba(183, 90, 244, .14);
+  color: #e5b2ff;
+}
+
+.ocean-pulse__card--promo .ocean-pulse__card-icon {
+  border-color: rgba(220, 148, 255, .38);
+  background: linear-gradient(145deg, rgba(183,90,244,.21), rgba(89,28,137,.06));
+  color: #e4b3ff;
+  box-shadow: 0 0 28px rgba(183,90,244,.13);
+}
+
+.ocean-pulse__card--maintenance .ocean-pulse__badge {
+  border-color: rgba(112, 241, 183, .38);
+  background: rgba(59, 204, 130, .13);
+  color: #a5f6ca;
+}
+
+.ocean-pulse__card--maintenance .ocean-pulse__card-icon {
+  border-color: rgba(112, 241, 183, .38);
+  background: linear-gradient(145deg, rgba(59,204,130,.2), rgba(15,111,66,.05));
+  color: #9bf7c6;
+  box-shadow: 0 0 28px rgba(59,204,130,.12);
+}
+
+.ocean-pulse__card--event .ocean-pulse__badge {
+  border-color: rgba(255, 156, 199, .36);
+  background: rgba(244, 91, 157, .13);
+  color: #ffc0da;
+}
+
+.ocean-pulse__card--event .ocean-pulse__card-icon {
+  border-color: rgba(255, 156, 199, .35);
+  background: linear-gradient(145deg, rgba(244,91,157,.2), rgba(121,19,70,.05));
+  color: #ffb8d8;
+}
+
+@keyframes ocean-pulse-sweep {
+  0%, 65% { transform: translateX(-130%); }
+  84%, 100% { transform: translateX(130%); }
+}
+
+@keyframes ocean-pulse-ripple {
+  0% { transform: scale(.75); opacity: .65; }
+  75%, 100% { transform: scale(1.35); opacity: 0; }
+}
+
+@keyframes ocean-pulse-live{
+
+0%{
+
+transform:scale(.8);
+
+opacity:.75;
+
+box-shadow:
+
+0 0 0 0 rgba(255,59,48,.70),
+
+0 0 8px rgba(255,59,48,.95);
+
+}
+
+50%{
+
+transform:scale(1.3);
+
+opacity:1;
+
+box-shadow:
+
+0 0 0 10px rgba(255,59,48,0),
+
+0 0 22px rgba(255,59,48,1);
+
+}
+
+100%{
+
+transform:scale(.8);
+
+opacity:.75;
+
+box-shadow:
+
+0 0 0 0 rgba(255,59,48,0),
+
+0 0 8px rgba(255,59,48,.90);
+
+}
+
+}
+
+@keyframes ocean-pulse-waterline {
+  0%, 100% { transform: translateX(-1%) scaleX(.98); }
+  50% { transform: translateX(1%) scaleX(1.02); }
+}
+
+@keyframes ocean-pulse-rays {
+  from { transform: rotate(2deg) translateX(0); opacity: .27; }
+  to { transform: rotate(7deg) translateX(20px); opacity: .54; }
+}
+
+@keyframes ocean-pulse-bubble {
+  0% { transform: translateY(0) scale(.75); opacity: 0; }
+  12% { opacity: .44; }
+  92% { opacity: .22; }
+  100% { transform: translateY(-590px) translateX(22px) scale(1.3); opacity: 0; }
+}
+
+@media (max-width: 720px) {
+  .ocean-pulse__bar{
+
+position:relative;
+
+left:auto;
+
+right:auto;
+
+bottom:auto;
+
+width:100%;
+
+max-width:none;
+
+transform:none;
+
+ }
+
+  .ocean-pulse__live {
+    display: none;
+  }
+
+  .ocean-pulse__panel {
+    place-items: end stretch;
+    padding: 10px;
+  }
+
+  .ocean-pulse__glass {
+    max-height: calc(100vh - 20px);
+    padding: 20px 16px 16px;
+    border-radius: 23px;
+  }
+
+  .ocean-pulse__panel-head {
+    margin-bottom: 18px;
+  }
+
+  .ocean-pulse__panel-head h2 {
+    font-size: 23px;
+  }
+
+  .ocean-pulse__carousel {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .ocean-pulse__viewport,
+  .ocean-pulse__track {
+    min-height: 292px;
+  }
+
+  .ocean-pulse__card {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 22px;
+  }
+
+  .ocean-pulse__card-icon {
+    width: 63px;
+    height: 63px;
+    border-radius: 18px;
+  }
+
+  .ocean-pulse__card-icon svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .ocean-pulse__card h3 {
+    font-size: 25px;
+  }
+
+  .ocean-pulse__card p {
+    font-size: 13px;
+  }
+
+  .ocean-pulse__nav {
+    position: absolute;
+    z-index: 3;
+    top: 101px;
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+  }
+
+  .ocean-pulse__nav--prev {
+    left: 9px;
+  }
+
+  .ocean-pulse__nav--next {
+    right: 9px;
+  }
+
+  .ocean-pulse__panel-foot {
+    margin-top: 14px;
+  }
+
+  .ocean-pulse__signature {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean-pulse *,
+  .ocean-pulse *::before,
+  .ocean-pulse *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+.ocean-pulse__promo-title{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:22px;
+
+font-weight:800;
+
+color:#fff;
+
+}
+
+.ocean-pulse__promo-title svg{
+
+width:22px;
+
+height:22px;
+
+color:#63f0ed;
+
+flex-shrink:0;
+
+}
+
+.promo-emoji{
+
+font-size:26px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:34px;
+
+flex-shrink:0;
+
+}
+
+.ocean-pulse__promo{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+flex:1;
+
+min-width:0;
+
+}
+
+.ocean-pulse__promo-title{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:18px;
+
+font-weight:800;
+
+color:#ffffff;
+
+line-height:1.2;
+
+}
+
+.ocean-pulse__promo-subtitle{
+
+margin-top:4px;
+
+font-size:13px;
+
+font-weight:500;
+
+color:rgba(255,255,255,.72);
+
+line-height:1.35;
+
+}
+
+.promo-emoji{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:30px;
+
+flex-shrink:0;
+
+font-size:24px;
+
+}
+
+/******************************************************************
+OCEAN DRAWER V2
+******************************************************************/
+
+.ocean-drawer{
+
+width:100%;
+
+overflow:hidden;
+
+max-height:0;
+
+opacity:0;
+
+transition:
+
+max-height .45s ease,
+
+opacity .35s ease;
+
+}
+
+.ocean-drawer.is-open{
+
+max-height:0;
+
+opacity:1;
+
+}
+
+.ocean-drawer__surface{
+
+margin-top:12px;
+
+border-radius:22px;
+
+border:1px solid rgba(99,240,237,.18);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(7,25,39,.96),
+
+rgba(2,10,18,.96)
+
+);
+
+backdrop-filter:blur(22px);
+
+padding:24px;
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.ocean-drawer__header{
+
+font-size:18px;
+
+font-weight:700;
+
+color:#63f0ed;
+
+margin-bottom:20px;
+
+}
+
+.ocean-drawer__body{
+
+min-height:180px;
+
+border-radius:16px;
+
+border:1px dashed rgba(99,240,237,.25);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:rgba(255,255,255,.55);
+
+font-size:14px;
+
+}
+
+.ocean-drawer__tabs{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-bottom:18px;
+
+}
+
+.ocean-drawer__content{
+
+min-height:180px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.02);
+
+border:1px solid rgba(99,240,237,.08);
+
+}
+
+.ocean-drawer__footer{
+
+margin-top:18px;
+
+display:flex;
+
+justify-content:flex-end;
+
+}
+
+.ocean-chip{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(99,240,237,.14);
+
+color:#dffcff;
+
+font-size:13px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.30s;
+
+backdrop-filter:blur(10px);
+
+-webkit-backdrop-filter:blur(10px);
+
+}
+
+.ocean-chip:hover{
+
+transform:translateY(-2px);
+
+border-color:rgba(99,240,237,.35);
+
+box-shadow:
+
+0 8px 24px rgba(0,213,255,.12);
+
+}
+
+.ocean-chip.active{
+
+background:linear-gradient(
+135deg,
+rgba(0,213,255,.18),
+rgba(25,217,255,.08)
+);
+
+border-color:#63f0ed;
+
+box-shadow:
+
+0 0 22px rgba(99,240,237,.18);
+
+}
+
+.ocean-pulse-panel__chips{
+
+display:flex;
+
+gap:10px;
+
+margin-top:18px;
+
+flex-wrap:wrap;
+
+}
+
+/*==================================================
+OCEAN PANEL V1
+==================================================*/
+
+.ocean-pulse-panel{
+
+position:fixed;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:flex-start;
+
+padding:28px;
+
+background:rgba(2,10,18,.72);
+backdrop-filter:blur(22px);
+
+z-index:9999;
+
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+
+transition:
+opacity .35s ease,
+visibility .35s ease;
+
+}
+
+.ocean-pulse-panel__content{
+
+    width:100%;
+
+    margin:0 auto;
+
+}
+
+.ocean-pulse-panel::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+top:0;
+
+height:1px;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.45),
+transparent
+);
+
+opacity:.55;
+
+pointer-events:none;
+
+}
+
+.ocean-pulse-panel.is-open{
+
+opacity:1;
+
+visibility:visible;
+
+pointer-events:auto;
+
+}
+
+.ocean-pulse-panel__glass{
+
+position:relative;
+overflow:hidden;
+
+width:min(1200px,94vw);
+
+height:min(88vh,820px);
+
+border-radius:28px;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(8,28,44,.98),
+rgba(3,14,22,.98)
+);
+
+border:1px solid rgba(0,213,255,.18);
+
+box-shadow:
+
+0 40px 120px rgba(0,0,0,.45),
+
+0 0 80px rgba(0,213,255,.06);
+
+overflow:hidden;
+
+display:flex;
+
+flex-direction:column;
+
+position:relative;
+
+}
+ 
+
+/*==================================================
+OCEAN HERO V2
+==================================================*/
+
+.ocean-pulse-panel__hero{
+
+position:relative;
+
+padding:24px 70px 40px;
+
+display:grid;
+
+grid-template-columns:minmax(0,1fr) 400px;
+
+align-items:center;
+
+column-gap:56px;
+
+min-height:640px;
+
+overflow:hidden;
+
+border-radius:28px;
+
+isolation:isolate;
+z-index:1;
+
+}
+
+.ocean-pulse-panel__hero-media{
+
+position:absolute;
+
+inset:0;
+
+z-index:1;
+
+overflow:hidden;
+
+border-radius:28px;
+
+}
+
+.ocean-pulse-panel__hero-media img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+.ocean-pulse-panel__hero-media::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+rgba(4,18,35,.68) 0%,
+
+rgba(4,18,35,.28) 40%,
+
+rgba(4,18,35,.08) 70%,
+
+rgba(4,18,35,.15) 100%
+
+);
+
+z-index:2;
+
+pointer-events:none;
+
+}
+
+.ocean-hero-title{
+
+display:block !important;
+
+font-size:78px !important;
+
+line-height:.92 !important;
+
+font-weight:900 !important;
+
+color:#fff !important;
+
+margin:18px 0 18px !important;
+
+text-shadow:
+
+0 12px 40px rgba(0,0,0,.55);
+
+}
+
+.ocean-hero-description{
+
+display:block !important;
+
+font-size:22px;
+
+color:#fff;
+
+max-width:470px;
+
+margin-bottom:35px;
+
+}
+
+.ocean-hero-buttons{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-top:0;
+
+}
+
+.ocean-live-wrapper{
+
+position:absolute;
+
+right:55px;
+
+top:55px;
+
+width:400px;
+
+z-index:60;
+
+display:flex;
+
+justify-content:flex-end;
+
+align-items:flex-start;
+
+}
+
+.ocean-live-panel{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+width:100%;
+
+}
+
+.live-card{
+
+min-height:110px;
+
+padding:24px;
+
+border-radius:24px;
+
+background:rgba(8,20,42,.84);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+
+0 20px 55px rgba(0,0,0,.38);
+
+}
+
+.live-card:hover{
+
+transform:translateX(-8px);
+
+}
+
+.ocean-pulse-panel__eyebrow{
+
+display:none;
+
+}
+
+.ocean-chip{
+
+transform:scale(.92);
+
+}
+
+@keyframes oceanFloat{
+
+0%{transform:translateY(0)}
+
+50%{transform:translateY(-10px)}
+
+100%{transform:translateY(0)}
+
+}
+
+.ocean-left{
+
+position:absolute;
+
+left:70px;
+
+top:35px;
+
+width:560px;
+
+z-index:100;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+/*==========================
+RESTORE HERO COMPONENTS
+==========================*/
+
+.ocean-pulse-panel__hero-content{
+
+position:absolute;
+
+inset:0;
+
+display:grid;
+
+grid-template-columns:1fr 400px;
+
+align-items:center;
+
+padding:70px;
+
+z-index:20;
+
+}
+
+.ocean-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+90deg,
+rgba(4,18,35,.58) 0%,
+rgba(4,18,35,.24) 42%,
+rgba(4,18,35,.08) 70%,
+rgba(4,18,35,.18) 100%
+);
+
+z-index:2;
+
+}
+
+.ocean-hero-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+background:linear-gradient(
+135deg,
+rgba(16,114,255,.55),
+rgba(25,217,255,.25)
+);
+
+border:1px solid rgba(99,240,237,.35);
+
+color:#fff;
+
+font-size:15px;
+
+font-weight:700;
+
+margin-bottom:22px;
+
+}
+
+.ocean-btn-primary{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:18px 34px;
+
+border:none;
+
+border-radius:16px;
+
+background:linear-gradient(
+135deg,
+#22d3ee,
+#0ea5e9
+);
+
+color:#04121e;
+
+font-size:16px;
+
+font-weight:800;
+
+cursor:pointer;
+
+box-shadow:
+0 18px 40px rgba(34,211,238,.30);
+
+transition:.30s;
+
+}
+
+.ocean-btn-primary:hover{
+
+transform:translateY(-3px);
+
+}
+
+.ocean-btn-whatsapp{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+padding:18px 34px;
+
+border:none;
+
+border-radius:16px;
+
+background:#25D366;
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:800;
+
+cursor:pointer;
+
+box-shadow:
+0 18px 40px rgba(37,211,102,.35);
+
+transition:.30s;
+
+}
+
+.ocean-btn-whatsapp:hover{
+
+transform:translateY(-3px);
+
+background:#1ebe5d;
+
+}
+
+/*==================================================
+OCEAN FINAL MAGIC
+==================================================*/
+
+/* HEADER */
+
+.ocean-pulse-panel__header{
+
+position:relative;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;    
+
+padding:14px 30px 4px;
+
+min-height:72px;
+
+display:flex;
+
+}
+
+/* Timer totalmente a la derecha */
+
+#oceanCountdown{
+
+padding-right:70px;    
+
+position:absolute !important;
+
+right:28px !important;
+
+top:50% !important;
+
+transform:translateY(-50%) !important;
+
+margin:0 !important;
+
+font-size:18px;
+
+font-weight:800;
+
+color:#66f5ff;
+
+z-index:999;
+
+}
+
+/* Chip exactamente al centro */
+
+.ocean-pulse-panel__chips{
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+margin:0 !important;
+
+z-index:999;
+
+}
+
+/* Hero completo sube */
+
+.ocean-pulse-panel__hero-content{
+
+padding-top:18px !important;
+
+align-items:flex-start !important;
+
+}
+
+/* Todo el contenido izquierdo sube */
+
+.ocean-left{
+
+position:absolute;
+
+left:70px;
+
+top:35px;
+
+width:560px;
+
+z-index:100;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+/* Tarjetas suben */
+
+.ocean-live-wrapper{
+
+position:absolute;
+
+right:55px;
+
+top:55px;
+
+width:400px;
+
+z-index:60;
+
+display:flex;
+
+justify-content:flex-end;
+
+align-items:flex-start;
+
+}
+/* Más aire entre tarjetas */
+
+.ocean-live-panel{
+
+gap:26px;
+
+}
+
+/* Botones premium */
+
+.ocean-hero-buttons{
+
+margin-top:40px;
+
+gap:18px;
+
+}
+
+/* Sombra espectacular */
+
+.ocean-hero-title{
+
+text-shadow:
+
+0 8px 30px rgba(0,0,0,.55),
+
+0 0 45px rgba(0,213,255,.15);
+
+}
+
+/* Tarjetas flotantes */
+
+.live-card{
+
+transition:.35s;
+
+}
+
+.live-card:hover{
+
+transform:translateX(-8px) translateY(-3px);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.45),
+
+0 0 35px rgba(0,213,255,.12);
+
+}
+
+/*=========================================================
+OCEAN ULTIMATE EDITION - PART 1
+Glass • Glow • Luxury
+=========================================================*/
+
+/*---------------------------------------------------------
+Glass Cards
+---------------------------------------------------------*/
+
+.live-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+145deg,
+rgba(13,25,50,.78),
+rgba(7,18,38,.88)
+) !important;
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(30px);
+
+-webkit-backdrop-filter:blur(30px);
+
+box-shadow:
+
+0 18px 45px rgba(0,0,0,.45),
+
+0 0 30px rgba(0,213,255,.05),
+
+inset 0 1px rgba(255,255,255,.08);
+
+transition:
+
+transform .45s,
+
+box-shadow .45s,
+
+border-color .45s;
+
+}
+
+/*---------------------------------------------------------
+Reflejo superior
+---------------------------------------------------------*/
+
+.live-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-40%;
+
+top:0;
+
+width:180%;
+
+height:1px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.60),
+
+transparent
+
+);
+
+opacity:.45;
+
+}
+
+/*---------------------------------------------------------
+Shine Animation
+---------------------------------------------------------*/
+
+.live-card::after{
+
+content:"";
+
+position:absolute;
+
+top:-120%;
+
+left:-55%;
+
+width:45%;
+
+height:300%;
+
+transform:rotate(22deg);
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.20),
+
+transparent
+
+);
+
+transition:1s;
+
+pointer-events:none;
+
+}
+
+.live-card:hover::after{
+
+left:145%;
+
+}
+
+/*---------------------------------------------------------
+Hover
+---------------------------------------------------------*/
+
+.live-card:hover{
+
+transform:
+
+translateY(-6px)
+
+translateX(-5px)
+
+scale(1.015);
+
+border-color:
+
+rgba(92,244,255,.40);
+
+box-shadow:
+
+0 35px 75px rgba(0,0,0,.52),
+
+0 0 45px rgba(0,213,255,.18),
+
+0 0 90px rgba(0,213,255,.06);
+
+}
+
+/*---------------------------------------------------------
+Hero Glow
+---------------------------------------------------------*/
+
+.ocean-hero-title{
+
+text-shadow:
+
+0 5px 30px rgba(0,0,0,.45),
+
+0 0 35px rgba(0,213,255,.12),
+
+0 0 70px rgba(0,213,255,.05);
+
+}
+
+/*---------------------------------------------------------
+Buttons
+---------------------------------------------------------*/
+
+.ocean-btn-primary,
+
+.ocean-btn-whatsapp{
+
+overflow:hidden;
+
+position:relative;
+
+transition:.40s;
+
+}
+
+.ocean-btn-primary::before,
+
+.ocean-btn-whatsapp::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:70%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
+
+transform:skewX(-22deg);
+
+transition:.8s;
+
+}
+
+.ocean-btn-primary:hover::before,
+
+.ocean-btn-whatsapp:hover::before{
+
+left:180%;
+
+}
+
+.ocean-btn-primary:hover{
+
+box-shadow:
+
+0 20px 45px rgba(0,200,255,.35);
+
+}
+
+.ocean-btn-whatsapp:hover{
+
+box-shadow:
+
+0 20px 45px rgba(37,211,102,.40);
+
+}
+
+/*---------------------------------------------------------
+Badge Glow
+---------------------------------------------------------*/
+
+.ocean-hero-badge{
+
+animation:
+
+badgePulse 4s ease-in-out infinite;
+
+}
+
+@keyframes badgePulse{
+
+0%,100%{
+
+box-shadow:
+
+0 0 0 rgba(0,213,255,0);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 28px rgba(0,213,255,.28);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Timer
+---------------------------------------------------------*/
+
+#oceanCountdown{
+
+animation:
+
+timerGlow 3s ease-in-out infinite;
+
+padding-right:70px;
+
+}
+
+@keyframes timerGlow{
+
+0%,100%{
+
+opacity:.9;
+
+}
+
+50%{
+
+opacity:1;
+
+text-shadow:
+
+0 0 18px rgba(0,213,255,.55);
+
+}
+
+}
+
+/*=========================================================
+OCEAN ULTIMATE EDITION PART 2
+CINEMATIC • DEPTH • LUXURY
+=========================================================*/
+
+/*---------------------------------------------------------
+Profundidad del Hero
+---------------------------------------------------------*/
+
+.ocean-pulse-panel__hero{
+
+transform:translateZ(0);
+
+overflow:hidden;
+
+padding:32px 56px;
+
+min-height:640px;
+
+}
+
+/*---------------------------------------------------------
+Movimiento submarino
+---------------------------------------------------------*/
+
+.ocean-pulse-panel__hero-media img{
+
+animation:oceanCamera 22s ease-in-out infinite alternate;
+
+will-change:transform;
+
+}
+
+@keyframes oceanCamera{
+
+0%{
+
+transform:scale(1.03) translateY(0) translateX(0);
+
+}
+
+50%{
+
+transform:scale(1.045) translateY(-6px) translateX(-3px);
+
+}
+
+100%{
+
+transform:scale(1.055) translateY(3px) translateX(4px);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Caústicas
+---------------------------------------------------------*/
+
+.ocean-pulse-panel__hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:-20%;
+
+background:
+
+radial-gradient(circle at 20% 10%,rgba(255,255,255,.08),transparent 35%),
+
+radial-gradient(circle at 80% 30%,rgba(255,255,255,.05),transparent 28%),
+
+radial-gradient(circle at 60% 80%,rgba(255,255,255,.04),transparent 26%);
+
+mix-blend-mode:screen;
+
+pointer-events:none;
+
+opacity:.55;
+
+animation:causticsMove 18s linear infinite;
+
+z-index:3;
+
+}
+
+@keyframes causticsMove{
+
+0%{
+
+transform:translateX(-2%) translateY(-2%) rotate(0deg);
+
+}
+
+50%{
+
+transform:translateX(2%) translateY(1%) rotate(.8deg);
+
+}
+
+100%{
+
+transform:translateX(-2%) translateY(-2%) rotate(0deg);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Respiración del Hero
+---------------------------------------------------------*/
+
+.ocean-left{
+
+animation:heroFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-4px);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Tarjetas Ultra Premium
+---------------------------------------------------------*/
+
+.live-card{
+
+overflow:hidden;
+
+}
+
+.live-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.12),
+
+transparent 28%
+
+);
+
+pointer-events:none;
+
+opacity:.45;
+
+}
+
+.live-card::after{
+
+content:"";
+
+position:absolute;
+
+left:-130%;
+
+top:0;
+
+width:60%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.18),
+
+transparent
+
+);
+
+transform:skewX(-22deg);
+
+transition:1.2s;
+
+}
+
+.live-card:hover::after{
+
+left:180%;
+
+}
+
+.live-card:hover{
+
+box-shadow:
+
+0 28px 70px rgba(0,0,0,.50),
+
+0 0 50px rgba(0,213,255,.12);
+
+}
+
+/*---------------------------------------------------------
+Badge
+---------------------------------------------------------*/
+
+.ocean-hero-badge{
+
+animation:badgeBreath 4s ease-in-out infinite;
+
+}
+
+@keyframes badgeBreath{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.03);
+
+}
+
+}
+
+/*---------------------------------------------------------
+Botones
+---------------------------------------------------------*/
+
+.ocean-btn-primary,
+
+.ocean-btn-whatsapp{
+
+transition:
+
+transform .35s,
+
+box-shadow .35s;
+
+}
+
+.ocean-btn-primary:hover,
+
+.ocean-btn-whatsapp:hover{
+
+transform:
+
+translateY(-4px)
+
+scale(1.03);
+
+}
+
+/*---------------------------------------------------------
+Timer
+---------------------------------------------------------*/
+
+#oceanCountdown{
+
+animation:timerBreath 2.8s ease-in-out infinite;
+
+padding-right:70px;
+
+}
+
+@keyframes timerBreath{
+
+0%,100%{
+
+filter:drop-shadow(0 0 0 rgba(0,213,255,0));
+
+}
+
+50%{
+
+filter:drop-shadow(0 0 12px rgba(0,213,255,.75));
+
+}
+
+}
+
+/*---------------------------------------------------------
+Entrada cinematográfica
+---------------------------------------------------------*/
+
+.ocean-left>*{
+
+opacity:0;
+
+animation:fadeLuxury .8s forwards;
+
+}
+
+.ocean-left>*:nth-child(1){animation-delay:.10s;}
+.ocean-left>*:nth-child(2){animation-delay:.22s;}
+.ocean-left>*:nth-child(3){animation-delay:.34s;}
+.ocean-left>*:nth-child(4){animation-delay:.46s;}
+
+.live-card{
+
+opacity:0;
+
+animation:cardRise .7s forwards;
+
+}
+
+.live-card:nth-child(1){animation-delay:.60s;}
+.live-card:nth-child(2){animation-delay:.78s;}
+.live-card:nth-child(3){animation-delay:.96s;}
+.live-card:nth-child(4){animation-delay:1.14s;}
+
+@keyframes fadeLuxury{
+
+from{
+
+opacity:0;
+
+transform:translateY(22px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes cardRise{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px) scale(.96);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+/*=========================================================
+OCEAN ULTIMATE — DIRECTOR'S CUT
+=========================================================*/
+
+/*-----------------------------------
+GLASS MÁS PREMIUM
+-----------------------------------*/
+
+.live-card{
+
+background:
+linear-gradient(
+160deg,
+rgba(12,26,48,.62),
+rgba(8,18,38,.72)
+) !important;
+
+backdrop-filter:blur(34px);
+
+-webkit-backdrop-filter:blur(34px);
+
+border:
+
+1px solid rgba(255,255,255,.10);
+
+box-shadow:
+
+0 18px 55px rgba(0,0,0,.42),
+
+0 0 24px rgba(0,213,255,.06),
+
+inset 0 1px rgba(255,255,255,.10);
+
+}
+
+/*-----------------------------------
+BORDE DE LUZ
+-----------------------------------*/
+
+.live-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:1px;
+
+border-radius:inherit;
+
+background:
+
+linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(255,255,255,.45),
+
+transparent,
+
+rgba(0,213,255,.30),
+
+transparent
+
+);
+
+mask:
+
+linear-gradient(#000 0 0) content-box,
+
+linear-gradient(#000 0 0);
+
+-webkit-mask:
+
+linear-gradient(#000 0 0) content-box,
+
+linear-gradient(#000 0 0);
+
+mask-composite:exclude;
+
+-webkit-mask-composite:xor;
+
+opacity:.35;
+
+animation:
+
+cardBorder 7s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes cardBorder{
+
+0%{
+
+transform:translateX(-120%);
+
+}
+
+100%{
+
+transform:translateX(120%);
+
+}
+
+}
+
+/*-----------------------------------
+REFLEJO
+-----------------------------------*/
+
+.live-card::after{
+
+content:"";
+
+position:absolute;
+
+top:-180%;
+
+left:-45%;
+
+width:38%;
+
+height:380%;
+
+transform:rotate(24deg);
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.16),
+
+transparent
+
+);
+
+transition:1.3s;
+
+}
+
+.live-card:hover::after{
+
+left:165%;
+
+}
+
+/*-----------------------------------
+HOVER
+-----------------------------------*/
+
+.live-card:hover{
+
+transform:
+
+translateY(-8px)
+
+scale(1.018);
+
+box-shadow:
+
+0 35px 80px rgba(0,0,0,.50),
+
+0 0 45px rgba(0,213,255,.15);
+
+}
+
+/*-----------------------------------
+GLOW SOBRE EL ARRECIFE
+-----------------------------------*/
+
+.live-card:hover{
+
+backdrop-filter:blur(36px);
+
+}
+
+/*-----------------------------------
+BOTÓN CERRAR
+-----------------------------------*/
+
+.ocean-close{
+
+position:absolute;
+
+top:22px;
+
+right:22px;
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+border:1px solid rgba(255,255,255,.10);
+
+background:
+
+rgba(8,20,38,.55);
+
+backdrop-filter:blur(18px);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+cursor:pointer;
+
+transition:.35s;
+
+color:white;
+
+font-size:18px;
+
+z-index:1000;
+
+}
+
+.ocean-close:hover{
+
+transform:rotate(90deg) scale(1.08);
+
+background:
+
+rgba(0,213,255,.20);
+
+box-shadow:
+
+0 0 24px rgba(0,213,255,.30);
+
+}
+
+/*==================================================
+OCEAN STATUS BAR
+==================================================*/
+
+.ocean-status{
+
+margin-top:10px;
+
+margin-bottom:-8px;
+
+transform:scale(.90);
+
+transform-origin:left center;
+
+}
+
+.ocean-status span{
+
+padding:8px 16px;
+
+border-radius:999px;
+
+background:
+
+rgba(255,255,255,.05);
+
+border:
+
+1px solid rgba(99,240,237,.12);
+
+backdrop-filter:blur(20px);
+
+font-size:13px;
+
+font-weight:600;
+
+color:#dffbff;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.ocean-status span::before{
+
+content:"";
+
+position:absolute;
+
+left:-140%;
+
+top:0;
+
+width:60%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.22),
+
+transparent
+
+);
+
+transform:skewX(-22deg);
+
+transition:1s;
+
+}
+
+.ocean-status span:hover::before{
+
+left:180%;
+
+}
+
+.ocean-status span:hover{
+
+transform:translateY(-2px);
+
+border-color:
+
+rgba(99,240,237,.40);
+
+box-shadow:
+
+0 0 18px rgba(0,213,255,.18);
+
+}
+
+/*==================================================
+OCEAN LIGHT FX
+==================================================*/
+
+.live-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* Luz superior */
+
+.live-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-40%;
+
+top:0;
+
+width:180%;
+
+height:1px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.65),
+
+transparent
+
+);
+
+opacity:.55;
+
+}
+
+/* Línea de luz viajando */
+
+.live-card::after{
+
+content:"";
+
+position:absolute;
+
+top:-20%;
+
+left:-65%;
+
+width:38%;
+
+height:160%;
+
+transform:rotate(22deg);
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.22),
+
+transparent
+
+);
+
+animation:
+
+cardShine 7s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes cardShine{
+
+0%{
+
+left:-65%;
+
+}
+
+100%{
+
+left:165%;
+
+}
+
+}
+
+/* Glow elegante */
+
+.live-card:hover{
+
+box-shadow:
+
+0 30px 75px rgba(0,0,0,.50),
+
+0 0 45px rgba(0,213,255,.18);
+
+}
+
+.ocean-close:hover{
+
+transform:rotate(90deg) scale(1.08);
+
+background:rgba(0,213,255,.18);
+
+box-shadow:
+
+0 0 24px rgba(0,213,255,.35);
+
+}
+
+.ocean-pulse-panel__close{
+
+position:absolute;
+
+top:20px;
+
+right:20px;
+
+width:46px;
+height:46px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(8,18,30,.72);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+color:#fff;
+
+cursor:pointer;
+
+z-index:500;
+
+transition:.25s;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.35);
+
+}
+
+.ocean-pulse-panel__close:hover{
+
+transform:scale(1.08);
+
+background:rgba(0,212,255,.20);
+
+}
+
+.ocean-close-icon{
+
+text-shadow:
+0 0 8px rgba(255,255,255,.45);    
+
+font-size:22px;
+
+font-weight:700;
+
+line-height:1;
+
+color:#ffffff;
+
+display:block;
+
+}
+
+/*==================================================
+OCEAN RESPONSIVE V3
+BLOQUE 1
+==================================================*/
+
+@media (max-width:768px){
+
+/* ===== Overlay ===== */
+
+.ocean-pulse-panel{
+
+padding:12px !important;
+
+align-items:flex-start !important;
+
+overflow-y:auto !important;
+
+}
+
+/* ===== Contenedor ===== */
+
+.ocean-pulse-panel__content{
+
+width:100% !important;
+
+max-width:430px !important;
+
+margin:auto !important;
+
+border-radius:24px !important;
+
+overflow:hidden !important;
+
+}
+
+/* ===== Glass ===== */
+
+.ocean-pulse-panel__glass{
+
+width:100% !important;
+
+height:auto !important;
+
+min-height:auto !important;
+
+border-radius:24px !important;
+
+overflow:hidden !important;
+
+display:flex !important;
+
+flex-direction:column !important;
+
+}
+
+/* ===== Hero ===== */
+
+.ocean-pulse-panel__hero{
+
+display:flex !important;
+
+flex-direction:column !important;
+
+padding:0 !important;
+
+min-height:auto !important;
+
+grid-template-columns:none !important;
+
+position:relative !important;
+
+overflow:hidden !important;
+
+}
+
+/* ===== Hero Content ===== */
+
+.ocean-pulse-panel__hero-content{
+
+position:relative !important;
+
+display:flex !important;
+
+flex-direction:column !important;
+
+padding:0 !important;
+
+inset:auto !important;
+
+height:auto !important;
+
+width:100% !important;
+
+}
+
+/* ===== Imagen ===== */
+
+.ocean-pulse-panel__hero-media{
+
+position:relative !important;
+
+height:240px !important;
+
+inset:auto !important;
+
+border-radius:0 !important;
+
+overflow:hidden !important;
+
+}
+
+.ocean-pulse-panel__hero-media img{
+
+width:100% !important;
+
+height:100% !important;
+
+object-fit:cover !important;
+
+display:block !important;
+
+}
+
+}
+
+/*==================================================
+OCEAN RESPONSIVE V3
+BLOQUE 2 — HEADER
+==================================================*/
+
+@media (max-width:768px){
+
+/* ===== Header ===== */
+
+.ocean-pulse-panel__header{
+
+display:flex !important;
+
+flex-direction:column !important;
+
+align-items:stretch !important;
+
+justify-content:flex-start !important;
+
+padding:20px !important;
+
+gap:16px !important;
+
+position:relative !important;
+
+min-height:auto !important;
+
+}
+
+/* ===== Información ===== */
+
+.ocean-header-left{
+
+display:flex !important;
+
+flex-direction:column !important;
+
+gap:8px !important;
+
+width:100% !important;
+
+}
+
+/* ===== Métodos de pago ===== */
+
+.ocean-payment-methods{
+
+font-size:12px !important;
+
+line-height:1.45 !important;
+
+}
+
+/* ===== Título ===== */
+
+#oceanPulseTitle{
+
+font-size:18px !important;
+
+line-height:1.25 !important;
+
+margin:0 !important;
+
+max-width:100% !important;
+
+}
+
+/* ===== Countdown ===== */
+
+#oceanCountdown{
+
+position:relative !important;
+
+top:auto !important;
+
+right:auto !important;
+
+left:auto !important;
+
+transform:none !important;
+
+padding:0 !important;
+
+margin:0 !important;
+
+text-align:center !important;
+
+font-size:16px !important;
+
+font-weight:800 !important;
+
+}
+
+/* ===== Chips ===== */
+
+.ocean-pulse-panel__chips{
+
+position:relative !important;
+
+left:auto !important;
+
+top:auto !important;
+
+transform:none !important;
+
+display:flex !important;
+
+gap:10px !important;
+
+overflow-x:auto !important;
+
+overflow-y:hidden !important;
+
+padding-bottom:6px !important;
+
+margin:0 !important;
+
+scrollbar-width:none;
+
+}
+
+.ocean-pulse-panel__chips::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.ocean-chip{
+
+flex:0 0 auto !important;
+
+white-space:nowrap !important;
+
+}
+
+/* ===== Botón cerrar ===== */
+
+.ocean-pulse-panel__close{
+
+position:absolute !important;
+
+top:18px !important;
+
+right:18px !important;
+
+width:44px !important;
+
+height:44px !important;
+
+margin:0 !important;
+
+z-index:50 !important;
+
+}
+
+}
+
+/*==================================================
+OCEAN RESPONSIVE V3
+BLOQUE 3 — CONTENIDO PRINCIPAL
+==================================================*/
+
+@media (max-width:768px){
+
+/* ===== Columna izquierda ===== */
+
+.ocean-left{
+
+position:relative !important;
+
+left:auto !important;
+
+top:auto !important;
+
+right:auto !important;
+
+bottom:auto !important;
+
+width:100% !important;
+
+padding:24px 20px !important;
+
+margin:0 !important;
+
+display:flex !important;
+
+flex-direction:column !important;
+
+align-items:flex-start !important;
+
+justify-content:flex-start !important;
+
+z-index:5 !important;
+
+animation:none !important;
+
+transform:none !important;
+
+}
+
+/* ===== Badge ===== */
+
+.ocean-hero-badge{
+
+margin:0 0 18px 0 !important;
+
+font-size:13px !important;
+
+padding:10px 18px !important;
+
+align-self:flex-start !important;
+
+}
+
+/* ===== Título ===== */
+
+.ocean-hero-title{
+
+display:block !important;
+
+font-size:42px !important;
+
+line-height:.95 !important;
+
+margin:0 0 18px 0 !important;
+
+width:100% !important;
+
+word-break:break-word !important;
+
+text-wrap:balance;
+
+}
+
+/* ===== Descripción ===== */
+
+.ocean-hero-description{
+
+font-size:17px !important;
+
+line-height:1.55 !important;
+
+max-width:100% !important;
+
+margin:0 0 26px 0 !important;
+
+}
+
+/* ===== Botones ===== */
+
+.ocean-hero-buttons{
+
+display:flex !important;
+
+flex-direction:column !important;
+
+width:100% !important;
+
+gap:14px !important;
+
+margin:0 !important;
+
+}
+
+.ocean-btn-primary,
+
+.ocean-btn-whatsapp{
+
+width:100% !important;
+
+justify-content:center !important;
+
+min-height:56px !important;
+
+font-size:16px !important;
+
+padding:16px 20px !important;
+
+}
+
+/* ===== Status ===== */
+
+.ocean-status{
+
+margin-top:22px !important;
+
+transform:none !important;
+
+width:100% !important;
+
+}
+
+.ocean-status span{
+
+display:flex !important;
+
+justify-content:center !important;
+
+width:100% !important;
+
+}
+
+}
+
+/*==================================================
+OCEAN RESPONSIVE V3
+BLOQUE 4 — LIVE CARDS
+==================================================*/
+
+@media (max-width:768px){
+
+/* ===== Contenedor derecho ===== */
+
+.ocean-live-wrapper{
+
+position:relative !important;
+
+top:auto !important;
+
+right:auto !important;
+
+left:auto !important;
+
+bottom:auto !important;
+
+width:100% !important;
+
+margin:0 !important;
+
+padding:0 20px 24px 20px !important;
+
+display:block !important;
+
+z-index:2 !important;
+
+}
+
+/* ===== Panel ===== */
+
+.ocean-live-panel{
+
+display:flex !important;
+
+flex-direction:column !important;
+
+gap:18px !important;
+
+width:100% !important;
+
+}
+
+/* ===== Tarjetas ===== */
+
+.live-card,
+
+.ocean-live-card{
+
+position:relative !important;
+
+width:100% !important;
+
+min-height:auto !important;
+
+margin:0 !important;
+
+padding:20px !important;
+
+border-radius:20px !important;
+
+transform:none !important;
+
+animation:none !important;
+
+left:auto !important;
+
+right:auto !important;
+
+top:auto !important;
+
+bottom:auto !important;
+
+}
+
+/* ===== Hover ===== */
+
+.live-card:hover,
+
+.ocean-live-card:hover{
+
+transform:none !important;
+
+}
+
+/* ===== Títulos ===== */
+
+.live-card h3,
+
+.ocean-live-card h3{
+
+font-size:20px !important;
+
+line-height:1.2 !important;
+
+margin-bottom:10px !important;
+
+}
+
+/* ===== Texto ===== */
+
+.live-card p,
+
+.ocean-live-card p{
+
+font-size:15px !important;
+
+line-height:1.55 !important;
+
+}
+
+/* ===== Iconos ===== */
+
+.live-card svg,
+
+.ocean-live-card svg{
+
+width:22px !important;
+
+height:22px !important;
+
+}
+
+/* ===== Espaciado final ===== */
+
+.ocean-live-wrapper:last-child{
+
+padding-bottom:36px !important;
+
+}
+
+}

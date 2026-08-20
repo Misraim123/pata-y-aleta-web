@@ -1,0 +1,6956 @@
+/* =========================================================
+   PATA Y ALETA — AQUARIUM DESIGN STUDIO
+   PREMIUM UI — DESKTOP COMPACT V1
+   ========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+/* =========================================================
+   CARD PRINCIPAL
+   ========================================================= */
+
+.config-card{
+  opacity:1 !important;
+  transform:none !important;
+
+  width:min(1320px,94vw) !important;
+  max-width:1320px !important;
+
+  margin:14px auto !important;
+  padding:18px 28px 22px !important;
+
+  border-radius:30px !important;
+
+  background:linear-gradient(180deg,#112132,#172d45);
+  box-shadow:0 24px 70px rgba(0,0,0,.38);
+
+  min-height:0 !important;
+  height:auto !important;
+
+  animation:fade .35s ease;
+}
+
+
+/* =========================================================
+   PROGRESO
+   ========================================================= */
+
+.progress-wrapper{
+  margin:0 0 14px !important;
+}
+
+.progress-label{
+  color:#5fdcff;
+  font-size:17px;
+  font-weight:700;
+  line-height:1;
+  margin:0 0 9px !important;
+}
+
+.progress{
+  width:100%;
+  height:5px !important;
+
+  margin:0 !important;
+
+  border-radius:999px;
+  overflow:hidden;
+
+  background:rgba(255,255,255,.08);
+}
+
+.progress-fill{
+  height:100%;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    90deg,
+    #00d5ff,
+    #74ecff
+  );
+
+  transition:width .35s ease;
+}
+
+
+/* =========================================================
+   TITULOS
+   ========================================================= */
+
+.config-card h1{
+  font-size:clamp(28px,2.15vw,38px) !important;
+  font-weight:800;
+
+  line-height:1.08 !important;
+
+  text-align:center;
+
+  margin:18px 0 24px !important;
+}
+
+.config-card h2{
+  line-height:1.15;
+}
+
+.config-card p{
+  line-height:1.45;
+}
+
+
+/* =========================================================
+   SELECTORES VISUALES
+   PASOS CON IMAGEN + OPCIONES
+   ========================================================= */
+
+.premium-selector{
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    minmax(300px,340px) !important;
+
+  gap:20px !important;
+
+  width:100%;
+
+  height:auto !important;
+  min-height:0 !important;
+
+  align-items:stretch !important;
+}
+
+
+/* =========================================================
+   IMAGEN PRINCIPAL
+   ========================================================= */
+
+.hero-wrapper{
+  position:relative;
+
+  width:100%;
+  height:420px !important;
+
+  overflow:hidden;
+
+  border-radius:25px;
+
+  background:#081725;
+
+  box-shadow:
+    0 22px 55px rgba(0,0,0,.30);
+
+  isolation:isolate;
+}
+
+.hero-image{
+  display:block;
+
+  width:100% !important;
+  height:100% !important;
+
+  min-height:0 !important;
+  max-height:none !important;
+
+  object-fit:cover !important;
+  object-position:center;
+
+  border-radius:25px;
+
+  transform:none !important;
+
+  transition:
+    opacity .25s ease,
+    filter .25s ease !important;
+}
+
+.hero-wrapper::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.035),
+      transparent 25%,
+      transparent 72%,
+      rgba(0,0,0,.18)
+    );
+
+  z-index:1;
+}
+
+
+/* =========================================================
+   COLUMNA DE OPCIONES
+   ========================================================= */
+
+.premium-list,
+.premium-options{
+  display:flex !important;
+
+  flex-direction:column;
+
+  gap:9px !important;
+
+  width:100%;
+
+  height:420px !important;
+  max-height:420px !important;
+  min-height:0 !important;
+
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+
+  padding:0 7px 0 0 !important;
+
+  scrollbar-width:thin;
+  scrollbar-color:
+    rgba(255,255,255,.42)
+    transparent;
+}
+
+.premium-list::-webkit-scrollbar,
+.premium-options::-webkit-scrollbar{
+  width:6px;
+}
+
+.premium-list::-webkit-scrollbar-track,
+.premium-options::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.premium-list::-webkit-scrollbar-thumb,
+.premium-options::-webkit-scrollbar-thumb{
+  background:rgba(255,255,255,.35);
+  border-radius:999px;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.premium-item{
+  position:relative !important;
+
+  display:flex !important;
+  flex-direction:column;
+  justify-content:center;
+
+  flex:0 0 auto;
+
+  width:100%;
+
+  min-height:82px !important;
+  height:auto !important;
+
+  padding:13px 16px !important;
+
+  margin:0 !important;
+
+  border:
+    1px solid rgba(255,255,255,.07) !important;
+
+  border-left:
+    4px solid transparent !important;
+
+  border-radius:18px !important;
+
+  background:
+    rgba(25,42,61,.82);
+
+  backdrop-filter:blur(14px);
+
+  cursor:pointer;
+
+  overflow:hidden !important;
+
+  transform:none !important;
+
+  box-shadow:none;
+
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease !important;
+}
+
+
+/* =========================================================
+   HOVER
+   SIN MOVIMIENTO
+   ========================================================= */
+
+.premium-item:hover{
+  transform:none !important;
+
+  border-left-color:#00d5ff !important;
+
+  background:
+    rgba(35,66,95,.94);
+
+  box-shadow:
+    0 10px 26px rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   ACTIVO / SELECCIONADO
+   SIN TEMBLOR
+   ========================================================= */
+
+.premium-item.active,
+.premium-item.selected{
+  transform:none !important;
+
+  border-left-color:#00d5ff !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(38,78,112,.98),
+      rgba(37,61,88,.98)
+    ) !important;
+
+  color:#fff !important;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(0,213,255,.08);
+}
+
+
+/* =========================================================
+   TEXTO TARJETAS
+   ========================================================= */
+
+.premium-item h3{
+  font-size:19px !important;
+  font-weight:800;
+
+  line-height:1.12 !important;
+
+  margin:0 0 5px !important;
+
+  color:inherit;
+}
+
+.premium-item p{
+  font-size:13px !important;
+
+  line-height:1.3 !important;
+
+  margin:0 !important;
+
+  opacity:.74;
+}
+
+
+/* =========================================================
+   BADGES
+   IMPORTANTE:
+   AHORA FORMAN PARTE REAL DE LA TARJETA
+   ========================================================= */
+
+.premium-badge,
+.premium-item .badge{
+  position:static !important;
+
+  display:inline-flex !important;
+
+  align-items:center;
+
+  align-self:flex-start;
+
+  width:auto !important;
+  max-width:100%;
+
+  min-height:0 !important;
+
+  margin:8px 0 0 !important;
+
+  padding:5px 11px !important;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(0,213,255,.28);
+
+  background:
+    rgba(0,213,255,.12);
+
+  color:#64e7ff;
+
+  font-size:11px !important;
+  font-weight:700;
+
+  line-height:1.1 !important;
+
+  white-space:normal;
+
+  transform:none !important;
+}
+
+
+/* =========================================================
+   OPTION CARDS GENÉRICAS
+   ========================================================= */
+
+.option-card img,
+.option-image{
+  display:none !important;
+}
+
+.option-card{
+  height:auto !important;
+  min-height:0 !important;
+}
+
+.option-title{
+  margin-top:0 !important;
+}
+
+.option-placeholder{
+  width:100%;
+
+  height:330px !important;
+
+  margin-bottom:14px;
+
+  overflow:hidden;
+
+  border-radius:22px;
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+
+/* =========================================================
+   PASOS DE FORMULARIO
+   ========================================================= */
+
+.config-card:has(input[type="number"]),
+.config-card:has(input[type="file"]),
+.config-card:has(textarea){
+  min-height:0 !important;
+  height:auto !important;
+
+  padding-top:18px !important;
+  padding-bottom:20px !important;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.config-card input[type="text"],
+.config-card input[type="tel"],
+.config-card input[type="email"],
+.config-card input[type="number"],
+.config-card select{
+  min-height:44px;
+
+  border-radius:12px;
+
+  padding:9px 12px;
+}
+
+
+/* =========================================================
+   PASO DIMENSIONES
+   ========================================================= */
+
+.config-card:has(input[type="number"]) h1{
+  margin-bottom:12px !important;
+}
+
+.config-card:has(input[type="number"]) p{
+  margin-top:0 !important;
+  margin-bottom:18px !important;
+}
+
+
+/* =========================================================
+   FOTOGRAFIAS
+   ========================================================= */
+
+.config-card:has(input[type="file"]) h1{
+  margin-bottom:10px !important;
+}
+
+.config-card:has(input[type="file"]) .upload-zone{
+  min-height:0 !important;
+
+  margin:14px 0 !important;
+
+  padding:24px !important;
+
+  border-radius:22px;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.config-card textarea{
+  display:block;
+
+  width:100%;
+
+  height:145px !important;
+  min-height:145px !important;
+  max-height:180px;
+
+  padding:18px !important;
+
+  border-radius:18px;
+
+  resize:vertical;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.config-card button{
+  transform:none;
+}
+
+.config-card button:hover{
+  transform:none;
+}
+
+
+/* =========================================================
+   CORRECCION ESPECIAL:
+   PASOS CON MUCHAS OPCIONES
+   ========================================================= */
+
+.config-card:has(.premium-selector){
+  padding-top:16px !important;
+  padding-bottom:18px !important;
+}
+
+.config-card:has(.premium-selector) .progress-wrapper{
+  margin-bottom:12px !important;
+}
+
+.config-card:has(.premium-selector) h1{
+  margin:
+    14px 0
+    22px !important;
+}
+
+
+/* =========================================================
+   EVITAR DESBORDAMIENTOS
+   ========================================================= */
+
+.config-card,
+.premium-selector,
+.hero-wrapper,
+.premium-list,
+.premium-options,
+.premium-item{
+  max-width:100%;
+}
+
+.premium-selector > *{
+  min-width:0;
+}
+
+
+/* =========================================================
+   ANIMACION
+   ========================================================= */
+
+@keyframes fade{
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width:1200px){
+
+  .config-card{
+    width:min(1120px,95vw) !important;
+  }
+
+  .premium-selector{
+    grid-template-columns:
+      minmax(0,1fr)
+      310px !important;
+  }
+
+  .hero-wrapper,
+  .premium-list,
+  .premium-options{
+    height:390px !important;
+    max-height:390px !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width:900px){
+
+  .config-card{
+    width:94vw !important;
+
+    padding:
+      18px 20px
+      22px !important;
+  }
+
+  .config-card h1{
+    font-size:
+      clamp(25px,5vw,34px) !important;
+  }
+
+  .premium-selector{
+    grid-template-columns:1fr !important;
+  }
+
+  .hero-wrapper{
+    height:300px !important;
+  }
+
+  .premium-list,
+  .premium-options{
+    height:auto !important;
+    max-height:none !important;
+
+    overflow:visible !important;
+
+    padding-right:0 !important;
+  }
+
+  .premium-item{
+    min-height:72px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:600px){
+
+  .config-card{
+    width:96vw !important;
+
+    margin:8px auto !important;
+
+    padding:
+      14px 14px
+      18px !important;
+
+    border-radius:22px !important;
+  }
+
+  .progress-wrapper{
+    margin-bottom:10px !important;
+  }
+
+  .config-card h1{
+    font-size:26px !important;
+
+    margin:
+      14px 0
+      18px !important;
+  }
+
+  .hero-wrapper{
+    height:230px !important;
+
+    border-radius:20px;
+  }
+
+  .hero-image{
+    border-radius:20px;
+  }
+
+  .premium-selector{
+    gap:14px !important;
+  }
+
+  .premium-list,
+  .premium-options{
+    gap:8px !important;
+  }
+
+  .premium-item{
+    padding:12px 14px !important;
+
+    border-radius:15px !important;
+  }
+
+  .premium-item h3{
+    font-size:17px !important;
+  }
+
+  .premium-item p{
+    font-size:12px !important;
+  }
+
+  .premium-badge,
+  .premium-item .badge{
+    font-size:10px !important;
+
+    padding:4px 9px !important;
+  }
+
+  .config-card textarea{
+    height:130px !important;
+    min-height:130px !important;
+  }
+
+}
+
+/* =========================================================
+   PATA Y ALETA — CONFIGURATOR UX FINAL
+   Pasos no fotográficos
+   ========================================================= */
+
+
+/* ---------- BASE ---------- */
+
+.configurator{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding:18px 0 36px;
+}
+
+
+/* =========================================================
+   SINGLE SIN IMAGEN — UBICACIÓN
+   ========================================================= */
+
+.config-card:not(:has(.premium-selector))
+.options{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:14px;
+    width:100%;
+    margin:22px 0 26px;
+}
+
+.config-card:not(:has(.premium-selector))
+.option-card{
+    min-height:145px!important;
+    height:auto!important;
+    padding:22px 16px!important;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(28,51,74,.96),
+        rgba(20,39,59,.96)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    cursor:pointer;
+
+    transition:
+    border-color .2s ease,
+    background .2s ease,
+    box-shadow .2s ease!important;
+}
+
+.config-card:not(:has(.premium-selector))
+.option-card:hover{
+    transform:none!important;
+
+    border-color:rgba(0,213,255,.55);
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(32,66,91,.98),
+        rgba(21,46,68,.98)
+    );
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.22),
+    0 0 22px rgba(0,213,255,.08);
+}
+
+.config-card:not(:has(.premium-selector))
+.option-card.selected{
+    border-color:#00d5ff;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(0,213,255,.18),
+        rgba(20,55,76,.98)
+    );
+}
+
+
+/* ICONO */
+
+.option-icon{
+    display:flex!important;
+
+    align-items:center;
+    justify-content:center;
+
+    width:64px;
+    height:64px;
+
+    margin:0 auto 12px;
+
+    font-size:38px!important;
+    line-height:1;
+
+    border-radius:20px;
+
+    background:rgba(0,213,255,.10);
+
+    border:1px solid rgba(0,213,255,.18);
+}
+
+
+/* TITULO */
+
+.config-card:not(:has(.premium-selector))
+.option-title{
+    margin:0!important;
+
+    font-size:18px!important;
+
+    font-weight:700;
+
+    line-height:1.2;
+}
+
+
+/* Ocultamos footer viejo */
+
+.config-card:not(:has(.premium-selector))
+.option-footer{
+    display:none!important;
+}
+
+
+/* =========================================================
+   MULTIPLE — INCLUDES
+   ========================================================= */
+
+.multiple-card{
+    position:relative;
+}
+
+.multiple-card .option-title{
+    width:100%;
+}
+
+.multiple-card .option-description{
+    width:100%;
+
+    margin-top:7px;
+
+    font-size:13px;
+
+    line-height:1.35;
+
+    color:#b8c5d4;
+}
+
+.multiple-card .option-badge{
+    position:static!important;
+
+    display:inline-flex;
+
+    width:auto!important;
+
+    margin-top:10px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:rgba(0,213,255,.12);
+
+    border:1px solid rgba(0,213,255,.28);
+
+    color:#63e6ff;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.multiple-card .checkmark{
+    position:absolute;
+
+    top:12px;
+    right:12px;
+
+    width:25px;
+    height:25px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#00d5ff;
+
+    color:#071421;
+
+    font-weight:900;
+
+    opacity:0;
+
+    transform:scale(.7);
+
+    transition:.18s ease;
+}
+
+.multiple-card.selected .checkmark{
+    opacity:1;
+    transform:scale(1);
+}
+
+
+/* =========================================================
+   MEDIDAS
+   ========================================================= */
+
+.config-card:has(.measure-grid){
+    max-width:1000px!important;
+}
+
+.measure-subtitle,
+.upload-subtitle,
+.textarea-subtitle{
+    text-align:center;
+
+    margin:
+    -2px auto 24px!important;
+
+    max-width:760px;
+
+    color:#b9c5d4;
+
+    font-size:17px!important;
+
+    line-height:1.5;
+}
+
+.measure-grid{
+    display:grid!important;
+
+    grid-template-columns:
+    repeat(3,minmax(0,1fr))!important;
+
+    gap:16px!important;
+
+    margin:18px 0!important;
+}
+
+.measure-field{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.measure-field label{
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#dce7f2;
+}
+
+.measure-field input{
+    width:100%!important;
+
+    height:52px!important;
+
+    padding:0 16px!important;
+
+    border-radius:14px!important;
+
+    border:1px solid rgba(255,255,255,.12)!important;
+
+    background:#091a2b!important;
+
+    color:white!important;
+
+    font-family:Poppins,sans-serif!important;
+
+    font-size:16px!important;
+
+    outline:none;
+}
+
+.measure-field input:focus{
+    border-color:#00d5ff!important;
+
+    box-shadow:
+    0 0 0 3px rgba(0,213,255,.08);
+}
+
+.measure-check{
+    display:flex!important;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin:18px 0!important;
+
+    font-size:14px!important;
+}
+
+
+/* =========================================================
+   UPLOAD
+   ========================================================= */
+
+.config-card:has(#dropZone){
+    max-width:1000px!important;
+}
+
+.drop-zone{
+    min-height:0!important;
+
+    margin:18px 0!important;
+
+    padding:28px!important;
+
+    text-align:center;
+
+    border-radius:24px;
+
+    border:
+    1px dashed rgba(0,213,255,.42);
+
+    background:
+    rgba(4,23,39,.42);
+}
+
+.upload-icon{
+    font-size:34px;
+
+    margin-bottom:7px;
+}
+
+.drop-zone h2{
+    margin:0 0 5px!important;
+
+    font-size:21px!important;
+}
+
+.drop-zone p{
+    margin:0 0 18px!important;
+
+    color:#aebccd;
+
+    font-size:15px;
+}
+
+#selectPhotos{
+    min-height:48px;
+
+    padding:0 24px;
+
+    border:0;
+
+    border-radius:14px;
+
+    background:#5bd0f4;
+
+    color:#071421;
+
+    font-family:Poppins,sans-serif;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.upload-info{
+    margin:14px 0!important;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    background:rgba(0,0,0,.12);
+
+    color:#b8c5d4;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   PREVIEW FOTOS
+   ========================================================= */
+
+.preview-gallery{
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,minmax(0,1fr));
+
+    gap:10px;
+
+    margin:12px 0;
+}
+
+.preview-card{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:14px;
+
+    aspect-ratio:1.35;
+}
+
+.preview-card img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/* =========================================================
+   TEXTAREA — PASO 11
+   ========================================================= */
+
+.config-card:has(#projectIdeas){
+    max-width:1050px!important;
+}
+
+.project-textarea{
+    display:block;
+
+    width:100%!important;
+
+    height:160px!important;
+
+    min-height:160px!important;
+
+    max-height:220px!important;
+
+    padding:18px!important;
+
+    margin:20px 0 22px!important;
+
+    resize:vertical;
+
+    border-radius:18px!important;
+
+    border:
+    1px solid rgba(0,213,255,.18)!important;
+
+    background:#071a2a!important;
+
+    color:white!important;
+
+    font-family:Poppins,sans-serif!important;
+
+    font-size:15px!important;
+
+    line-height:1.55;
+
+    outline:none;
+}
+
+.project-textarea:focus{
+    border-color:#00d5ff!important;
+
+    box-shadow:
+    0 0 0 3px rgba(0,213,255,.07);
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.bottom-actions{
+    display:grid!important;
+
+    grid-template-columns:
+    180px 1fr;
+
+    gap:12px;
+
+    width:100%;
+
+    margin-top:20px!important;
+}
+
+.next-btn,
+.secondary-btn{
+    min-height:52px!important;
+
+    border-radius:15px!important;
+
+    font-family:Poppins,sans-serif!important;
+
+    font-weight:700!important;
+
+    cursor:pointer;
+}
+
+.next-btn{
+    width:100%!important;
+
+    border:0!important;
+
+    background:#5bd0f4!important;
+
+    color:#071421!important;
+}
+
+.secondary-btn{
+    border:
+    1px solid rgba(255,255,255,.14)!important;
+
+    background:
+    rgba(255,255,255,.04)!important;
+
+    color:white!important;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.summary-card{
+    max-width:1100px!important;
+}
+
+.summary-grid{
+    display:grid!important;
+
+    grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
+    gap:12px!important;
+
+    margin:22px 0!important;
+}
+
+.summary-item{
+    padding:16px 18px;
+
+    border-radius:17px;
+
+    background:rgba(6,25,42,.55);
+
+    border:
+    1px solid rgba(255,255,255,.07);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+}
+
+.summary-item strong{
+    color:#62e4ff;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.06em;
+}
+
+.summary-item span,
+.summary-item p{
+    margin:0;
+
+    color:#e7eef5;
+
+    font-size:14px;
+
+    line-height:1.45;
+}
+
+.summary-item.full{
+    grid-column:1/-1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .config-card:not(:has(.premium-selector))
+    .options{
+        grid-template-columns:
+        repeat(2,minmax(0,1fr));
+    }
+
+    .measure-grid{
+        grid-template-columns:1fr!important;
+    }
+
+    .preview-gallery{
+        grid-template-columns:
+        repeat(3,minmax(0,1fr));
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .configurator{
+        padding:8px 0 24px;
+    }
+
+    .config-card:not(:has(.premium-selector))
+    .options{
+        grid-template-columns:1fr;
+    }
+
+    .config-card:not(:has(.premium-selector))
+    .option-card{
+        min-height:105px!important;
+    }
+
+    .bottom-actions{
+        grid-template-columns:1fr;
+    }
+
+    .summary-grid{
+        grid-template-columns:1fr!important;
+    }
+
+    .summary-item.full{
+        grid-column:auto;
+    }
+
+}
+
+/* =====================================================
+   MULTIPLE CARDS — PREMIUM IMAGE MODE
+   ===================================================== */
+
+.multiple-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.multiple-card-image{
+    width:100%;
+    height:190px;
+    overflow:hidden;
+    border-radius:20px 20px 0 0;
+    margin-bottom:18px;
+}
+
+.multiple-card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+
+    transition:
+        transform .55s ease,
+        filter .55s ease;
+}
+
+.multiple-card:hover .multiple-card-image img{
+    transform:scale(1.06);
+}
+
+.multiple-card-content{
+    position:relative;
+    z-index:2;
+}
+
+/* =========================================================
+   PATA Y ALETA — MULTIPLE CARDS PREMIUM
+   Recuperación visual pasos múltiples
+========================================================= */
+
+.multiple-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:20px;
+    width:100%;
+    margin-top:28px;
+}
+
+
+/* TARJETA */
+
+.multiple-card{
+    position:relative;
+    overflow:hidden;
+
+    min-width:0;
+    min-height:250px;
+
+    display:flex;
+    flex-direction:column;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(29,58,84,.95),
+            rgba(18,40,61,.98)
+        );
+
+    border:1px solid rgba(135,190,220,.16);
+    border-radius:24px;
+
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+/* HOVER */
+
+.multiple-card:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(0,213,255,.65);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.22),
+        0 0 25px rgba(0,213,255,.08);
+}
+
+
+/* IMAGEN */
+
+.multiple-card img{
+    display:block;
+
+    width:100%;
+    height:145px;
+
+    object-fit:cover;
+
+    border-radius:
+        23px
+        23px
+        0
+        0;
+}
+
+
+/* CONTENIDO */
+
+.multiple-card h3{
+    margin:
+        18px
+        20px
+        4px;
+
+    color:#fff;
+
+    font-size:19px;
+    line-height:1.25;
+    font-weight:700;
+}
+
+
+.multiple-card p{
+    margin:
+        0
+        20px
+        14px;
+
+    color:#aebdcd;
+
+    font-size:14px;
+    line-height:1.45;
+}
+
+
+/* BADGE */
+
+.multiple-card .premium-badge,
+.multiple-card .badge{
+    align-self:flex-start;
+
+    margin:
+        auto
+        20px
+        18px;
+
+    padding:6px 13px;
+
+    border-radius:999px;
+
+    background:rgba(0,213,255,.10);
+
+    border:1px solid rgba(0,213,255,.42);
+
+    color:#62e6ff;
+
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* SELECCIONADA */
+
+.multiple-card.selected{
+    transform:translateY(-3px);
+
+    border-color:#00d5ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,91,111,.72),
+            rgba(20,55,78,.98)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.24),
+        0 0 0 1px rgba(0,213,255,.12),
+        0 0 30px rgba(0,213,255,.16);
+}
+
+
+/* CHECK */
+
+.multiple-card::after{
+    content:"";
+
+    position:absolute;
+
+    top:14px;
+    right:14px;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+    transform:scale(.7);
+
+    background:#00d5ff;
+
+    color:#062033;
+
+    font-size:18px;
+    font-weight:900;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+
+.multiple-card.selected::after{
+    content:"✓";
+
+    opacity:1;
+
+    transform:scale(1);
+}
+
+
+/* BOTÓN CONTINUAR */
+
+#multipleNext{
+    width:100%;
+
+    min-height:58px;
+
+    margin-top:24px;
+
+    align-items:center;
+    justify-content:center;
+
+    border:0;
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #62d5f4,
+            #4fc3e7
+        );
+
+    color:#071827;
+
+    font-family:'Poppins',sans-serif;
+    font-size:18px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+#multipleNext:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(0,213,255,.20);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .multiple-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .multiple-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================================================
+   PASO 3 — LOCATION
+   MASTER DESIGN PATA Y ALETA
+========================================================= */
+
+.config-card:has(.location-grid){
+    max-width:1500px;
+    min-height:auto;
+    padding:28px 32px 32px;
+}
+
+
+/* ===== GRID ===== */
+
+.location-grid{
+    width:100%;
+    max-width:1280px;
+
+    margin:32px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+
+    gap:16px;
+}
+
+
+/* ===== TARJETA ===== */
+
+.location-card{
+    position:relative;
+
+    min-height:160px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(29,58,84,.95),
+            rgba(18,40,61,.98)
+        );
+
+    border:1px solid rgba(135,190,220,.16);
+    border-radius:22px;
+
+    cursor:pointer;
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+/* ===== GLOW ===== */
+
+.location-card::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0,213,255,.12),
+            transparent 60%
+        );
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .25s ease;
+}
+
+
+/* ===== HOVER ===== */
+
+.location-card:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(0,213,255,.55);
+
+    box-shadow:
+        0 16px 35px rgba(0,0,0,.20),
+        0 0 22px rgba(0,213,255,.08);
+}
+
+.location-card:hover::before{
+    opacity:1;
+}
+
+
+/* ===== ICONO ===== */
+
+.location-card .location-icon{
+    position:relative;
+
+    width:62px;
+    height:62px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:14px;
+
+    border-radius:18px;
+
+    background:rgba(0,213,255,.09);
+
+    border:1px solid rgba(0,213,255,.28);
+
+    font-size:28px;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.location-card:hover .location-icon{
+    transform:scale(1.06);
+
+    background:rgba(0,213,255,.14);
+
+    box-shadow:
+        0 0 20px rgba(0,213,255,.08);
+}
+
+
+/* ===== NOMBRE ===== */
+
+.location-card h3{
+    position:relative;
+
+    margin:0;
+
+    color:#fff;
+
+    font-size:16px;
+    line-height:1.25;
+    font-weight:700;
+
+    text-align:center;
+}
+
+
+/* ===== SELECCIONADA ===== */
+
+.location-card.selected{
+    transform:translateY(-3px);
+
+    border-color:#00d5ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,91,111,.72),
+            rgba(20,55,78,.98)
+        );
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,.22),
+        0 0 0 1px rgba(0,213,255,.10),
+        0 0 28px rgba(0,213,255,.15);
+}
+
+
+.location-card.selected::before{
+    opacity:1;
+}
+
+
+/* ===== CHECK ===== */
+
+.location-card.selected::after{
+    content:"✓";
+
+    position:absolute;
+
+    top:11px;
+    right:11px;
+
+    width:27px;
+    height:27px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#00d5ff;
+
+    color:#062033;
+
+    font-size:17px;
+    font-weight:900;
+
+    box-shadow:
+        0 5px 15px rgba(0,213,255,.25);
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:1100px){
+
+    .location-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .location-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .location-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================================================
+   PATA Y ALETA — PASO 4 / MEDIDAS
+   PREMIUM COMPACT EXPERIENCE
+   ========================================================= */
+
+.measure-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    width:100%;
+    margin:28px 0 20px;
+}
+
+.measure-grid label{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+    padding:20px 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31,63,88,.72),
+            rgba(18,43,64,.88)
+        );
+
+    border:1px solid rgba(116,211,239,.16);
+    border-radius:20px;
+
+    transition:
+        border-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.measure-grid label:focus-within{
+    border-color:#19d3ff;
+
+    box-shadow:
+        0 0 0 1px rgba(25,211,255,.10),
+        0 12px 30px rgba(0,0,0,.16);
+
+    transform:translateY(-2px);
+}
+
+.measure-grid label span{
+    font-size:14px;
+    font-weight:700;
+    color:#dce9f3;
+}
+
+.measure-grid input{
+    width:100%;
+    height:54px;
+
+    padding:0 16px;
+
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.10);
+
+    background:rgba(5,25,42,.72);
+
+    color:#fff;
+
+    font-family:inherit;
+    font-size:18px;
+    font-weight:600;
+
+    outline:none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.measure-grid input:focus{
+    border-color:#19d3ff;
+
+    background:rgba(6,31,50,.95);
+
+    box-shadow:
+        0 0 0 3px rgba(25,211,255,.08);
+}
+
+.measure-grid input::placeholder{
+    color:rgba(202,216,228,.42);
+    font-weight:500;
+}
+
+
+/* NO CONOZCO LAS MEDIDAS */
+
+.unknown-measures{
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    width:max-content;
+    max-width:100%;
+
+    margin:4px 0 26px;
+
+    padding:13px 18px;
+
+    border:1px solid rgba(116,211,239,.16);
+    border-radius:14px;
+
+    background:rgba(13,43,64,.55);
+
+    cursor:pointer;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+.unknown-measures:hover{
+    border-color:rgba(25,211,255,.55);
+    background:rgba(18,63,86,.72);
+    transform:translateY(-1px);
+}
+
+.unknown-measures input{
+    width:19px;
+    height:19px;
+
+    margin:0;
+
+    accent-color:#19d3ff;
+
+    cursor:pointer;
+}
+
+.unknown-measures span{
+    color:#eaf4fa;
+    font-size:15px;
+    font-weight:600;
+}
+
+
+/* INPUTS DESACTIVADOS */
+
+.measure-grid input:disabled{
+    opacity:.38;
+    cursor:not-allowed;
+    border-color:rgba(255,255,255,.05);
+}
+
+
+/* ACCIONES PASO 4 */
+
+.measure-grid + .unknown-measures + .bottom-actions{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:14px;
+    width:100%;
+    margin-top:4px;
+}
+
+.measure-grid + .unknown-measures + .bottom-actions button{
+    min-height:62px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .measure-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .measure-grid label{
+        padding:16px;
+    }
+
+    .measure-grid + .unknown-measures + .bottom-actions{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================================
+   PHOTO GALLERY — DELETE BUTTON FIX
+========================================= */
+
+.preview-card{
+    position:relative;
+}
+
+.preview-card img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:16px;
+}
+
+.preview-card button,
+.preview-card .remove-photo{
+    position:absolute;
+    top:8px;
+    right:8px;
+
+    width:34px !important;
+    height:34px !important;
+    min-width:34px !important;
+    min-height:34px !important;
+
+    padding:0 !important;
+    margin:0 !important;
+
+    border:0 !important;
+    border-radius:50% !important;
+
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px !important;
+    line-height:1 !important;
+
+    cursor:pointer;
+
+    z-index:5;
+}
+
+/* =========================================================
+   CONFIGURADOR — COMPACT PREMIUM DESKTOP
+   Reduce altura y scroll sin alterar estructura
+========================================================= */
+
+@media (min-width: 1000px){
+
+    /* CONTENEDOR PRINCIPAL */
+
+    .config-card{
+        padding:22px 28px 24px !important;
+        min-height:auto !important;
+    }
+
+
+    /* CABECERA / PROGRESO */
+
+    .config-card .step,
+    .progress-wrapper{
+        margin-bottom:14px !important;
+    }
+
+    .config-card .progress{
+        margin-bottom:18px !important;
+    }
+
+    .config-card h1{
+        font-size:36px !important;
+        line-height:1.08 !important;
+        margin:18px 0 28px !important;
+    }
+
+
+    /* =====================================================
+       TARJETAS GENERALES
+    ===================================================== */
+
+    .premium-grid,
+    .options.premium-grid{
+        gap:18px !important;
+        align-items:stretch;
+    }
+
+    .premium-card,
+    .option-card{
+        min-height:0 !important;
+        height:auto !important;
+        padding:18px !important;
+        border-radius:24px !important;
+    }
+
+
+    /* IMÁGENES */
+
+    .premium-card .option-placeholder,
+    .option-card .option-placeholder{
+        height:210px !important;
+        min-height:210px !important;
+        max-height:210px !important;
+        border-radius:18px !important;
+        margin-bottom:14px !important;
+    }
+
+
+    /* TEXTOS */
+
+    .option-title{
+        font-size:21px !important;
+        line-height:1.15 !important;
+        margin-top:8px !important;
+        margin-bottom:5px !important;
+    }
+
+    .option-description{
+        font-size:16px !important;
+        line-height:1.3 !important;
+        margin:0 0 10px !important;
+    }
+
+    .option-badge{
+        margin-top:8px !important;
+        font-size:14px !important;
+        padding:6px 12px !important;
+    }
+
+    .option-footer{
+        margin-top:8px !important;
+    }
+
+
+    /* =====================================================
+       PASOS MULTIPLE — 6 / 7 / 8
+    ===================================================== */
+
+    .multiple-grid{
+        gap:18px !important;
+    }
+
+    .multiple-card{
+        min-height:0 !important;
+        height:auto !important;
+        padding:16px !important;
+    }
+
+    .multiple-card img{
+        height:170px !important;
+        min-height:170px !important;
+        object-fit:cover !important;
+    }
+
+
+    /* Paso sin imágenes como "Qué deseas incluir" */
+
+    .multiple-card:not(:has(img)){
+        min-height:150px !important;
+        padding:20px !important;
+    }
+
+
+    /* =====================================================
+       BOTONES INFERIORES
+    ===================================================== */
+
+    .bottom-actions{
+        margin-top:24px !important;
+        gap:14px !important;
+    }
+
+    .bottom-actions button,
+    .secondary-btn,
+    .next-btn{
+        min-height:58px !important;
+        height:58px !important;
+        padding:0 28px !important;
+        font-size:20px !important;
+    }
+
+
+    /* =====================================================
+       PREMIUM CARDS — PASOS 2 / 9 / 10
+    ===================================================== */
+
+    .premium-selector{
+        gap:18px !important;
+    }
+
+    .premium-item{
+        min-height:0 !important;
+    }
+
+}
+
+/* =========================================================
+   CONFIGURADOR — GRID FINAL PREMIUM
+   PASOS 2 / 6 / 7
+========================================================= */
+
+@media (min-width:1200px){
+
+    /* =====================================================
+       PASO 2 — 5 OPCIONES EN UNA SOLA FILA
+    ===================================================== */
+
+    .config-card:has(.premium-grid) .premium-grid{
+        display:grid !important;
+        grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+        gap:14px !important;
+    }
+
+    .config-card:has(.premium-grid) .premium-card,
+    .config-card:has(.premium-grid) .option-card{
+        min-width:0 !important;
+    }
+
+    .config-card:has(.premium-grid) .option-placeholder{
+        height:180px !important;
+        min-height:180px !important;
+        max-height:180px !important;
+    }
+
+
+    /* =====================================================
+       PASO 6 — ECOSISTEMA
+       4 OPCIONES = UNA FILA
+    ===================================================== */
+
+    .config-card:has(.multiple-card img) .multiple-grid,
+    .config-card:has(.multiple-card img) .options{
+        grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+        gap:16px !important;
+    }
+
+    .config-card:has(.multiple-card img) .multiple-card{
+        min-height:0 !important;
+        height:auto !important;
+    }
+
+    .config-card:has(.multiple-card img) .multiple-card img{
+        height:165px !important;
+        min-height:165px !important;
+        object-fit:cover !important;
+    }
+
+
+    /* =====================================================
+       PASO 7 — INCLUDES
+       8 OPCIONES = 4 + 4
+    ===================================================== */
+
+    .config-card:has(.multiple-card:not(:has(img))) .multiple-grid,
+    .config-card:has(.multiple-card:not(:has(img))) .options{
+        grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+        gap:14px !important;
+    }
+
+    .config-card:has(.multiple-card:not(:has(img))) .multiple-card{
+        min-height:125px !important;
+        padding:18px 20px !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:center !important;
+
+        position:relative !important;
+
+        background:
+        linear-gradient(
+            145deg,
+            rgba(31,67,94,.95),
+            rgba(21,48,72,.95)
+        ) !important;
+
+        border:1px solid rgba(83,211,245,.18) !important;
+
+        box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.03),
+        0 8px 25px rgba(0,0,0,.08) !important;
+
+        transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease,
+        box-shadow .18s ease !important;
+    }
+
+
+    /* HOVER PASO 7 */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card:hover{
+
+        transform:translateY(-3px) !important;
+
+        border-color:#21d7f4 !important;
+
+        background:
+        linear-gradient(
+            145deg,
+            rgba(28,82,108,.98),
+            rgba(20,55,80,.98)
+        ) !important;
+
+        box-shadow:
+        0 12px 28px rgba(0,0,0,.16),
+        0 0 0 1px rgba(33,215,244,.08) !important;
+    }
+
+
+    /* SELECCIONADO PASO 7 */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card.selected{
+
+        border-color:#20d8f4 !important;
+
+        background:
+        linear-gradient(
+            145deg,
+            rgba(18,100,128,.95),
+            rgba(18,65,91,.98)
+        ) !important;
+
+        box-shadow:
+        0 0 0 1px #20d8f4,
+        0 12px 30px rgba(0,216,244,.10) !important;
+    }
+
+
+    /* TÍTULOS PASO 7 */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card .option-title{
+
+        font-size:20px !important;
+        font-weight:700 !important;
+        margin-bottom:5px !important;
+    }
+
+
+    /* DESCRIPCIÓN PASO 7 */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card .option-description{
+
+        font-size:14px !important;
+        line-height:1.25 !important;
+        opacity:.78 !important;
+        margin-bottom:8px !important;
+    }
+
+
+    /* BADGE PASO 7 */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card .option-badge{
+
+        width:max-content !important;
+        font-size:12px !important;
+        padding:4px 9px !important;
+        border-radius:999px !important;
+
+        background:rgba(17,213,244,.10) !important;
+        color:#6ee7f9 !important;
+
+        border:1px solid rgba(33,215,244,.15) !important;
+    }
+
+
+    /* =====================================================
+       REDUCIR ESPACIOS GENERALES
+    ===================================================== */
+
+    .config-card h1{
+        margin-top:14px !important;
+        margin-bottom:24px !important;
+    }
+
+    .bottom-actions{
+        margin-top:20px !important;
+    }
+
+}
+
+/* =========================================================
+   PASO 7 — INCLUDES / SELECTOR COMPACTO PREMIUM
+========================================================= */
+
+@media (min-width:1200px){
+
+    /* GRID 4 x 2 */
+
+    .config-card:has(.multiple-card:not(:has(img))) .multiple-grid,
+    .config-card:has(.multiple-card:not(:has(img))) .options{
+
+        display:grid !important;
+        grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+
+        gap:14px !important;
+
+        align-items:stretch !important;
+    }
+
+
+    /* TARJETA */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card{
+
+        min-height:0 !important;
+        height:130px !important;
+
+        padding:18px 20px !important;
+
+        position:relative !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:center !important;
+
+        border-radius:20px !important;
+
+        background:
+        linear-gradient(
+            145deg,
+            rgba(31,68,96,.96),
+            rgba(20,48,72,.98)
+        ) !important;
+
+        border:
+        1px solid rgba(76,194,230,.20) !important;
+
+        overflow:hidden !important;
+
+        cursor:pointer !important;
+
+        transition:
+            transform .18s ease,
+            border-color .18s ease,
+            box-shadow .18s ease,
+            background .18s ease !important;
+    }
+
+
+    /* BRILLO SUPERIOR */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card::before{
+
+        content:"";
+
+        position:absolute;
+
+        left:18px;
+        right:18px;
+        top:0;
+
+        height:1px;
+
+        background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(91,220,247,.45),
+            transparent
+        );
+
+        opacity:.45;
+    }
+
+
+    /* HOVER */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card:hover{
+
+        transform:translateY(-3px) !important;
+
+        border-color:
+        rgba(67,215,244,.70) !important;
+
+        box-shadow:
+        0 12px 28px rgba(0,0,0,.16),
+        0 0 20px rgba(36,205,239,.05) !important;
+    }
+
+
+    /* SELECCIONADA */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card.selected{
+
+        border-color:#2bdcf7 !important;
+
+        background:
+        linear-gradient(
+            145deg,
+            rgba(20,91,119,.98),
+            rgba(18,58,82,.98)
+        ) !important;
+
+        box-shadow:
+        0 0 0 1px rgba(43,220,247,.30),
+        0 12px 30px rgba(0,0,0,.15) !important;
+    }
+
+
+    /* CHECK SUPERIOR DERECHO */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card.selected::after{
+
+        content:"✓";
+
+        position:absolute;
+
+        top:12px;
+        right:14px;
+
+        width:27px;
+        height:27px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        border-radius:50%;
+
+        background:#37dff7;
+        color:#082237;
+
+        font-size:16px;
+        font-weight:900;
+    }
+
+
+    /* TITULO */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .option-title{
+
+        margin:0 40px 4px 0 !important;
+
+        font-size:19px !important;
+        line-height:1.15 !important;
+
+        font-weight:750 !important;
+    }
+
+
+    /* DESCRIPCIÓN */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .option-description{
+
+        margin:0 0 10px 0 !important;
+
+        font-size:13px !important;
+        line-height:1.3 !important;
+
+        opacity:.72 !important;
+    }
+
+
+    /* BADGE */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .option-badge{
+
+        display:inline-flex !important;
+
+        align-items:center !important;
+
+        width:max-content !important;
+
+        margin:0 !important;
+
+        padding:4px 10px !important;
+
+        border-radius:999px !important;
+
+        background:
+        rgba(24,201,235,.10) !important;
+
+        border:
+        1px solid rgba(58,211,241,.18) !important;
+
+        color:#74e5f7 !important;
+
+        font-size:11px !important;
+        line-height:1 !important;
+        font-weight:700 !important;
+    }
+
+
+    /* QUITA CHECK VIEJO SI ESTÁ COMO ELEMENTO */
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card > .checkmark{
+
+        display:none !important;
+    }
+
+}
+
+/* =========================================================
+   PASO 7 — FORZAR 4 COLUMNAS EN DESKTOP
+========================================================= */
+
+@media (min-width:1200px){
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-grid{
+
+        display:grid !important;
+
+        grid-template-columns:
+        repeat(4,minmax(0,1fr)) !important;
+
+        gap:14px !important;
+
+        width:100% !important;
+    }
+
+
+    .config-card:has(.multiple-card:not(:has(img)))
+    .multiple-card{
+
+        width:100% !important;
+
+        height:122px !important;
+        min-height:122px !important;
+
+        padding:16px 18px !important;
+    }
+
+}
+
+/* =========================================================
+   PASO 7 — INCLUDES
+   GRID PREMIUM COMPACTO 4 x 2
+========================================================= */
+
+@media (min-width:1200px){
+
+    /* SOLO el multiple que NO contiene imágenes */
+    .options:has(.multiple-card:not(:has(.multiple-card-image))){
+
+        display:grid !important;
+
+        grid-template-columns:
+        repeat(4, minmax(0,1fr)) !important;
+
+        gap:16px !important;
+
+        width:100% !important;
+
+        align-items:stretch !important;
+    }
+
+
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-card{
+
+        width:auto !important;
+        max-width:none !important;
+
+        height:130px !important;
+        min-height:130px !important;
+
+        padding:18px 20px !important;
+
+        margin:0 !important;
+
+        position:relative !important;
+
+        display:flex !important;
+        align-items:center !important;
+
+        border-radius:20px !important;
+    }
+
+
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-card-content{
+
+        width:100% !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+
+        gap:5px !important;
+    }
+
+
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-card h3{
+
+        margin:0 !important;
+
+        padding-right:32px !important;
+
+        font-size:17px !important;
+        line-height:1.15 !important;
+    }
+
+
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-card p{
+
+        margin:0 !important;
+
+        font-size:12.5px !important;
+        line-height:1.2 !important;
+    }
+
+
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-badge{
+
+        width:max-content !important;
+
+        margin-top:6px !important;
+
+        padding:4px 9px !important;
+
+        border-radius:999px !important;
+
+        background:rgba(0,213,255,.10) !important;
+
+        border:1px solid rgba(0,213,255,.20) !important;
+
+        color:#67e8f9 !important;
+
+        font-size:11px !important;
+        font-weight:700 !important;
+    }
+
+
+    /* CHECK */
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-check{
+
+        position:absolute !important;
+
+        top:12px !important;
+        right:12px !important;
+
+        width:27px !important;
+        height:27px !important;
+
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+
+        border-radius:50% !important;
+
+        background:#22d3ee !important;
+
+        color:#071b2b !important;
+
+        font-size:16px !important;
+        font-weight:900 !important;
+
+        opacity:0 !important;
+
+        transform:scale(.75) !important;
+
+        pointer-events:none !important;
+    }
+
+
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-card.selected
+    .multiple-check{
+
+        opacity:1 !important;
+
+        transform:scale(1) !important;
+    }
+
+
+    /* QUITA EL ✓ SUELTO */
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-card:not(.selected)
+    .multiple-check{
+
+        opacity:0 !important;
+    }
+
+
+    /* Seleccionada */
+    .options:has(.multiple-card:not(:has(.multiple-card-image)))
+    .multiple-card.selected{
+
+        border-color:#22d3ee !important;
+
+        background:
+        linear-gradient(
+            135deg,
+            rgba(13,79,96,.85),
+            rgba(20,55,76,.95)
+        ) !important;
+
+        box-shadow:
+        0 0 24px rgba(34,211,238,.10) !important;
+    }
+
+}
+
+/* =========================================================
+   PASO 7 — INCLUDES 4 x 2 DEFINITIVO
+========================================================= */
+
+.includes-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4, minmax(0,1fr)) !important;
+    gap:18px !important;
+    width:100% !important;
+}
+
+.includes-grid .multiple-card{
+    width:100% !important;
+    max-width:none !important;
+    min-width:0 !important;
+
+    height:145px !important;
+    min-height:145px !important;
+
+    margin:0 !important;
+    padding:20px 22px !important;
+
+    position:relative !important;
+}
+
+.includes-grid .multiple-card-content{
+    width:100% !important;
+}
+
+.includes-grid .multiple-card h3{
+    font-size:17px !important;
+    margin:0 0 5px !important;
+}
+
+.includes-grid .multiple-card p{
+    font-size:12.5px !important;
+    margin:0 0 8px !important;
+}
+
+.includes-grid .multiple-badge{
+    font-size:12px !important;
+    margin-top:6px !important;
+}
+
+.includes-grid .multiple-check{
+    position:absolute !important;
+    top:12px !important;
+    right:12px !important;
+
+    width:27px !important;
+    height:27px !important;
+
+    border-radius:50% !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    background:#22d3ee !important;
+    color:#071b2b !important;
+
+    font-weight:900 !important;
+
+    display:none !important;
+}
+
+.includes-grid .multiple-card.selected .multiple-check{
+    display:flex !important;
+}
+
+.includes-grid .multiple-card.selected{
+    border-color:#22d3ee !important;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(13,79,96,.88),
+            rgba(20,55,76,.96)
+        ) !important;
+
+    box-shadow:0 0 22px rgba(34,211,238,.12) !important;
+}
+
+
+/* TABLET */
+@media(max-width:1100px){
+
+    .includes-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    }
+
+}
+
+
+/* MÓVIL */
+@media(max-width:650px){
+
+    .includes-grid{
+        grid-template-columns:1fr !important;
+    }
+
+}
+
+/* =========================================================
+   PATA Y ALETA — PASO 8 EQUIPAMIENTO
+   BLOQUE FINAL LIMPIO / AISLADO
+   No modifica pasos 2, 6, 7, 9 ni 10
+   ========================================================= */
+
+@media (min-width:1200px){
+
+    .config-card:has(.equipment-grid) > h1{
+        width:100% !important;
+        text-align:center !important;
+    }
+
+    .config-card .options.equipment-grid{
+        display:grid !important;
+        grid-template-columns:repeat(3, 340px) !important;
+
+        width:min(1076px, 100%) !important;
+        max-width:1076px !important;
+        box-sizing:content-box !important;
+
+        margin:28px auto 0 !important;
+        padding:0 !important;
+
+        gap:28px !important;
+
+        justify-content:center !important;
+        align-items:stretch !important;
+    }
+
+    .config-card .options.equipment-grid .multiple-card{
+        width:340px !important;
+        max-width:340px !important;
+        min-width:340px !important;
+        box-sizing:border-box !important;
+
+        height:430px !important;
+        min-height:430px !important;
+
+        margin:0 !important;
+        padding:0 !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+    }
+
+    .config-card .options.equipment-grid .multiple-card-image{
+        width:100% !important;
+        height:185px !important;
+        min-height:185px !important;
+
+        margin:0 !important;
+
+        overflow:hidden !important;
+        border-radius:20px 20px 0 0 !important;
+    }
+
+    .config-card .options.equipment-grid .multiple-card-image img{
+        display:block !important;
+
+        width:100% !important;
+        height:100% !important;
+        min-height:0 !important;
+
+        object-fit:cover !important;
+    }
+
+    .config-card .options.equipment-grid .multiple-card-content{
+        width:100% !important;
+        padding:18px 20px 16px !important;
+    }
+
+    .config-card .options.equipment-grid .multiple-card-content h3{
+        margin:0 0 6px !important;
+        font-size:19px !important;
+        line-height:1.15 !important;
+    }
+
+    .config-card .options.equipment-grid .multiple-card-content p{
+        margin:0 0 12px !important;
+        font-size:14px !important;
+        line-height:1.35 !important;
+    }
+
+    .config-card:has(.equipment-grid) .bottom-actions{
+        width:min(1076px, 100%) !important;
+        max-width:1076px !important;
+
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+}
+
+
+/* TABLET — PASO 8 */
+
+@media (max-width:1199px) and (min-width:701px){
+
+    .config-card .options.equipment-grid{
+        display:grid !important;
+        grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+
+        width:100% !important;
+        max-width:760px !important;
+
+        margin:24px auto 0 !important;
+        gap:18px !important;
+    }
+
+    .config-card .options.equipment-grid .multiple-card{
+        width:100% !important;
+        max-width:none !important;
+        height:auto !important;
+        min-height:0 !important;
+    }
+}
+
+
+/* MÓVIL — PASO 8 */
+
+@media (max-width:700px){
+
+    .config-card .options.equipment-grid{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+
+        width:100% !important;
+        max-width:none !important;
+
+        margin:18px auto 0 !important;
+        gap:14px !important;
+    }
+
+    .config-card .options.equipment-grid .multiple-card{
+        width:100% !important;
+        max-width:none !important;
+        height:auto !important;
+        min-height:0 !important;
+    }
+}
+
+
+/* =========================================================
+   PATA Y ALETA — FIX DEFINITIVO PASOS 8 / 9 / 10
+   Clases explícitas generadas por configurator-engine.js
+   ========================================================= */
+
+@media (min-width:1200px){
+
+    /* Base común: contenido centrado dentro de la tarjeta principal */
+    .config-card.step-equipment,
+    .config-card.step-style,
+    .config-card.step-budget{
+        width:min(1320px,94vw) !important;
+        max-width:1320px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+
+    .config-card.step-equipment > h1,
+    .config-card.step-style > h1,
+    .config-card.step-budget > h1{
+        width:100% !important;
+        text-align:center !important;
+    }
+
+    /* ---------------------------------------------------------
+       PASO 8 — EQUIPAMIENTO
+       3 tarjetas, centradas, separadas y del mismo tamaño
+       --------------------------------------------------------- */
+
+    .config-card.step-equipment .options.equipment-grid{
+        display:grid !important;
+        grid-template-columns:repeat(3,minmax(0,340px)) !important;
+        justify-content:center !important;
+        align-items:stretch !important;
+        column-gap:24px !important;
+        row-gap:24px !important;
+
+        width:100% !important;
+        max-width:1120px !important;
+
+        margin:28px auto 0 !important;
+        padding:0 !important;
+        box-sizing:border-box !important;
+    }
+
+    .config-card.step-equipment .equipment-grid > .multiple-card{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:340px !important;
+
+        height:430px !important;
+        min-height:430px !important;
+
+        margin:0 !important;
+        padding:0 !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+
+        border-radius:22px !important;
+        overflow:hidden !important;
+        box-sizing:border-box !important;
+    }
+
+    .config-card.step-equipment .equipment-grid .multiple-card-image{
+        width:100% !important;
+        height:185px !important;
+        min-height:185px !important;
+        margin:0 !important;
+        overflow:hidden !important;
+        border-radius:0 !important;
+    }
+
+    .config-card.step-equipment .equipment-grid .multiple-card-image img{
+        display:block !important;
+        width:100% !important;
+        height:185px !important;
+        min-height:185px !important;
+        max-height:185px !important;
+        object-fit:cover !important;
+        margin:0 !important;
+    }
+
+    .config-card.step-equipment .equipment-grid .multiple-card-content{
+        width:100% !important;
+        padding:20px 22px !important;
+        box-sizing:border-box !important;
+    }
+
+    .config-card.step-equipment .bottom-actions{
+        width:100% !important;
+        max-width:1120px !important;
+        margin:24px auto 0 !important;
+    }
+
+    /* ---------------------------------------------------------
+       PASOS 9 Y 10 — ESTILO / PRESUPUESTO
+       3 tarjetas centradas, no cargadas a la izquierda
+       --------------------------------------------------------- */
+
+    .config-card.step-style .options.premium-grid,
+    .config-card.step-budget .options.premium-grid{
+        display:grid !important;
+        grid-template-columns:repeat(3,minmax(0,300px)) !important;
+        justify-content:center !important;
+        align-items:stretch !important;
+
+        column-gap:24px !important;
+        row-gap:24px !important;
+
+        width:100% !important;
+        max-width:980px !important;
+
+        margin:28px auto 0 !important;
+        padding:0 !important;
+        box-sizing:border-box !important;
+    }
+
+    .config-card.step-style .options.premium-grid > .option-card,
+    .config-card.step-budget .options.premium-grid > .option-card{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:300px !important;
+        height:auto !important;
+        min-height:390px !important;
+
+        margin:0 !important;
+        padding:18px !important;
+
+        box-sizing:border-box !important;
+    }
+
+    .config-card.step-style .option-placeholder,
+    .config-card.step-budget .option-placeholder{
+        width:100% !important;
+        height:205px !important;
+        min-height:205px !important;
+        max-height:205px !important;
+        margin:0 0 14px !important;
+        border-radius:18px !important;
+    }
+
+    .config-card.step-style .bottom-actions,
+    .config-card.step-budget .bottom-actions{
+        width:100% !important;
+        max-width:980px !important;
+        margin:24px auto 0 !important;
+    }
+}
+
+/* TABLET */
+@media (max-width:1199px) and (min-width:701px){
+
+    .config-card.step-equipment .options.equipment-grid,
+    .config-card.step-style .options.premium-grid,
+    .config-card.step-budget .options.premium-grid{
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        justify-content:center !important;
+        gap:18px !important;
+        width:100% !important;
+        max-width:760px !important;
+        margin:24px auto 0 !important;
+    }
+
+    .config-card.step-equipment .equipment-grid > .multiple-card,
+    .config-card.step-style .options.premium-grid > .option-card,
+    .config-card.step-budget .options.premium-grid > .option-card{
+        width:100% !important;
+        max-width:none !important;
+        min-width:0 !important;
+        height:auto !important;
+    }
+}
+
+/* MÓVIL */
+@media (max-width:700px){
+
+    .config-card.step-equipment .options.equipment-grid,
+    .config-card.step-style .options.premium-grid,
+    .config-card.step-budget .options.premium-grid{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:14px !important;
+        width:100% !important;
+        max-width:none !important;
+        margin:18px auto 0 !important;
+    }
+
+    .config-card.step-equipment .equipment-grid > .multiple-card,
+    .config-card.step-style .options.premium-grid > .option-card,
+    .config-card.step-budget .options.premium-grid > .option-card{
+        width:100% !important;
+        max-width:none !important;
+        min-width:0 !important;
+        height:auto !important;
+        min-height:0 !important;
+    }
+}
+
+/* ============================================================
+   PATA Y ALETA — MAGIC PASS V1
+   FINAL LUXURY COMPACT OVERRIDES
+   PEGAR AL FINAL DE premium-ui.css
+   ============================================================ */
+
+@media (min-width:1200px){
+
+    /* ========================================================
+       01 — BASE GENERAL
+       Menos altura / más aire lateral / jerarquía premium
+       ======================================================== */
+
+    .configurator{
+        min-height:100vh !important;
+        padding:10px 0 24px !important;
+        align-items:flex-start !important;
+    }
+
+    .config-card{
+        width:min(1460px,96vw) !important;
+        max-width:1460px !important;
+        min-height:0 !important;
+        height:auto !important;
+
+        margin:0 auto !important;
+        padding:18px 30px 22px !important;
+
+        border:1px solid rgba(109,220,255,.06) !important;
+        border-radius:30px !important;
+
+        background:
+            radial-gradient(
+                circle at 50% -20%,
+                rgba(0,213,255,.055),
+                transparent 38%
+            ),
+            linear-gradient(
+                145deg,
+                #102438 0%,
+                #172f48 100%
+            ) !important;
+
+        box-shadow:
+            0 28px 70px rgba(0,0,0,.25),
+            inset 0 1px 0 rgba(255,255,255,.025) !important;
+    }
+
+    .progress-wrapper{
+        margin:0 0 10px !important;
+    }
+
+    .progress-label{
+        font-size:16px !important;
+        margin-bottom:7px !important;
+    }
+
+    .progress{
+        height:4px !important;
+    }
+
+    .config-card h1{
+        font-size:clamp(30px,2.25vw,40px) !important;
+        line-height:1.06 !important;
+        letter-spacing:-.035em !important;
+
+        margin:14px 0 18px !important;
+    }
+
+    .config-card > p,
+    .config-card .subtitle{
+        font-size:16px !important;
+        line-height:1.45 !important;
+    }
+
+
+    /* ========================================================
+       02 — PASO 1 / BIENVENIDA
+       De bloque gigante a portada premium
+       ======================================================== */
+
+    .config-card.step-intro{
+        min-height:0 !important;
+        padding:18px 30px 24px !important;
+    }
+
+    .config-card.step-intro h1{
+        font-size:42px !important;
+        margin:12px 0 10px !important;
+    }
+
+    .config-card.step-intro h1 + p{
+        max-width:720px !important;
+        margin:0 auto 20px !important;
+
+        text-align:center !important;
+        font-size:20px !important;
+        color:#c2cfdb !important;
+    }
+
+    .config-card.step-intro .next-btn{
+        min-height:56px !important;
+        height:56px !important;
+
+        margin-top:12px !important;
+
+        border-radius:16px !important;
+    }
+
+
+    /* ========================================================
+       03 — PASO 2 / TIPO DE PROYECTO
+       5 tarjetas compactas cinematográficas
+       ======================================================== */
+
+    .config-card.step-project{
+        padding-bottom:20px !important;
+    }
+
+    .config-card.step-project .options,
+    .config-card.step-project .premium-grid{
+        display:grid !important;
+        grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+
+        gap:14px !important;
+
+        width:100% !important;
+        margin:16px auto 0 !important;
+    }
+
+    .config-card.step-project .option-card{
+        position:relative !important;
+
+        min-height:0 !important;
+        height:410px !important;
+
+        padding:12px 12px 16px !important;
+
+        border-radius:22px !important;
+
+        justify-content:flex-start !important;
+
+        background:
+            linear-gradient(
+                155deg,
+                rgba(31,59,84,.96),
+                rgba(17,40,61,.98)
+            ) !important;
+
+        border:1px solid rgba(113,197,229,.13) !important;
+
+        overflow:hidden !important;
+    }
+
+    .config-card.step-project .option-placeholder{
+        width:100% !important;
+
+        height:185px !important;
+        min-height:185px !important;
+        max-height:185px !important;
+
+        margin:0 0 14px !important;
+
+        border-radius:17px !important;
+
+        transition:
+            transform .35s ease,
+            filter .35s ease !important;
+    }
+
+    .config-card.step-project .option-card:hover
+    .option-placeholder{
+        transform:scale(1.025) !important;
+        filter:saturate(1.08) brightness(1.03) !important;
+    }
+
+    .config-card.step-project .option-title{
+        margin:0 4px 6px !important;
+
+        font-size:19px !important;
+        line-height:1.15 !important;
+    }
+
+    .config-card.step-project .option-description{
+        margin:0 4px 10px !important;
+
+        font-size:14px !important;
+        line-height:1.35 !important;
+
+        color:#c2cfdb !important;
+    }
+
+    .config-card.step-project .option-badge{
+        margin:auto auto 0 !important;
+
+        padding:6px 12px !important;
+
+        font-size:11px !important;
+        line-height:1.15 !important;
+
+        border-radius:999px !important;
+    }
+
+    /* ADIÓS PALOMITAS */
+
+    .config-card.step-project .option-footer,
+    .config-card.step-project .checkmark{
+        display:none !important;
+    }
+
+    .config-card.step-project .option-card::after{
+        content:none !important;
+        display:none !important;
+    }
+
+    .config-card.step-project .option-card.selected{
+        border-color:#28d9f6 !important;
+
+        box-shadow:
+            0 0 0 1px rgba(40,217,246,.20),
+            0 15px 35px rgba(0,0,0,.18),
+            0 0 28px rgba(40,217,246,.08) !important;
+    }
+
+
+    /* ========================================================
+       04 — PASO 3 / UBICACIÓN
+       Más compacto + selección por borde, NO palomita
+       ======================================================== */
+
+    .config-card.step-location,
+    .config-card:has(.location-grid){
+        max-width:1460px !important;
+        padding:18px 30px 22px !important;
+    }
+
+    .location-grid{
+        max-width:1300px !important;
+
+        grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+        gap:14px !important;
+
+        margin:20px auto 0 !important;
+    }
+
+    .location-card{
+        min-height:190px !important;
+
+        padding:18px 12px !important;
+
+        border-radius:20px !important;
+    }
+
+    .location-card .location-icon{
+        width:72px !important;
+        height:72px !important;
+
+        margin-bottom:13px !important;
+
+        border-radius:20px !important;
+
+        font-size:31px !important;
+    }
+
+    .location-card h3{
+        font-size:17px !important;
+    }
+
+    .location-card.selected::after{
+        content:none !important;
+        display:none !important;
+    }
+
+    .location-card.selected{
+        transform:none !important;
+
+        border-color:#2bdcf7 !important;
+
+        box-shadow:
+            inset 0 0 0 1px rgba(43,220,247,.16),
+            0 16px 35px rgba(0,0,0,.15),
+            0 0 25px rgba(43,220,247,.08) !important;
+    }
+
+
+    /* ========================================================
+       05 — PASO 4 / MEDIDAS
+       Compacto y limpio
+       ======================================================== */
+
+    .config-card:has(.measure-grid){
+        max-width:1100px !important;
+    }
+
+    .measure-subtitle{
+        margin:0 auto 16px !important;
+        font-size:15px !important;
+    }
+
+    .measure-grid{
+        gap:12px !important;
+        margin:14px 0 !important;
+    }
+
+    .measure-grid label{
+        gap:7px !important;
+
+        padding:14px 16px !important;
+
+        border-radius:17px !important;
+    }
+
+    .measure-grid input{
+        height:48px !important;
+
+        font-size:16px !important;
+
+        border-radius:12px !important;
+    }
+
+    .unknown-measures{
+        margin:2px 0 14px !important;
+
+        padding:10px 14px !important;
+
+        border-radius:12px !important;
+    }
+
+    .measure-grid + .unknown-measures + .bottom-actions{
+        margin-top:0 !important;
+    }
+
+
+    /* ========================================================
+       06 — PASO 5 / FOTOGRAFÍAS
+       Dropzone real — menos formulario, más experiencia
+       ======================================================== */
+
+    .config-card:has(#dropZone){
+        max-width:1100px !important;
+    }
+
+    .config-card:has(#dropZone) h1{
+        margin-bottom:8px !important;
+    }
+
+    .upload-subtitle{
+        margin:0 auto 14px !important;
+
+        font-size:15px !important;
+    }
+
+    .drop-zone{
+        position:relative !important;
+
+        min-height:230px !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+        justify-content:center !important;
+
+        margin:12px 0 !important;
+        padding:24px !important;
+
+        border:
+            1px dashed rgba(80,220,250,.42) !important;
+
+        border-radius:22px !important;
+
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                rgba(0,213,255,.08),
+                transparent 58%
+            ),
+            rgba(5,25,42,.38) !important;
+
+        transition:
+            border-color .2s ease,
+            background .2s ease,
+            box-shadow .2s ease !important;
+    }
+
+    .drop-zone:hover{
+        border-color:#37dff8 !important;
+
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                rgba(0,213,255,.13),
+                transparent 58%
+            ),
+            rgba(6,31,49,.52) !important;
+
+        box-shadow:
+            inset 0 0 40px rgba(0,213,255,.025) !important;
+    }
+
+    .upload-icon{
+        font-size:38px !important;
+        margin:0 0 5px !important;
+    }
+
+    .drop-zone h2{
+        font-size:20px !important;
+        margin:0 0 5px !important;
+    }
+
+    .drop-zone p{
+        margin:0 0 15px !important;
+
+        font-size:14px !important;
+    }
+
+    #selectPhotos{
+        min-height:46px !important;
+
+        padding:0 28px !important;
+
+        border-radius:13px !important;
+    }
+
+    .upload-info{
+        margin:10px 0 0 !important;
+        padding:10px 14px !important;
+
+        line-height:1.45 !important;
+    }
+
+
+    /* ========================================================
+       07 — PASOS MÚLTIPLES
+       Eliminar TODAS las palomitas visuales
+       La selección vive en borde/glow
+       ======================================================== */
+
+    .multiple-card .checkmark{
+        display:none !important;
+    }
+
+    .multiple-card::after,
+    .multiple-card.selected::after{
+        content:none !important;
+        display:none !important;
+    }
+
+    .multiple-card.selected{
+        border-color:#29d9f5 !important;
+
+        box-shadow:
+            inset 0 0 0 1px rgba(41,217,245,.16),
+            0 13px 32px rgba(0,0,0,.17),
+            0 0 26px rgba(41,217,245,.07) !important;
+    }
+
+
+    /* ========================================================
+       08 — PASOS 6 / 7 / 8
+       Unificación visual
+       ======================================================== */
+
+    .multiple-grid{
+        gap:14px !important;
+        margin-top:18px !important;
+    }
+
+    .multiple-card{
+        border-radius:20px !important;
+    }
+
+    .multiple-card h3,
+    .multiple-card .option-title{
+        font-size:18px !important;
+        line-height:1.18 !important;
+    }
+
+    .multiple-card p,
+    .multiple-card .option-description{
+        font-size:13px !important;
+        line-height:1.35 !important;
+    }
+
+    .multiple-card img{
+        height:150px !important;
+        min-height:150px !important;
+    }
+
+    .config-card.step-equipment .equipment-grid
+    > .multiple-card{
+        min-height:0 !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid
+    .multiple-card-image img{
+        height:155px !important;
+        min-height:155px !important;
+        max-height:155px !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid
+    .multiple-card-content{
+        padding:15px 18px !important;
+    }
+
+
+    /* ========================================================
+       09 — PASOS 9 / 10
+       Refinamiento sin romper lo que ya quedó bien
+       ======================================================== */
+
+    .config-card.step-style .options.premium-grid,
+    .config-card.step-budget .options.premium-grid{
+        margin-top:18px !important;
+
+        column-gap:18px !important;
+        row-gap:18px !important;
+    }
+
+    .config-card.step-style
+    .options.premium-grid > .option-card,
+    .config-card.step-budget
+    .options.premium-grid > .option-card{
+        min-height:350px !important;
+
+        padding:14px !important;
+
+        border-radius:21px !important;
+    }
+
+    .config-card.step-style .option-placeholder,
+    .config-card.step-budget .option-placeholder{
+        height:180px !important;
+        min-height:180px !important;
+        max-height:180px !important;
+
+        margin-bottom:11px !important;
+    }
+
+    .config-card.step-style .option-footer,
+    .config-card.step-budget .option-footer,
+    .config-card.step-style .checkmark,
+    .config-card.step-budget .checkmark{
+        display:none !important;
+    }
+
+    .config-card.step-style .option-card::after,
+    .config-card.step-budget .option-card::after{
+        content:none !important;
+        display:none !important;
+    }
+
+
+    /* ========================================================
+       10 — PASO 11 / DETALLES
+       De formulario gigante a briefing premium
+       ======================================================== */
+
+    .config-card:has(#projectIdeas){
+        max-width:1180px !important;
+    }
+
+    .config-card:has(#projectIdeas) h1{
+        margin-bottom:10px !important;
+    }
+
+    .textarea-subtitle{
+        max-width:700px !important;
+
+        margin:0 auto 14px !important;
+
+        font-size:15px !important;
+    }
+
+    .project-textarea,
+    .config-card:has(#projectIdeas) textarea{
+        height:125px !important;
+        min-height:125px !important;
+        max-height:160px !important;
+
+        margin:12px 0 8px !important;
+        padding:16px 18px !important;
+
+        border-radius:16px !important;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(4,22,37,.95),
+                rgba(8,31,49,.96)
+            ) !important;
+
+        border:
+            1px solid rgba(91,211,244,.18) !important;
+
+        font-size:14px !important;
+        line-height:1.5 !important;
+
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.025) !important;
+    }
+
+    .project-textarea::placeholder{
+        color:rgba(190,204,216,.52) !important;
+    }
+
+
+    /* ========================================================
+       11 — BOTONES
+       Menos gigantes, más elegantes
+       ======================================================== */
+
+    .bottom-actions{
+        grid-template-columns:180px 1fr !important;
+
+        gap:12px !important;
+
+        margin-top:16px !important;
+    }
+
+    .bottom-actions button,
+    .secondary-btn,
+    .next-btn{
+        min-height:50px !important;
+        height:50px !important;
+
+        padding:0 22px !important;
+
+        border-radius:14px !important;
+
+        font-size:16px !important;
+        font-weight:700 !important;
+    }
+
+    .next-btn{
+        background:
+            linear-gradient(
+                135deg,
+                #64d8f7,
+                #51c7ea
+            ) !important;
+
+        box-shadow:
+            0 8px 22px rgba(0,190,230,.10) !important;
+    }
+
+    .next-btn:hover{
+        filter:brightness(1.045) !important;
+
+        box-shadow:
+            0 10px 26px rgba(0,190,230,.16) !important;
+    }
+
+
+    /* ========================================================
+       12 — RESUMEN
+       Executive project sheet
+       ======================================================== */
+
+    .summary-card{
+        width:min(1320px,95vw) !important;
+        max-width:1320px !important;
+
+        padding:18px 28px 22px !important;
+    }
+
+    .summary-card h1{
+        margin:12px 0 8px !important;
+
+        font-size:38px !important;
+    }
+
+    .summary-card h1 + p{
+        max-width:760px !important;
+
+        margin:0 auto 18px !important;
+
+        font-size:16px !important;
+        line-height:1.4 !important;
+    }
+
+    .summary-grid{
+        gap:9px !important;
+
+        margin:16px 0 !important;
+    }
+
+    .summary-item{
+        min-height:72px !important;
+
+        justify-content:center !important;
+
+        padding:11px 15px !important;
+
+        gap:3px !important;
+
+        border-radius:14px !important;
+
+        background:
+            rgba(5,25,42,.58) !important;
+    }
+
+    .summary-item strong{
+        font-size:10px !important;
+        letter-spacing:.07em !important;
+    }
+
+    .summary-item span,
+    .summary-item p{
+        font-size:13px !important;
+        line-height:1.35 !important;
+    }
+
+    .summary-card .bottom-actions{
+        margin-top:14px !important;
+    }
+
+
+    /* ========================================================
+       13 — PANTALLA FINAL / SOLICITAR PROYECTO
+       Limpieza + formulario horizontal elegante
+       ======================================================== */
+
+    .config-card.step-contact,
+    .config-card.step-final,
+    .config-card:has(input[type="tel"]){
+        max-width:1180px !important;
+
+        padding:22px 30px 26px !important;
+    }
+
+    .config-card.step-contact h1,
+    .config-card.step-final h1,
+    .config-card:has(input[type="tel"]) h1{
+        margin:10px 0 8px !important;
+
+        font-size:38px !important;
+    }
+
+    .config-card.step-contact h1 + p,
+    .config-card.step-final h1 + p,
+    .config-card:has(input[type="tel"]) h1 + p{
+        max-width:760px !important;
+
+        margin:0 auto 22px !important;
+
+        font-size:16px !important;
+        line-height:1.45 !important;
+
+        text-align:center !important;
+    }
+
+    .config-card:has(input[type="tel"])
+    input[type="text"],
+    .config-card:has(input[type="tel"])
+    input[type="tel"]{
+        height:48px !important;
+        min-height:48px !important;
+
+        padding:0 14px !important;
+
+        border:
+            1px solid rgba(255,255,255,.12) !important;
+
+        border-radius:12px !important;
+
+        background:#f8fafc !important;
+
+        font-size:14px !important;
+    }
+
+    .config-card:has(input[type="tel"]) .next-btn{
+        margin-top:14px !important;
+
+        min-height:52px !important;
+        height:52px !important;
+    }
+
+
+    /* ========================================================
+       14 — MICRO DETALLES DE LUJO
+       ======================================================== */
+
+    .option-card,
+    .location-card,
+    .multiple-card,
+    .summary-item{
+        -webkit-font-smoothing:antialiased;
+    }
+
+    .option-card,
+    .location-card,
+    .multiple-card{
+        transition:
+            border-color .2s ease,
+            background .2s ease,
+            box-shadow .2s ease,
+            transform .2s ease !important;
+    }
+
+    .option-card:hover,
+    .location-card:hover,
+    .multiple-card:hover{
+        transform:translateY(-2px) !important;
+    }
+
+    .option-card.selected,
+    .location-card.selected,
+    .multiple-card.selected{
+        transform:none !important;
+    }
+
+}
+
+
+/* ============================================================
+   TABLET — MAGIC PASS
+   ============================================================ */
+
+@media (max-width:1199px) and (min-width:701px){
+
+    .config-card{
+        width:95vw !important;
+    }
+
+    .location-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    }
+
+    .config-card.step-project .options,
+    .config-card.step-project .premium-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    }
+
+    .config-card.step-project .option-card{
+        height:auto !important;
+    }
+
+    .multiple-card .checkmark,
+    .location-card.selected::after{
+        display:none !important;
+    }
+
+    .multiple-card::after,
+    .multiple-card.selected::after{
+        content:none !important;
+        display:none !important;
+    }
+}
+
+
+/* ============================================================
+   MOBILE — MAGIC PASS
+   ============================================================ */
+
+@media (max-width:700px){
+
+    .configurator{
+        padding:6px 0 18px !important;
+    }
+
+    .config-card{
+        width:96vw !important;
+
+        padding:14px !important;
+
+        border-radius:22px !important;
+    }
+
+    .config-card h1{
+        font-size:27px !important;
+
+        margin:12px 0 16px !important;
+    }
+
+    .config-card.step-project .options,
+    .config-card.step-project .premium-grid,
+    .location-grid{
+        grid-template-columns:1fr !important;
+
+        gap:10px !important;
+
+        margin-top:14px !important;
+    }
+
+    .config-card.step-project .option-card{
+        height:auto !important;
+    }
+
+    .config-card.step-project .option-placeholder{
+        height:180px !important;
+        min-height:180px !important;
+    }
+
+    .location-card{
+        min-height:110px !important;
+
+        flex-direction:row !important;
+
+        justify-content:flex-start !important;
+
+        gap:14px !important;
+
+        padding:13px 16px !important;
+    }
+
+    .location-card .location-icon{
+        width:54px !important;
+        height:54px !important;
+
+        flex:0 0 54px !important;
+
+        margin:0 !important;
+
+        font-size:25px !important;
+    }
+
+    .bottom-actions{
+        grid-template-columns:1fr !important;
+    }
+
+    .multiple-card .checkmark,
+    .location-card.selected::after{
+        display:none !important;
+    }
+
+    .multiple-card::after,
+    .multiple-card.selected::after{
+        content:none !important;
+        display:none !important;
+    }
+
+    .summary-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .project-textarea{
+        height:130px !important;
+        min-height:130px !important;
+    }
+}
+
+/* =========================================================
+   MAGIC PASS V2
+   PASO 1 — BIENVENIDO
+   ========================================================= */
+
+.config-card.step-intro{
+    min-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.config-card.step-intro .progress-wrapper{
+    flex: 0 0 auto;
+}
+
+.config-card.step-intro .intro-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 8px 32px;
+}
+
+.config-card.step-intro .intro-premium-mark{
+    margin-bottom: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    opacity: .92;
+}
+
+.config-card.step-intro h1{
+    margin: 0;
+    text-align: center;
+}
+
+.config-card.step-intro .intro-description{
+    max-width: 760px;
+    margin: 12px auto 0;
+    text-align: center;
+}
+
+.config-card.step-intro .intro-features{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+    margin: 28px auto 22px;
+}
+
+.config-card.step-intro .intro-features span{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 14px;
+    border: 1px solid rgba(92, 214, 255, .16);
+    border-radius: 999px;
+    background: rgba(8, 31, 48, .30);
+    white-space: nowrap;
+}
+
+.config-card.step-intro .intro-start-btn{
+    width: min(760px, 100%);
+    margin: 4px auto 0;
+    min-height: 58px;
+}
+
+/* =========================================================
+   SELECCIÓN PREMIUM — SIN PALOMITAS
+   ========================================================= */
+
+/* SELECCIÓN ÚNICA */
+
+.option-card{
+    position:relative;
+    transition:
+        border-color .22s ease,
+        box-shadow .22s ease,
+        transform .22s ease,
+        background .22s ease;
+}
+
+.option-card:hover{
+    border-color:rgba(88,211,244,.55);
+    transform:translateY(-3px);
+}
+
+.option-card.selected{
+    border-color:#35d9ff;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(39,92,122,.42),
+            rgba(18,48,72,.96)
+        );
+    box-shadow:
+        0 0 0 1px rgba(53,217,255,.18),
+        0 12px 32px rgba(0,0,0,.20),
+        0 0 24px rgba(53,217,255,.10);
+}
+
+/* línea luminosa superior */
+.option-card.selected::before{
+    content:"";
+    position:absolute;
+    top:-1px;
+    left:18%;
+    width:64%;
+    height:2px;
+    border-radius:999px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #5ee8ff,
+        transparent
+    );
+}
+
+
+/* SELECCIÓN MÚLTIPLE */
+
+.multiple-card{
+    position:relative;
+    transition:
+        border-color .22s ease,
+        box-shadow .22s ease,
+        transform .22s ease,
+        background .22s ease;
+}
+
+.multiple-card:hover{
+    border-color:rgba(88,211,244,.55);
+    transform:translateY(-3px);
+}
+
+.multiple-card.selected{
+    border-color:#35d9ff;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(39,92,122,.42),
+            rgba(18,48,72,.96)
+        );
+    box-shadow:
+        0 0 0 1px rgba(53,217,255,.18),
+        0 12px 32px rgba(0,0,0,.20),
+        0 0 24px rgba(53,217,255,.10);
+}
+
+.multiple-card.selected::before{
+    content:"";
+    position:absolute;
+    top:-1px;
+    left:18%;
+    width:64%;
+    height:2px;
+    border-radius:999px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #5ee8ff,
+        transparent
+    );
+}
+
+/* =========================================================
+   ICONOS PREMIUM — SINGLE OPTIONS
+   ========================================================= */
+
+.option-card .option-icon{
+    width:76px;
+    height:76px;
+
+    margin:0 auto 16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:22px;
+
+    font-size:34px;
+    line-height:1;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,103,134,.58),
+            rgba(16,65,91,.72)
+        );
+
+    border:1px solid rgba(70,213,244,.22);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 10px 25px rgba(0,0,0,.12);
+
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        box-shadow .22s ease;
+}
+
+
+/* HOVER */
+
+.option-card:hover .option-icon{
+    transform:translateY(-2px);
+
+    border-color:rgba(75,220,250,.48);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 10px 28px rgba(0,0,0,.16),
+        0 0 18px rgba(53,217,255,.08);
+}
+
+
+/* SELECCIONADO */
+
+.option-card.selected .option-icon{
+    border-color:rgba(73,224,255,.72);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(23,122,157,.78),
+            rgba(13,78,106,.90)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 10px 28px rgba(0,0,0,.18),
+        0 0 22px rgba(53,217,255,.14);
+}
+
+
+/* TÍTULO */
+
+.option-card h3{
+    transition:
+        color .22s ease,
+        transform .22s ease;
+}
+
+.option-card.selected h3{
+    color:#ffffff;
+}
+
+/* =========================================================
+   PASO 3 — UBICACIÓN / COMPOSICIÓN PREMIUM
+   SOLO step-location
+   ========================================================= */
+
+.step-location{
+    min-height:650px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* TÍTULO */
+
+.step-location > h1{
+    margin:58px 0 54px;
+    text-align:center;
+}
+
+/* GRID */
+
+.step-location .premium-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+    align-items:stretch;
+}
+
+/* TARJETAS MÁS COMPACTAS */
+
+.step-location .option-card{
+    min-height:245px;
+    padding:24px 18px 22px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:24px;
+}
+
+/* ICONO — quitamos la cápsula vertical */
+
+.step-location .option-icon{
+    width:82px;
+    height:82px;
+    margin:0 0 20px;
+
+    border-radius:24px;
+
+    font-size:38px;
+
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(76,220,246,.22),
+            rgba(17,91,121,.72)
+        );
+
+    border:1px solid rgba(70,213,244,.28);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 12px 30px rgba(0,0,0,.14);
+}
+
+/* TÍTULO DE CADA OPCIÓN */
+
+.step-location .option-card h3{
+    margin:0;
+    font-size:20px;
+    line-height:1.2;
+    text-align:center;
+}
+
+/* SELECCIÓN */
+
+.step-location .option-card.selected{
+    transform:translateY(-3px);
+
+    border-color:rgba(65,220,250,.88);
+
+    box-shadow:
+        0 16px 36px rgba(0,0,0,.20),
+        0 0 26px rgba(53,217,255,.10);
+}
+
+/* BOTONES */
+
+.step-location .bottom-actions{
+    margin-top:48px;
+}
+
+/* =========================================================
+   PASO 5 — FOTOGRAFÍAS / PREMIUM UPLOAD
+   ========================================================= */
+
+.step-photos{
+    min-height:650px;
+    display:flex;
+    flex-direction:column;
+}
+
+.step-photos > h1{
+    margin:46px 0 32px;
+    text-align:center;
+}
+
+.step-photos .photo-upload,
+.step-photos .upload-area,
+.step-photos .photo-section{
+    width:min(760px,100%);
+    margin:0 auto;
+
+    padding:34px;
+
+    text-align:center;
+
+    border:1px dashed rgba(83,213,244,.38);
+    border-radius:26px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(53,217,255,.08),
+            transparent 48%
+        ),
+        rgba(8,34,54,.28);
+}
+
+.step-photos input[type="file"]{
+    max-width:100%;
+}
+
+.step-photos .next-btn{
+    flex:1;
+}
+
+.step-photos .bottom-actions{
+    margin-top:auto;
+    padding-top:34px;
+}
+
+/* =========================================================
+   PASO 8 — EQUIPAMIENTO / PREMIUM FINISH
+   ========================================================= */
+
+.step-equipment{
+    min-height:650px;
+    display:flex;
+    flex-direction:column;
+}
+
+.step-equipment > h1{
+    margin:42px 0 34px;
+    text-align:center;
+}
+
+.step-equipment .equipment-grid{
+    width:min(1120px,100%);
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.step-equipment .multiple-card{
+    min-height:360px;
+    overflow:hidden;
+    border-radius:26px;
+}
+
+.step-equipment .multiple-card-image{
+    height:165px;
+    overflow:hidden;
+}
+
+.step-equipment .multiple-card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+
+    transition:transform .35s ease;
+}
+
+.step-equipment .multiple-card:hover .multiple-card-image img{
+    transform:scale(1.035);
+}
+
+.step-equipment .multiple-card-content{
+    padding:22px 22px 24px;
+}
+
+.step-equipment .multiple-card-content h3{
+    margin:0 0 7px;
+    font-size:20px;
+}
+
+.step-equipment .multiple-card-content p{
+    margin:0 0 15px;
+    font-size:15px;
+    line-height:1.45;
+}
+
+.step-equipment .multiple-badge{
+    display:inline-flex;
+    align-items:center;
+
+    padding:7px 12px;
+
+    border-radius:999px;
+
+    background:rgba(22,111,145,.42);
+    border:1px solid rgba(72,211,242,.16);
+}
+
+.step-equipment .bottom-actions{
+    margin-top:auto;
+    padding-top:34px;
+}
+
+/* =========================================================
+   PASO 11 — ÚLTIMOS DETALLES
+   COMPACT PREMIUM
+   ========================================================= */
+
+.step-details{
+    min-height:650px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* CABECERA */
+
+.step-details > h1{
+    max-width:900px;
+    margin:38px auto 10px;
+    text-align:center;
+    line-height:1.08;
+}
+
+/* TEXTO SECUNDARIO */
+
+.step-details > p{
+    max-width:760px;
+    margin:0 auto 28px;
+    text-align:center;
+    line-height:1.45;
+}
+
+/* ZONA DE TEXTO */
+
+.step-details textarea{
+    width:100%;
+    min-height:125px;
+    max-height:170px;
+
+    padding:20px 22px;
+
+    border-radius:20px;
+
+    font-size:16px;
+    line-height:1.5;
+
+    resize:vertical;
+
+    border:1px solid rgba(88,211,244,.22);
+
+    box-shadow:
+        inset 0 1px 3px rgba(0,0,0,.08),
+        0 10px 30px rgba(0,0,0,.08);
+}
+
+/* FOCUS MÁS PREMIUM */
+
+.step-details textarea:focus{
+    outline:none;
+
+    border-color:rgba(68,219,249,.75);
+
+    box-shadow:
+        0 0 0 3px rgba(53,217,255,.08),
+        0 12px 32px rgba(0,0,0,.10);
+}
+
+/* BOTONES ABAJO */
+
+.step-details .bottom-actions{
+    margin-top:auto;
+    padding-top:30px;
+}
+
+/* =========================================================
+   PASO 11 — ÚLTIMOS DETALLES
+   COMPACT PREMIUM
+   ========================================================= */
+
+.step-ideas{
+    min-height:650px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* CABECERA */
+
+.step-ideas > h1{
+    max-width:900px;
+    margin:38px auto 10px;
+    text-align:center;
+    line-height:1.08;
+}
+
+/* TEXTO SECUNDARIO */
+
+.step-ideas > p{
+    max-width:760px;
+    margin:0 auto 24px;
+    text-align:center;
+    line-height:1.45;
+}
+
+/* TEXTAREA */
+
+.step-ideas textarea{
+    width:100%;
+    min-height:125px;
+    max-height:165px;
+
+    padding:20px 22px;
+
+    border-radius:20px;
+
+    font-size:16px;
+    line-height:1.5;
+
+    resize:vertical;
+
+    border:1px solid rgba(88,211,244,.22);
+
+    box-shadow:
+        inset 0 1px 3px rgba(0,0,0,.08),
+        0 10px 30px rgba(0,0,0,.08);
+}
+
+.step-ideas textarea:focus{
+    outline:none;
+
+    border-color:rgba(68,219,249,.75);
+
+    box-shadow:
+        0 0 0 3px rgba(53,217,255,.08),
+        0 12px 32px rgba(0,0,0,.10);
+}
+
+/* NAVEGACIÓN */
+
+.step-ideas .bottom-actions{
+    margin-top:auto;
+    padding-top:28px;
+}
+
+/* =========================================================
+   STEP SUMMARY — PATA Y ALETA PREMIUM COMPACT
+   ========================================================= */
+
+.step-summary{
+    min-height:auto !important;
+    padding-bottom:24px !important;
+}
+
+/* HEADER */
+
+.step-summary .summary-header{
+    text-align:center;
+    max-width:820px;
+    margin:18px auto 26px;
+}
+
+.step-summary .summary-premium-mark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:7px 14px;
+    margin-bottom:10px;
+
+    border:1px solid rgba(82,211,255,.18);
+    border-radius:999px;
+
+    background:rgba(82,211,255,.06);
+
+    color:#59dcff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.08em;
+}
+
+.step-summary .summary-header h1{
+    margin:0 0 8px !important;
+
+    font-size:clamp(30px,3vw,44px) !important;
+    line-height:1.05 !important;
+    text-align:center;
+}
+
+.step-summary .summary-header p{
+    max-width:680px;
+    margin:0 auto;
+
+    color:#c8d3df;
+    font-size:17px;
+    line-height:1.45;
+}
+
+
+/* =========================================================
+   SUMMARY GRID
+   ========================================================= */
+
+.step-summary .summary-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px;
+
+    margin:0 auto 18px;
+}
+
+.step-summary .summary-item{
+    position:relative;
+
+    min-height:88px;
+    padding:14px 16px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7,29,46,.92),
+            rgba(10,37,58,.78)
+        );
+
+    border:1px solid rgba(132,199,224,.12);
+    border-radius:16px;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.step-summary .summary-item:hover{
+    transform:translateY(-2px);
+    border-color:rgba(82,211,255,.30);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8,35,55,.96),
+            rgba(11,45,67,.86)
+        );
+}
+
+.step-summary .summary-item-title{
+    margin-bottom:5px;
+
+    color:#91a8ba;
+
+    font-size:11px;
+    font-weight:700;
+    line-height:1.25;
+
+    text-transform:uppercase;
+    letter-spacing:.055em;
+}
+
+.step-summary .summary-item-value{
+    color:#ffffff;
+
+    font-size:15px;
+    font-weight:700;
+    line-height:1.3;
+}
+
+
+/* =========================================================
+   CTA PANEL
+   ========================================================= */
+
+.step-summary .summary-cta-panel{
+    display:grid;
+    grid-template-columns:1.25fr .9fr;
+    align-items:center;
+    gap:24px;
+
+    margin:4px 0 16px;
+    padding:17px 20px;
+
+    border:1px solid rgba(82,211,255,.16);
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(17,58,80,.48),
+            rgba(6,28,45,.35)
+        );
+}
+
+.step-summary .summary-cta-kicker{
+    display:block;
+
+    margin-bottom:3px;
+
+    color:#59dcff;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.10em;
+}
+
+.step-summary .summary-cta-panel h3{
+    margin:0 0 4px;
+
+    color:#fff;
+
+    font-size:18px;
+    line-height:1.2;
+}
+
+.step-summary .summary-cta-panel p{
+    margin:0;
+
+    color:#b9c8d6;
+
+    font-size:13px;
+    line-height:1.4;
+}
+
+
+/* BENEFICIOS */
+
+.step-summary .summary-security{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:7px;
+}
+
+.step-summary .summary-security span{
+    display:inline-flex;
+    align-items:center;
+
+    padding:7px 10px;
+
+    border-radius:999px;
+
+    background:rgba(82,211,255,.08);
+    border:1px solid rgba(82,211,255,.13);
+
+    color:#dcebf4;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.step-summary .summary-actions{
+    display:grid !important;
+    grid-template-columns:190px 1fr !important;
+    gap:12px !important;
+
+    margin-top:0 !important;
+}
+
+.step-summary .summary-actions .secondary-btn,
+.step-summary .summary-actions .next-btn{
+    min-height:54px !important;
+    height:54px !important;
+
+    border-radius:15px !important;
+
+    font-size:15px !important;
+    font-weight:800 !important;
+}
+
+.step-summary .summary-actions .next-btn{
+    width:100% !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1100px){
+
+    .step-summary .summary-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    .step-summary .summary-header{
+        margin:10px auto 18px;
+    }
+
+    .step-summary .summary-header h1{
+        font-size:30px !important;
+    }
+
+    .step-summary .summary-header p{
+        font-size:14px;
+    }
+
+    .step-summary .summary-grid{
+        grid-template-columns:1fr;
+        gap:8px;
+    }
+
+    .step-summary .summary-item{
+        min-height:70px;
+        padding:12px 14px;
+    }
+
+    .step-summary .summary-cta-panel{
+        grid-template-columns:1fr;
+        gap:14px;
+
+        padding:15px;
+    }
+
+    .step-summary .summary-security{
+        justify-content:flex-start;
+    }
+
+    .step-summary .summary-actions{
+        grid-template-columns:1fr !important;
+    }
+
+    .step-summary .summary-actions .next-btn{
+        order:1;
+    }
+
+    .step-summary .summary-actions .secondary-btn{
+        order:2;
+    }
+
+}
+
+/* =========================================================
+   PROJECT REQUEST — PREMIUM CONCIERGE
+   ========================================================= */
+
+.project-request-step{
+    min-height:auto !important;
+    padding:30px 36px !important;
+}
+
+.request-premium-shell{
+    width:min(1040px,100%);
+    margin:0 auto;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+}
+
+
+/* SUCCESS ICON */
+
+.request-premium-shell .request-success-icon{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 10px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(82,211,255,.20),
+            rgba(82,211,255,.07)
+        );
+
+    border:1px solid rgba(82,211,255,.35);
+
+    color:#59dcff;
+
+    font-size:24px;
+    font-weight:900;
+
+    box-shadow:
+        0 0 30px rgba(82,211,255,.10);
+}
+
+
+/* PREMIUM MARK */
+
+.request-premium-shell .request-premium-mark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:12px;
+    padding:6px 13px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(82,211,255,.20);
+    background:rgba(82,211,255,.06);
+
+    color:#59dcff;
+
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.09em;
+}
+
+
+/* TITLE */
+
+.request-premium-shell h1{
+    margin:0 0 8px !important;
+
+    font-size:clamp(32px,3.3vw,48px) !important;
+    line-height:1.05 !important;
+
+    text-align:center !important;
+}
+
+
+/* SUBTITLE */
+
+.request-subtitle{
+    max-width:720px;
+
+    margin:0 auto 16px !important;
+
+    color:#c7d3df;
+
+    font-size:16px;
+    line-height:1.45;
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.request-premium-shell .request-benefits{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:0 auto 22px;
+}
+
+.request-premium-shell .request-benefits span{
+    display:inline-flex;
+    align-items:center;
+
+    padding:7px 11px;
+
+    border-radius:999px;
+
+    background:rgba(82,211,255,.07);
+    border:1px solid rgba(82,211,255,.13);
+
+    color:#d8e8f2;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.request-form-premium{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    gap:12px;
+
+    margin-bottom:14px;
+}
+
+.request-form-premium label{
+    display:flex;
+    flex-direction:column;
+
+    gap:7px;
+
+    text-align:left;
+}
+
+.request-form-premium label > span{
+    padding-left:3px;
+
+    color:#dce7ef;
+
+    font-size:12px;
+    font-weight:700;
+}
+
+.request-form-premium input{
+    width:100%;
+    height:54px;
+
+    padding:0 16px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(145,190,214,.22);
+
+    background:
+        rgba(5,27,44,.72);
+
+    color:#ffffff;
+
+    font-family:inherit;
+    font-size:14px;
+
+    outline:none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.request-form-premium input::placeholder{
+    color:#7890a2;
+}
+
+.request-form-premium input:focus{
+    border-color:#59dcff;
+
+    background:
+        rgba(7,35,54,.92);
+
+    box-shadow:
+        0 0 0 3px rgba(82,211,255,.08);
+}
+
+
+/* =========================================================
+   MAIN CTA
+   ========================================================= */
+
+.request-send-btn{
+    width:100% !important;
+
+    min-height:56px !important;
+    height:56px !important;
+
+    margin:0 !important;
+
+    border-radius:15px !important;
+
+    font-size:16px !important;
+    font-weight:900 !important;
+}
+
+
+/* PRIVACY */
+
+.request-privacy{
+    margin:11px 0 8px;
+
+    color:#8fa6b7;
+
+    font-size:10px;
+    line-height:1.4;
+}
+
+
+/* BACK */
+
+.request-premium-shell .request-back-btn{
+    appearance:none;
+
+    padding:7px 12px;
+
+    border:0;
+    background:transparent;
+
+    color:#b9c9d5;
+
+    font-family:inherit;
+    font-size:12px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+.request-premium-shell .request-back-btn:hover{
+    color:#59dcff;
+    transform:translateX(-2px);
+}
+
+
+/* ERROR MESSAGE */
+
+.request-premium-shell .request-message{
+    min-height:18px;
+
+    margin:4px 0 0;
+
+    color:#ffb4b4;
+
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    .project-request-step{
+        padding:22px 16px !important;
+    }
+
+    .request-premium-shell .request-success-icon{
+        width:46px;
+        height:46px;
+
+        font-size:21px;
+    }
+
+    .request-premium-shell h1{
+        font-size:30px !important;
+    }
+
+    .request-subtitle{
+        max-width:92%;
+
+        font-size:14px;
+    }
+
+    .request-premium-shell .request-benefits{
+        gap:6px;
+
+        margin-bottom:18px;
+    }
+
+    .request-premium-shell .request-benefits span{
+        padding:6px 9px;
+
+        font-size:10px;
+    }
+
+    .request-form-premium{
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .request-form-premium input{
+        height:50px;
+    }
+
+    .request-send-btn{
+        height:52px !important;
+        min-height:52px !important;
+    }
+
+}
+
+/* =========================================================
+   PASO 5 — FOTOGRAFIAS / PREVIEW PREMIUM
+   ========================================================= */
+
+.step-photos .photo-preview{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:12px;
+    width:min(920px,100%);
+    margin:18px auto 0;
+}
+
+.step-photos .photo-preview-item{
+    position:relative;
+    width:100%;
+    height:110px;
+    overflow:hidden;
+    border-radius:16px;
+    border:1px solid rgba(84,211,255,.30);
+    background:#0b2539;
+}
+
+.step-photos .photo-preview-image{
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:100%;
+    object-fit:cover;
+    object-position:center;
+    border-radius:inherit;
+}
+
+.step-photos .remove-photo{
+    position:absolute;
+    top:7px;
+    right:7px;
+    width:27px;
+    height:27px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    border:0;
+    border-radius:50%;
+    background:rgba(4,20,34,.88);
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+    cursor:pointer;
+    z-index:5;
+}
+
+.step-photos .remove-photo:hover{
+    background:#55d5ff;
+    color:#071a2a;
+}
+
+@media (max-width:900px){
+
+    .step-photos .photo-preview{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+}
+
+@media (max-width:600px){
+
+    .step-photos .photo-preview{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .step-photos .photo-preview-item{
+        height:95px;
+    }
+
+}
+
+/* =========================================================
+   FIX FINAL FORM + FINAL SUCCESS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   FORM — TEXTO SIEMPRE VISIBLE
+   --------------------------------------------------------- */
+
+.project-request-step .request-form-premium input{
+    color:#0b2235 !important;
+    -webkit-text-fill-color:#0b2235 !important;
+
+    background:#ffffff !important;
+
+    caret-color:#0b2235 !important;
+
+    opacity:1 !important;
+}
+
+.project-request-step .request-form-premium input::placeholder{
+    color:#8796a3 !important;
+    -webkit-text-fill-color:#8796a3 !important;
+    opacity:1 !important;
+}
+
+.project-request-step .request-form-premium input:focus{
+    color:#0b2235 !important;
+    -webkit-text-fill-color:#0b2235 !important;
+
+    background:#ffffff !important;
+
+    border-color:#59dcff !important;
+
+    box-shadow:
+        0 0 0 3px rgba(82,211,255,.12) !important;
+}
+
+
+/* Chrome autofill */
+
+.project-request-step
+.request-form-premium
+input:-webkit-autofill,
+
+.project-request-step
+.request-form-premium
+input:-webkit-autofill:hover,
+
+.project-request-step
+.request-form-premium
+input:-webkit-autofill:focus{
+
+    -webkit-text-fill-color:#0b2235 !important;
+
+    box-shadow:
+        0 0 0 1000px #ffffff inset !important;
+
+    transition:
+        background-color 9999s ease-in-out 0s;
+}
+
+
+/* ---------------------------------------------------------
+   FINAL SUCCESS SCREEN
+   --------------------------------------------------------- */
+
+.final-step{
+    min-height:520px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    padding:40px !important;
+}
+
+.final-step .final-content{
+    width:min(720px,100%);
+
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+
+/* ICON */
+
+.final-step .final-icon{
+    width:68px;
+    height:68px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 16px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(82,211,255,.38);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(82,211,255,.20),
+            rgba(82,211,255,.06)
+        );
+
+    color:#59dcff;
+
+    font-size:30px;
+    font-weight:900;
+
+    box-shadow:
+        0 0 45px rgba(82,211,255,.12);
+}
+
+
+/* BRAND MARK */
+
+.final-step .final-premium-mark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:13px;
+
+    padding:7px 15px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(82,211,255,.20);
+
+    background:rgba(82,211,255,.06);
+
+    color:#59dcff;
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:.12em;
+}
+
+
+/* TITLE */
+
+.final-step .final-content h1{
+    margin:0 0 12px !important;
+
+    color:#ffffff;
+
+    font-size:clamp(34px,4vw,52px) !important;
+    line-height:1.05 !important;
+
+    text-align:center !important;
+}
+
+
+/* TEXT */
+
+.final-step .final-content p{
+    width:min(620px,100%);
+
+    margin:0 auto 26px !important;
+
+    color:#c6d3dd;
+
+    font-size:16px;
+    line-height:1.6;
+
+    text-align:center;
+}
+
+
+/* REVIEW BUTTON */
+
+.final-step #finalReview{
+    min-width:240px;
+
+    min-height:52px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto;
+
+    padding:0 24px;
+
+    border-radius:15px;
+
+    font-size:14px;
+    font-weight:800;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media(max-width:700px){
+
+    .final-step{
+        min-height:460px !important;
+        padding:28px 18px !important;
+    }
+
+    .final-step .final-icon{
+        width:58px;
+        height:58px;
+
+        font-size:25px;
+    }
+
+    .final-step .final-content h1{
+        font-size:32px !important;
+    }
+
+    .final-step .final-content p{
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    .final-step #finalReview{
+        width:100%;
+        min-width:0;
+    }
+
+}
+
+/* =========================================================
+   CONFIGURATOR — PHOTO UPLOAD PREMIUM
+   ========================================================= */
+
+.step-photos .photo-preview{
+    width:min(920px,100%);
+    margin:22px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:14px;
+}
+
+
+.step-photos .photo-preview-item{
+    position:relative;
+
+    width:100%;
+    aspect-ratio:4/3;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    border:1px solid rgba(82,211,255,.25);
+
+    background:#0c2235;
+}
+
+
+.step-photos .photo-image-wrapper{
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:inherit;
+
+    pointer-events:none;
+}
+
+
+.step-photos .photo-preview-image{
+    display:block;
+
+    width:100% !important;
+    height:100% !important;
+
+    max-width:100% !important;
+    max-height:100% !important;
+
+    object-fit:cover !important;
+
+    border-radius:inherit;
+
+    cursor:default;
+
+    pointer-events:none;
+}
+
+
+.step-photos .remove-photo{
+    position:absolute;
+
+    top:8px;
+    right:8px;
+
+    z-index:10;
+
+    width:30px;
+    height:30px;
+
+    padding:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:50%;
+
+    background:rgba(5,20,33,.88);
+
+    color:#fff;
+
+    font-size:20px;
+    line-height:1;
+
+    cursor:pointer;
+}
+
+
+.step-photos .remove-photo:hover{
+    transform:scale(1.06);
+}
+
+
+.step-photos .photo-placeholder{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+}
+
+
+/* TABLET */
+
+@media(max-width:900px){
+
+    .step-photos .photo-preview{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+}
+
+
+/* MÓVIL */
+
+@media(max-width:600px){
+
+    .step-photos .photo-preview{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        margin-top:16px;
+    }
+
+
+    .step-photos .photo-preview-item{
+        border-radius:14px;
+    }
+
+
+    .step-photos .remove-photo{
+        width:28px;
+        height:28px;
+
+        top:6px;
+        right:6px;
+    }
+
+}
+
+/* =========================================================
+   PHOTO SELECTOR — NATIVE SAFE MODE
+   ========================================================= */
+
+.step-photos .photo-native-input{
+    position:absolute !important;
+    width:1px !important;
+    height:1px !important;
+    padding:0 !important;
+    margin:-1px !important;
+    overflow:hidden !important;
+    clip:rect(0,0,0,0) !important;
+    white-space:nowrap !important;
+    border:0 !important;
+}
+
+.step-photos .photo-select-label{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    user-select:none;
+}
+
+/* =========================================================
+   PHOTO SELECT BUTTON — PREMIUM
+   ========================================================= */
+
+.step-photos .photo-select-label{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    min-width:320px;
+    min-height:72px;
+
+    padding:18px 34px;
+
+    background:linear-gradient(
+        135deg,
+        #63d8f7,
+        #49bfe3
+    );
+
+    color:#061522 !important;
+
+    font-family:'Poppins',sans-serif;
+    font-size:20px;
+    font-weight:700;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.step-photos .photo-select-label:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(72,201,239,.18);
+}
+
+@media(max-width:768px){
+
+    .step-photos .photo-select-label{
+        width:100%;
+        min-width:0;
+        min-height:58px;
+        padding:15px 20px;
+        font-size:16px;
+    }
+
+}
+
+/* =========================================================
+   PHOTO UPLOAD — ACTIONS + DRAG & DROP
+   ========================================================= */
+
+.step-photos .photo-actions{
+    width:min(680px,100%);
+
+    margin:22px auto 10px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+
+.step-photos .photo-actions .photo-select-label{
+    width:100% !important;
+    min-width:0 !important;
+    min-height:58px !important;
+
+    padding:14px 20px !important;
+
+    font-size:15px !important;
+}
+
+
+.step-photos .camera-select-label{
+    background:rgba(82,211,255,.08) !important;
+
+    border:1px solid rgba(82,211,255,.38) !important;
+
+    color:#dff8ff !important;
+}
+
+
+.step-photos .photo-drop-hint{
+    margin-top:10px;
+
+    color:#8fa7b8;
+
+    font-size:12px;
+    font-weight:600;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+/* CUANDO SE ARRASTRA UNA FOTO */
+
+.step-photos .upload-area.drag-active{
+    border-color:#59dcff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(82,211,255,.12),
+            rgba(82,211,255,.035)
+        ) !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(82,211,255,.12),
+        0 0 35px rgba(82,211,255,.08);
+
+    transform:scale(1.005);
+}
+
+
+.step-photos .upload-area.drag-active
+.photo-drop-hint{
+    color:#59dcff;
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    .step-photos .photo-actions{
+        grid-template-columns:1fr;
+
+        gap:10px;
+
+        margin-top:18px;
+    }
+
+
+    .step-photos .photo-actions .photo-select-label{
+        min-height:54px !important;
+
+        font-size:14px !important;
+    }
+
+
+    .step-photos .photo-drop-hint{
+        display:none;
+    }
+
+}
+
+/* =========================================================
+   SPECIES SELECTOR — COMPACT PREMIUM
+   PECES / CORALES
+   ========================================================= */
+
+.species-catalog-panel{
+    width:100%;
+    margin-top:24px;
+}
+
+.species-search-wrapper{
+    width:min(760px,100%);
+    margin:0 auto 18px;
+    position:relative;
+}
+
+.species-search{
+    width:100%;
+    height:56px;
+    padding:0 22px 0 52px;
+
+    border:1px solid rgba(91,211,245,.28);
+    border-radius:16px;
+
+    background:#0d2538;
+    color:#fff;
+
+    font-family:'Poppins',sans-serif;
+    font-size:15px;
+
+    outline:none;
+}
+
+.species-search:focus{
+    border-color:#5bd3f5;
+    box-shadow:0 0 0 3px rgba(91,211,245,.10);
+}
+
+.species-search-icon{
+    position:absolute;
+    left:19px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:2;
+    pointer-events:none;
+}
+
+.species-helper{
+    max-width:760px;
+    margin:0 auto 22px;
+
+    text-align:center;
+    font-size:13px;
+    line-height:1.6;
+    color:#9eb2c3;
+}
+
+
+/* GRID */
+
+.species-grid{
+    width:100%;
+
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+
+    gap:16px;
+
+    margin-top:20px;
+}
+
+
+/* TARJETA */
+
+.species-card{
+    position:relative;
+
+    display:flex !important;
+    flex-direction:column;
+
+    width:100% !important;
+    min-width:0 !important;
+    height:auto !important;
+    min-height:0 !important;
+
+    padding:0 !important;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:20px;
+
+    background:#0b2336;
+
+    color:#fff;
+    text-align:left;
+
+    cursor:pointer;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
+}
+
+.species-card:hover{
+    transform:translateY(-3px);
+
+    border-color:rgba(91,211,245,.55);
+
+    box-shadow:
+        0 14px 32px rgba(0,0,0,.22);
+}
+
+
+/* IMAGEN — IMPORTANTE: EVITA FOTO GIGANTE */
+
+.species-card .species-image{
+    width:100% !important;
+    height:150px !important;
+    min-height:150px !important;
+    max-height:150px !important;
+
+    overflow:hidden !important;
+
+    background:#071b2a;
+}
+
+.species-card .species-image img{
+    display:block !important;
+
+    width:100% !important;
+    height:100% !important;
+
+    max-width:100% !important;
+    max-height:150px !important;
+
+    object-fit:cover !important;
+    object-position:center !important;
+
+    margin:0 !important;
+}
+
+
+/* INFORMACIÓN */
+
+.species-card-content{
+    padding:14px 15px 15px;
+}
+
+.species-card-top{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.species-card h3{
+    margin:0;
+
+    color:#fff;
+
+    font-size:15px;
+    line-height:1.25;
+    font-weight:700;
+}
+
+.species-card em{
+    display:block;
+
+    margin-top:4px;
+
+    color:#91a8ba;
+
+    font-size:11px;
+    line-height:1.35;
+    font-weight:400;
+}
+
+.species-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+
+    margin-top:12px;
+}
+
+.species-meta span{
+    padding:5px 8px;
+
+    border:1px solid rgba(91,211,245,.18);
+    border-radius:999px;
+
+    background:rgba(91,211,245,.07);
+
+    color:#b8d5e1;
+
+    font-size:10px;
+    font-weight:600;
+}
+
+.species-price{
+    margin-top:11px;
+
+    color:#5bd3f5;
+
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* CHECK */
+
+.species-check{
+    flex:0 0 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:28px;
+    height:28px;
+
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:50%;
+
+    color:transparent;
+
+    font-size:15px;
+    font-weight:800;
+
+    transition:.18s ease;
+}
+
+
+/* SELECCIONADO */
+
+.species-card.selected{
+    border-color:#5bd3f5;
+
+    box-shadow:
+        0 0 0 2px rgba(91,211,245,.16),
+        0 14px 32px rgba(0,0,0,.22);
+}
+
+.species-card.selected .species-check{
+    border-color:#5bd3f5;
+    background:#5bd3f5;
+    color:#062033;
+}
+
+
+/* =========================================================
+   OPCIONES SUPERIORES
+   ========================================================= */
+
+.species-choice-panel{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:14px;
+
+    max-width:900px;
+    margin:24px auto 0;
+}
+
+.species-choice-card{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    min-height:90px;
+    padding:17px 20px;
+
+    border:1px solid rgba(91,211,245,.25);
+    border-radius:18px;
+
+    background:#102c42;
+    color:#fff;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    font-family:'Poppins',sans-serif;
+}
+
+.species-choice-card.active,
+.species-choice-card:hover{
+    border-color:#5bd3f5;
+    background:#153950;
+}
+
+.species-choice-icon{
+    font-size:27px;
+}
+
+.species-choice-copy{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+}
+
+.species-choice-copy strong{
+    font-size:15px;
+}
+
+.species-choice-copy small{
+    color:#9eb2c3;
+    font-size:11px;
+}
+
+
+/* FOTOS DE REFERENCIA */
+
+.species-upload-preview{
+    display:none;
+
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:10px;
+
+    margin:18px auto;
+
+    max-width:900px;
+}
+
+.species-upload-item{
+    position:relative;
+
+    height:105px;
+
+    overflow:hidden;
+
+    border-radius:14px;
+    border:1px solid rgba(91,211,245,.25);
+}
+
+.species-upload-item img{
+    width:100% !important;
+    height:100% !important;
+
+    object-fit:cover !important;
+}
+
+.species-upload-remove{
+    position:absolute;
+    top:6px;
+    right:6px;
+
+    width:27px;
+    height:27px;
+
+    border:0;
+    border-radius:50%;
+
+    background:#102638;
+    color:#fff;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1100px){
+
+    .species-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    }
+
+}
+
+@media(max-width:760px){
+
+    .species-choice-panel{
+        grid-template-columns:1fr;
+    }
+
+    .species-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:10px;
+    }
+
+    .species-card .species-image{
+        height:115px !important;
+        min-height:115px !important;
+        max-height:115px !important;
+    }
+
+    .species-card .species-image img{
+        max-height:115px !important;
+    }
+
+    .species-card-content{
+        padding:11px;
+    }
+
+    .species-card h3{
+        font-size:13px;
+    }
+
+    .species-upload-preview{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+}
+
+@media(max-width:430px){
+
+    .species-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    }
+
+    .species-card .species-image{
+        height:100px !important;
+        min-height:100px !important;
+        max-height:100px !important;
+    }
+
+    .species-card .species-image img{
+        max-height:100px !important;
+    }
+
+}
+
+/* =========================================================
+   EQUIPMENT — COMPACT PREMIUM
+   SOLO PASO EQUIPAMIENTO
+   ========================================================= */
+
+.step-equipment .premium-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:22px;
+    align-items:stretch;
+    max-width:1180px;
+    margin:34px auto 0;
+}
+
+.step-equipment .option-card{
+    min-height:0 !important;
+    height:auto !important;
+    padding:18px !important;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:12px;
+}
+
+.step-equipment .option-placeholder{
+    width:100%;
+    height:210px !important;
+    min-height:210px !important;
+    border-radius:18px;
+    flex:none !important;
+}
+
+.step-equipment .option-card h3{
+    margin:4px 0 0 !important;
+    min-height:0 !important;
+}
+
+.step-equipment .option-card p{
+    margin:0 !important;
+    min-height:58px;
+}
+
+.step-equipment .option-badge{
+    margin-top:auto !important;
+}
+
+@media(max-width:800px){
+
+    .step-equipment .premium-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+        margin-top:22px;
+    }
+
+    .step-equipment .option-card{
+        padding:14px !important;
+    }
+
+    .step-equipment .option-placeholder{
+        height:180px !important;
+        min-height:180px !important;
+    }
+
+    .step-equipment .option-card p{
+        min-height:0;
+    }
+
+}
+
+/* =========================================================
+   PATA Y ALETA — EQUIPAMIENTO FINAL
+   MISMO BALANCE VISUAL QUE ESTILO
+   SOLO STEP-EQUIPMENT
+   ========================================================= */
+
+@media (min-width:1200px){
+
+    .config-card.step-equipment{
+        width:min(1320px,94vw) !important;
+        max-width:1320px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+
+    .config-card.step-equipment > h1{
+        width:100% !important;
+        text-align:center !important;
+    }
+
+    .config-card.step-equipment .options.equipment-grid{
+        display:grid !important;
+
+        grid-template-columns:
+            repeat(3,minmax(0,300px)) !important;
+
+        justify-content:center !important;
+        align-items:stretch !important;
+
+        column-gap:24px !important;
+        row-gap:24px !important;
+
+        width:100% !important;
+        max-width:980px !important;
+
+        margin:28px auto 0 !important;
+        padding:0 !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid > .multiple-card{
+
+        width:100% !important;
+        min-width:0 !important;
+        max-width:300px !important;
+
+        height:auto !important;
+        min-height:390px !important;
+
+        margin:0 !important;
+        padding:0 !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+
+        border-radius:22px !important;
+        overflow:hidden !important;
+        box-sizing:border-box !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid
+    .multiple-card-image{
+
+        width:100% !important;
+
+        height:205px !important;
+        min-height:205px !important;
+        max-height:205px !important;
+
+        margin:0 !important;
+        overflow:hidden !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid
+    .multiple-card-image img{
+
+        display:block !important;
+
+        width:100% !important;
+
+        height:205px !important;
+        min-height:205px !important;
+        max-height:205px !important;
+
+        object-fit:cover !important;
+        margin:0 !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid
+    .multiple-card-content{
+
+        width:100% !important;
+
+        padding:18px !important;
+
+        box-sizing:border-box !important;
+
+        flex:1 !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid
+    .multiple-card-content h3{
+
+        margin:0 0 8px !important;
+
+        font-size:19px !important;
+        line-height:1.2 !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid
+    .multiple-card-content p{
+
+        margin:0 0 14px !important;
+
+        font-size:14px !important;
+        line-height:1.4 !important;
+    }
+
+    .config-card.step-equipment
+    .equipment-grid
+    .multiple-badge{
+
+        margin-top:auto !important;
+        align-self:flex-start !important;
+    }
+
+    .config-card.step-equipment .bottom-actions{
+
+        width:100% !important;
+        max-width:980px !important;
+
+        margin:24px auto 0 !important;
+    }
+
+}
+
+/* =========================================================
+   EQUIPMENT — 3 CARDS / DESKTOP
+   AISLADO: NO AFECTA STYLE, BUDGET NI OTROS SINGLE
+   ========================================================= */
+
+.step-equipment{
+    max-width:1320px !important;
+}
+
+.step-equipment .options.premium-grid{
+    display:grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 300px)) !important;
+
+    justify-content:center !important;
+    align-items:stretch !important;
+
+    column-gap:22px !important;
+    row-gap:22px !important;
+
+    width:100% !important;
+
+    margin:
+        22px auto
+        26px !important;
+}
+
+.step-equipment .option-card{
+    width:100% !important;
+    max-width:300px !important;
+
+    min-height:0 !important;
+    height:auto !important;
+
+    padding:
+        18px 18px
+        20px !important;
+}
+
+.step-equipment .option-placeholder{
+    width:100% !important;
+    height:180px !important;
+
+    margin-bottom:16px !important;
+
+    border-radius:18px !important;
+}
+
+.step-equipment .option-card h3{
+    font-size:18px !important;
+    line-height:1.25 !important;
+
+    margin:
+        0 0
+        10px !important;
+}
+
+.step-equipment .option-card p{
+    font-size:15px !important;
+    line-height:1.45 !important;
+
+    margin:0 0 14px !important;
+}
+
+.step-equipment .option-badge{
+    margin-top:auto !important;
+}
+
+
+/* TABLET */
+
+@media(max-width:900px){
+
+    .step-equipment .options.premium-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,280px)) !important;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .step-equipment .options.premium-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .step-equipment .option-card{
+        max-width:none !important;
+    }
+
+}

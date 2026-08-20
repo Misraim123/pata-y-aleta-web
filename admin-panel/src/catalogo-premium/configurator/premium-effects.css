@@ -1,0 +1,146 @@
+/* ===== LUXURY BACKGROUND ===== */
+
+body{
+
+background:
+radial-gradient(circle at 20% 20%,rgba(0,213,255,.10),transparent 35%),
+radial-gradient(circle at 80% 10%,rgba(0,153,255,.10),transparent 35%),
+linear-gradient(180deg,#08111d,#10233a);
+
+background-size:180% 180%;
+
+animation:oceanMove 18s ease infinite;
+
+}
+
+@keyframes oceanMove{
+
+0%{background-position:0% 0%;}
+
+50%{background-position:100% 100%;}
+
+100%{background-position:0% 0%;}
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 2px);
+
+background-size:140px 140px;
+
+animation:bubbles 35s linear infinite;
+
+opacity:.25;
+
+}
+
+@keyframes bubbles{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-400px);
+
+}
+
+}
+
+/* ===== LIGHT FX ===== */
+
+.light-rays{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+linear-gradient(115deg,
+transparent 20%,
+rgba(255,255,255,.05) 40%,
+transparent 60%);
+
+mix-blend-mode:screen;
+
+animation:rays 12s linear infinite;
+
+opacity:.45;
+
+}
+
+@keyframes rays{
+
+from{
+
+transform:translateX(-35%);
+
+}
+
+to{
+
+transform:translateX(35%);
+
+}
+
+}
+
+.floating-glow{
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+left:50%;
+
+top:40%;
+
+transform:translate(-50%,-50%);
+
+background:
+
+radial-gradient(circle,
+rgba(0,213,255,.18),
+transparent 70%);
+
+filter:blur(80px);
+
+pointer-events:none;
+
+animation:pulseGlow 7s ease-in-out infinite;
+
+}
+
+@keyframes pulseGlow{
+
+0%,100%{
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+50%{
+
+transform:translate(-50%,-50%) scale(1.15);
+
+}
+
+}
