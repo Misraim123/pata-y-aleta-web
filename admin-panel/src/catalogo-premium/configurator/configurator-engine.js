@@ -523,7 +523,7 @@ function renderIntro(step){
 
     <div class="configurator">
 
-        <div class="config-card show step-${step.id}">
+        <div class="config-card show step-${step.id} intro-premium-step">
 
             <div class="progress-wrapper">
 
@@ -543,32 +543,98 @@ function renderIntro(step){
             </div>
 
 
-            <div class="intro-content">
+            <div class="intro-premium-shell">
 
-                <div class="intro-premium-mark">
-                    ✦ PATA Y ALETA AQUARIUM DESIGN STUDIO
+                <div class="intro-glow intro-glow-one"></div>
+                <div class="intro-glow intro-glow-two"></div>
+
+
+                <div class="intro-brand">
+
+                    <div class="intro-logo-shell">
+
+                        <img
+                            src="../logo-oficial.png"
+                            alt="Pata y Aleta"
+                            class="intro-logo">
+
+                    </div>
+
+                    <div class="intro-premium-mark">
+                        ✦ AQUARIUM DESIGN STUDIO
+                    </div>
+
                 </div>
 
-                <h1>
-                    ${step.title}
-                </h1>
 
-                <p class="intro-description">
+                <div class="intro-hero">
 
-                    ${
-                        step.description ||
-                        "Diseñemos juntos un acuario extraordinario."
-                    }
+                    <div class="intro-eyebrow">
+                        DISEÑA · PERSONALIZA · CREA
+                    </div>
 
-                </p>
+                    <h1>
+                        Diseña el acuario
+                        <span>que imaginas.</span>
+                    </h1>
+
+                    <p class="intro-description">
+                        Creamos contigo una experiencia única,
+                        desde el concepto y las especies hasta
+                        la tecnología que dará vida a tu acuario.
+                    </p>
+
+                </div>
+
 
                 <div class="intro-features">
 
-                    <span>✦ Diseño personalizado</span>
+                    <div class="intro-feature">
 
-                    <span>✦ Selección de especies</span>
+                        <div class="intro-feature-icon">
+                            ✦
+                        </div>
 
-                    <span>✦ Tecnología Premium</span>
+                        <div>
+                            <strong>Diseño personalizado</strong>
+                            <small>
+                                Un proyecto pensado para tu espacio.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="intro-feature">
+
+                        <div class="intro-feature-icon">
+                            🐠
+                        </div>
+
+                        <div>
+                            <strong>Selección de especies</strong>
+                            <small>
+                                Peces, corales y ecosistemas a tu gusto.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="intro-feature">
+
+                        <div class="intro-feature-icon">
+                            ✦
+                        </div>
+
+                        <div>
+                            <strong>Tecnología Premium</strong>
+                            <small>
+                                Equipamiento adaptado a tu proyecto.
+                            </small>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -578,9 +644,29 @@ function renderIntro(step){
                     class="next-btn intro-start-btn"
                     type="button">
 
-                    Comenzar mi proyecto →
+                    <span>
+                        Comenzar a diseñar
+                    </span>
+
+                    <span class="intro-arrow">
+                        →
+                    </span>
 
                 </button>
+
+
+                <div class="intro-bottom-note">
+
+                    <span>01</span>
+
+                    <div></div>
+
+                    <p>
+                        Tu proyecto se guarda automáticamente
+                        mientras avanzas.
+                    </p>
+
+                </div>
 
             </div>
 

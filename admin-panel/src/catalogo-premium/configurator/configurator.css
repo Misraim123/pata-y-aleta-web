@@ -1945,3 +1945,599 @@ grid-template-columns:1fr;
     box-shadow:
         0 0 10px rgba(85,220,255,.85);
 }
+
+/* =========================================================
+   PATA Y ALETA — INTRO EXPERIENCE PREMIUM
+   ========================================================= */
+
+.intro-premium-step{
+    position:relative;
+    overflow:hidden;
+    min-height:calc(100vh - 24px);
+}
+
+.intro-premium-shell{
+    position:relative;
+    isolation:isolate;
+    width:min(1180px,100%);
+    margin:0 auto;
+    padding:18px 24px 10px;
+    text-align:center;
+}
+
+
+/* =========================================================
+   AMBIENTE / LUZ ACUÁTICA
+   ========================================================= */
+
+.intro-glow{
+    position:absolute;
+    z-index:-1;
+    pointer-events:none;
+    border-radius:50%;
+    filter:blur(12px);
+}
+
+.intro-glow-one{
+    width:420px;
+    height:420px;
+    top:-180px;
+    left:-170px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(63,213,255,.13) 0%,
+            rgba(63,213,255,.04) 42%,
+            transparent 72%
+        );
+}
+
+.intro-glow-two{
+    width:500px;
+    height:500px;
+    right:-220px;
+    bottom:-250px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(22,181,202,.11) 0%,
+            rgba(22,181,202,.03) 45%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.intro-brand{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.intro-logo-shell{
+    width:92px;
+    height:92px;
+    padding:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.98),
+            rgba(239,249,252,.96)
+        );
+
+    border:1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 18px 42px rgba(0,0,0,.24),
+        0 0 34px rgba(69,210,244,.08);
+}
+
+.intro-logo{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.intro-premium-mark{
+    margin:0;
+    color:#55daf7;
+    font-size:12px;
+    line-height:1;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.intro-hero{
+    width:min(900px,100%);
+    margin:0 auto;
+}
+
+.intro-eyebrow{
+    margin-bottom:14px;
+    color:rgba(206,224,239,.7);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3.2px;
+}
+
+.intro-hero h1{
+    margin:0;
+    color:#fff;
+    font-size:clamp(42px,5vw,68px);
+    line-height:.98;
+    letter-spacing:-2.7px;
+    font-weight:800;
+}
+
+.intro-hero h1 span{
+    display:block;
+    margin-top:7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #62ddf7 52%,
+            #22bfdc 100%
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.intro-description{
+    width:min(720px,100%);
+    margin:22px auto 0;
+    color:#bdcad9;
+    font-size:18px;
+    line-height:1.55;
+    font-weight:400;
+}
+
+
+/* =========================================================
+   3 PILARES
+   ========================================================= */
+
+.intro-features{
+    width:min(980px,100%);
+    margin:30px auto 26px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.intro-feature{
+    min-height:92px;
+    padding:16px 17px;
+
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    text-align:left;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,57,82,.82),
+            rgba(13,40,61,.78)
+        );
+
+    border:1px solid rgba(89,211,241,.14);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+}
+
+.intro-feature:hover{
+    transform:translateY(-3px);
+    border-color:rgba(89,211,241,.32);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(29,65,92,.92),
+            rgba(14,43,65,.88)
+        );
+}
+
+.intro-feature-icon{
+    flex:0 0 43px;
+    width:43px;
+    height:43px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    color:#5de0fa;
+    font-size:19px;
+
+    background:rgba(80,213,244,.08);
+    border:1px solid rgba(80,213,244,.16);
+}
+
+.intro-feature strong{
+    display:block;
+    margin-bottom:4px;
+    color:#fff;
+    font-size:14px;
+    line-height:1.25;
+}
+
+.intro-feature small{
+    display:block;
+    color:#91a6b9;
+    font-size:11px;
+    line-height:1.4;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.intro-start-btn{
+    width:min(720px,100%);
+    min-height:62px;
+    margin:0 auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+
+    border-radius:18px;
+
+    font-size:17px;
+    font-weight:800;
+    letter-spacing:-.2px;
+
+    box-shadow:
+        0 16px 38px rgba(51,199,233,.14);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+}
+
+.intro-start-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 20px 46px rgba(51,199,233,.22);
+
+    filter:brightness(1.04);
+}
+
+.intro-arrow{
+    font-size:22px;
+    line-height:1;
+    transition:transform .25s ease;
+}
+
+.intro-start-btn:hover .intro-arrow{
+    transform:translateX(5px);
+}
+
+
+/* =========================================================
+   MICROCOPY
+   ========================================================= */
+
+.intro-bottom-note{
+    width:min(720px,100%);
+    margin:16px auto 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    color:#71899e;
+}
+
+.intro-bottom-note > span{
+    color:#55daf7;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.intro-bottom-note > div{
+    width:34px;
+    height:1px;
+    background:rgba(83,215,245,.32);
+}
+
+.intro-bottom-note p{
+    margin:0;
+    font-size:11px;
+    line-height:1.4;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .intro-premium-shell{
+        padding:16px 12px 8px;
+    }
+
+    .intro-features{
+        grid-template-columns:1fr;
+        width:min(620px,100%);
+        margin-top:25px;
+    }
+
+    .intro-feature{
+        min-height:76px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PREMIUM
+   ========================================================= */
+
+@media(max-width:600px){
+
+    .intro-premium-step{
+        min-height:100svh;
+    }
+
+    .intro-premium-shell{
+        padding:10px 2px 4px;
+    }
+
+    .intro-brand{
+        gap:10px;
+        margin-bottom:17px;
+    }
+
+    .intro-logo-shell{
+        width:76px;
+        height:76px;
+        padding:7px;
+        border-radius:22px;
+    }
+
+    .intro-premium-mark{
+        font-size:9px;
+        letter-spacing:2.1px;
+    }
+
+    .intro-eyebrow{
+        margin-bottom:11px;
+        font-size:8px;
+        letter-spacing:2px;
+    }
+
+    .intro-hero h1{
+        font-size:clamp(37px,11vw,48px);
+        line-height:1;
+        letter-spacing:-1.8px;
+    }
+
+    .intro-hero h1 span{
+        margin-top:5px;
+    }
+
+    .intro-description{
+        width:94%;
+        margin-top:17px;
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    .intro-features{
+        width:100%;
+        margin:22px auto 20px;
+        gap:8px;
+    }
+
+    .intro-feature{
+        min-height:68px;
+        padding:12px 13px;
+        gap:11px;
+        border-radius:17px;
+    }
+
+    .intro-feature-icon{
+        flex-basis:38px;
+        width:38px;
+        height:38px;
+        border-radius:12px;
+        font-size:16px;
+    }
+
+    .intro-feature strong{
+        font-size:12px;
+    }
+
+    .intro-feature small{
+        font-size:9px;
+    }
+
+    .intro-start-btn{
+        min-height:56px;
+        border-radius:16px;
+        font-size:14px;
+    }
+
+    .intro-bottom-note{
+        margin-top:13px;
+        gap:8px;
+    }
+
+    .intro-bottom-note > div{
+        width:20px;
+    }
+
+    .intro-bottom-note p{
+        font-size:9px;
+    }
+
+}
+
+/* =========================================================
+   PASO 1 — MOBILE FINAL PREMIUM
+   iPhone 390 / 440
+   SOLO PANTALLA DE BIENVENIDA
+   ========================================================= */
+
+@media (max-width:600px){
+
+    .config-card.step-intro{
+        width:calc(100% - 16px) !important;
+        min-height:auto !important;
+        margin:8px auto !important;
+        padding:14px 14px 16px !important;
+        border-radius:24px !important;
+    }
+
+    .config-card.step-intro .progress-wrapper{
+        margin-bottom:0 !important;
+    }
+
+    .config-card.step-intro .intro-content{
+        padding:18px 4px 8px !important;
+        justify-content:flex-start !important;
+    }
+
+    .intro-premium-shell{
+        width:100%;
+        padding:0 !important;
+    }
+
+    .intro-brand{
+        gap:9px !important;
+        margin-bottom:14px !important;
+    }
+
+    .intro-logo-shell{
+        width:70px !important;
+        height:70px !important;
+        padding:7px !important;
+        border-radius:20px !important;
+    }
+
+    .intro-premium-mark{
+        font-size:9px !important;
+        letter-spacing:1.6px !important;
+    }
+
+    .intro-eyebrow{
+        margin-bottom:10px !important;
+        font-size:7px !important;
+        letter-spacing:1.8px !important;
+    }
+
+    .intro-hero h1{
+        font-size:clamp(34px,10vw,42px) !important;
+        line-height:.98 !important;
+        letter-spacing:-1.7px !important;
+        margin:0 !important;
+    }
+
+    .intro-hero h1 span{
+        display:block;
+        margin-top:4px !important;
+    }
+
+    .intro-description{
+        width:92% !important;
+        max-width:340px !important;
+        margin:15px auto 0 !important;
+        font-size:13px !important;
+        line-height:1.48 !important;
+    }
+
+    .intro-features{
+        width:100% !important;
+        margin:19px auto 17px !important;
+        gap:8px !important;
+    }
+
+    .intro-feature{
+        width:100% !important;
+        min-height:62px !important;
+        padding:10px 12px !important;
+        gap:10px !important;
+        border-radius:16px !important;
+    }
+
+    .intro-feature-icon{
+        flex:0 0 36px !important;
+        width:36px !important;
+        height:36px !important;
+        border-radius:11px !important;
+        font-size:15px !important;
+    }
+
+    .intro-feature strong{
+        font-size:11px !important;
+        line-height:1.2 !important;
+    }
+
+    .intro-feature small{
+        font-size:8px !important;
+        line-height:1.3 !important;
+    }
+
+    .intro-start-btn{
+        width:100% !important;
+        min-height:54px !important;
+        height:54px !important;
+        margin:0 !important;
+        border-radius:15px !important;
+        font-size:13px !important;
+    }
+
+    .intro-bottom-note{
+        margin-top:11px !important;
+        gap:7px !important;
+    }
+
+    .intro-bottom-note > div{
+        width:18px !important;
+    }
+
+    .intro-bottom-note p{
+        font-size:8px !important;
+        line-height:1.3 !important;
+    }
+
+}
